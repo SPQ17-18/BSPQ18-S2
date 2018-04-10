@@ -5,14 +5,26 @@ public class reserva {
 	//Julen tendras que modificar cosas en base al id de reserva no lo se
 	String id_reserva;
 	String id_sala;
+	String dni_respon;
 	String fecha;
 	String hora;
 	int plazas;
 
-	public reserva(String id_reserva,String id_sala, String fecha, String hora, int plazas){
+	
+
+	public String getDni_respon() {
+		return dni_respon;
+	}
+
+	public void setDni_respon(String dni_respon) {
+		this.dni_respon = dni_respon;
+	}
+
+	public reserva(String id_reserva, String id_sala, String dni_respon, String fecha, String hora, int plazas) {
 		super();
-		this.id_reserva=id_reserva;
+		this.id_reserva = id_reserva;
 		this.id_sala = id_sala;
+		this.dni_respon = dni_respon;
 		this.fecha = fecha;
 		this.hora = hora;
 		this.plazas = plazas;

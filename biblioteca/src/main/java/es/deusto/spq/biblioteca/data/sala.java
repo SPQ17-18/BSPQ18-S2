@@ -4,14 +4,17 @@ public class sala {
 	
 	String id_sala;
 	String id_reserva;
-	String dni_respon;
+	String fecha;
+	String hora;
 	int capacidad;
 	
-	public sala(String id_sala, String id_reserva, String dni_respon, int capacidad) {
+	
+	public sala(String id_sala, String id_reserva, String fecha, String hora, int capacidad) {
 		super();
 		this.id_sala = id_sala;
 		this.id_reserva = id_reserva;
-		this.dni_respon = dni_respon;
+		this.fecha = fecha;
+		this.hora = hora;
 		this.capacidad = capacidad;
 	}
 
@@ -31,12 +34,22 @@ public class sala {
 		this.id_reserva = id_reserva;
 	}
 
-	public String getDni_respon() {
-		return dni_respon;
+	
+
+	public String getFecha() {
+		return fecha;
 	}
 
-	public void setDni_respon(String dni_respon) {
-		this.dni_respon = dni_respon;
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+	public String getHora() {
+		return hora;
+	}
+
+	public void setHora(String hora) {
+		this.hora = hora;
 	}
 
 	public int getCapacidad() {
