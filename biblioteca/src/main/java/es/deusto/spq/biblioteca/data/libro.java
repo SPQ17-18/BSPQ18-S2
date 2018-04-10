@@ -6,6 +6,7 @@ public class libro {
 	String titulo;
 	String autor;
 	String editorial;
+	//Añadir mas???
 	
 	public libro(int isbn, String titulo, String autor, String editorial) {
 		this.isbn = isbn;
