@@ -1,6 +1,7 @@
 package es.deusto.spq.biblioteca.data;
 
 public class reserva {
+	
 	//Julen tendras que modificar cosas en base al id de reserva no lo se
 	String id_reserva;
 	String id_sala;
