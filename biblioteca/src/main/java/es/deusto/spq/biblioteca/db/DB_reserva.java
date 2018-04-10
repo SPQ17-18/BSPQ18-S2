@@ -10,9 +10,9 @@ public class DB_reserva{
 	public static DB_reserva instance = new DB_reserva();
 	
 	public DB_reserva(){
-		reserva reserva1 = new reserva("01","10/02/17","09:00",4);
-		reserva reserva2 = new reserva("03","10/02/17","12:00",2);
-		reserva reserva3 = new reserva("05","02/12/14","09:00",6);
+		reserva reserva1 = new reserva("01","S1","10/02/17","09:00",4);
+		reserva reserva2 = new reserva("03","S1","10/02/17","12:00",2);
+		reserva reserva3 = new reserva("05", "S2","02/12/14","09:00",6);
 		listaReserva.add(reserva1);
 		listaReserva.add(reserva2);
 		listaReserva.add(reserva3);
