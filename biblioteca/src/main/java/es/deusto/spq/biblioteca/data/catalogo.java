@@ -31,6 +31,7 @@ public class catalogo {
 	 * @param titulo
 	 * @param autor
 	 * @param editorial
+	 * @return
 	 */
 	public List<libro> getListaLibros(int isbn, String titulo, String autor, String editorial) {
 		return listaLibros;
