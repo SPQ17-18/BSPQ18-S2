@@ -1,20 +1,33 @@
 package es.deusto.spq.biblioteca.data;
 
-public class libro {
+import java.io.Serializable;
+
+import javax.jdo.annotations.Inheritance;
+import javax.jdo.annotations.InheritanceStrategy;
+import javax.jdo.annotations.PersistenceCapable;
+
+@PersistenceCapable(detachable = "true")
+@Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
+
+public class libro implements Serializable {
 	
-	int isbn;
-	String titulo;
-	String autor;
-	String editorial;
+	int isbn = 0;
+	String titulo = null;
+	String autor = null;
+	String editorial = null;
+	boolean isReservado = false; //Inicializado a false pues de primeras ninguno lo esta. Se cambiara a true cuando se reserve
+
 	//Añadir mas???
 	
-	public libro(int isbn, String titulo, String autor, String editorial) {
+	public libro(int isbn, String titulo, String autor, String editorial, boolean isReservado) {
 		this.isbn = isbn;
 		this.titulo = titulo;
 		this.autor = autor;
 		this.editorial = editorial;
+		this.isReservado = isReservado;
 	}
 
+	//Getters y Setters
 	public int getIsbn() {
 		return isbn;
 	}
@@ -47,9 +60,19 @@ public class libro {
 		this.editorial = editorial;
 	}
 	
+	public boolean isReservado() {
+		return isReservado;
+	}
+
+	public void setReservado(boolean isReservado) {
+		this.isReservado = isReservado;
+	}
+	
+	
 	@Override
 	public String toString() {
-		return "libro [isbn=" + isbn + ", titulo=" + titulo + ", autor=" + autor + ", editorial=" + editorial + "]";
+		return "libro [isbn=" + isbn + ", titulo=" + titulo + ", autor=" + autor + ", editorial=" + editorial
+				+ ", isReservado=" + isReservado + "]";
 	}
 
 }
