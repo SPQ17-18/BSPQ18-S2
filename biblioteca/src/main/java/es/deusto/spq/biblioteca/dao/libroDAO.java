@@ -52,6 +52,7 @@ public class libroDAO implements ILibroDAO{
 
 		Transaction tx = pm.currentTransaction();
 		libro l = null;
+	//	libro l = new libro(); descomentar este si no funciona el otro
 
 		try {
 			System.out.println("   * Buscando libro: " + nombre);
