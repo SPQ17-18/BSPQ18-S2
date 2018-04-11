@@ -18,6 +18,29 @@ public class libroDAO implements ILibroDAO{
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
 }
+	
+	@Override
+	public void almacenarLibro(libro l) {
+		// TODO Auto-generated method stub
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			tx.begin();
+			System.out.println("   * Almacenando libro: " + l);
+			pm.makePersistent(l);
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println("   $ Error almacenando libro: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+		
+	}
 
 	//Para  sprint 1 solo esta funcion tiene que ser funcional
 	@Override
@@ -52,45 +75,48 @@ public class libroDAO implements ILibroDAO{
 		
 	}
 
-	//Funcion en proceso
-	@Override
-	public String EstaDisponible(String titulo, boolean isReservado) {
-		// TODO Auto-generated method stub
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
-		String disp = "";
-	
-		try {
-			System.out.println("   * Buscando reserva del libro: " + titulo);
-			tx.begin();
-			Query<libro> query = pm.newQuery(libro.class);
-			@SuppressWarnings("unchecked")
-			List<libro> book = (List<libro>) query.execute();
-			for (libro l : book) {
-				if (l.getTitulo().equals(titulo)) {
-					String libro = l.getTitulo() + "#" + l.getIsbn() + "#" + l.getAutor() + "#" + l.getEditorial() + "#" + l.isReservado()+ "/";
-					disp += libro;
-				}
-				if(l.isReservado() == false) {
-					System.out.println(" * El libro" + titulo + "se encuentra disponible");
-					
-				} else {
-					System.out.println(" * El libro no se encuentra disponible");
-				}
 
-			}
-			tx.commit();
-		} catch (Exception ex) {
-			System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
-		} finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
-
-			pm.close();
-		}
-		
-		return disp;
-	}
+	/**
+	 * OLVIDAR POR AHORA. ESPARA CUANDO SE HAGA LA RESERVA. NO ES DE SPRINT 1
+	 */
+//	@Override
+//	public String EstaDisponible(String titulo, boolean isReservado) {
+//		// TODO Auto-generated method stub
+//		PersistenceManager pm = pmf.getPersistenceManager();
+//		Transaction tx = pm.currentTransaction();
+//		String disp = "";
+//	
+//		try {
+//			System.out.println("   * Buscando reserva del libro: " + titulo);
+//			tx.begin();
+//			Query<libro> query = pm.newQuery(libro.class);
+//			@SuppressWarnings("unchecked")
+//			List<libro> book = (List<libro>) query.execute();
+//			for (libro l : book) {
+//				if (l.getTitulo().equals(titulo)) {
+//					String libro = l.getTitulo() + "#" + l.getIsbn() + "#" + l.getAutor() + "#" + l.getEditorial() + "#" + l.isReservado()+ "/";
+//					disp += libro;
+//				}
+//				if(l.isReservado() == false) {
+//					System.out.println(" * El libro" + titulo + "se encuentra disponible");
+//					
+//				} else {
+//					System.out.println(" * El libro no se encuentra disponible");
+//				}
+//
+//			}
+//			tx.commit();
+//		} catch (Exception ex) {
+//			System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+//		} finally {
+//			if (tx != null && tx.isActive()) {
+//				tx.rollback();
+//			}
+//
+//			pm.close();
+//		}
+//		
+//		return disp;
+//	}
 
 }

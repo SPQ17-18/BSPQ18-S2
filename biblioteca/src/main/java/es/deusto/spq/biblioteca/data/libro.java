@@ -10,7 +10,7 @@ import javax.jdo.annotations.PersistenceCapable;
 @Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
 
 public class libro implements Serializable {
-	
+
 	int isbn = 0;
 	String titulo = null;
 	String autor = null;
