@@ -10,16 +10,6 @@ public class reserva {
 	String hora;
 	int plazas;
 
-	
-
-	public String getDni_respon() {
-		return dni_respon;
-	}
-
-	public void setDni_respon(String dni_respon) {
-		this.dni_respon = dni_respon;
-	}
-
 	public reserva(String id_reserva, String id_sala, String dni_respon, String fecha, String hora, int plazas) {
 		super();
 		this.id_reserva = id_reserva;
@@ -28,6 +18,14 @@ public class reserva {
 		this.fecha = fecha;
 		this.hora = hora;
 		this.plazas = plazas;
+	}
+	
+	public String getDni_respon() {
+		return dni_respon;
+	}
+
+	public void setDni_respon(String dni_respon) {
+		this.dni_respon = dni_respon;
 	}
 
 	public String getId_reserva() {

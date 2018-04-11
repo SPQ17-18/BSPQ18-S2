@@ -1,5 +1,6 @@
 package es.deusto.spq.biblioteca.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.jdo.JDOHelper;
@@ -42,21 +43,22 @@ public class libroDAO implements ILibroDAO{
 		
 	}
 
-	//Para  sprint 1 solo esta funcion tiene que ser funcional
+	//Funcion de busqueda de un libro por su nombre
 	@Override
-	public libro buscarLibro(String titulo) {
+	public libro getLibro(String nombre) {
 		// TODO Auto-generated method stub
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
 
 		Transaction tx = pm.currentTransaction();
 		libro l = null;
+	//	libro l = new libro(); descomentar este si no funciona el otro
 
 		try {
-			System.out.println("   * Buscando libro: " + titulo);
+			System.out.println("   * Buscando libro: " + nombre);
 
 			tx.begin();
-			Query<?> query = pm.newQuery("SELECT FROM " + libro.class.getName() + " WHERE titulo == '" + titulo);
+			Query<?> query = pm.newQuery("SELECT FROM " + libro.class.getName() + " WHERE nombre == '" + nombre +"'");
 			query.setUnique(true);
 			l = (libro) query.execute();
 			tx.commit();
@@ -75,30 +77,70 @@ public class libroDAO implements ILibroDAO{
 		
 	}
 
+	//Funcion que devuelve el catalogo de libros
+	@Override
+	public ArrayList<libro> getLibros() {
+		// TODO Auto-generated method stub
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
 
+		Transaction tx = pm.currentTransaction();
+		
+		ArrayList<libro> catalogo = new ArrayList<libro>();
+		
+		try {
+			System.out.println("   * Mostrando catalogo de libros...");
+
+			tx.begin();
+			Query<?> query2 = pm.newQuery("SELECT FROM " + libro.class.getName());
+	
+			List<libro> l = (List<libro>) query2.execute();
+		
+			for(int i = 0; i < l.size(); i++) {
+				catalogo.add(new libro());
+				catalogo.get(i);
+			}
+		
+			tx.commit();
+
+		} catch (Exception ex) {
+			System.out.println("   $ Error recuperando todos los libros: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+		
+		
+		
+		return null;
+	}	
+	
 	/**
 	 * OLVIDAR POR AHORA. ESPARA CUANDO SE HAGA LA RESERVA. NO ES DE SPRINT 1
 	 */
 //	@Override
-//	public String EstaDisponible(String titulo, boolean isReservado) {
+//	public String EstaDisponible(String nombre, boolean isReservado) {
 //		// TODO Auto-generated method stub
 //		PersistenceManager pm = pmf.getPersistenceManager();
 //		Transaction tx = pm.currentTransaction();
 //		String disp = "";
 //	
 //		try {
-//			System.out.println("   * Buscando reserva del libro: " + titulo);
+//			System.out.println("   * Buscando reserva del libro: " + nombre);
 //			tx.begin();
 //			Query<libro> query = pm.newQuery(libro.class);
 //			@SuppressWarnings("unchecked")
 //			List<libro> book = (List<libro>) query.execute();
 //			for (libro l : book) {
-//				if (l.getTitulo().equals(titulo)) {
-//					String libro = l.getTitulo() + "#" + l.getIsbn() + "#" + l.getAutor() + "#" + l.getEditorial() + "#" + l.isReservado()+ "/";
+//				if (l.getnombre().equals(nombre)) {
+//					String libro = l.getnombre() + "#" + l.getIsbn() + "#" + l.getAutor() + "#" + l.getEditorial() + "#" + l.isReservado()+ "/";
 //					disp += libro;
 //				}
 //				if(l.isReservado() == false) {
-//					System.out.println(" * El libro" + titulo + "se encuentra disponible");
+//					System.out.println(" * El libro" + nombre + "se encuentra disponible");
 //					
 //				} else {
 //					System.out.println(" * El libro no se encuentra disponible");
