@@ -8,6 +8,7 @@ import es.deusto.spq.biblioteca.dao.libroDAO;
 import es.deusto.spq.biblioteca.dao.IreservaDAO;
 import es.deusto.spq.biblioteca.dao.reservaDAO;
 import es.deusto.spq.biblioteca.data.libro;
+import es.deusto.spq.biblioteca.data.reserva;
 
 public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	
@@ -38,6 +39,26 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		libro l = new libro(isbn, nombre, autor, editorial, isReservado);
 		libroDAO.almacenarLibro(l);
 
+	}
+
+	@Override
+	public void anyadirReserva(String id_Sala, String dni_respon, String fecha, String hora, int plazas)
+			throws RemoteException {
+		// TODO Auto-generated method stub
+		int cod=00;
+		cod++;
+		String codg = "";
+		codg = String.valueOf(cod);
+		codg = Integer.toString(cod);
+		
+		reserva r = new reserva(codg,id_Sala, dni_respon, fecha, hora, plazas);
+		reservaDAO.anyadirReserva(r);
+	}
+
+	@Override
+	public void consultarDisponibilidad(String Id_Sala, String fecha, String hora) {
+		// TODO Auto-generated method stub
+		reservaDAO.consultarDisponibilidad(Id_Sala, fecha, hora);
 	}	
 	
 
