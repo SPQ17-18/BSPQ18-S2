@@ -1,7 +1,5 @@
 package es.deusto.spq.biblioteca.dao;
 
-import java.util.ArrayList;
-import java.util.List;
 import es.deusto.spq.biblioteca.data.reserva;
 
 public interface IreservaDAO {

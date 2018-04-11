@@ -1,6 +1,5 @@
 package es.deusto.spq.biblioteca.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.jdo.JDOHelper;
@@ -14,6 +13,7 @@ import es.deusto.spq.biblioteca.data.reserva;
 public class reservaDAO implements IreservaDAO {
 
 	private PersistenceManagerFactory pmf;
+	
 	public reservaDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
