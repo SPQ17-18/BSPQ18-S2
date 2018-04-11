@@ -69,6 +69,10 @@ public class reservaDAO implements IReservasDAO{
 			return r;
 			
 		}
+		//necesita GUI
+		public void verReservas() {
+			new GUIreservas;
+		}
 
 		//Provisional para el sprint 1
 		@Override
