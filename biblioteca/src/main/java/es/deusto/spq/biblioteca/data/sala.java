@@ -59,4 +59,8 @@ public class sala {
 	public void setCapacidad(int capacidad) {
 		this.capacidad = capacidad;
 	}
+	
+	public void añadirNuevosUsuarios(int CantidadNuevosUsuarios) {
+		this.capacidad = this.capacidad + CantidadNuevosUsuarios;
+	}
 }
