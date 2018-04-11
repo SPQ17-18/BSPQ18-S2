@@ -16,16 +16,20 @@ public class libro implements Serializable {
 	 */
 	private static final long serialVersionUID = 2763690162513004091L;
 	int isbn = 0;
-	String titulo = null;
+	String nombre = null;
 	String autor = null;
 	String editorial = null;
 	boolean isReservado = false; //Inicializado a false pues de primeras ninguno lo esta. Se cambiara a true cuando se reserve
 
 	//Añadir mas???
 	
-	public libro(int isbn, String titulo, String autor, String editorial, boolean isReservado) {
+	public libro() {
+		
+	}
+	
+	public libro(int isbn, String nombre, String autor, String editorial, boolean isReservado) {
 		this.isbn = isbn;
-		this.titulo = titulo;
+		this.nombre = nombre;
 		this.autor = autor;
 		this.editorial = editorial;
 		this.isReservado = isReservado;
@@ -40,12 +44,12 @@ public class libro implements Serializable {
 		this.isbn = isbn;
 	}
 
-	public String getTitulo() {
-		return titulo;
+	public String getnombre() {
+		return nombre;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+	public void setnombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public String getAutor() {
@@ -75,7 +79,7 @@ public class libro implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "libro [isbn=" + isbn + ", titulo=" + titulo + ", autor=" + autor + ", editorial=" + editorial
+		return "libro [isbn=" + isbn + ", nombre=" + nombre + ", autor=" + autor + ", editorial=" + editorial
 				+ ", isReservado=" + isReservado + "]";
 	}
 

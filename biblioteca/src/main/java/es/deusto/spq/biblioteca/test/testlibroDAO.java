@@ -19,7 +19,7 @@ public class testlibroDAO {
 		
 		try {
 			libro l = new libro(1, "Las almas de Brandoom", "Cesar Brandom", "S.L.U. Espasa Libros", false);
-			libroDAO.almacenarLibro(l);
+			libroDAO.almacenarLibro(l); //No esta almacenando el libro
 //			libroDAO.buscarLibro("Las almas de Brandoom");
 			
 			
