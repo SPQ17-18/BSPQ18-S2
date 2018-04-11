@@ -70,4 +70,5 @@ public class reserva {
 		this.plazas = plazas;
 	}
 	
+	//borrar
 }
