@@ -43,7 +43,7 @@ public class libroDAO implements ILibroDAO{
 		
 	}
 
-	//Para  sprint 1 solo esta funcion tiene que ser funcional
+	//Funcion de busqueda de un libro por su nombre
 	@Override
 	public libro getLibro(String nombre) {
 		// TODO Auto-generated method stub
@@ -76,6 +76,7 @@ public class libroDAO implements ILibroDAO{
 		
 	}
 
+	//Funcion que devuelve el catalogo de libros
 	@Override
 	public ArrayList<libro> getLibros() {
 		// TODO Auto-generated method stub
@@ -91,9 +92,9 @@ public class libroDAO implements ILibroDAO{
 
 			tx.begin();
 			Query<?> query2 = pm.newQuery("SELECT FROM " + libro.class.getName());
-			
+	
 			List<libro> l = (List<libro>) query2.execute();
-			
+		
 			for(int i = 0; i < l.size(); i++) {
 				catalogo.add(new libro());
 				catalogo.get(i);
@@ -114,10 +115,7 @@ public class libroDAO implements ILibroDAO{
 		
 		
 		return null;
-	}
-	
-	//Para consultar catalogo hacemos una select de todos los libros
-	
+	}	
 	
 	/**
 	 * OLVIDAR POR AHORA. ESPARA CUANDO SE HAGA LA RESERVA. NO ES DE SPRINT 1
