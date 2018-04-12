@@ -78,5 +78,31 @@ public class reservaDAO implements IreservaDAO {
 	}
 
 
+	public int actualizarReserva(reserva r) {
+		int cont=0;
+		
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		
+			try {
+				tx.begin();
+				System.out.println("*Actualizando su reserva" + cont++);
+				pm.makePersistent(r);
+				tx.commit();
+			} 
+			catch (Exception ex) {
+				System.out.println("Error durante la actualizacion de su reserva: " +
+				ex.getMessage());
+			} 
+			finally {
+				if (tx != null && tx.isActive()) {
+					tx.rollback();
+				}
+	
+			pm.close();
+			}
+	}
+	
+
 
 }
