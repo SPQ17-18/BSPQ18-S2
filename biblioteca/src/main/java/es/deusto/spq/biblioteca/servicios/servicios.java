@@ -14,6 +14,12 @@ public class servicios extends Thread {
 		//getListaReservas.consultarDisponibilidad(String Id_Sala, String fecha, String hora)
 	}
 
+	public int actualizarReserva(String id_reserva, String id_sala, String dni_respon, String fecha, String hora, int plazas) {
+		
+	}
 	
+	public int prolongarEstancia() {
+		
+	}
 	
 }
