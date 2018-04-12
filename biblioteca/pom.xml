@@ -15,8 +15,8 @@
 		<server.IP>127.0.0.1</server.IP>
 		<server.port>1099</server.port>
 		<server.Name>BibliotecaRMI</server.Name>
-		<config.files.dir>${basedir}/src/main/resources/java</config.files.dir>
-		<policy.file>${basedir}/src/main/resources/java/security/java.policy</policy.file>
+		<config.files.dir>${basedir}/src/main/resources</config.files.dir>
+		<policy.file>${basedir}/src/main/resources/security/java.policy</policy.file>
 	</properties>
 
 	<dependencies>
@@ -221,7 +221,7 @@
 								<forkedVmArg>-Xverify:none</forkedVmArg>
 							</forkedVmArgs>
 
-							<mainClass>es.deusto.spq.biblioteca.server.server</mainClass>
+							<mainClass>es.deusto.spq.biblioteca.server.Server</mainClass>
 							<systemProperties>
 
 								<systemProperty>
@@ -258,7 +258,7 @@
 						<artifactId>exec-maven-plugin</artifactId>
 						<version>1.2.1</version>
 						<configuration>
-							<mainClass>es.deusto.spq.biblioteca.client.client</mainClass>
+							<mainClass>es.deusto.spq.biblioteca.client.Client</mainClass>
 							<systemProperties>
 								<systemProperty>
 									<key>java.security.manager</key>
