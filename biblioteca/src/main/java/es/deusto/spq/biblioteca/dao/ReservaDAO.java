@@ -8,18 +8,18 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
-import es.deusto.spq.biblioteca.data.reserva;
+import es.deusto.spq.biblioteca.data.Reserva;
 
-public class reservaDAO implements IreservaDAO {
+public class ReservaDAO implements IReservaDAO {
 
 	private PersistenceManagerFactory pmf;
 	
-	public reservaDAO() {
+	public ReservaDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 	
 	@Override
-	public void anyadirReserva(reserva r) {
+	public void anyadirReserva(Reserva r) {
 		// TODO Auto-generated method stub
 		int cont=0;
 		
@@ -54,10 +54,10 @@ public class reservaDAO implements IreservaDAO {
 		try {
 			System.out.println("   * Consultado disponibilidad de: " + Id_Sala);
 			tx.begin();
-			Query<reserva> query = pm.newQuery(reserva.class);
+			Query<Reserva> query = pm.newQuery(Reserva.class);
 			@SuppressWarnings("unchecked")
-			List<reserva> reservas = (List<reserva>) query.execute();
-			for (reserva r : reservas) {
+			List<Reserva> reservas = (List<Reserva>) query.execute();
+			for (Reserva r : reservas) {
 				if (r.getId_sala().equals(Id_Sala) && r.getFecha().equals(fecha) && r.getHora().equals(hora)) {
 					// No hay salas disponibles
 					disponible = false;

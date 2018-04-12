@@ -1,11 +1,22 @@
 package es.deusto.spq.biblioteca.data;
 
-public class sala {
+import java.io.Serializable;
+
+import javax.jdo.annotations.Inheritance;
+import javax.jdo.annotations.InheritanceStrategy;
+import javax.jdo.annotations.PersistenceCapable;
+
+@PersistenceCapable(detachable = "true")
+@Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
+public class Sala implements Serializable{
 	
 	String id_sala;
 	int capacidad;
 	
-	public sala(String id_sala, int capacidad) {
+	public Sala() {
+
+	}
+	public Sala(String id_sala, int capacidad) {
 		super();
 		this.id_sala = id_sala;
 		this.capacidad = capacidad;

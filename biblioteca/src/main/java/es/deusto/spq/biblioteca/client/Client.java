@@ -2,11 +2,11 @@ package es.deusto.spq.biblioteca.client;
 
 import es.deusto.spq.biblioteca.remote.IBiblioteca;
 
-public class client {
+public class Client {
 
 	private IBiblioteca service;
 	
-	public client() {
+	public Client() {
 	
 	}
 

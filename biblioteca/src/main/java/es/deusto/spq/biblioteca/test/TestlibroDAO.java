@@ -1,14 +1,14 @@
 package es.deusto.spq.biblioteca.test;
 
 import es.deusto.spq.biblioteca.dao.ILibroDAO;
-import es.deusto.spq.biblioteca.dao.libroDAO;
-import es.deusto.spq.biblioteca.data.libro;
+import es.deusto.spq.biblioteca.dao.LibroDAO;
+import es.deusto.spq.biblioteca.data.Libro;
 
-public class testlibroDAO {
+public class TestlibroDAO {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ILibroDAO libroDAO = new libroDAO();
+		ILibroDAO libroDAO = new LibroDAO();
 		
 		crearTest(libroDAO);
 
@@ -18,7 +18,7 @@ public class testlibroDAO {
 		// TODO Auto-generated method stub
 		
 		try {
-			libro l = new libro(1, "Las almas de Brandoom", "Cesar Brandom", "S.L.U. Espasa Libros", false);
+			Libro l = new Libro(1, "Las almas de Brandoom", "Cesar Brandom", "S.L.U. Espasa Libros", false);
 			libroDAO.almacenarLibro(l); //No esta almacenando el libro
 //			libroDAO.buscarLibro("Las almas de Brandoom");
 			
