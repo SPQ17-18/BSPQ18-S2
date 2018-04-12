@@ -12,4 +12,6 @@ public interface IBiblioteca extends Remote{
 	public void anyadirReserva(String id_Sala, String dni_respon, String fecha, String hora, int plazas )throws RemoteException;
 	public boolean consultarDisponibilidad(String Id_Sala, String fecha, String hora)throws RemoteException;
 	//Añadir lo que falta
+	void eliminarReserva(String id_Sala, String dni_respon)
+			throws RemoteException;
 }

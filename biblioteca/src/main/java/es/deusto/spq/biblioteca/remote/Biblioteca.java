@@ -63,6 +63,19 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		return disponible;
 	}	
 	
+	@Override
+	public void eliminarReserva(String id_Sala, String dni_respon)
+			throws RemoteException {
+		// TODO Auto-generated method stub
+		int cod=00;
+		cod++;
+		String codg = "";
+		codg = String.valueOf(cod);
+		codg = Integer.toString(cod);
+		
+		Reserva r = new Reserva(codg,id_Sala, dni_respon, null, null, 0);
+		reservaDAO.eliminarReserva(r);
+	}
 
 }
 //DAO DATA RMI del SERVER

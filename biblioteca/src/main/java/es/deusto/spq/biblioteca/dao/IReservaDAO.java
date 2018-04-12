@@ -9,5 +9,5 @@ public interface IReservaDAO {
 	public void verReservas(String dni);
 	public void editarReserva(Reserva r,String fecha_nueva,String hora_nueva);
 	public void editarReserva(Reserva r,String hora_nueva);
-	
+	public void eliminarReserva(Reserva r);
 }

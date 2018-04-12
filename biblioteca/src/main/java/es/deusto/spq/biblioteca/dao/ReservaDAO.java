@@ -122,6 +122,28 @@ public class ReservaDAO implements IReservaDAO {
 		
 	}
 
+	@Override
+	public void eliminarReserva(Reserva r) {
+		// TODO Auto-generated method stub
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			tx.begin();
+			System.out.println("   * Eliminando reserva: " + cont++);
+			pm.deletePersistent(r);
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println("   $ Error Eliminando reserva: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+	}
+
 
 
 
