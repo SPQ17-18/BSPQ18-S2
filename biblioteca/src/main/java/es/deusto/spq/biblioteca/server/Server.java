@@ -24,7 +24,7 @@ public class Server {
 			java.io.BufferedReader stdin = new java.io.BufferedReader ( inputStreamReader );
 			String line  = stdin.readLine();
 		} catch (Exception e) {
-			System.err.println("- Error en el servidor EasyBooking: " + e.getMessage());
+			System.err.println("- Error en el servidor CRAI: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}
