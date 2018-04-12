@@ -61,6 +61,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		boolean disponible = reservaDAO.consultarDisponibilidad(Id_Sala, fecha, hora);
 		
 		return disponible;
+
 	}	
 	
 	@Override
@@ -75,6 +76,31 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		
 		Reserva r = new Reserva(codg,id_Sala, dni_respon, null, null, 0);
 		reservaDAO.eliminarReserva(r);
+	}
+	
+
+	@Override
+	public void verReservas(String dni) throws RemoteException {
+		// TODO Auto-generated method stub
+		reservaDAO.verReservas(dni);
+	}
+
+	@Override
+	public void editarReserva(Reserva r, String fecha_nueva, String hora_nueva) throws RemoteException {
+		// TODO Auto-generated method stub
+		reservaDAO.editarReserva(r, fecha_nueva, hora_nueva);
+	}
+
+	@Override
+	public void editarReserva(Reserva r, String hora_nueva) throws RemoteException {
+		// TODO Auto-generated method stub
+		reservaDAO.editarReserva(r, hora_nueva);
+	}	
+	
+	@Override
+	public void anyadirUsuario(Reserva r) throws RemoteException {
+		// TODO Auto-generated method stub
+		reservaDAO.anyadirUsuario(r);
 	}
 
 }

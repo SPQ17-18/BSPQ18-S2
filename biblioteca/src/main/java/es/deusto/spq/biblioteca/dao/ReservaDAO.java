@@ -114,12 +114,20 @@ public class ReservaDAO implements IReservaDAO {
 	@Override
 	public void editarReserva(Reserva r, String fecha_nueva, String hora_nueva) {
 		
+		if(consultarDisponibilidad(r.getId_sala(), fecha_nueva, hora_nueva)) {
+			Reserva aux = new Reserva(r.getId_reserva(), r.getId_sala(), r.getDni_respon(), fecha_nueva, hora_nueva, r.getPlazas());
+		//	eliminarReserva(r);
+			anyadirReserva(aux);
+			System.out.println("Reserva modificada satisfactoriamente");
+		}else {
+			System.out.println("Reserva no modificada.No se puede reservar en la fecha/hora seleccionadas");
+		}
 		
 	}
 
 	@Override
 	public void editarReserva(Reserva r, String hora_nueva) {
-		
+		editarReserva(r, r.getFecha(), hora_nueva);
 	}
 
 	@Override
@@ -144,7 +152,16 @@ public class ReservaDAO implements IReservaDAO {
 		}
 	}
 
-
+	@Override
+	public void anyadirUsuario(Reserva r) {
+		
+		
+			Reserva aux = new Reserva(r.getId_reserva(), r.getId_sala(), r.getDni_respon(), r.getFecha() , r.getHora(), r.getPlazas()+1);
+			eliminarReserva(r);
+			anyadirReserva(aux);
+			
+		
+	}
 
 
 }
