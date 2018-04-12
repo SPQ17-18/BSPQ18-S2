@@ -4,11 +4,11 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 import es.deusto.spq.biblioteca.dao.ILibroDAO;
-import es.deusto.spq.biblioteca.dao.libroDAO;
+import es.deusto.spq.biblioteca.dao.LibroDAO;
 import es.deusto.spq.biblioteca.dao.IreservaDAO;
-import es.deusto.spq.biblioteca.dao.reservaDAO;
-import es.deusto.spq.biblioteca.data.libro;
-import es.deusto.spq.biblioteca.data.reserva;
+import es.deusto.spq.biblioteca.dao.ReservaDAO;
+import es.deusto.spq.biblioteca.data.Libro;
+import es.deusto.spq.biblioteca.data.Reserva;
 
 public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	
@@ -17,18 +17,18 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	
 	public Biblioteca(String serverIP, int ServerPort) throws RemoteException {
 		super();
-		this.reservaDAO = new reservaDAO();
-		this.libroDAO = new libroDAO();
+		this.reservaDAO = new ReservaDAO();
+		this.libroDAO = new LibroDAO();
 			
 	}
 
 	@Override
-	public libro buscarLibro(String nombre) {
+	public Libro buscarLibro(String nombre) {
 		// TODO Auto-generated method stub
 //		libro l = new libro(1, "Las almas de Brandoom", "Cesar Brandom", "S.L.U. Espasa Libros", false);
 //		libroDAO.almacenarLibro(l); //No esta almacenando el libro
 //		libroDAO.buscarLibro("Las almas de Brandoom");
-		libro lib = libroDAO.getLibro(nombre);
+		Libro lib = libroDAO.getLibro(nombre);
 		
 		return lib;
 	}
@@ -36,7 +36,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	@Override
 	public void almacenarLibro(int isbn, String nombre, String autor, String editorial, boolean isReservado) {
 		// TODO Auto-generated method stub
-		libro l = new libro(isbn, nombre, autor, editorial, isReservado);
+		Libro l = new Libro(isbn, nombre, autor, editorial, isReservado);
 		libroDAO.almacenarLibro(l);
 
 	}
@@ -51,7 +51,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		codg = String.valueOf(cod);
 		codg = Integer.toString(cod);
 		
-		reserva r = new reserva(codg,id_Sala, dni_respon, fecha, hora, plazas);
+		Reserva r = new Reserva(codg,id_Sala, dni_respon, fecha, hora, plazas);
 		reservaDAO.anyadirReserva(r);
 	}
 

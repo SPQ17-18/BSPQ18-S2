@@ -1,11 +1,11 @@
 package es.deusto.spq.biblioteca.data;
 
-public class sala {
+public class Sala {
 	
 	String id_sala;
 	int capacidad;
 	
-	public sala(String id_sala, int capacidad) {
+	public Sala(String id_sala, int capacidad) {
 		super();
 		this.id_sala = id_sala;
 		this.capacidad = capacidad;

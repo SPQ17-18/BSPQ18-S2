@@ -5,7 +5,7 @@ import java.rmi.Naming;
 import es.deusto.spq.biblioteca.remote.Biblioteca;
 import es.deusto.spq.biblioteca.remote.IBiblioteca;
 
-public class server {
+public class Server {
 	public static void main(String[] args) {
 
 		if (System.getSecurityManager() == null) {

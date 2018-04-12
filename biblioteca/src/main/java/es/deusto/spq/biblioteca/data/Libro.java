@@ -9,7 +9,7 @@ import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable(detachable = "true")
 @Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
-public class libro implements Serializable {
+public class Libro implements Serializable {
 
 	/**
 	 * 
@@ -23,11 +23,11 @@ public class libro implements Serializable {
 
 	//Añadir mas???
 	
-	public libro() {
+	public Libro() {
 		
 	}
 	
-	public libro(int isbn, String nombre, String autor, String editorial, boolean isReservado) {
+	public Libro(int isbn, String nombre, String autor, String editorial, boolean isReservado) {
 		this.isbn = isbn;
 		this.nombre = nombre;
 		this.autor = autor;

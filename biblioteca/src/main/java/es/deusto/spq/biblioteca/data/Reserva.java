@@ -1,6 +1,6 @@
 package es.deusto.spq.biblioteca.data;
 
-public class reserva {
+public class Reserva {
 	
 	//Julen tendras que modificar cosas en base al id de reserva no lo se
 	String id_reserva;
@@ -10,7 +10,7 @@ public class reserva {
 	String hora;
 	int plazas;
 
-	public reserva(String id_reserva, String id_sala, String dni_respon, String fecha, String hora, int plazas) {
+	public Reserva(String id_reserva, String id_sala, String dni_respon, String fecha, String hora, int plazas) {
 		super();
 		this.id_reserva = id_reserva;
 		this.id_sala = id_sala;

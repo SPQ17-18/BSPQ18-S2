@@ -2,15 +2,15 @@ package es.deusto.spq.biblioteca.controller;
 
 import java.rmi.RemoteException;
 
-import es.deusto.spq.biblioteca.client.client;
+import es.deusto.spq.biblioteca.client.Client;
 
-public class controller {
+public class Controller {
 	@SuppressWarnings("unused")
-	private client cl;
+	private Client cl;
 
-	public controller(String[] args) throws RemoteException {
+	public Controller(String[] args) throws RemoteException {
 
-		cl = new client();
+		cl = new Client();
 		cl.setService(args);
 
 		// desde aqui haremos un cl.getservicio e iremos anyadiendo las diferentes
@@ -32,16 +32,16 @@ public class controller {
 		//cl.getService().consultarCatalogo();  esta sin hacer aun
 	}
 	
-	public client getCl() {
+	public Client getCl() {
 		return cl;
 	}
 
-	public void setCl(client cl) {
+	public void setCl(Client cl) {
 		this.cl = cl;
 	}
 
 	public static void main(String[] args) throws RemoteException {
 
-		new controller(args);
+		new Controller(args);
 	}
 }
