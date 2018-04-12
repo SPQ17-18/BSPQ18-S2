@@ -1,8 +1,10 @@
 package es.deusto.spq.biblioteca.controller;
 
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
 import es.deusto.spq.biblioteca.client.Client;
+import es.deusto.spq.biblioteca.data.Reserva;
 
 
 public class Controller {
@@ -38,5 +40,4 @@ public static void main(String[] args) throws RemoteException {
 		//Busqueda de libro por nombre
 		c.getCl().getService().buscarLibro("Festin de cuervos, Cancion de Hielo y fuego IV");
 		c.getCl().getService().buscarLibro("Paco Jemez: Grandes exitos en el Rayo Vallecano");
-	}	}
-}
+	}	}}

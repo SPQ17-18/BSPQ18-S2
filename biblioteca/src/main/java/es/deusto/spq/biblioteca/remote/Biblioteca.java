@@ -2,22 +2,29 @@ package es.deusto.spq.biblioteca.remote;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
+import java.util.List;
 
 import es.deusto.spq.biblioteca.dao.ILibroDAO;
 import es.deusto.spq.biblioteca.dao.LibroDAO;
 import es.deusto.spq.biblioteca.dao.IreservaDAO;
+import es.deusto.spq.biblioteca.dao.ISalaDAO;
 import es.deusto.spq.biblioteca.dao.ReservaDAO;
+import es.deusto.spq.biblioteca.dao.SalaDAO;
 import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Reserva;
+import es.deusto.spq.biblioteca.data.Sala;
 
 public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	
 	private IreservaDAO reservaDAO;
+	private ISalaDAO salaDAO;
 	private ILibroDAO libroDAO;
 	
 	public Biblioteca(String serverIP, int ServerPort) throws RemoteException {
 		super();
 		this.reservaDAO = new ReservaDAO();
+		this.salaDAO = new SalaDAO();
 		this.libroDAO = new LibroDAO();
 			
 	}
@@ -61,8 +68,13 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		boolean disponible = reservaDAO.consultarDisponibilidad(Id_Sala, fecha, hora);
 		
 		return disponible;
-	}	
-	
+	}
 
+	@Override
+	public void anyadirSala(String id_sala, int capacidad) throws RemoteException {
+		// TODO Auto-generated method stub
+		Sala s = new Sala (id_sala, capacidad);
+		salaDAO.anyadirSala(s);
+	}
 }
-//DAO DATA RMI del SERVER
+

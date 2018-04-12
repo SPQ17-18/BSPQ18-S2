@@ -9,6 +9,7 @@ import javax.jdo.Query;
 import javax.jdo.Transaction;
 
 import es.deusto.spq.biblioteca.data.Reserva;
+import es.deusto.spq.biblioteca.data.Sala;
 
 public class ReservaDAO implements IreservaDAO {
 
@@ -24,12 +25,19 @@ public class ReservaDAO implements IreservaDAO {
 
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-		
 		try {
 			tx.begin();
-			System.out.println("   * Guardando reserva: " + r.getId_reserva());
-			pm.makePersistent(r);
-			tx.commit();
+			Query<Sala> query = pm.newQuery(Sala.class);
+			@SuppressWarnings("unchecked")
+			List<Sala> salas = (List<Sala>) query.execute();
+			for (Sala s : salas) {
+				if (s.getId_sala().equals(r.getId_sala())) {
+					s.getReservas().add(r);
+					System.out.println("   * Guardando reserva: " + r.getId_reserva());
+					pm.makePersistent(s);
+					tx.commit();
+				}
+			}
 		} catch (Exception ex) {
 			System.out.println("   $ Error guardando reserva: " + ex.getMessage());
 		} finally {
