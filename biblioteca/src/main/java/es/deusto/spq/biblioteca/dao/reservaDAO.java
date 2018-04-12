@@ -78,12 +78,11 @@ public class reservaDAO implements IreservaDAO {
 	}
 
 
-	public int actualizarReserva(reserva r) {
+	/**public int actualizarReserva(reserva r) {
 		int cont=0;
 		
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-		
 			try {
 				tx.begin();
 				System.out.println("*Actualizando su reserva" + cont++);
@@ -101,6 +100,7 @@ public class reservaDAO implements IreservaDAO {
 	
 			pm.close();
 			}
+			**/
 	}
 	
 
