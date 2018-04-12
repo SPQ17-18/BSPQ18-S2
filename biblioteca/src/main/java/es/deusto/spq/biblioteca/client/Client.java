@@ -17,7 +17,7 @@ public class Client {
 			service=(IBiblioteca) java.rmi.Naming.lookup(name);
 			System.out.println("Conectado con el servidor: " + name);
 		} catch (Exception e) {
-			System.err.println("RMI Example exception: " + e.getMessage());
+			System.err.println("RMI Client exception: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}

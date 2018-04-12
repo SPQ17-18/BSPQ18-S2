@@ -21,14 +21,13 @@ public class ReservaDAO implements IReservaDAO {
 	@Override
 	public void anyadirReserva(Reserva r) {
 		// TODO Auto-generated method stub
-		int cont=0;
-		
+
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-
+		
 		try {
 			tx.begin();
-			System.out.println("   * Guardando reserva: " + cont++);
+			System.out.println("   * Guardando reserva: " + r.getId_reserva());
 			pm.makePersistent(r);
 			tx.commit();
 		} catch (Exception ex) {
