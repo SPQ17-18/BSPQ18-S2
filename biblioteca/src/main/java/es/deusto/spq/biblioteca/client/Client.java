@@ -2,11 +2,11 @@ package es.deusto.spq.biblioteca.client;
 
 import es.deusto.spq.biblioteca.remote.IBiblioteca;
 
-public class client {
+public class Client {
 
 	private IBiblioteca service;
 	
-	public client() {
+	public Client() {
 	
 	}
 
@@ -17,7 +17,7 @@ public class client {
 			service=(IBiblioteca) java.rmi.Naming.lookup(name);
 			System.out.println("Conectado con el servidor: " + name);
 		} catch (Exception e) {
-			System.err.println("RMI Example exception: " + e.getMessage());
+			System.err.println("RMI Client exception: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}
