@@ -15,7 +15,7 @@ public class Server {
 		String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
 
 		try {
-			IBiblioteca server = new Biblioteca(args[3],Integer.parseInt(args[4]));
+			IBiblioteca server = new Biblioteca(args[0],Integer.parseInt(args[1]));
 			Naming.rebind(name, server);
 			System.out.println("* Servidor '" + name + "' activo y esperando...");
 			
