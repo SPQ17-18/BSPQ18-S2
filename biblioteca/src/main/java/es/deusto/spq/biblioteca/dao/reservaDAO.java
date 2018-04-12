@@ -73,7 +73,11 @@ public class reservaDAO implements IReservasDAO{
 		public void verReservas() {
 			new GUIreservas;
 		}
-
+		
+		public void eliminarReserva() {
+			
+		}
+		
 		//Provisional para el sprint 1
 		@Override
 		public void editarReserva(String id_reserva, reserva nueva_res) {
