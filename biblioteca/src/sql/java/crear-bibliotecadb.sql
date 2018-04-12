@@ -1,5 +1,5 @@
 /* DELETE 'nucleus' database*/
-DROP SCHEMA IF EXISTS bibliotecaDB;
+DROP SCHEMA IF EXISTS bibliotecadb;
 /* DELETE USER 'spq' AT LOCAL SERVER*/
 DROP USER IF EXISTS 'spq'@'%';
 
@@ -8,4 +8,4 @@ CREATE SCHEMA bibliotecadb;
 /* CREATE THE USER 'spq' AT LOCAL SERVER WITH PASSWORD 'spq' */
 CREATE USER IF NOT EXISTS 'spq'@'%' IDENTIFIED BY 'spq';
 
-GRANT ALL ON bibliotecaDB.* TO 'spq'@'%';
+GRANT ALL ON bibliotecadb.* TO 'spq'@'%';
