@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 
 import es.deusto.spq.biblioteca.client.Client;
 
+
 public class Controller {
 	@SuppressWarnings("unused")
 	private Client cl;
@@ -43,5 +44,14 @@ public class Controller {
 	public static void main(String[] args) throws RemoteException {
 		
 		Controller c = new Controller(args);
+		//Almacenamos libros 
+
+		c.getCl().getService().almacenarLibro(1, "Las almas de Brandom", "Cesar Brandom", "S.L.U. Espasa Libros", false);
+		c.getCl().getService().almacenarLibro(2, "Festin de cuervos, Cancion de Hielo y fuego IV", "George R.R. Martin", "Gigamesh", false);
+		c.getCl().getService().almacenarLibro(3, "FYellowstar: Conviértete en un campeón de League of Legends", "Bora Kim ", "Editorial Planeta S.A", false);	
+		
+		//Busqueda de libro por nombre
+		c.getCl().getService().buscarLibro("Festin de cuervos, Cancion de Hielo y fuego IV");
+		c.getCl().getService().buscarLibro("Paco Jemez: Grandes exitos en el Rayo Vallecano");
 	}
 }
