@@ -7,7 +7,7 @@ import java.util.List;
 
 import es.deusto.spq.biblioteca.dao.ILibroDAO;
 import es.deusto.spq.biblioteca.dao.LibroDAO;
-import es.deusto.spq.biblioteca.dao.IreservaDAO;
+import es.deusto.spq.biblioteca.dao.IReservaDAO;
 import es.deusto.spq.biblioteca.dao.ISalaDAO;
 import es.deusto.spq.biblioteca.dao.ReservaDAO;
 import es.deusto.spq.biblioteca.dao.SalaDAO;
@@ -17,7 +17,7 @@ import es.deusto.spq.biblioteca.data.Sala;
 
 public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	
-	private IreservaDAO reservaDAO;
+	private IReservaDAO reservaDAO;
 	private ISalaDAO salaDAO;
 	private ILibroDAO libroDAO;
 	
@@ -81,4 +81,3 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		salaDAO.anyadirSala(s);
 	}
 }
-

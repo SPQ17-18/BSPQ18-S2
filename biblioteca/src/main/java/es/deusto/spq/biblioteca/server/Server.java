@@ -6,6 +6,7 @@ import es.deusto.spq.biblioteca.remote.Biblioteca;
 import es.deusto.spq.biblioteca.remote.IBiblioteca;
 
 public class Server {
+	
 	public static void main(String[] args) {
 
 		if (System.getSecurityManager() == null) {
@@ -18,10 +19,10 @@ public class Server {
 			IBiblioteca server = new Biblioteca(args[0],Integer.parseInt(args[1]));
 			Naming.rebind(name, server);
 			System.out.println("* Servidor '" + name + "' activo y esperando...");
-//Para que este todo el rato escuchando el servidor
 			java.io.InputStreamReader inputStreamReader = new java.io.InputStreamReader ( System.in );
 			java.io.BufferedReader stdin = new java.io.BufferedReader ( inputStreamReader );
-			String line  = stdin.readLine();		} catch (Exception e) {
+			String line  = stdin.readLine();
+		} catch (Exception e) {
 			System.err.println("- Error en el servidor CRAI: " + e.getMessage());
 			e.printStackTrace();
 		}

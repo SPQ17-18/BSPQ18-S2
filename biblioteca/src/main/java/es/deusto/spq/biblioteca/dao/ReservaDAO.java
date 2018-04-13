@@ -11,7 +11,7 @@ import javax.jdo.Transaction;
 import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.Sala;
 
-public class ReservaDAO implements IreservaDAO {
+public class ReservaDAO implements IReservaDAO {
 
 	private PersistenceManagerFactory pmf;
 	
