@@ -44,6 +44,9 @@ public class Controller {
 	public static void main(String[] args) throws RemoteException {
 		
 		Controller c = new Controller(args);
+		System.out.println(c.getCl().getService());
+		System.out.println("Hola");
+		
 		//Almacenamos libros 
 
 		c.getCl().getService().almacenarLibro(1, "Las almas de Brandom", "Cesar Brandom", "S.L.U. Espasa Libros", false);

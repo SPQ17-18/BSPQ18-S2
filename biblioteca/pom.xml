@@ -5,15 +5,14 @@
 	<groupId>es.deusto.spq</groupId>
 	<artifactId>biblioteca</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
-
+	<packaging>jar</packaging>	
 	<name>biblioteca</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<server.IP>127.0.0.1</server.IP>
-		<server.port>1099</server.port>
+		<server.IP>127.0.0.1</server.IP>  <!-- 127.0.0.1 -->
+		<server.port>1099</server.port> <!-- 1099 -->
 		<server.Name>BibliotecaRMI</server.Name>
 		<config.files.dir>${basedir}/src/main/resources</config.files.dir>
 		<policy.file>${basedir}/src/main/resources/security/java.policy</policy.file>
@@ -111,10 +110,8 @@
 							<exclude>es/deusto/client/*.class</exclude>
 							<exclude>es/deusto/server/Server.class</exclude>
 							<exclude>es/deusto/server/**/I*.*</exclude>
-
 							This lines is for excluding from the instrumentation and the 
 								coverage calculations all the classes from server down <exclude>es/deusto/server/**/*</exclude>
-
 						</excludes> -->
 					</instrumentation>
 					<check>
