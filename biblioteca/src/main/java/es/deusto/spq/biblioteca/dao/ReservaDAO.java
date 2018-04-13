@@ -138,7 +138,7 @@ public class ReservaDAO implements IReservaDAO {
 
 		try {
 			tx.begin();
-			System.out.println("   * Eliminando reserva: " + cont++);
+			System.out.println("   * Eliminando reserva *   " );
 			pm.deletePersistent(r);
 			tx.commit();
 		} catch (Exception ex) {
