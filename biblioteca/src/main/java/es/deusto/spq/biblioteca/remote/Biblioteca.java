@@ -63,10 +63,14 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 	@Override
-	public boolean consultarDisponibilidad(String Id_Sala, String fecha, String hora) {
+	public boolean consultarDisponibilidad(String Id_Sala, String fecha, String hora, int personas) {
 		// TODO Auto-generated method stub
-		boolean disponible = reservaDAO.consultarDisponibilidad(Id_Sala, fecha, hora);
-		
+		boolean disponible=false;
+		boolean libre = reservaDAO.consultarDisponibilidad(Id_Sala, fecha, hora);
+		boolean plazas = salaDAO.consultarPlazas(Id_Sala, personas);
+		if(plazas && libre) {
+			disponible=true;
+		}
 		return disponible;
 	}
 
