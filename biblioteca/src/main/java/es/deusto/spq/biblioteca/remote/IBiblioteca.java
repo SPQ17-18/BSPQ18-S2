@@ -2,6 +2,10 @@ package es.deusto.spq.biblioteca.remote;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+
+import es.deusto.spq.biblioteca.data.Libro;
+import java.rmi.Remote;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,4 +20,11 @@ public interface IBiblioteca extends Remote{
 	public void anyadirSala(String id_sala, int capacidad)throws RemoteException;
 	public boolean consultarDisponibilidad(String Id_Sala, String fecha, String hora, int personas)throws RemoteException;
 	//Añadir lo que falta
+
+	public void verReservas(String dni) throws RemoteException;
+	public void editarReserva(Reserva r,String fecha_nueva,String hora_nueva) throws RemoteException;
+	public void editarReserva(Reserva r,String hora_nueva) throws RemoteException;
+	public void eliminarReserva(String id_Sala, String dni_respon)
+			throws RemoteException;
+	public void anyadirUsuario(Reserva r) throws RemoteException;
 }

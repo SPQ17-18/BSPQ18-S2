@@ -257,6 +257,7 @@
 						<version>1.2.1</version>
 						<configuration>
 							<mainClass>es.deusto.spq.biblioteca.controller.Controller</mainClass>
+
 							<systemProperties>
 								<systemProperty>
 									<key>java.security.manager</key>

@@ -52,4 +52,5 @@ public class Sala implements Serializable {
 	public void setCapacidad(int capacidad) {
 		this.capacidad = capacidad;
 	}
+
 }
