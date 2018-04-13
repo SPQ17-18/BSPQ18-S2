@@ -47,8 +47,12 @@ public class Controller {
 		System.out.println(c.getCl().getService());
 		System.out.println("Hola");
 		
+		
+		c.getCl().getService().anyadirReserva("S1", "1A", "1-1-1", "12:32", 2);
+		c.getCl().getService().consultarDisponibilidad("S1", "1-1-1", "12:32");
+		
+		
 		//Almacenamos libros 
-
 		c.getCl().getService().almacenarLibro(1, "Las almas de Brandom", "Cesar Brandom", "S.L.U. Espasa Libros", false);
 		c.getCl().getService().almacenarLibro(2, "Festin de cuervos, Cancion de Hielo y fuego IV", "George R.R. Martin", "Gigamesh", false);
 		c.getCl().getService().almacenarLibro(3, "FYellowstar: Conviértete en un campeón de League of Legends", "Bora Kim ", "Editorial Planeta S.A", false);	
