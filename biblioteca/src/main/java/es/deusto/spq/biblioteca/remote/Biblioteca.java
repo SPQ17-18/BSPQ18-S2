@@ -2,6 +2,7 @@ package es.deusto.spq.biblioteca.remote;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 
 import es.deusto.spq.biblioteca.dao.ILibroDAO;
 import es.deusto.spq.biblioteca.dao.LibroDAO;
@@ -32,6 +33,12 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		
 		return lib;
 	}
+	
+	@Override
+	public ArrayList<Libro> consultarCatalogo() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}	
 
 	@Override
 	public void almacenarLibro(int isbn, String nombre, String autor, String editorial, boolean isReservado) {
@@ -61,7 +68,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		boolean disponible = reservaDAO.consultarDisponibilidad(Id_Sala, fecha, hora);
 		
 		return disponible;
-	}	
+	}
 	
 
 }
