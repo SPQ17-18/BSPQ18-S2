@@ -8,3 +8,4 @@ public interface IReservaDAO {
 	public boolean consultarDisponibilidad(String Id_Sala, String fecha, String hora);
 	
 }
+

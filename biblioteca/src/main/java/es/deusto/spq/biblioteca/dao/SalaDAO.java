@@ -73,5 +73,5 @@ public class SalaDAO implements ISalaDAO {
 		}
 		return disponible;
 	}
-
 }
+

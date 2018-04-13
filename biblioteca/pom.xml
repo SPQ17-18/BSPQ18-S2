@@ -111,10 +111,8 @@
 							<exclude>es/deusto/client/*.class</exclude>
 							<exclude>es/deusto/server/Server.class</exclude>
 							<exclude>es/deusto/server/**/I*.*</exclude>
-
 							This lines is for excluding from the instrumentation and the 
 								coverage calculations all the classes from server down <exclude>es/deusto/server/**/*</exclude>
-
 						</excludes> -->
 					</instrumentation>
 					<check>
