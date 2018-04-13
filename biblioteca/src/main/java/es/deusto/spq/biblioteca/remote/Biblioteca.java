@@ -37,7 +37,9 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	@Override
 	public ArrayList<Libro> consultarCatalogo() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Libro> catalogo = libroDAO.getLibros();
+		
+		return catalogo;
 	}	
 
 	@Override

@@ -56,5 +56,9 @@ public class Controller {
 		//Busqueda de libro por nombre
 		c.getCl().getService().buscarLibro("Festin de cuervos, Cancion de Hielo y fuego IV");
 		c.getCl().getService().buscarLibro("Paco Jemez: Grandes exitos en el Rayo Vallecano");
+		
+		//Consultar catalogo
+		System.out.println(c.getCl().getService().consultarCatalogo());
+		
 	}
 }
