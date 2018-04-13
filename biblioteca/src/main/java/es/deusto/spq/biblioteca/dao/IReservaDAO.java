@@ -6,6 +6,6 @@ public interface IReservaDAO {
 
 	public void anyadirReserva(Reserva r);
 	public boolean consultarDisponibilidad(String Id_Sala, String fecha, String hora);
-	public String EliminarParticipante(String id_reserva, String plazas);
+	public void EliminarParticipanteR(String id_reserva, String plazas);
 	
 }
