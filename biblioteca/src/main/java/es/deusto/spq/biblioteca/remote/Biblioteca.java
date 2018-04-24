@@ -52,7 +52,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		Libro lib = libroDAO.getLibro(nombre);
 		
 		return lib;
-	
+	}
 
 	@Override
 	public void verReservas(String dni) throws RemoteException {

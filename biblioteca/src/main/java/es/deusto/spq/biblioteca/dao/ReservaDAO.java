@@ -114,7 +114,7 @@ public class ReservaDAO implements IReservaDAO {
 
 		try {
 			tx.begin();
-			System.out.println("   * Eliminando reserva: " + cont++);
+			System.out.println("   * Eliminando reserva: " );
 			pm.deletePersistent(r);
 			tx.commit();
 		} catch (Exception ex) {
@@ -142,7 +142,35 @@ public class ReservaDAO implements IReservaDAO {
 	@Override
 	public void verReservas(String dni) {
 		// TODO Auto-generated method stub
-		
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			System.out.println("   * Consultado reservas de: " + dni);
+			tx.begin();
+			Query<Reserva> query = pm.newQuery(Reserva.class);
+			@SuppressWarnings("unchecked")
+			List<Reserva> reservas = (List<Reserva>) query.execute();
+			for (Reserva r : reservas) {
+				if (r.getDni_respon().equals(dni)) {
+					System.out.println("======================================");
+					System.out.println("\nSala : " + r.getId_sala());
+					System.out.println("\nFecha : " + r.getFecha());
+					System.out.println("\nHora : " + r.getHora());
+					System.out.println("\nNº plazas : " + r.getPlazas());
+					System.out.println("\n======================================\n");
+				} 
+			}
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}		
 	}
 
 
