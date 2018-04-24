@@ -173,5 +173,30 @@ public class ReservaDAO implements IReservaDAO {
 		}		
 	}
 
+	public void EliminarParticipanteR(String id_reserva, String plazas) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		int reserva = Integer.parseInt(id_reserva);
+		int Plazas = Integer.parseInt(plazas);
+		Reserva r = null;
+		try {
+			System.out.println(" *Eliminando: " + Plazas );
+			tx.begin();
+			Query<?> query = pm.newQuery("SELECT FROM " + Reserva.class.getName() + " WHERE id_reserva == " + reserva );
+			query.setUnique(true);
+			r = (Reserva) query.execute();
+			int nuevoNumero = r.getPlazas()-Plazas;
+			tx.commit();
+			tx.begin();
+			r.setPlazas(nuevoNumero);
+			pm.makePersistent(r);
+			tx.commit();
+			System.out.println(" *Eliminando: " + Plazas +  "Nuevo numero de asistentes: " + nuevoNumero);
+
+		} catch (Exception ex) {
+			System.out.println(" $ Error eliminando participantes: " + ex.getMessage());
+		}
+	}
+
 
 }

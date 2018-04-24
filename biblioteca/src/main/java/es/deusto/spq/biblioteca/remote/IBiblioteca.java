@@ -27,4 +27,6 @@ public interface IBiblioteca extends Remote{
 	public void eliminarReserva(String id_Sala, String dni_respon)
 			throws RemoteException;
 	public void anyadirUsuario(Reserva r) throws RemoteException;
+	public void EliminarLibro(Libro l)throws RemoteException;
+	public void EliminarParticipante(Reserva r) throws RemoteException;
 }

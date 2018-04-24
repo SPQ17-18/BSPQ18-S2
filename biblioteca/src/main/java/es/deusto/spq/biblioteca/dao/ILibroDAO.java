@@ -11,6 +11,6 @@ public interface ILibroDAO {
 	public ArrayList<Libro> getLibros();
 	public void almacenarLibro(Libro l);
 	//public String EstaDisponible(String titulo, boolean isReservado);
-
+	public void EliminarLibro(String isbn);
 
 }

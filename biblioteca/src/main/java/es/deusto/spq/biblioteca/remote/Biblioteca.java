@@ -118,4 +118,19 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		Sala s = new Sala (id_sala, capacidad);
 		salaDAO.anyadirSala(s);
 	}
+	public void EliminarParticipante(Reserva r) {
+		String plazas = "";
+		plazas = String.valueOf(r.getPlazas());
+		reservaDAO.EliminarParticipanteR(r.getId_reserva(),plazas);
+	}
+	public void EliminarLibro(Libro l) {
+	//	int numeroEjemplares = 00;
+	//	numeroEjemplares
+		String Isbn;
+		Isbn=String.valueOf(l.getIsbn());
+	//	String nya="R#";
+	//	nya=nya.concat(Isbn);
+		libroDAO.EliminarLibro(Isbn);
+	}
+
 }

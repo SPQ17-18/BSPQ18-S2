@@ -45,6 +45,12 @@ public class Controller {
 		// Busqueda de libro por nombre
 		c.getCl().getService().buscarLibro("Festin de cuervos, Cancion de Hielo y fuego IV");
 		c.getCl().getService().buscarLibro("Paco Jemez: Grandes exitos en el Rayo Vallecano");
+		
+		
+		//Pruebas Reservas
+		c.getCl().getService().verReservas("12345678X");
+		c.getCl().getService().
+		
 	}
 
 
