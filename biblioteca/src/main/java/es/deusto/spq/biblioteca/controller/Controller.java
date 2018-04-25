@@ -49,7 +49,6 @@ public class Controller {
 		
 		//Pruebas Reservas
 		c.getCl().getService().verReservas("12345678X");
-		c.getCl().getService().
 		
 	}
 

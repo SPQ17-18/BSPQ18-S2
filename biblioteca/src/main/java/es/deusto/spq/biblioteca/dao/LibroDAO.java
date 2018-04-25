@@ -10,6 +10,7 @@ import javax.jdo.Query;
 import javax.jdo.Transaction;
 
 import es.deusto.spq.biblioteca.data.Libro;
+import es.deusto.spq.biblioteca.data.Reserva;
 
 public class LibroDAO implements ILibroDAO{
 	
