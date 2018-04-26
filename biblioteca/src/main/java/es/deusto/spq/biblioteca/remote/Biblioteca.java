@@ -2,22 +2,29 @@ package es.deusto.spq.biblioteca.remote;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
+import java.util.List;
 
 import es.deusto.spq.biblioteca.dao.ILibroDAO;
 import es.deusto.spq.biblioteca.dao.LibroDAO;
 import es.deusto.spq.biblioteca.dao.IReservaDAO;
+import es.deusto.spq.biblioteca.dao.ISalaDAO;
 import es.deusto.spq.biblioteca.dao.ReservaDAO;
+import es.deusto.spq.biblioteca.dao.SalaDAO;
 import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Reserva;
+import es.deusto.spq.biblioteca.data.Sala;
 
 public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	
 	private IReservaDAO reservaDAO;
+	private ISalaDAO salaDAO;
 	private ILibroDAO libroDAO;
 	
 	public Biblioteca(String serverIP, int ServerPort) throws RemoteException {
 		super();
 		this.reservaDAO = new ReservaDAO();
+		this.salaDAO = new SalaDAO();
 		this.libroDAO = new LibroDAO();
 			
 	}
@@ -34,9 +41,9 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 	@Override
-	public void almacenarLibro(int isbn, String nombre, String autor, String editorial, boolean isReservado, int numeroEjemplares) {
+	public void almacenarLibro(int isbn, String nombre, String autor, String editorial, boolean isReservado) {
 		// TODO Auto-generated method stub
-		Libro l = new Libro(isbn, nombre, autor, editorial, isReservado, numeroEjemplares);
+		Libro l = new Libro(isbn, nombre, autor, editorial, isReservado);
 		libroDAO.almacenarLibro(l);
 
 	}
@@ -56,29 +63,21 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 	@Override
-	public boolean consultarDisponibilidad(String Id_Sala, String fecha, String hora) {
+	public boolean consultarDisponibilidad(String Id_Sala, String fecha, String hora, int personas) {
 		// TODO Auto-generated method stub
-		boolean disponible = reservaDAO.consultarDisponibilidad(Id_Sala, fecha, hora);
-		
+		boolean disponible=false;
+		boolean libre = reservaDAO.consultarDisponibilidad(Id_Sala, fecha, hora);
+		boolean plazas = salaDAO.consultarPlazas(Id_Sala, personas);
+		if(plazas && libre) {
+			disponible=true;
+		}
 		return disponible;
-	}	
-	
-	public void EliminarParticipante(Reserva r) {
-		String plazas = "";
-		plazas = String.valueOf(r.getPlazas());
-		reservaDAO.EliminarParticipanteR(r.getId_reserva(),plazas);
 	}
-	public void EliminarLibro(Libro l) {
-	//	int numeroEjemplares = 00;
-	//	numeroEjemplares
-		String Isbn;
-		Isbn=String.valueOf(l.getIsbn());
-	//	String nya="R#";
-	//	nya=nya.concat(Isbn);
-		libroDAO.EliminarLibro(Isbn);
-	}
-	
-	}
-	
 
-//DAO DATA RMI del SERVER
+	@Override
+	public void anyadirSala(String id_sala, int capacidad) throws RemoteException {
+		// TODO Auto-generated method stub
+		Sala s = new Sala (id_sala, capacidad);
+		salaDAO.anyadirSala(s);
+	}
+}

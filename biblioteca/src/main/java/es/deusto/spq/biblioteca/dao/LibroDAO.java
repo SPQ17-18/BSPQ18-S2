@@ -10,7 +10,6 @@ import javax.jdo.Query;
 import javax.jdo.Transaction;
 
 import es.deusto.spq.biblioteca.data.Libro;
-import es.deusto.spq.biblioteca.data.Reserva;
 
 public class LibroDAO implements ILibroDAO{
 	
@@ -117,30 +116,7 @@ public class LibroDAO implements ILibroDAO{
 		
 		
 		return null;
-	}
-	public void EliminarLibro(String isbn) {
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
-		int codigo = Integer.parseInt(isbn);
-		Libro l = null;
-		try {
-			System.out.println(" *Eliminando: " + codigo );
-			tx.begin();
-			Query<?> query = pm.newQuery("SELECT FROM " + Reserva.class.getName() + " WHERE isbn == " + codigo );
-			query.setUnique(true);
-			l = (Libro) query.execute();
-			int nuevaLista = l.getNumeroEjemplares()-codigo;
-			tx.commit();
-			tx.begin();
-			l.setNumeroEjemplares(nuevaLista);
-			pm.makePersistent(l);
-			tx.commit();
-			System.out.println(" *Eliminando: " + codigo +  "Nuevo numero de asistentes: " + nuevaLista);
-
-		} catch (Exception ex) {
-			System.out.println(" $ Error eliminando participantes: " + ex.getMessage());
-		}
-	}
+	}	
 	
 	/**
 	 * OLVIDAR POR AHORA. ESPARA CUANDO SE HAGA LA RESERVA. NO ES DE SPRINT 1
