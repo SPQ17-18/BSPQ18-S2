@@ -9,4 +9,6 @@ public interface ISalaDAO {
 
 	public void anyadirSala(Sala s);
 	public boolean consultarPlazas(String Id_Sala, int personas);
+	
 }
+

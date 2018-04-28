@@ -8,23 +8,35 @@ import java.util.List;
 import es.deusto.spq.biblioteca.dao.ILibroDAO;
 import es.deusto.spq.biblioteca.dao.LibroDAO;
 import es.deusto.spq.biblioteca.dao.IReservaDAO;
+<<<<<<<<< Temporary merge branch 1
+import es.deusto.spq.biblioteca.dao.ReservaDAO;
+import es.deusto.spq.biblioteca.data.Libro;
+import es.deusto.spq.biblioteca.data.Reserva;
+=========
 import es.deusto.spq.biblioteca.dao.ISalaDAO;
 import es.deusto.spq.biblioteca.dao.ReservaDAO;
 import es.deusto.spq.biblioteca.dao.SalaDAO;
 import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.Sala;
+>>>>>>>>> Temporary merge branch 2
 
 public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	
 	private IReservaDAO reservaDAO;
+<<<<<<<<< Temporary merge branch 1
+=========
 	private ISalaDAO salaDAO;
+>>>>>>>>> Temporary merge branch 2
 	private ILibroDAO libroDAO;
 	
 	public Biblioteca(String serverIP, int ServerPort) throws RemoteException {
 		super();
 		this.reservaDAO = new ReservaDAO();
+<<<<<<<<< Temporary merge branch 1
+=========
 		this.salaDAO = new SalaDAO();
+>>>>>>>>> Temporary merge branch 2
 		this.libroDAO = new LibroDAO();
 			
 	}	
@@ -118,6 +130,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		Sala s = new Sala (id_sala, capacidad);
 		salaDAO.anyadirSala(s);
 	}
+}
 	public void EliminarParticipante(Reserva r) {
 		String plazas = "";
 		plazas = String.valueOf(r.getPlazas());
