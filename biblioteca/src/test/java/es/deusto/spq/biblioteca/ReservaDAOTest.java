@@ -38,7 +38,6 @@ public class ReservaDAOTest {
 	@Test
 	public void testAnyadirReserva() throws RemoteException {
 			Reserva r = new Reserva("R5", "S2", "20304050A", "29-04-2018", "18:42", 8);
-			when( dao.devolverReserva("19182138S", "29-04-2018", "18:27")).thenReturn(null);	
 			b.anyadirReserva("S2", "20304050A", "29-04-2018", "18:42", 8);	
 			ArgumentCaptor<Reserva> reservaCaptor = ArgumentCaptor.forClass( Reserva.class );
 			verify(dao).anyadirReserva(reservaCaptor.capture());
@@ -49,5 +48,5 @@ public class ReservaDAOTest {
 			assertEquals(r.getFecha(), rn.getFecha());
 			assertEquals(r.getHora(), rn.getHora());
 			assertEquals(r.getPlazas(), rn.getPlazas());
-	}	
+	}
 }
