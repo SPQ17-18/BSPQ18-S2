@@ -5,15 +5,20 @@ import java.util.ArrayList;
 
 import es.deusto.spq.biblioteca.client.Client;
 import es.deusto.spq.biblioteca.data.Reserva;
+import es.deusto.spq.biblioteca.client.gui.*;
 
 public class Controller {
 	@SuppressWarnings("unused")
 	private Client cl;
+	private VentanaBuscar vb;
+	private VentanaLogin vl;
 
 	public Controller(String[] args) throws RemoteException {
 
 		cl = new Client();
 		cl.setService(args);
+		vl = new VentanaLogin(this);
+		vl.ejecutarVentana();
 	}
 
 	public Client getCl() {
@@ -22,6 +27,14 @@ public class Controller {
 
 	public void setCl(Client cl) {
 		this.cl = cl;
+	}
+	
+	public VentanaLogin getVL() {
+		return vl;
+	}
+
+	public void setVL(VentanaLogin vl) {
+		this.vl = vl;
 	}
 
 	public static void main(String[] args) throws RemoteException {
