@@ -14,8 +14,13 @@ public class Client {
 
 		try {
 			String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
+
+			service=(IBiblioteca) java.rmi.Naming.lookup(name);
+			System.out.println("Conectado con el servidor: " + name + "\n"+ service  );
+
 			service = (IBiblioteca) java.rmi.Naming.lookup(name);
 			System.out.println("Conectado con el servidor: " + name);
+
 		} catch (Exception e) {
 			System.err.println("RMI Client exception: " + e.getMessage());
 			e.printStackTrace();
