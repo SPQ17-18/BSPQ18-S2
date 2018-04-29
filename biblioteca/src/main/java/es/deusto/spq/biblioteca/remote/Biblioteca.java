@@ -26,6 +26,11 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 
 	private ILibroDAO libroDAO;
 
+	public Biblioteca(IReservaDAO reservaDAO) throws RemoteException {
+		super();
+		this.reservaDAO = reservaDAO;
+	}
+
 	public Biblioteca(String serverIP, int ServerPort) throws RemoteException {
 		super();
 		this.reservaDAO = new ReservaDAO();
@@ -119,7 +124,6 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 
 	@Override
 	public void anyadirSala(String id_sala, int capacidad) throws RemoteException {
-		// TODO Auto-generated method stub
 		Sala s = new Sala(id_sala, capacidad);
 		salaDAO.anyadirSala(s);
 	}
@@ -138,5 +142,12 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		// String nya="R#";
 		// nya=nya.concat(Isbn);
 		libroDAO.EliminarLibro(Isbn);
+	}
+
+	@Override
+	public Reserva DevolverReserva(String dni, String fecha, String hora) throws RemoteException {
+		Reserva r = null;
+		r = reservaDAO.devolverReserva(dni, fecha, hora);
+		return r;
 	}
 }

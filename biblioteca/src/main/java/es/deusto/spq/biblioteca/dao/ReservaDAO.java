@@ -7,18 +7,17 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
-
 import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.Sala;
 
 public class ReservaDAO implements IReservaDAO {
 
 	private PersistenceManagerFactory pmf;
-	
+
 	public ReservaDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
-	
+
 	@Override
 	public void anyadirReserva(Reserva r) {
 		// TODO Auto-generated method stub
@@ -68,7 +67,7 @@ public class ReservaDAO implements IReservaDAO {
 				if (r.getId_sala().equals(Id_Sala) && r.getFecha().equals(fecha) && r.getHora().equals(hora)) {
 					// No hay salas disponibles
 					disponible = false;
-				} 
+				}
 			}
 			tx.commit();
 		} catch (Exception ex) {
@@ -84,21 +83,19 @@ public class ReservaDAO implements IReservaDAO {
 
 	}
 
-
-
-
 	@Override
 	public void editarReserva(Reserva r, String fecha_nueva, String hora_nueva) {
-		
-		if(consultarDisponibilidad(r.getId_sala(), fecha_nueva, hora_nueva)) {
-			Reserva aux = new Reserva(r.getId_reserva(), r.getId_sala(), r.getDni_respon(), fecha_nueva, hora_nueva, r.getPlazas());
-		//	eliminarReserva(r);
+
+		if (consultarDisponibilidad(r.getId_sala(), fecha_nueva, hora_nueva)) {
+			Reserva aux = new Reserva(r.getId_reserva(), r.getId_sala(), r.getDni_respon(), fecha_nueva, hora_nueva,
+					r.getPlazas());
+			// eliminarReserva(r);
 			anyadirReserva(aux);
 			System.out.println("Reserva modificada satisfactoriamente");
-		}else {
+		} else {
 			System.out.println("Reserva no modificada.No se puede reservar en la fecha/hora seleccionadas");
 		}
-		
+
 	}
 
 	@Override
@@ -114,7 +111,7 @@ public class ReservaDAO implements IReservaDAO {
 
 		try {
 			tx.begin();
-			System.out.println("   * Eliminando reserva: " );
+			System.out.println("   * Eliminando reserva: ");
 			pm.deletePersistent(r);
 			tx.commit();
 		} catch (Exception ex) {
@@ -130,13 +127,12 @@ public class ReservaDAO implements IReservaDAO {
 
 	@Override
 	public void anyadirUsuario(Reserva r) {
-		
-		
-			Reserva aux = new Reserva(r.getId_reserva(), r.getId_sala(), r.getDni_respon(), r.getFecha() , r.getHora(), r.getPlazas()+1);
-			eliminarReserva(r);
-			anyadirReserva(aux);
-			
-		
+
+		Reserva aux = new Reserva(r.getId_reserva(), r.getId_sala(), r.getDni_respon(), r.getFecha(), r.getHora(),
+				r.getPlazas() + 1);
+		eliminarReserva(r);
+		anyadirReserva(aux);
+
 	}
 
 	@Override
@@ -159,7 +155,7 @@ public class ReservaDAO implements IReservaDAO {
 					System.out.println("\nHora : " + r.getHora());
 					System.out.println("\nNº plazas : " + r.getPlazas());
 					System.out.println("\n======================================\n");
-				} 
+				}
 			}
 			tx.commit();
 		} catch (Exception ex) {
@@ -170,7 +166,7 @@ public class ReservaDAO implements IReservaDAO {
 			}
 
 			pm.close();
-		}		
+		}
 	}
 
 	public void EliminarParticipanteR(String id_reserva, String plazas) {
@@ -180,23 +176,53 @@ public class ReservaDAO implements IReservaDAO {
 		int Plazas = Integer.parseInt(plazas);
 		Reserva r = null;
 		try {
-			System.out.println(" *Eliminando: " + Plazas );
+			System.out.println(" *Eliminando: " + Plazas);
 			tx.begin();
-			Query<?> query = pm.newQuery("SELECT FROM " + Reserva.class.getName() + " WHERE id_reserva == " + reserva );
+			Query<?> query = pm.newQuery("SELECT FROM " + Reserva.class.getName() + " WHERE id_reserva == " + reserva);
 			query.setUnique(true);
 			r = (Reserva) query.execute();
-			int nuevoNumero = r.getPlazas()-Plazas;
+			int nuevoNumero = r.getPlazas() - Plazas;
 			tx.commit();
 			tx.begin();
 			r.setPlazas(nuevoNumero);
 			pm.makePersistent(r);
 			tx.commit();
-			System.out.println(" *Eliminando: " + Plazas +  "Nuevo numero de asistentes: " + nuevoNumero);
+			System.out.println(" *Eliminando: " + Plazas + "Nuevo numero de asistentes: " + nuevoNumero);
 
 		} catch (Exception ex) {
 			System.out.println(" $ Error eliminando participantes: " + ex.getMessage());
 		}
 	}
 
+	@Override
+	public Reserva devolverReserva(String dni, String fecha, String hora) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		Reserva R = null;
 
+		try {
+			System.out.println("   * Buscando reserva de: " + dni);
+			tx.begin();
+			Query<Reserva> query = pm.newQuery(Reserva.class);
+			@SuppressWarnings("unchecked")
+			List<Reserva> reservas = (List<Reserva>) query.execute();
+			for (Reserva r : reservas) {
+				if (r.getDni_respon().equals(dni) && r.getFecha().equals(fecha) && r.getHora().equals(hora)) {
+					R = r;
+				}
+
+			}
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println("   $ Error devolviendo reserva: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+
+		return R;
+	}
 }
