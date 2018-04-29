@@ -36,6 +36,8 @@ public class Controller {
 	public void setVL(VentanaLogin vl) {
 		this.vl = vl;
 	}
+	
+	
 
 	public static void main(String[] args) throws RemoteException {
 		Controller c = new Controller(args);

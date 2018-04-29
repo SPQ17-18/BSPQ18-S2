@@ -7,8 +7,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -17,12 +19,13 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
 import es.deusto.spq.biblioteca.controller.*;
 import es.deusto.spq.biblioteca.dao.ReservaDAO;
-import es.deusto.spq.biblioteca.dao.SalaDAO;
+import es.deusto.spq.biblioteca.data.Sala;
 
 
 public class VentanaBuscar extends JFrame{
@@ -30,13 +33,14 @@ public class VentanaBuscar extends JFrame{
 	private JPanel panel;
 	private JLabel lnumPlazas, lfecha, lhora;
 	private JButton reservar;
-	private JTextField fecha, hora;
+	private JTextField txtfecha, txthora;
 	private JScrollPane scroll;
 	private static VentanaBuscar INSTANCE;
 	private Controller controller = null;
 	private JTable tablaSalasDisponibles;
+	private JComboBox<String> NumAsistentes;
 	private DefaultTableModel modelo = new DefaultTableModel();
-	List<SalaDAO> consultarPlazas = new ArrayList<>();
+	List<Sala> consultarPlazas = new ArrayList<>();
 
 
 	public static VentanaBuscar getInstance() {
@@ -74,32 +78,54 @@ public class VentanaBuscar extends JFrame{
 		lhora.setBounds(10, 38, 75, 20);
 		panel.add(lhora);
 		
-		fecha = new JTextField();
-		fecha.setFont(new Font("Times New Roman", Font.PLAIN, 19));
-		fecha.setColumns(10);
-		fecha.setBounds(84, 119, 108, 25);
-		panel.add(fecha);
+		txtfecha = new JTextField();
+		txtfecha.setFont(new Font("Times New Roman", Font.PLAIN, 19));
+		txtfecha.setColumns(10);
+		txtfecha.setBounds(84, 119, 108, 25);
+		panel.add(txtfecha);
 		
-		hora = new JTextField();
-		hora.setFont(new Font("Times New Roman", Font.PLAIN, 19));
-		hora.setColumns(10);
-		hora.setBounds(84, 119, 108, 25);
-		panel.add(hora);
+		txthora = new JTextField();
+		txthora.setFont(new Font("Times New Roman", Font.PLAIN, 19));
+		txthora.setColumns(10);
+		txthora.setBounds(84, 119, 108, 25);
+		panel.add(txthora);
 		
 		reservar = new JButton("Reservar");
 		reservar.setFont(new Font("Times New Roman", Font.PLAIN, 13));		
 		reservar.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
 				if (tablaSalasDisponibles.getSelectedRow() >= 0) { 
 					System.out.println(tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 0));
 					int plazas;
-			}
+					try{
+						String id_sala = (String)tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 0);
+						String dni_respon = (String)tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 1);
+						String fecha = (String)tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 2);
+						String hora = (String)tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 3);
+						int capacidad = (int)tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 4);
+					
+						plazas = 1 + NumAsistentes.getSelectedIndex();
+						controller.getCl().getService().anyadirReserva( id_sala,  dni_respon,  fecha,  hora,  capacidad);
+					
+						int PlazasVuelo = (int)tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 5);
+						modelo = (DefaultTableModel)tablaSalasDisponibles.getModel();
+						modelo.setValueAt(PlazasVuelo-plazas, tablaSalasDisponibles.getSelectedRow(), 5);
+						JOptionPane.showInputDialog(null, "has echo una reserva", JOptionPane.INFORMATION_MESSAGE);
+					}catch (NumberFormatException ex) {
+						JOptionPane.showInputDialog(null, "Error: Se ha excedido el numero de plazas", JOptionPane.ERROR_MESSAGE);
+					
+					
+			} catch (RemoteException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				
 			}	
 	
-	});
-	
 	}
+	
+	});
 
-
+	}
 }
