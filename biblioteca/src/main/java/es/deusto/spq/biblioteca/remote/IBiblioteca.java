@@ -23,7 +23,7 @@ public interface IBiblioteca extends Remote {
 	public boolean reserveBook(String nombre) throws RemoteException;
 	
 	public void mostrarLibro(String nombre) throws RemoteException;
-
+	
 	public void anyadirReserva(String id_Sala, String dni_respon, String fecha, String hora, int plazas)
 			throws RemoteException;
 

@@ -78,48 +78,50 @@ public class LibroDAO implements ILibroDAO{
 		return l;
 		
 	}
+	
+
 
 	//Funcion que devuelve el catalogo de libros
-	@Override
-	public ArrayList<Libro> getLibros() {
-		// TODO Auto-generated method stub
-		PersistenceManager pm = pmf.getPersistenceManager();
-		pm.getFetchPlan().setMaxFetchDepth(3);
-
-		Transaction tx = pm.currentTransaction();
-		
-		ArrayList<Libro> catalogo = new ArrayList<Libro>();
-		
-		try {
-			System.out.println("   * Mostrando catalogo de libros...");
-
-			tx.begin();
-			Query<?> query2 = pm.newQuery("SELECT FROM " + Libro.class.getName());
-	
-			List<Libro> l = (List<Libro>) query2.execute();
-		
-			for(int i = 0; i < l.size(); i++) {
-				catalogo.add(new Libro());
-				catalogo.get(i);
-			}
-		
-			tx.commit();
-
-		} catch (Exception ex) {
-			System.out.println("   $ Error recuperando todos los libros: " + ex.getMessage());
-		} finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
-
-			pm.close();
-		}
-		
-		
-		
-		return null;
-	}	
-	
+//	@Override
+//	public ArrayList<Libro> getLibros() {
+//		// TODO Auto-generated method stub
+//		PersistenceManager pm = pmf.getPersistenceManager();
+//		pm.getFetchPlan().setMaxFetchDepth(3);
+//
+//		Transaction tx = pm.currentTransaction();
+//		
+//		ArrayList<Libro> catalogo = new ArrayList<Libro>();
+//		
+//		try {
+//			System.out.println("   * Mostrando catalogo de libros...");
+//
+//			tx.begin();
+//			Query<?> query2 = pm.newQuery("SELECT FROM " + Libro.class.getName());
+//	
+//			List<Libro> l = (List<Libro>) query2.execute();
+//		
+//			for(int i = 0; i < l.size(); i++) {
+//				catalogo.add(new Libro());
+//				catalogo.get(i);
+//			}
+//		
+//			tx.commit();
+//
+//		} catch (Exception ex) {
+//			System.out.println("   $ Error recuperando todos los libros: " + ex.getMessage());
+//		} finally {
+//			if (tx != null && tx.isActive()) {
+//				tx.rollback();
+//			}
+//
+//			pm.close();
+//		}
+//		
+//		
+//		
+//		return null;
+//	}	
+//	
 	public void EliminarLibro(String isbn) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -215,6 +217,7 @@ public class LibroDAO implements ILibroDAO{
 		return l;
 
 	}
+
 
 	
 	/**

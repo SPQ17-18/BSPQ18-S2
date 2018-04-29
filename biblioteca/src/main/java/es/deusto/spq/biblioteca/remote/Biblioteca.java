@@ -159,4 +159,6 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		// TODO Auto-generated method stub
 		libroDAO.verLibro(nombre);
 	}
+
+	
 }
