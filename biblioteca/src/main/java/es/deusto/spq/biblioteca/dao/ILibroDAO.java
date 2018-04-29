@@ -12,5 +12,7 @@ public interface ILibroDAO {
 	public void almacenarLibro(Libro l);
 	//public String EstaDisponible(String titulo, boolean isReservado);
 	public void EliminarLibro(String isbn);
+	public boolean reservarLibro(String nombre);
+	public Libro verLibro(String nombre);
 
 }

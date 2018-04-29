@@ -34,6 +34,7 @@ public class Libro implements Serializable {
 		this.editorial = editorial;
 		this.isReservado = isReservado;
 	}
+	
 
 	//Getters y Setters
 	public int getIsbn() {

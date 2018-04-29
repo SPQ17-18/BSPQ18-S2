@@ -140,4 +140,23 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		// nya=nya.concat(Isbn);
 		libroDAO.EliminarLibro(Isbn);
 	}
+
+	@Override
+	public boolean reserveBook(String nombre) throws RemoteException {
+		// TODO Auto-generated method stub
+		boolean isReservado = false;
+		boolean reserva = libroDAO.reservarLibro(nombre);
+		if (reserva) {
+			isReservado = true;
+		}
+		
+	return isReservado;
+		
+	}
+
+	@Override
+	public void mostrarLibro(String nombre) throws RemoteException {
+		// TODO Auto-generated method stub
+		libroDAO.verLibro(nombre);
+	}
 }
