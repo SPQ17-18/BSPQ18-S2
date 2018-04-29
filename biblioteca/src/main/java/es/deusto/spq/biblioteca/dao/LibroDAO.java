@@ -195,11 +195,11 @@ public class LibroDAO implements ILibroDAO{
 			l = (Libro) query.execute();
 
 
-			System.out.println("isbn: " + l.getIsbn());
+			System.out.println("\nisbn: " + l.getIsbn());
 			System.out.println("\nNombre: " + l.getnombre());
 			System.out.println("\nAutor: " + l.getAutor());
 			System.out.println("\nEditorial: " + l.getEditorial());
-			System.out.println("\nReservado: " + l.isReservado());				
+			System.out.println("\nReservado: " + l.isReservado() + "\n");				
 
 			tx.commit();
 

@@ -43,16 +43,24 @@ public class Controller {
 		//Busqueda de libro por nombre
 		c.getCl().getService().buscarLibro("Festin de cuervos, Cancion de Hielo y fuego IV");
 		c.getCl().getService().buscarLibro("Paco Jemez: Grandes exitos en el Rayo Vallecano");
+		
+		/**
+		 * Consultar disponiblididad de un libro
+		 * Primero buscamos el libro, luego lo reservamos y despues miramos si ha cambiado su disponibilidad
+		 */
+		c.getCl().getService().buscarLibro("Las almas de Brandom");
+		c.getCl().getService().reserveBook("Las almas de Brandom");
+		c.getCl().getService().mostrarLibro("Las almas de Brandom");
 
 		//Anyadir sala
-//		c.getCl().getService().anyadirSala("S1", 10);
-//		c.getCl().getService().anyadirSala("S2", 8);
-//		c.getCl().getService().anyadirReserva("S1", "12345678X", "11/04/18", "21:20", 3);
-//		c.getCl().getService().anyadirReserva("S2", "23456789Y", "12/05/18", "19:26", 2);
-//		Boolean disponible = c.getCl().getService().consultarDisponibilidad("S1", "11/04/18", "10:00", 4);
-//		if (disponible) {
-//			c.getCl().getService().anyadirReserva("S1", "34567890X", "11/04/18", "10:00", 4);
-//		}
+		c.getCl().getService().anyadirSala("S1", 10);
+		c.getCl().getService().anyadirSala("S2", 8);
+		c.getCl().getService().anyadirReserva("S1", "12345678X", "11/04/18", "21:20", 3);
+		c.getCl().getService().anyadirReserva("S2", "23456789Y", "12/05/18", "19:26", 2);
+		Boolean disponible = c.getCl().getService().consultarDisponibilidad("S1", "11/04/18", "10:00", 4);
+		if (disponible) {
+			c.getCl().getService().anyadirReserva("S1", "34567890X", "11/04/18", "10:00", 4);
+		}
 		
 		
 
@@ -63,13 +71,7 @@ public class Controller {
 		//Pruebas Reservas
 //		c.getCl().getService().verReservas("12345678X");
 		
-		/**
-		 * Consultar disponiblididad de un libro
-		 * Primero reservamos un libro y despues lo buscamos para ver si ha cambiado su disponibilidad
-		 */
-		c.getCl().getService().reserveBook("Las almas de Brandom");
-		c.getCl().getService().buscarLibro("Las almas de Brandom");
-		c.getCl().getService().mostrarLibro("Las almas de Brandom");
+		
 		
 		
 	}
