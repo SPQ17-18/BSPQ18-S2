@@ -32,7 +32,7 @@ public class Controller {
 		
 		
 		c.getCl().getService().anyadirReserva("S1", "1A", "1-1-1", "12:32", 2);
-		c.getCl().getService().consultarDisponibilidad("S1", "1-1-1", "12:32");
+		c.getCl().getService().consultarDisponibilidad("S1", "1-1-1", "12:32", 2);
 		
 		
 		//Almacenamos libros 
@@ -65,7 +65,7 @@ public class Controller {
 		
 
 		//Consultar catalogo
-		System.out.println(c.getCl().getService().consultarCatalogo());
+	//	System.out.println(c.getCl().getService().consultarCatalogo());
 
 		
 		//Pruebas Reservas
