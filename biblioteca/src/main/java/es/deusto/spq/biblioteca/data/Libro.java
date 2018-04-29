@@ -76,11 +76,19 @@ public class Libro implements Serializable {
 		this.isReservado = isReservado;
 	}
 	
-	
+	int numeroEjemplares = 0;
+	public int getNumeroEjemplares() {
+		return numeroEjemplares;
+	}
+
+	public void setNumeroEjemplares(int numeroEjemplares) {
+		this.numeroEjemplares = numeroEjemplares;
+	}
+
 	@Override
 	public String toString() {
 		return "libro [isbn=" + isbn + ", nombre=" + nombre + ", autor=" + autor + ", editorial=" + editorial
-				+ ", isReservado=" + isReservado + "]";
+				+ ", isReservado=" + isReservado + ", numeroEjemplares=" + numeroEjemplares +"]";
 	}
 
 }
