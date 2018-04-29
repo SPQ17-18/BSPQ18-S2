@@ -107,13 +107,10 @@
 						<!-- This line is for skipping set/get and constructor trivial methods. 
 							The coverage is higher -->
 						<ignoreTrivial>true</ignoreTrivial>
-			<!-- 			<excludes>
-							<exclude>es/deusto/client/*.class</exclude>
-							<exclude>es/deusto/server/Server.class</exclude>
-							<exclude>es/deusto/server/**/I*.*</exclude>
-							This lines is for excluding from the instrumentation and the 
-								coverage calculations all the classes from server down <exclude>es/deusto/server/**/*</exclude>
-						</excludes> -->
+						<!-- <excludes> <exclude>es/deusto/client/*.class</exclude> <exclude>es/deusto/server/Server.class</exclude> 
+							<exclude>es/deusto/server/**/I*.*</exclude> This lines is for excluding from 
+							the instrumentation and the coverage calculations all the classes from server 
+							down <exclude>es/deusto/server/**/*</exclude> </excludes> -->
 					</instrumentation>
 					<check>
 						<branchRate>50</branchRate>
@@ -257,7 +254,7 @@
 						<version>1.2.1</version>
 						<configuration>
 							<mainClass>es.deusto.spq.biblioteca.controller.Controller</mainClass>
->>>>>>>>> Temporary merge branch 2							<systemProperties>
+							<systemProperties>
 								<systemProperty>
 									<key>java.security.manager</key>
 									<value>java.rmi.RMISecurityManager</value>
