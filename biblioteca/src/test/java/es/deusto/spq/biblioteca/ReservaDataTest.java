@@ -35,10 +35,10 @@ public class ReservaDataTest {
 		//logger.info("Entering setUp");
 		logger.info("Construyendo datos: {}", iteracion++);
 		
-		Reserva R1= new Reserva("R1","S1","12345678X","1-05-2018","17:59",7);
-		Reserva R2= new Reserva("R2","S1","23456789X","2-05-2018","20:00",6);
-		Reserva R3= new Reserva("R3","S2","34567890X","28-05-2018","17:59",4);
-		Reserva R4= new Reserva("R4","S3","45678901X","28-05-2018","12:00",5);
+		R1= new Reserva("R1","S1","12345678X","1-05-2018","17:59",7);
+		R2= new Reserva("R2","S1","23456789X","2-05-2018","20:00",6);
+		R3= new Reserva("R3","S2","34567890X","28-05-2018","17:59",4);
+		R4= new Reserva("R4","S3","45678901X","28-05-2018","12:00",5);
 	
 		logger.info("Abandonando constructor de datos");
 	}
