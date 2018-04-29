@@ -5,14 +5,15 @@
 	<groupId>es.deusto.spq</groupId>
 	<artifactId>biblioteca</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>	
+	<packaging>jar</packaging>
+
 	<name>biblioteca</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<server.IP>127.0.0.1</server.IP>  <!-- 127.0.0.1 -->
-		<server.port>1099</server.port> <!-- 1099 -->
+		<server.IP>127.0.0.1</server.IP>
+		<server.port>1099</server.port>
 		<server.Name>BibliotecaRMI</server.Name>
 		<config.files.dir>${basedir}/src/main/resources</config.files.dir>
 		<policy.file>${basedir}/src/main/resources/security/java.policy</policy.file>
@@ -49,6 +50,29 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
+		</dependency>
+		 <dependency>
+            <groupId>org.databene</groupId>
+            <artifactId>contiperf</artifactId>
+            <version>2.2.0</version>
+            <scope>test</scope>
+        </dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.4</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.4</version>
+			<scope>compile</scope>
+		</dependency> 
+			<dependency>
+		 	<groupId>org.mockito</groupId>
+    		<artifactId>mockito-core</artifactId>
+  		  	<version>2.18.0</version>   	
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
@@ -106,13 +130,10 @@
 						<!-- This line is for skipping set/get and constructor trivial methods. 
 							The coverage is higher -->
 						<ignoreTrivial>true</ignoreTrivial>
-			<!-- 			<excludes>
-							<exclude>es/deusto/client/*.class</exclude>
-							<exclude>es/deusto/server/Server.class</exclude>
-							<exclude>es/deusto/server/**/I*.*</exclude>
-							This lines is for excluding from the instrumentation and the 
-								coverage calculations all the classes from server down <exclude>es/deusto/server/**/*</exclude>
-						</excludes> -->
+						<!-- <excludes> <exclude>es/deusto/client/*.class</exclude> <exclude>es/deusto/server/Server.class</exclude> 
+							<exclude>es/deusto/server/**/I*.*</exclude> This lines is for excluding from 
+							the instrumentation and the coverage calculations all the classes from server 
+							down <exclude>es/deusto/server/**/*</exclude> </excludes> -->
 					</instrumentation>
 					<check>
 						<branchRate>50</branchRate>

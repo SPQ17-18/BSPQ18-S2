@@ -45,4 +45,6 @@ public interface IBiblioteca extends Remote {
 	public void EliminarLibro(Libro l) throws RemoteException;
 
 	public void EliminarParticipante(Reserva r) throws RemoteException;
+	
+	public Reserva DevolverReserva(String dni, String fecha, String hora) throws RemoteException;
 }
