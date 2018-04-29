@@ -47,7 +47,7 @@ public class ReservaDataTest {
     @PerfTest(invocations = 100, threads = 10)
     @Required(max = 500, average = 200)
 	public void testCreacionReserva() throws Exception {
-		logger.info("Empezando test de creacion de Reserva");
+		logger.info("Empezando test de creacion de Reserva1");
 		Reserva esperada= new Reserva("R1","S1","12345678X","1-05-2018","17:59",7);
 		assertEquals(esperada.getDni_respon(), R1.getDni_respon());
 		assertEquals(esperada.getId_sala(), R1.getId_sala());
@@ -55,7 +55,55 @@ public class ReservaDataTest {
 		assertEquals(esperada.getFecha(), R1.getFecha());
 		assertEquals(esperada.getFecha(), R1.getHora());
 		assertEquals(esperada.getFecha(), R1.getPlazas());
-		Thread.sleep(2);
+		Thread.sleep(5);
+		logger.debug("Finalizando test de creacion de Reserva");
+	}
+	
+	@Test 
+    @PerfTest(invocations = 600, threads = 100)
+    @Required(max = 1000, average = 400)
+	public void testCreacionReserva2() throws Exception {
+		logger.info("Empezando test de creacion de Reserva2");
+		Reserva esperada= new Reserva("R2","S1","23456789X","2-05-2018","20:00",6);
+		assertEquals(esperada.getDni_respon(), R2.getDni_respon());
+		assertEquals(esperada.getId_sala(), R2.getId_sala());
+		assertEquals(esperada.getDni_respon(), R2.getDni_respon());
+		assertEquals(esperada.getFecha(), R2.getFecha());
+		assertEquals(esperada.getFecha(), R2.getHora());
+		assertEquals(esperada.getFecha(), R2.getPlazas());
+		Thread.sleep(85);
+		logger.debug("Finalizando test de creacion de Reserva");
+	}
+	
+	@Test 
+    @PerfTest(invocations = 300, threads = 50)
+    @Required(max = 200, average = 20)
+	public void testCreacionReserva3() throws Exception {
+		logger.info("Empezando test de creacion de Reserva3");
+		Reserva esperada= new Reserva("R3","S2","34567890X","28-05-2018","17:59",4);
+		assertEquals(esperada.getDni_respon(), R3.getDni_respon());
+		assertEquals(esperada.getId_sala(), R3.getId_sala());
+		assertEquals(esperada.getDni_respon(), R3.getDni_respon());
+		assertEquals(esperada.getFecha(), R3.getFecha());
+		assertEquals(esperada.getFecha(), R3.getHora());
+		assertEquals(esperada.getFecha(), R3.getPlazas());
+		Thread.sleep(15);
+		logger.debug("Finalizando test de creacion de Reserva");
+	}
+	
+	@Test 
+    @PerfTest(invocations = 200, threads = 90)
+    @Required(max = 400, average = 300)
+	public void testCreacionReserva4() throws Exception {
+		logger.info("Empezando test de creacion de Reserva4");
+		Reserva esperada= new Reserva("R4","S3","45678901X","28-05-2018","12:00",5);
+		assertEquals(esperada.getDni_respon(), R4.getDni_respon());
+		assertEquals(esperada.getId_sala(), R4.getId_sala());
+		assertEquals(esperada.getDni_respon(), R4.getDni_respon());
+		assertEquals(esperada.getFecha(), R4.getFecha());
+		assertEquals(esperada.getFecha(), R4.getHora());
+		assertEquals(esperada.getFecha(), R4.getPlazas());
+		Thread.sleep(90);
 		logger.debug("Finalizando test de creacion de Reserva");
 	}
 	
