@@ -49,4 +49,16 @@ public class ReservaDAOTest {
 			assertEquals(r.getHora(), rn.getHora());
 			assertEquals(r.getPlazas(), rn.getPlazas());
 	}
+	
+	@Test
+	public void testAnyadirUsuario() throws RemoteException {
+		Reserva r = new Reserva("R5", "S2", "20304050A", "29-04-2018", "18:42", 8);
+		b.anyadirUsuario(r);	
+		ArgumentCaptor<Reserva> reservaCaptor = ArgumentCaptor.forClass( Reserva.class );
+		verify(dao).anyadirUsuario(reservaCaptor.capture());
+		System.out.println("Anyadiendo usuario");
+		Reserva rn=reservaCaptor.getValue();
+		rn.setPlazas(rn.getPlazas()+1);
+		assertEquals(9,rn.getPlazas());
+	}
 }
