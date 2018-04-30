@@ -7,12 +7,19 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
+import org.apache.log4j.Logger;
+
+
+import es.deusto.spq.biblioteca.LibroDataTest;
 import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.Sala;
 
 public class ReservaDAO implements IReservaDAO {
 
 	private PersistenceManagerFactory pmf;
+	private static final Logger logger = Logger.getLogger(ReservaDAO.class);
+
+
 
 	public ReservaDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
@@ -32,13 +39,17 @@ public class ReservaDAO implements IReservaDAO {
 			for (Sala s : salas) {
 				if (s.getId_sala().equals(r.getId_sala())) {
 					s.getReservas().add(r);
-					System.out.println("   * Guardando reserva: " + r.getId_reserva());
+					//System.out.println("   * Guardando reserva: " + r.getId_reserva());
+					logger.info("   * Guardando reserva: " + r.getId_reserva());
+
 					pm.makePersistent(s);
 					tx.commit();
 				}
 			}
 		} catch (Exception ex) {
-			System.out.println("   $ Error guardando reserva: " + ex.getMessage());
+			//System.out.println("   $ Error guardando reserva: " + ex.getMessage());
+			logger.error("   $ Error guardando reserva:" + ex.getMessage());
+
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -58,7 +69,9 @@ public class ReservaDAO implements IReservaDAO {
 		Transaction tx = pm.currentTransaction();
 
 		try {
-			System.out.println("   * Consultado disponibilidad de: " + Id_Sala);
+			//System.out.println("   * Consultado disponibilidad de: " + Id_Sala);
+			logger.info("   * Consultado disponibilidad de: " + Id_Sala);
+
 			tx.begin();
 			Query<Reserva> query = pm.newQuery(Reserva.class);
 			@SuppressWarnings("unchecked")
@@ -71,7 +84,9 @@ public class ReservaDAO implements IReservaDAO {
 			}
 			tx.commit();
 		} catch (Exception ex) {
-			System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+			//System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+			logger.error("   $ Error retreiving an extent: " + ex.getMessage());
+
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -91,9 +106,13 @@ public class ReservaDAO implements IReservaDAO {
 					r.getPlazas());
 			// eliminarReserva(r);
 			anyadirReserva(aux);
-			System.out.println("Reserva modificada satisfactoriamente");
+			//System.out.println("Reserva modificada satisfactoriamente");
+			logger.info("Reserva modificada satisfactoriamente");
+
 		} else {
-			System.out.println("Reserva no modificada.No se puede reservar en la fecha/hora seleccionadas");
+			//System.out.println("Reserva no modificada.No se puede reservar en la fecha/hora seleccionadas");
+			logger.info("Reserva no modificada.No se puede reservar en la fecha/hora seleccionadas");
+
 		}
 
 	}
@@ -111,11 +130,15 @@ public class ReservaDAO implements IReservaDAO {
 
 		try {
 			tx.begin();
-			System.out.println("   * Eliminando reserva: ");
+			//System.out.println("   * Eliminando reserva: ");
+			logger.info("   * Eliminando reserva: ");
+
 			pm.deletePersistent(r);
 			tx.commit();
 		} catch (Exception ex) {
-			System.out.println("   $ Error Eliminando reserva: " + ex.getMessage());
+			//System.out.println("   $ Error Eliminando reserva: " + ex.getMessage());
+			logger.error("	$ Error Eliminando reserva: " + ex.getMessage());
+
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -142,7 +165,9 @@ public class ReservaDAO implements IReservaDAO {
 		Transaction tx = pm.currentTransaction();
 
 		try {
-			System.out.println("   * Consultado reservas de: " + dni);
+			//System.out.println("   * Consultado reservas de: " + dni);
+			logger.info("   * Consultado reservas de: " + dni);
+
 			tx.begin();
 			Query<Reserva> query = pm.newQuery(Reserva.class);
 			@SuppressWarnings("unchecked")
@@ -159,7 +184,9 @@ public class ReservaDAO implements IReservaDAO {
 			}
 			tx.commit();
 		} catch (Exception ex) {
-			System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+			//System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+			logger.error("   $ Error retreiving an extent: " + ex.getMessage());
+
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -176,7 +203,9 @@ public class ReservaDAO implements IReservaDAO {
 		int Plazas = Integer.parseInt(plazas);
 		Reserva r = null;
 		try {
-			System.out.println(" *Eliminando: " + Plazas);
+			//System.out.println(" *Eliminando: " + Plazas);
+			logger.info(" *Eliminando: " + Plazas);
+
 			tx.begin();
 			Query<?> query = pm.newQuery("SELECT FROM " + Reserva.class.getName() + " WHERE id_reserva == " + reserva);
 			query.setUnique(true);
@@ -187,10 +216,13 @@ public class ReservaDAO implements IReservaDAO {
 			r.setPlazas(nuevoNumero);
 			pm.makePersistent(r);
 			tx.commit();
-			System.out.println(" *Eliminando: " + Plazas + "Nuevo numero de asistentes: " + nuevoNumero);
+			//System.out.println(" *Eliminando: " + Plazas + "Nuevo numero de asistentes: " + nuevoNumero);
+			logger.info(" *Eliminando: " + Plazas + "Nuevo numero de asistentes: " + nuevoNumero);
 
 		} catch (Exception ex) {
-			System.out.println(" $ Error eliminando participantes: " + ex.getMessage());
+			//System.out.println(" $ Error eliminando participantes: " + ex.getMessage());
+			logger.error(" $ Error eliminando participantes: " + ex.getMessage());
+
 		}
 	}
 
@@ -201,7 +233,9 @@ public class ReservaDAO implements IReservaDAO {
 		Reserva R = null;
 
 		try {
-			System.out.println("   * Buscando reserva de: " + dni);
+			//System.out.println("   * Buscando reserva de: " + dni);
+			logger.info("   * Buscando reserva de: " + dni);
+
 			tx.begin();
 			Query<Reserva> query = pm.newQuery(Reserva.class);
 			@SuppressWarnings("unchecked")
@@ -214,7 +248,9 @@ public class ReservaDAO implements IReservaDAO {
 			}
 			tx.commit();
 		} catch (Exception ex) {
-			System.out.println("   $ Error devolviendo reserva: " + ex.getMessage());
+			//System.out.println("   $ Error devolviendo reserva: " + ex.getMessage());
+			logger.error("   $ Error devolviendo reserva: " + ex.getMessage());
+
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
