@@ -30,11 +30,6 @@ public class Controller {
 		System.out.println(c.getCl().getService());
 		System.out.println("Hola");
 		
-		
-//		c.getCl().getService().anyadirReserva("S1", "1A", "1-1-1", "12:32", 2);
-//		c.getCl().getService().consultarDisponibilidad("S1", "1-1-1", "12:32", 2);
-		
-		
 		//Almacenamos libros 
 		c.getCl().getService().almacenarLibro(1, "Las almas de Brandom", "Cesar Brandom", "S.L.U. Espasa Libros", false);
 		c.getCl().getService().almacenarLibro(2, "Festin de cuervos, Cancion de Hielo y fuego IV", "George R.R. Martin", "Gigamesh", false);
@@ -61,19 +56,6 @@ public class Controller {
 		if (disponible) {
 			c.getCl().getService().anyadirReserva("S1", "34567890X", "11/04/18", "10:00", 4);
 		}
-		
-		
-
-		//Consultar catalogo
-	//	System.out.println(c.getCl().getService().consultarCatalogo());
-
-		
-		//Pruebas Reservas
-//		c.getCl().getService().verReservas("12345678X");
-		
-		
-		
-		
 	}
 
 

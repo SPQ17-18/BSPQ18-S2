@@ -12,6 +12,7 @@ import java.util.List;
 import es.deusto.spq.biblioteca.data.Libro;
 
 import es.deusto.spq.biblioteca.data.Reserva;
+import es.deusto.spq.biblioteca.data.ReservaMesa;
 
 public interface IBiblioteca extends Remote {
 
@@ -45,4 +46,19 @@ public interface IBiblioteca extends Remote {
 	public void EliminarParticipante(Reserva r) throws RemoteException;
 	
 	public Reserva DevolverReserva(String dni, String fecha, String hora) throws RemoteException;
+	
+	public void anyadirReservaComedor(String id_Mesa, String dni_respon, String fecha, String hora, int plazas)
+			throws RemoteException;
+	
+	public boolean consultarDisponibilidadComedor(String Id_Mesa, String fecha, String hora, int personas) throws RemoteException;
+	
+	public void anyadirMesa(String id_mesa, int capacidad) throws RemoteException;
+	
+	public void verReservaComedor(String dni) throws RemoteException;
+	
+	public void eliminarReservaComedor(ReservaMesa m) throws RemoteException;
+	
+	public void editarReservaComedor(ReservaMesa m, String fecha_nueva, String hora_nueva) throws RemoteException;
+	
+	
 }
