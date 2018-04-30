@@ -23,11 +23,10 @@ public class Mesa implements Serializable{
 		super();
 	}
 
-	public Mesa(String id_Mesa, int capacidad, List<ReservaMesa> reservaMesas) {
+	public Mesa(String id_Mesa, int capacidad) {
 		super();
 		this.id_Mesa = id_Mesa;
 		this.capacidad = capacidad;
-		this.reservaMesas = reservaMesas;
 	}
 
 	public String getId_Mesa() {

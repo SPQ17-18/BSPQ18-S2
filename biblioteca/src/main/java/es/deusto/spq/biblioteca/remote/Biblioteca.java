@@ -7,11 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.deusto.spq.biblioteca.dao.ILibroDAO;
+import es.deusto.spq.biblioteca.dao.IMesaDAO;
+import es.deusto.spq.biblioteca.dao.IReservaComedorDAO;
 import es.deusto.spq.biblioteca.dao.LibroDAO;
+import es.deusto.spq.biblioteca.dao.MesaDAO;
+import es.deusto.spq.biblioteca.dao.ReservaComedorDAO;
 import es.deusto.spq.biblioteca.dao.IReservaDAO;
 import es.deusto.spq.biblioteca.dao.ReservaDAO;
 import es.deusto.spq.biblioteca.data.Libro;
+import es.deusto.spq.biblioteca.data.Mesa;
 import es.deusto.spq.biblioteca.data.Reserva;
+import es.deusto.spq.biblioteca.data.ReservaMesa;
 import es.deusto.spq.biblioteca.dao.ISalaDAO;
 import es.deusto.spq.biblioteca.dao.ReservaDAO;
 import es.deusto.spq.biblioteca.dao.SalaDAO;
@@ -26,6 +32,10 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	private ISalaDAO salaDAO;
 
 	private ILibroDAO libroDAO;
+	
+	private IMesaDAO mesaDAO;
+	
+	private IReservaComedorDAO rComedorDAO;
 
 	public Biblioteca(IReservaDAO reservaDAO ) throws RemoteException {
 		super();
@@ -42,6 +52,8 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		this.reservaDAO = new ReservaDAO();
 		this.salaDAO = new SalaDAO();
 		this.libroDAO = new LibroDAO();
+		this.mesaDAO = new MesaDAO();
+		this.rComedorDAO = new ReservaComedorDAO();
 
 	}
 
@@ -171,6 +183,54 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		r = reservaDAO.devolverReserva(dni, fecha, hora);
 		return r;
 	}
+
+	@Override
+	public boolean consultarDisponibilidadComedor(String Id_Mesa, String fecha, String hora, int personas)
+			throws RemoteException {
+		boolean disponible = false;
+		boolean libre = rComedorDAO.consultarDisponibilidadComedor(Id_Mesa, fecha, hora);
+		boolean plazas = mesaDAO.consultarPlazasComedor(Id_Mesa, personas);
+		if (plazas && libre) {
+			disponible = true;
+		}
+		return disponible;
+	}
+
+	@Override
+	public void anyadirReservaComedor(String id_Mesa, String dni_respon, String fecha, String hora, int plazas)
+			throws RemoteException {
+		int cod = 00;
+		cod++;
+		String codg = "";
+		codg = String.valueOf(cod);
+		codg = Integer.toString(cod);
+
+		ReservaMesa r = new ReservaMesa(codg, id_Mesa, dni_respon, fecha, hora, plazas);
+		rComedorDAO.anyadirReservaComedor(r);
+	}
+
+	@Override
+	public void anyadirMesa(String id_mesa, int capacidad) throws RemoteException {
+		Mesa m = new Mesa(id_mesa, capacidad);
+		mesaDAO.anyadirMesa(m);
+	}
+
+	@Override
+	public void verReservaComedor(String dni) throws RemoteException {
+		rComedorDAO.verReservaComedor(dni);
+		}
+
+	@Override
+	public void eliminarReservaComedor(ReservaMesa m) throws RemoteException {
+		rComedorDAO.eliminarReservaComedor(m);
+	}
+
+	@Override
+	public void editarReservaComedor(ReservaMesa m, String fecha_nueva, String hora_nueva) throws RemoteException {
+		rComedorDAO.editarReservaComedor(m, fecha_nueva, hora_nueva);
+		}
+
+	
 }
 
 	

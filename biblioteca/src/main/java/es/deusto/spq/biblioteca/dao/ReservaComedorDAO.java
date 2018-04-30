@@ -21,7 +21,7 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 	}
 
 	@Override
-	public void anyadirReservaC(ReservaMesa r) {
+	public void anyadirReservaComedor(ReservaMesa r) {
 		// TODO Auto-generated method stub
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -50,7 +50,7 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 	}
 
 	@Override
-	public boolean consultarDisponibilidadC(String Id_Mesa, String fecha, String hora) {
+	public boolean consultarDisponibilidadComedor(String Id_Mesa, String fecha, String hora) {
 
 		boolean disponible = true;
 
@@ -140,11 +140,11 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 	}
 
 	@Override
-	public void editarReserva(ReservaMesa r, String fecha_nueva, String hora_nueva) {
-		if (consultarDisponibilidadC(r.getId_Mesa(), fecha_nueva, hora_nueva)) {
+	public void editarReservaComedor(ReservaMesa r, String fecha_nueva, String hora_nueva) {
+		if (consultarDisponibilidadComedor(r.getId_Mesa(), fecha_nueva, hora_nueva)) {
 			ReservaMesa aux = new ReservaMesa(r.getId_Reserva(),r.getId_Mesa(), r.getDni_respon(),r.getFecha(),r.getHora(),r.getPersonas());
 			// eliminarReserva(r);
-			anyadirReservaC(aux);
+			anyadirReservaComedor(aux);
 			System.out.println("Reserva modificada satisfactoriamente");
 		} else {
 			System.out.println("Reserva no modificada.No se puede reservar en la fecha/hora seleccionadas");
