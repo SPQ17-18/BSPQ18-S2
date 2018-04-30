@@ -19,6 +19,8 @@ import org.slf4j.LoggerFactory;
 import es.deusto.spq.biblioteca.data.Libro;
 import junit.framework.JUnit4TestAdapter;
 
+@PerfTest(invocations = 5)
+@Required(max = 1500, average = 300)
 public class LibroDataTest {
 	
 	private Libro l;
@@ -66,8 +68,8 @@ public class LibroDataTest {
 	}
 	
 	@Test
-	@PerfTest(invocations = 100, threads = 10)
-    @Required(max = 500, average = 200)
+	@PerfTest(invocations = 200, threads = 30)
+    @Required(max = 600, average = 20)
 	public void testCreacionLibro2() throws Exception {
 		logger.info("Iniciando test de creacion del primer libro");
 		Libro expected = new Libro(222, "Libro 2", "Autor 2", "Editorial 2", false);
@@ -81,8 +83,8 @@ public class LibroDataTest {
 	}
 	
 	@Test
-	@PerfTest(invocations = 100, threads = 10)
-    @Required(max = 500, average = 200)
+	@PerfTest(invocations = 400, threads = 80)
+    @Required(max = 200, average = 300)
 	public void testCreacionLibro3() throws Exception {
 		logger.info("Iniciando test de creacion del primer libro");
 		Libro expected = new Libro(333, "Libro 3", "Autor 3", "Editorial 3", false);
