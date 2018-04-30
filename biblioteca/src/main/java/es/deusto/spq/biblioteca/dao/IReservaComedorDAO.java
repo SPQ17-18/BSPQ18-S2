@@ -6,4 +6,5 @@ public interface IReservaComedorDAO {
 	
 	public void anyadirReservaC(ReservaMesa r);
 	public boolean consultarDisponibilidad(String Id_Comedor, String fecha, String hora);
+	public void verReservaComedor(String dni);
 }

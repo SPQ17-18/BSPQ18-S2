@@ -82,4 +82,39 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 		return disponible;
 
 	}
+
+	@Override
+	public void verReservaComedor(String dni) {
+		// TODO Auto-generated method stub
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			System.out.println("   * Consultado reservas de: " + dni);
+			tx.begin();
+			Query<ReservaMesa> query = pm.newQuery(ReservaMesa.class);
+			@SuppressWarnings("unchecked")
+			List<ReservaMesa> reservas = (List<ReservaMesa>) query.execute();
+			for (ReservaMesa r : reservas) {
+				if (r.getDni_respon().equals(dni)) {
+					System.out.println("======================================");
+					System.out.println("\nComedor : " + r.getId_Comedor());
+					System.out.println("\nMesa : " + r.getId_Mesa());
+					System.out.println("\nFecha : " + r.getFecha());
+					System.out.println("\nHora : " + r.getHora());
+					System.out.println("\nNº personas : " + r.getPersonas());
+					System.out.println("\n======================================\n");
+				}
+			}
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+	}
 }
