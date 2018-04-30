@@ -11,39 +11,39 @@ import javax.jdo.annotations.PersistenceCapable;
 
 @PersistenceCapable(detachable = "true")
 @Inheritance(strategy = InheritanceStrategy.NEW_TABLE)
-public class Comedor implements Serializable{
+public class Mesa implements Serializable{
 
-	String id_Comedor;
-	int mesas;
+	String id_Mesa;
+	int capacidad;
 	
 	@Join
 	List<ReservaMesa> reservaMesas = new ArrayList<ReservaMesa>();
 
-	public Comedor() {
+	public Mesa() {
 		super();
 	}
 
-	public Comedor(String id_Comedor, int mesas, List<ReservaMesa> reservaMesas) {
+	public Mesa(String id_Mesa, int capacidad, List<ReservaMesa> reservaMesas) {
 		super();
-		this.id_Comedor = id_Comedor;
-		this.mesas = mesas;
+		this.id_Mesa = id_Mesa;
+		this.capacidad = capacidad;
 		this.reservaMesas = reservaMesas;
 	}
 
-	public String getId_Comedor() {
-		return id_Comedor;
+	public String getId_Mesa() {
+		return id_Mesa;
 	}
 
-	public void setId_Comedor(String id_Comedor) {
-		this.id_Comedor = id_Comedor;
+	public void setId_Mesa(String id_Mesa) {
+		this.id_Mesa = id_Mesa;
 	}
 
-	public int getMesas() {
-		return mesas;
+	public int getCapacidad() {
+		return capacidad;
 	}
 
-	public void setMesas(int mesas) {
-		this.mesas = mesas;
+	public void setCapacidad(int capacidad) {
+		this.capacidad = capacidad;
 	}
 
 	public List<ReservaMesa> getReservaMesas() {

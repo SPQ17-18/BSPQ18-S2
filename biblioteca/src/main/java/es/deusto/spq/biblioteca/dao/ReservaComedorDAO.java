@@ -8,7 +8,7 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
-import es.deusto.spq.biblioteca.data.Comedor;
+import es.deusto.spq.biblioteca.data.Mesa;
 import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
 
@@ -27,13 +27,13 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
-			Query<Comedor> query = pm.newQuery(Comedor.class);
+			Query<Mesa> query = pm.newQuery(Mesa.class);
 			@SuppressWarnings("unchecked")
-			List<Comedor> mesas = (List<Comedor>) query.execute();
-			for (Comedor m : mesas) {
-				if (m.getId_Comedor().equals(r.getId_Comedor())) {
+			List<Mesa> mesas = (List<Mesa>) query.execute();
+			for (Mesa m : mesas) {
+				if (m.getId_Mesa().equals(r.getId_Mesa())) {
 					m.getReservaMesas().add(r);
-					System.out.println("   * Guardando reserva de comedor: " + r.getId_Comedor());
+					System.out.println("   * Guardando reserva de comedor: " + r.getId_Mesa());
 					pm.makePersistent(m);
 					tx.commit();
 				}
@@ -50,7 +50,7 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 	}
 
 	@Override
-	public boolean consultarDisponibilidad(String Id_Comedor, String fecha, String hora) {
+	public boolean consultarDisponibilidadC(String Id_Mesa, String fecha, String hora) {
 
 		boolean disponible = true;
 
@@ -58,13 +58,13 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 		Transaction tx = pm.currentTransaction();
 
 		try {
-			System.out.println("   * Consultado disponibilidad de: " + Id_Comedor);
+			System.out.println("   * Consultado disponibilidad de: " + Id_Mesa);
 			tx.begin();
 			Query<ReservaMesa> query = pm.newQuery(ReservaMesa.class);
 			@SuppressWarnings("unchecked")
 			List<ReservaMesa> reservas = (List<ReservaMesa>) query.execute();
 			for (ReservaMesa r : reservas) {
-				if (r.getId_Comedor().equals(Id_Comedor) && r.getFecha().equals(fecha) && r.getHora().equals(hora)) {
+				if (r.getId_Mesa().equals(Id_Mesa) && r.getFecha().equals(fecha) && r.getHora().equals(hora)) {
 					// No hay salas disponibles
 					disponible = false;
 				}
@@ -98,7 +98,7 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 			for (ReservaMesa r : reservas) {
 				if (r.getDni_respon().equals(dni)) {
 					System.out.println("======================================");
-					System.out.println("\nComedor : " + r.getId_Comedor());
+					System.out.println("\nReserva : " + r.getId_Reserva());
 					System.out.println("\nMesa : " + r.getId_Mesa());
 					System.out.println("\nFecha : " + r.getFecha());
 					System.out.println("\nHora : " + r.getHora());
@@ -125,7 +125,7 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 
 		try {
 			tx.begin();
-			System.out.println("   * Eliminando reserva de comedor: " + r.getId_Comedor());
+			System.out.println("   * Eliminando reserva: " + r.getId_Reserva());
 			pm.deletePersistent(r);
 			tx.commit();
 		} catch (Exception ex) {
@@ -137,5 +137,18 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 
 			pm.close();
 		}
+	}
+
+	@Override
+	public void editarReserva(ReservaMesa r, String fecha_nueva, String hora_nueva) {
+		if (consultarDisponibilidadC(r.getId_Mesa(), fecha_nueva, hora_nueva)) {
+			ReservaMesa aux = new ReservaMesa(r.getId_Reserva(),r.getId_Mesa(), r.getDni_respon(),r.getFecha(),r.getHora(),r.getPersonas());
+			// eliminarReserva(r);
+			anyadirReservaC(aux);
+			System.out.println("Reserva modificada satisfactoriamente");
+		} else {
+			System.out.println("Reserva no modificada.No se puede reservar en la fecha/hora seleccionadas");
+		}
+
 	}
 }

@@ -8,8 +8,8 @@ import javax.jdo.annotations.PersistenceCapable;
 @Inheritance(strategy = InheritanceStrategy.NEW_TABLE)
 public class ReservaMesa {
 
-	String id_Comedor;
 	String id_Mesa;
+	String id_Reserva;
 	String dni_respon;
 	String fecha;
 	String hora;
@@ -18,23 +18,15 @@ public class ReservaMesa {
 	public ReservaMesa() {
 		super();
 	}
-
-	public ReservaMesa(String id_Comedor, String id_Mesa, String dni_respon, String fecha, String hora, int personas) {
+	
+	public ReservaMesa(String id_Mesa, String id_Reserva, String dni_respon, String fecha, String hora, int personas) {
 		super();
-		this.id_Comedor = id_Comedor;
 		this.id_Mesa = id_Mesa;
+		this.id_Reserva = id_Reserva;
 		this.dni_respon = dni_respon;
 		this.fecha = fecha;
 		this.hora = hora;
 		Personas = personas;
-	}
-
-	public String getId_Comedor() {
-		return id_Comedor;
-	}
-
-	public void setId_Comedor(String id_Comedor) {
-		this.id_Comedor = id_Comedor;
 	}
 
 	public String getId_Mesa() {
@@ -43,6 +35,14 @@ public class ReservaMesa {
 
 	public void setId_Mesa(String id_Mesa) {
 		this.id_Mesa = id_Mesa;
+	}
+
+	public String getId_Reserva() {
+		return id_Reserva;
+	}
+
+	public void setId_Reserva(String id_Reserva) {
+		this.id_Reserva = id_Reserva;
 	}
 
 	public String getDni_respon() {
@@ -75,5 +75,5 @@ public class ReservaMesa {
 
 	public void setPersonas(int personas) {
 		Personas = personas;
-	}	
+	}
 }
