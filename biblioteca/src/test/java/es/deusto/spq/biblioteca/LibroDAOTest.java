@@ -57,7 +57,42 @@ public class LibroDAOTest {
 		assertEquals(l.getEditorial(), book.getEditorial());
 		assertEquals(l.isReservado(), book.isReservado());
 
+	}
+	
+	@Test
+	public void testVerLibro() throws Exception {
+		Libro libro = new Libro(2, "Festin de cuervos, Cancion de Hielo y fuego IV", "George R.R. Martin", "Gigamesh", false);
+		biblioteca.mostrarLibro("Festin de cuervos, Cancion de Hielo y fuego IV");
+		ArgumentCaptor<Libro> libroCaptor = ArgumentCaptor.forClass(Libro.class);
+		verify(ILibroDAO).verLibro("Festin de cuervos, Cancion de Hielo y fuego IV");
+		System.out.println("Mostrando el libro...");
 		
+		Libro book = libroCaptor.getValue();
+		assertEquals(libro.getIsbn(), book.getIsbn());
+		assertEquals(libro.getnombre(), book.getnombre());
+		assertEquals(libro.getAutor(), book.getAutor());
+		assertEquals(libro.getEditorial(), book.getEditorial());
+		assertEquals(libro.isReservado(), book.isReservado());
+		
+
+	}
+	
+	@Test
+	public void testDeleteLibro() throws Exception {
+		Libro libro = new Libro(3, "FYellowstar: Conviértete en un campeón de League of Legends", "Bora Kim ", "Editorial Planeta S.A", false);
+		biblioteca.EliminarLibro(libro);
+		ArgumentCaptor<Libro> libroCaptor = ArgumentCaptor.forClass(Libro.class);
+		verify(ILibroDAO).EliminarLibro("3");
+		System.out.println("Eliminando libro...");
+		
+		Libro book = libroCaptor.getValue();
+		assertEquals(libro.getIsbn(), book.getIsbn());
+		assertEquals(libro.getnombre(), book.getnombre());
+		assertEquals(libro.getAutor(), book.getAutor());
+		assertEquals(libro.getEditorial(), book.getEditorial());
+		assertEquals(libro.isReservado(), book.isReservado());
+
+
 		
 	}
 //
