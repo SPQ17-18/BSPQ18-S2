@@ -10,7 +10,6 @@ import javax.jdo.Transaction;
 import org.apache.log4j.Logger;
 
 
-import es.deusto.spq.biblioteca.LibroDataTest;
 import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.Sala;
 
