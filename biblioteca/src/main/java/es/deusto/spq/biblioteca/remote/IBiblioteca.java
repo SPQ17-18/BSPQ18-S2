@@ -36,8 +36,6 @@ public interface IBiblioteca extends Remote {
 
 	public void editarReserva(Reserva r, String fecha_nueva, String hora_nueva) throws RemoteException;
 
-	public void editarReserva(Reserva r, String hora_nueva) throws RemoteException;
-
 	public void eliminarReserva(String id_Sala, String dni_respon) throws RemoteException;
 
 	public void anyadirUsuario(Reserva r) throws RemoteException;
