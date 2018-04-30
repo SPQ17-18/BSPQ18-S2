@@ -1,3 +1,4 @@
+//DAO DATA RMI del SERVER
 package es.deusto.spq.biblioteca.remote;
 
 import java.rmi.RemoteException;
@@ -136,8 +137,29 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		// String nya="R#";
 		// nya=nya.concat(Isbn);
 		libroDAO.EliminarLibro(Isbn);
+
 	}
 
+	@Override
+	public boolean reserveBook(String nombre) throws RemoteException {
+		// TODO Auto-generated method stub
+		boolean isReservado = false;
+		boolean reserva = libroDAO.reservarLibro(nombre);
+		if (reserva) {
+			isReservado = true;
+		}
+		
+	return isReservado;
+		
+	}
+
+	@Override
+	public void mostrarLibro(String nombre) throws RemoteException {
+		// TODO Auto-generated method stub
+		libroDAO.verLibro(nombre);
+	}
+
+	
 	@Override
 	public Reserva DevolverReserva(String dni, String fecha, String hora) throws RemoteException {
 		Reserva r = null;
@@ -145,3 +167,5 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		return r;
 	}
 }
+
+	
