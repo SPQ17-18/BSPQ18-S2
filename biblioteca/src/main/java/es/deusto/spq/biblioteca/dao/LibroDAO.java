@@ -8,6 +8,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
+import org.apache.log4j.Logger;
 
 import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Reserva;
@@ -16,6 +17,8 @@ import es.deusto.spq.biblioteca.data.Sala;
 public class LibroDAO implements ILibroDAO{
 	
 	private PersistenceManagerFactory pmf;
+	private static final Logger logger = Logger.getLogger(LibroDAO.class);
+
 
 	public LibroDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
@@ -30,11 +33,13 @@ public class LibroDAO implements ILibroDAO{
 
 		try {
 			tx.begin();
-			System.out.println("   * Almacenando libro: " + l);
+		//	System.out.println("   * Almacenando libro: " + l);
+			logger.info("   * Almacenando libro: " + l);
 			pm.makePersistent(l);
 			tx.commit();
 		} catch (Exception ex) {
-			System.out.println("   $ Error almacenando libro: " + ex.getMessage());
+			//System.out.println("   $ Error almacenando libro: " + ex.getMessage());
+			logger.error("   $ Error almacenando libro:" + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -57,7 +62,9 @@ public class LibroDAO implements ILibroDAO{
 	//	libro l = new libro(); descomentar este si no funciona el otro
 
 		try {
-			System.out.println("   * Buscando libro: " + nombre);
+			//System.out.println("   * Buscando libro: " + nombre);
+			logger.info("   * Buscando libro: " + nombre);
+
 
 			tx.begin();
 			Query<?> query = pm.newQuery("SELECT FROM " + Libro.class.getName() + " WHERE nombre == '" + nombre +"'");
@@ -66,7 +73,9 @@ public class LibroDAO implements ILibroDAO{
 			tx.commit();
 
 		} catch (Exception ex) {
-			System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+			//System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+			logger.error("   $ Error buscando libro:" + ex.getMessage());
+
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -128,7 +137,8 @@ public class LibroDAO implements ILibroDAO{
 		int codigo = Integer.parseInt(isbn);
 		Libro l = null;
 		try {
-			System.out.println(" *Eliminando: " + codigo );
+			//System.out.println(" *Eliminando: " + codigo );
+			logger.info(" *Eliminando: " + codigo );
 			tx.begin();
 			Query<?> query = pm.newQuery("SELECT FROM " + Reserva.class.getName() + " WHERE isbn == " + codigo );
 			query.setUnique(true);
@@ -139,10 +149,14 @@ public class LibroDAO implements ILibroDAO{
 			l.setNumeroEjemplares(nuevaLista);
 			pm.makePersistent(l);
 			tx.commit();
-			System.out.println(" *Eliminando: " + codigo +  "Nuevo numero de asistentes: " + nuevaLista);
+			//System.out.println(" *Eliminando: " + codigo +  "Nuevo numero de asistentes: " + nuevaLista);
+			logger.info(" *Eliminando: " + codigo +  "Nuevo numero de asistentes: " + nuevaLista);
+
 
 		} catch (Exception ex) {
-			System.out.println(" $ Error eliminando participantes: " + ex.getMessage());
+			//System.out.println(" $ Error eliminando libro: " + ex.getMessage());
+			logger.error("   $ Error eliminando libro:" + ex.getMessage());
+
 		}
 	}
 
@@ -167,7 +181,9 @@ public class LibroDAO implements ILibroDAO{
 			}
 			tx.commit();
 		} catch (Exception ex) {
-			System.out.println("   $ Error reservando un libro: " + ex.getMessage());
+			//System.out.println("   $ Error reservando un libro: " + ex.getMessage());
+			logger.error("   $ Error reservando un libro:" + ex.getMessage());
+
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -189,7 +205,9 @@ public class LibroDAO implements ILibroDAO{
 		//	libro l = new libro(); descomentar este si no funciona el otro
 
 		try {
-			System.out.println("   * Mostrando datos del libro: " + nombre);
+			//System.out.println("   * Mostrando datos del libro: " + nombre);
+			logger.info("\"   * Mostrando datos del libro: " + nombre);
+
 
 			tx.begin();
 			Query<?> query = pm.newQuery("SELECT FROM " + Libro.class.getName() + " WHERE nombre == '" + nombre +"'");
@@ -206,7 +224,9 @@ public class LibroDAO implements ILibroDAO{
 			tx.commit();
 
 		} catch (Exception ex) {
-			System.out.println("   $ Error mostrando datos del libro seleccionado: " + ex.getMessage());
+			//System.out.println("   $ Error mostrando datos del libro seleccionado: " + ex.getMessage());
+			logger.error("   $ Error mostrando datos del libro seleccionado:" + ex.getMessage());
+
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();

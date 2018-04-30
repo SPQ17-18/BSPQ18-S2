@@ -8,6 +8,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
+import org.apache.log4j.Logger;
 
 import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.Sala;
@@ -15,6 +16,8 @@ import es.deusto.spq.biblioteca.data.Sala;
 public class SalaDAO implements ISalaDAO {
 
 	private PersistenceManagerFactory pmf;
+	private static final Logger logger = Logger.getLogger(SalaDAO.class);
+
 
 	public SalaDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
@@ -27,11 +30,13 @@ public class SalaDAO implements ISalaDAO {
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
-			System.out.println("   * Guardando sala: " + s.getId_sala());
+			//System.out.println("   * Guardando sala: " + s.getId_sala());
+			logger.info("   * Guardando sala: " + s.getId_sala());
 			pm.makePersistent(s);
 			tx.commit();
 		} catch (Exception ex) {
-			System.out.println("   $ Error guardando sala: " + ex.getMessage());
+			//System.out.println("   $ Error guardando sala: " + ex.getMessage());
+			logger.error("   $ Error devolviendo reserva: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -50,7 +55,9 @@ public class SalaDAO implements ISalaDAO {
 		Transaction tx = pm.currentTransaction();
 
 		try {
-			System.out.println("   * Consultado plazas de: " + Id_Sala);
+			//System.out.println("   * Consultado plazas de: " + Id_Sala);
+			logger.info("   * Consultado plazas de: " + Id_Sala);
+
 			tx.begin();
 			Query<Sala> query = pm.newQuery(Sala.class);
 			@SuppressWarnings("unchecked")
@@ -63,7 +70,9 @@ public class SalaDAO implements ISalaDAO {
 			}
 			tx.commit();
 		} catch (Exception ex) {
-			System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+			//System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+			logger.error("   $ Error retreiving an extent: " + ex.getMessage());
+
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
