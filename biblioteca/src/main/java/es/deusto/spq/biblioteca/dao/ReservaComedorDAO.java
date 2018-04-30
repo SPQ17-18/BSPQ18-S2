@@ -117,4 +117,25 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 			pm.close();
 		}
 	}
+
+	@Override
+	public void eliminarReservaComedor(ReservaMesa r) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			tx.begin();
+			System.out.println("   * Eliminando reserva de comedor: " + r.getId_Comedor());
+			pm.deletePersistent(r);
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println("   $ Error Eliminando reserva de comedor: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+	}
 }
