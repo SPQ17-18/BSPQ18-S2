@@ -83,12 +83,6 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 	@Override
-	public void editarReserva(Reserva r, String hora_nueva) throws RemoteException {
-		// TODO Auto-generated method stub
-		reservaDAO.editarReserva(r, hora_nueva);
-	}
-
-	@Override
 	public void anyadirUsuario(Reserva r) throws RemoteException {
 		// TODO Auto-generated method stub
 		reservaDAO.anyadirUsuario(r);

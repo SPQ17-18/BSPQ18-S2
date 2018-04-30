@@ -117,11 +117,6 @@ public class ReservaDAO implements IReservaDAO {
 	}
 
 	@Override
-	public void editarReserva(Reserva r, String hora_nueva) {
-		editarReserva(r, r.getFecha(), hora_nueva);
-	}
-
-	@Override
 	public void eliminarReserva(Reserva r) {
 		// TODO Auto-generated method stub
 		PersistenceManager pm = pmf.getPersistenceManager();
