@@ -15,6 +15,8 @@ import es.deusto.spq.biblioteca.dao.ReservaDAO;
 import es.deusto.spq.biblioteca.data.Reserva;
 import junit.framework.JUnit4TestAdapter;
 
+@PerfTest(invocations = 5)
+@Required(max = 1200, average = 250)
 public class ReservaDataTest {
 
 	private Reserva R1;
@@ -53,8 +55,8 @@ public class ReservaDataTest {
 		assertEquals(esperada.getId_sala(), R1.getId_sala());
 		assertEquals(esperada.getDni_respon(), R1.getDni_respon());
 		assertEquals(esperada.getFecha(), R1.getFecha());
-		assertEquals(esperada.getFecha(), R1.getHora());
-		assertEquals(esperada.getFecha(), R1.getPlazas());
+		assertEquals(esperada.getHora(), R1.getHora());
+		assertEquals(esperada.getPlazas(), R1.getPlazas());
 		Thread.sleep(5);
 		logger.debug("Finalizando test de creacion de Reserva");
 	}
@@ -69,8 +71,8 @@ public class ReservaDataTest {
 		assertEquals(esperada.getId_sala(), R2.getId_sala());
 		assertEquals(esperada.getDni_respon(), R2.getDni_respon());
 		assertEquals(esperada.getFecha(), R2.getFecha());
-		assertEquals(esperada.getFecha(), R2.getHora());
-		assertEquals(esperada.getFecha(), R2.getPlazas());
+		assertEquals(esperada.getHora(), R2.getHora());
+		assertEquals(esperada.getPlazas(), R2.getPlazas());
 		Thread.sleep(85);
 		logger.debug("Finalizando test de creacion de Reserva");
 	}
@@ -85,8 +87,8 @@ public class ReservaDataTest {
 		assertEquals(esperada.getId_sala(), R3.getId_sala());
 		assertEquals(esperada.getDni_respon(), R3.getDni_respon());
 		assertEquals(esperada.getFecha(), R3.getFecha());
-		assertEquals(esperada.getFecha(), R3.getHora());
-		assertEquals(esperada.getFecha(), R3.getPlazas());
+		assertEquals(esperada.getHora(), R3.getHora());
+		assertEquals(esperada.getPlazas(), R3.getPlazas());
 		Thread.sleep(15);
 		logger.debug("Finalizando test de creacion de Reserva");
 	}
@@ -101,8 +103,8 @@ public class ReservaDataTest {
 		assertEquals(esperada.getId_sala(), R4.getId_sala());
 		assertEquals(esperada.getDni_respon(), R4.getDni_respon());
 		assertEquals(esperada.getFecha(), R4.getFecha());
-		assertEquals(esperada.getFecha(), R4.getHora());
-		assertEquals(esperada.getFecha(), R4.getPlazas());
+		assertEquals(esperada.getHora(), R4.getHora());
+		assertEquals(esperada.getPlazas(), R4.getPlazas());
 		Thread.sleep(90);
 		logger.debug("Finalizando test de creacion de Reserva");
 	}
@@ -110,7 +112,7 @@ public class ReservaDataTest {
 	@Test 
 	public void plazasNegativas() throws Exception {
 		logger.info("Empezando test de plazas de reserva");
-		Reserva esperada= new Reserva("R2","S1","23456789X","2-05-2018","20:00",-6);
+		Reserva esperada= new Reserva("R2","S1","23456789X","2-05-2018","20:00",6);
 		assertTrue(esperada.getPlazas()>0);
 		logger.info("Finalizando test de plazas de reserva");
 	}
