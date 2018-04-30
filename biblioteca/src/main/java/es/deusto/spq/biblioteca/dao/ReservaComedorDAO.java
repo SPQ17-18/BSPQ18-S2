@@ -9,6 +9,7 @@ import javax.jdo.Query;
 import javax.jdo.Transaction;
 
 import es.deusto.spq.biblioteca.data.Comedor;
+import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
 
 public class ReservaComedorDAO implements IReservaComedorDAO{
@@ -48,4 +49,37 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 		}
 	}
 
+	@Override
+	public boolean consultarDisponibilidad(String Id_Comedor, String fecha, String hora) {
+
+		boolean disponible = true;
+
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			System.out.println("   * Consultado disponibilidad de: " + Id_Comedor);
+			tx.begin();
+			Query<ReservaMesa> query = pm.newQuery(ReservaMesa.class);
+			@SuppressWarnings("unchecked")
+			List<ReservaMesa> reservas = (List<ReservaMesa>) query.execute();
+			for (ReservaMesa r : reservas) {
+				if (r.getId_Comedor().equals(Id_Comedor) && r.getFecha().equals(fecha) && r.getHora().equals(hora)) {
+					// No hay salas disponibles
+					disponible = false;
+				}
+			}
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+		return disponible;
+
+	}
 }
