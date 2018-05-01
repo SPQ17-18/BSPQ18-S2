@@ -88,11 +88,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		reservaDAO.verReservas(dni);
 	}
 
-	@Override
-	public void editarReserva(Reserva r, String fecha_nueva, String hora_nueva) throws RemoteException {
-		// TODO Auto-generated method stub
-		reservaDAO.editarReserva(r, fecha_nueva, hora_nueva);
-	}
+	
 
 	@Override
 	public void anyadirUsuario(Reserva r) throws RemoteException {
@@ -235,6 +231,13 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		// TODO Auto-generated method stub
 		ReservaMesa r = DevolverReservaMesa(dni, fecha, hora);
 		rComedorDAO.eliminarReservaComedor(r);
+	}
+
+	@Override
+	public void editarReserva(String dni, String fecha, String hora, String sala, String fecha_nueva, String hora_nueva,
+			String SalaNueva) throws RemoteException {
+		reservaDAO.editarReserva(dni, fecha, hora, sala, fecha_nueva, hora_nueva, SalaNueva);
+		
 	}
 	
 }
