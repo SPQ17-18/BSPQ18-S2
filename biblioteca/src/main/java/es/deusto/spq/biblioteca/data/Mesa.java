@@ -20,7 +20,7 @@ public class Mesa implements Serializable{
 	List<ReservaMesa> reservaMesas = new ArrayList<ReservaMesa>();
 
 	public Mesa() {
-		super();
+		
 	}
 
 	public Mesa(String id_Mesa, int capacidad) {
