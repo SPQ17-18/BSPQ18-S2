@@ -26,10 +26,7 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 
 	@Override
 	public void anyadirReservaComedor(ReservaMesa r) {
-<<<<<<< HEAD
-		// TODO Auto-generated method stub
-=======
->>>>>>> remotes/origin/master
+
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
@@ -159,5 +156,41 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 			System.out.println("Reserva no modificada.No se puede reservar en la fecha/hora seleccionadas");
 		}
 
+	}
+
+	@Override
+	public ReservaMesa devolverReservaComedor(String dni, String fecha, String hora) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		ReservaMesa R = null;
+
+		try {
+			//System.out.println("   * Buscando reserva de: " + dni);
+			logger.info("   * Buscando reserva de: " + dni);
+
+			tx.begin();
+			Query<ReservaMesa> query = pm.newQuery(ReservaMesa.class);
+			@SuppressWarnings("unchecked")
+			List<ReservaMesa> reservas = (List<ReservaMesa>) query.execute();
+			for (ReservaMesa r : reservas) {
+				if (r.getDni_respon().equals(dni) && r.getFecha().equals(fecha) && r.getHora().equals(hora)) {
+					R = r;
+				}
+
+			}
+			tx.commit();
+		} catch (Exception ex) {
+			//System.out.println("   $ Error devolviendo reserva: " + ex.getMessage());
+			logger.error("   $ Error devolviendo reserva: " + ex.getMessage());
+
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+
+		return R;
 	}
 }

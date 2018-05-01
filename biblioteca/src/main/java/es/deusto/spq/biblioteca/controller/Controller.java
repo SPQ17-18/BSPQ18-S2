@@ -56,8 +56,7 @@ public class Controller {
 		if (disponible) {
 			c.getCl().getService().anyadirReserva("S1", "34567890X", "11/04/18", "10:00", 4);
 		}
-<<<<<<< HEAD
-=======
+
 		
 		c.getCl().getService().verReservas("12345678X");
 		
@@ -72,7 +71,7 @@ public class Controller {
 		}
 		
 		c.getCl().getService().verReservaComedor("12345678X");
->>>>>>> remotes/origin/master
+		c.getCl().getService().eliminarReservaComedor("12345678X", "30/04/18", "14:30");
 	}
 
 

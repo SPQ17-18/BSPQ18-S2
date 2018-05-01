@@ -204,12 +204,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		String codg = "";
 		codg = String.valueOf(cod);
 		codg = Integer.toString(cod);
-
-<<<<<<< HEAD
-		ReservaMesa r = new ReservaMesa(codg, id_Mesa, dni_respon, fecha, hora, plazas);
-=======
 		ReservaMesa r = new ReservaMesa(id_Mesa,codg,dni_respon, fecha, hora, plazas);
->>>>>>> remotes/origin/master
 		rComedorDAO.anyadirReservaComedor(r);
 	}
 
@@ -225,15 +220,22 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		}
 
 	@Override
-	public void eliminarReservaComedor(ReservaMesa m) throws RemoteException {
-		rComedorDAO.eliminarReservaComedor(m);
-	}
-
-	@Override
 	public void editarReservaComedor(ReservaMesa m, String fecha_nueva, String hora_nueva) throws RemoteException {
 		rComedorDAO.editarReservaComedor(m, fecha_nueva, hora_nueva);
 		}
 
+	@Override
+	public ReservaMesa DevolverReservaMesa(String dni, String fecha, String hora) throws RemoteException {
+		ReservaMesa r = rComedorDAO.devolverReservaComedor(dni, fecha, hora);
+		return r;
+	}
+
+	@Override
+	public void eliminarReservaComedor(String dni, String fecha, String hora) throws RemoteException {
+		// TODO Auto-generated method stub
+		ReservaMesa r = DevolverReservaMesa(dni, fecha, hora);
+		rComedorDAO.eliminarReservaComedor(r);
+	}
 	
 }
 
