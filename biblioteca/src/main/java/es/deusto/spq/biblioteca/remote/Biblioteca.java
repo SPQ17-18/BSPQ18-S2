@@ -254,6 +254,14 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		reservaDAO.editarReserva(dni, fecha, hora, sala, fecha_nueva, hora_nueva, SalaNueva);
 		
 	}
+
+	@Override
+	public ArrayList<Libro> getLibros() throws RemoteException {
+		// TODO Auto-generated method stub
+		ArrayList<Libro> catalogo = libroDAO.getLibros();
+		return catalogo;
+
+	}
 	
 }
 

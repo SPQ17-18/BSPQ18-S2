@@ -3,12 +3,18 @@ package es.deusto.spq.biblioteca.controller;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+
 import es.deusto.spq.biblioteca.client.Client;
+import es.deusto.spq.biblioteca.dao.LibroDAO;
 import es.deusto.spq.biblioteca.data.Reserva;
 
 public class Controller {
 	@SuppressWarnings("unused")
 	private Client cl;
+	
+	private static final Logger logger = Logger.getLogger(Controller.class);
+
 
 	public Controller(String[] args) throws RemoteException {
 
@@ -47,6 +53,10 @@ public class Controller {
 		//c.getCl().getService().reserveBook("Las almas de Brandom");
 		c.getCl().getService().consultarDiponibilidadLibro("Las almas de Brandom");
 		c.getCl().getService().mostrarLibro("Las almas de Brandom");
+		
+		//Mostrar catalogo y prueba en logger
+		c.getCl().getService().getLibros();
+		logger.info("Mostrando catalogo de libros...\n" + c.getCl().getService().getLibros());
 
 		//Anyadir sala
 		c.getCl().getService().anyadirSala("S1", 10);
