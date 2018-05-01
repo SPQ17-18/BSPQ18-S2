@@ -13,13 +13,17 @@ import javax.naming.spi.DirStateFactory.Result;
 
 import org.apache.log4j.Logger;
 
+import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Mesa;
 import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
 import es.deusto.spq.biblioteca.data.Sala;
+import es.deusto.spq.biblioteca.data.Menu;
 
 public class ReservaComedorDAO implements IReservaComedorDAO{
-
+	
+	
+	
 	private PersistenceManagerFactory pmf;
 	private static final Logger logger = Logger.getLogger(ReservaComedorDAO.class);
 
@@ -263,4 +267,31 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 
 		return R;
 	}
+	
+	
+	
+	public void consultaMenu(Menu menu){
+		try {
+			//System.out.println("   * Mostrando datos del libro: " + nombre);
+			logger.info("\"   * Mostrando menu: " + menu.toString());
+
+			System.out.println(menu.toString());
+			
+		} catch (Exception ex) {
+			//System.out.println("   $ Error mostrando datos del libro seleccionado: " + ex.getMessage());
+			logger.error("   $ Error mostrando datos del libro seleccionado:" + ex.getMessage());
+
+		}
+	}
+	
+
+	public void seleccionarMenu(){
+		
+	}
+
+
+	public void comprarMenu(){
+		
+	}
+	
 }
