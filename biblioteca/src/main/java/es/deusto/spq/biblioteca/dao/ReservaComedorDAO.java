@@ -1,5 +1,6 @@
 package es.deusto.spq.biblioteca.dao;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.jdo.JDOHelper;
@@ -7,6 +8,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
+import javax.naming.spi.DirStateFactory.Result;
 
 import org.apache.log4j.Logger;
 
@@ -124,27 +126,59 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 		}
 	}
 
+	//Koldo: Tengo que editarlo
 	@Override
-	public void eliminarReservaComedor(ReservaMesa r) {
+	public void eliminarReservaComedor(ReservaMesa r) throws Exception {
+//		PersistenceManager pm = pmf.getPersistenceManager();
+//		Transaction tx = pm.currentTransaction();
+//
+//		try {
+//			tx.begin();
+//			System.out.println("   * Eliminando reserva: " + r.getId_Reserva());
+//			pm.deletePersistent(r);
+//			tx.commit();
+//		} catch (Exception ex) {
+//			System.out.println("   $ Error Eliminando reserva de comedor: " + ex.getMessage());
+//		} finally {
+//			if (tx != null && tx.isActive()) {
+//				tx.rollback();
+//			}
+//
+//			pm.close();
+//		}
+		
+		//No se si va. Hay que mirarlo
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-
+		
 		try {
+			
 			tx.begin();
-			System.out.println("   * Eliminando reserva: " + r.getId_Reserva());
-			pm.deletePersistent(r);
+			Query<ReservaMesa> query = pm.newQuery(ReservaMesa.class, "id_reserva =='" + r.getId_Reserva() + "'");
+			Collection<?> e = (Collection<?>) query.execute();
+			
+			ReservaMesa rm = (ReservaMesa) e.iterator().next();
+					
+			query.close();
+			pm.deletePersistent(rm);
 			tx.commit();
+			
+			
 		} catch (Exception ex) {
-			System.out.println("   $ Error Eliminando reserva de comedor: " + ex.getMessage());
+			logger.error("Error eliminando una reserva de una mesa: " + ex.getMessage());
+			throw new Exception();
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
 			}
-
-			pm.close();
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
 		}
+		
 	}
 
+	//Koldo: Tengo que editarlo
 	@Override
 	public void editarReservaComedor(ReservaMesa r, String fecha_nueva, String hora_nueva) {
 		if (consultarDisponibilidadComedor(r.getId_Mesa(), fecha_nueva, hora_nueva)) {

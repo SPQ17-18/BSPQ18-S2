@@ -231,7 +231,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 	@Override
-	public void eliminarReservaComedor(String dni, String fecha, String hora) throws RemoteException {
+	public void eliminarReservaComedor(String dni, String fecha, String hora) throws Exception {
 		// TODO Auto-generated method stub
 		ReservaMesa r = DevolverReservaMesa(dni, fecha, hora);
 		rComedorDAO.eliminarReservaComedor(r);

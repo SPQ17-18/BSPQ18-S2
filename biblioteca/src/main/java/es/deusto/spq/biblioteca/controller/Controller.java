@@ -24,7 +24,7 @@ public class Controller {
 		this.cl = cl;
 	}
 
-	public static void main(String[] args) throws RemoteException {
+	public static void main(String[] args) throws Exception {
 		Controller c = new Controller(args);
 
 		System.out.println(c.getCl().getService());
