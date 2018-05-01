@@ -29,22 +29,23 @@ public class Controller {
 
 		System.out.println(c.getCl().getService());
 		System.out.println("Hola");
-		
+
 		//Almacenamos libros 
 		c.getCl().getService().almacenarLibro(1, "Las almas de Brandom", "Cesar Brandom", "S.L.U. Espasa Libros", false);
 		c.getCl().getService().almacenarLibro(2, "Festin de cuervos, Cancion de Hielo y fuego IV", "George R.R. Martin", "Gigamesh", false);
 		c.getCl().getService().almacenarLibro(3, "FYellowstar: Conviértete en un campeón de League of Legends", "Bora Kim ", "Editorial Planeta S.A", false);	
-		
+
 		//Busqueda de libro por nombre
 		c.getCl().getService().buscarLibro("Festin de cuervos, Cancion de Hielo y fuego IV");
 		c.getCl().getService().buscarLibro("Paco Jemez: Grandes exitos en el Rayo Vallecano");
-		
+
 		/**
 		 * Consultar disponiblididad de un libro
 		 * Primero buscamos el libro, luego lo reservamos y despues miramos si ha cambiado su disponibilidad
 		 */
 		c.getCl().getService().buscarLibro("Las almas de Brandom");
-		c.getCl().getService().reserveBook("Las almas de Brandom");
+		//c.getCl().getService().reserveBook("Las almas de Brandom");
+		c.getCl().getService().consultarDiponibilidadLibro("Las almas de Brandom");
 		c.getCl().getService().mostrarLibro("Las almas de Brandom");
 
 		//Anyadir sala
@@ -56,10 +57,12 @@ public class Controller {
 		if (disponible) {
 			c.getCl().getService().anyadirReserva("S1", "34567890X", "11/04/18", "10:00", 4);
 		}
-
-		
 		c.getCl().getService().verReservas("12345678X");
-		
+
+		c.getCl().getService().editarReserva("12345678X", "11/04/18", "21:20", "S1", "20/12/15", "12:00", "S2");
+
+		c.getCl().getService().verReservas("12345678X");
+
 		//Anyadir mesa
 		c.getCl().getService().anyadirMesa("M1", 4);
 		c.getCl().getService().anyadirMesa("M2", 6);
@@ -69,7 +72,7 @@ public class Controller {
 		if (disponibleComedor) {
 			c.getCl().getService().anyadirReservaComedor("M1", "34567890X", "2/05/18", "14:00", 4);
 		}
-		
+
 		c.getCl().getService().verReservaComedor("12345678X");
 		c.getCl().getService().eliminarReservaComedor("12345678X", "30/04/18", "14:30");
 	}
