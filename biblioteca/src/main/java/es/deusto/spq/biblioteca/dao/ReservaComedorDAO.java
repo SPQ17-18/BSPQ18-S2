@@ -8,13 +8,17 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
+import org.apache.log4j.Logger;
+
 import es.deusto.spq.biblioteca.data.Mesa;
 import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
+import es.deusto.spq.biblioteca.data.Sala;
 
 public class ReservaComedorDAO implements IReservaComedorDAO{
 
 	private PersistenceManagerFactory pmf;
+	private static final Logger logger = Logger.getLogger(ReservaComedorDAO.class);
 
 	public ReservaComedorDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
@@ -22,7 +26,10 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 
 	@Override
 	public void anyadirReservaComedor(ReservaMesa r) {
+<<<<<<< HEAD
 		// TODO Auto-generated method stub
+=======
+>>>>>>> remotes/origin/master
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
@@ -33,13 +40,16 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 			for (Mesa m : mesas) {
 				if (m.getId_Mesa().equals(r.getId_Mesa())) {
 					m.getReservaMesas().add(r);
-					System.out.println("   * Guardando reserva de comedor: " + r.getId_Mesa());
+					// System.out.println(" * Guardando reserva: " + r.getId_reserva());
+					logger.info("   * Guardando reserva: " + r.getId_Reserva());
 					pm.makePersistent(m);
 					tx.commit();
 				}
 			}
 		} catch (Exception ex) {
-			System.out.println("   $ Error guardando reserva: " + ex.getMessage());
+			// System.out.println(" $ Error guardando reserva: " + ex.getMessage());
+			logger.error("   $ Error guardando reserva:" + ex.getMessage());
+
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -48,7 +58,6 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 			pm.close();
 		}
 	}
-
 	@Override
 	public boolean consultarDisponibilidadComedor(String Id_Mesa, String fecha, String hora) {
 

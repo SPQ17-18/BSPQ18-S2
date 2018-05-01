@@ -47,8 +47,12 @@ public interface IBiblioteca extends Remote {
 	
 	public Reserva DevolverReserva(String dni, String fecha, String hora) throws RemoteException;
 	
+<<<<<<< HEAD
 	public void anyadirReservaComedor(String id_Mesa, String dni_respon, String fecha, String hora, int plazas)
 			throws RemoteException;
+=======
+	public void anyadirReservaComedor(String id_Mesa, String dni_respon, String fecha, String hora, int plazas)throws RemoteException;
+>>>>>>> remotes/origin/master
 	
 	public boolean consultarDisponibilidadComedor(String Id_Mesa, String fecha, String hora, int personas) throws RemoteException;
 	

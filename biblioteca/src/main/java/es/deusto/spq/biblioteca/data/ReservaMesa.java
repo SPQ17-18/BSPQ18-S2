@@ -1,12 +1,14 @@
 package es.deusto.spq.biblioteca.data;
 
+import java.io.Serializable;
+
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 
 @PersistenceCapable(detachable = "true")
 @Inheritance(strategy = InheritanceStrategy.NEW_TABLE)
-public class ReservaMesa {
+public class ReservaMesa implements Serializable{
 
 	String id_Mesa;
 	String id_Reserva;
@@ -16,9 +18,9 @@ public class ReservaMesa {
 	int Personas;
 	
 	public ReservaMesa() {
-		super();
+		
 	}
-	
+
 	public ReservaMesa(String id_Mesa, String id_Reserva, String dni_respon, String fecha, String hora, int personas) {
 		super();
 		this.id_Mesa = id_Mesa;

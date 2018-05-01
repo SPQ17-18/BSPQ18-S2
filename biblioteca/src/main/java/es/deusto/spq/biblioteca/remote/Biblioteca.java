@@ -37,9 +37,14 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	
 	private IReservaComedorDAO rComedorDAO;
 
-	public Biblioteca(IReservaDAO reservaDAO) throws RemoteException {
+	public Biblioteca(IReservaDAO reservaDAO ) throws RemoteException {
 		super();
 		this.reservaDAO = reservaDAO;
+	}
+	
+	public Biblioteca(ILibroDAO libroDAO ) throws RemoteException {
+		super();
+		this.libroDAO = libroDAO;
 	}
 
 	public Biblioteca(String serverIP, int ServerPort) throws RemoteException {
@@ -200,7 +205,11 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		codg = String.valueOf(cod);
 		codg = Integer.toString(cod);
 
+<<<<<<< HEAD
 		ReservaMesa r = new ReservaMesa(codg, id_Mesa, dni_respon, fecha, hora, plazas);
+=======
+		ReservaMesa r = new ReservaMesa(id_Mesa,codg,dni_respon, fecha, hora, plazas);
+>>>>>>> remotes/origin/master
 		rComedorDAO.anyadirReservaComedor(r);
 	}
 

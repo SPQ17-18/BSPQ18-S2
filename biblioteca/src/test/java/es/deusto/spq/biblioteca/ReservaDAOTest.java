@@ -62,3 +62,11 @@ public class ReservaDAOTest {
 		assertEquals(9,rn.getPlazas());
 	}
 }
+
+
+
+
+
+
+
+

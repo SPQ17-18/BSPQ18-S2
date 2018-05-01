@@ -10,7 +10,6 @@ import javax.jdo.annotations.PersistenceCapable;
 @Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
 public class Reserva implements Serializable  {
 	
-	//Julen tendras que modificar cosas en base al id de reserva no lo se
 	String id_reserva;
 	String id_sala;
 	String dni_respon;

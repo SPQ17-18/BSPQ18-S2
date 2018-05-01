@@ -56,6 +56,23 @@ public class Controller {
 		if (disponible) {
 			c.getCl().getService().anyadirReserva("S1", "34567890X", "11/04/18", "10:00", 4);
 		}
+<<<<<<< HEAD
+=======
+		
+		c.getCl().getService().verReservas("12345678X");
+		
+		//Anyadir mesa
+		c.getCl().getService().anyadirMesa("M1", 4);
+		c.getCl().getService().anyadirMesa("M2", 6);
+		c.getCl().getService().anyadirReservaComedor("M1", "12345678X", "30/04/18", "14:30", 2);
+		c.getCl().getService().anyadirReservaComedor("M2", "19182138S", "1/05/18", "15:00", 6);
+		Boolean disponibleComedor = c.getCl().getService().consultarDisponibilidadComedor("M1", "2/05/18", "14:00", 3);
+		if (disponibleComedor) {
+			c.getCl().getService().anyadirReservaComedor("M1", "34567890X", "2/05/18", "14:00", 4);
+		}
+		
+		c.getCl().getService().verReservaComedor("12345678X");
+>>>>>>> remotes/origin/master
 	}
 
 
