@@ -220,8 +220,8 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		}
 
 	@Override
-	public void editarReservaComedor(ReservaMesa m, String fecha_nueva, String hora_nueva) throws RemoteException {
-		rComedorDAO.editarReservaComedor(m, fecha_nueva, hora_nueva);
+	public void editarReservaComedor(String id_reserva, String fecha_nueva, String hora_nueva) throws RemoteException {
+		rComedorDAO.editarReservaComedor(id_reserva, fecha_nueva, hora_nueva);
 		}
 
 	@Override
