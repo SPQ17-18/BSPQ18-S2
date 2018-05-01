@@ -3,6 +3,7 @@ package es.deusto.spq.biblioteca.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jdo.Extent;
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
@@ -92,46 +93,57 @@ public class LibroDAO implements ILibroDAO{
 
 
 	//Funcion que devuelve el catalogo de libros
-//	@Override
-//	public ArrayList<Libro> getLibros() {
-//		// TODO Auto-generated method stub
-//		PersistenceManager pm = pmf.getPersistenceManager();
-//		pm.getFetchPlan().setMaxFetchDepth(3);
-//
-//		Transaction tx = pm.currentTransaction();
-//		
-//		ArrayList<Libro> catalogo = new ArrayList<Libro>();
-//		
-//		try {
-//			System.out.println("   * Mostrando catalogo de libros...");
-//
-//			tx.begin();
+	@Override
+	public ArrayList<Libro> getLibros() {
+		// TODO Auto-generated method stub
+		
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+
+		Transaction tx = pm.currentTransaction();
+		
+		ArrayList<Libro> catalogo = new ArrayList<Libro>();
+		
+		try {
+			//System.out.println("   * Mostrando catalogo de libros...");
+			logger.info("  * Mostrando catalogo de libros...");
+			
+			pm = pmf.getPersistenceManager();
+			tx = pm.currentTransaction();
+			tx.begin();
+			
 //			Query<?> query2 = pm.newQuery("SELECT FROM " + Libro.class.getName());
-//	
 //			List<Libro> l = (List<Libro>) query2.execute();
-//		
+			
+			Extent<Libro> extent = pm.getExtent(Libro.class, true);
+			
 //			for(int i = 0; i < l.size(); i++) {
 //				catalogo.add(new Libro());
 //				catalogo.get(i);
 //			}
-//		
-//			tx.commit();
-//
-//		} catch (Exception ex) {
-//			System.out.println("   $ Error recuperando todos los libros: " + ex.getMessage());
-//		} finally {
-//			if (tx != null && tx.isActive()) {
-//				tx.rollback();
-//			}
-//
-//			pm.close();
-//		}
-//		
-//		
-//		
-//		return null;
-//	}	
-//	
+			for (Libro libro : extent) {
+				catalogo.add(new Libro(libro.getIsbn(), libro.getnombre(), libro.getAutor(), libro.getEditorial(), libro.isReservado()));
+			}
+			
+			tx.commit();
+
+		} catch (Exception ex) {
+			//System.out.println("   $ Error recuperando todos los libros: " + ex.getMessage());
+			logger.error("   $ Error recuperando todos los libros: " + ex.getMessage());
+		
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+		
+		
+		
+		return null;
+	}	
+	
 	public void EliminarLibro(String isbn) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
