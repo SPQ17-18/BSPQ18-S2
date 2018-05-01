@@ -3,18 +3,19 @@ package es.deusto.spq.biblioteca.controller;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+
 import es.deusto.spq.biblioteca.client.Client;
-import es.deusto.spq.biblioteca.client.gui.VentanaBuscar;
 import es.deusto.spq.biblioteca.client.gui.VentanaLogin;
 import es.deusto.spq.biblioteca.client.gui.VerReservas;
-import es.deusto.spq.biblioteca.data.Reserva;
+import es.deusto.spq.biblioteca.dao.LibroDAO;import es.deusto.spq.biblioteca.data.Reserva;
 
 public class Controller {
 	@SuppressWarnings("unused")
 	private Client cl;
-	private VentanaLogin vl;
+private VentanaLogin vl;
 	private VentanaBuscar vb;
-	private VerReservas vr;
+	private VerReservas vr;	private static final Logger logger = Logger.getLogger(Controller.class);
 
 	public Controller(String[] args) throws RemoteException {
 

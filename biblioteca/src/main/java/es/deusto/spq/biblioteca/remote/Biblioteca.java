@@ -154,17 +154,31 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		libroDAO.EliminarLibro(Isbn);
 
 	}
-
+	
 	@Override
-	public boolean reserveBook(String nombre) throws RemoteException {
+	public boolean consultarDiponibilidadLibro(String nombre) throws RemoteException {
 		// TODO Auto-generated method stub
 		boolean isReservado = false;
-		boolean reserva = libroDAO.reservarLibro(nombre);
-		if (reserva) {
+		boolean disponible = libroDAO.consultarDisponibilidadLibro(nombre);
+		if (disponible) {
 			isReservado = true;
 		}
-		
-	return isReservado;
+		return isReservado;
+	}
+
+	//Esta descartado
+	@Override
+	public boolean reserveBook(Libro l/*String nombre*/) throws RemoteException {
+//		// TODO Auto-generated method stub
+//		boolean isReservado = false;
+//		boolean reserva = libroDAO.reservarLibro(nombre);
+//		if (reserva) {
+//			isReservado = true;
+//		}
+//		libroDAO.reservarLibro(l);
+//		
+//	return isReservado;
+	return false;
 		
 	}
 
@@ -235,11 +249,20 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		rComedorDAO.eliminarReservaComedor(r);
 	}
 
+
 	@Override
 	public void editarReserva(String dni, String fecha, String hora, String sala, String fecha_nueva, String hora_nueva,
 			String SalaNueva) throws RemoteException {
 		reservaDAO.editarReserva(dni, fecha, hora, sala, fecha_nueva, hora_nueva, SalaNueva);
 		
+	}
+
+	@Override
+	public ArrayList<Libro> getLibros() throws RemoteException {
+		// TODO Auto-generated method stub
+		ArrayList<Libro> catalogo = libroDAO.getLibros();
+		return catalogo;
+
 	}
 	
 }
