@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 
 import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Reserva;
+import es.deusto.spq.biblioteca.data.ReservaMesa;
 import es.deusto.spq.biblioteca.data.Sala;
 
 public class LibroDAO implements ILibroDAO{
@@ -161,37 +162,39 @@ public class LibroDAO implements ILibroDAO{
 	}
 
 	@Override
-	public boolean reservarLibro(String nombre) {
+	public void reservarLibro(Libro l) {
 		// TODO Auto-generated method stub
-		boolean disponible = true;
+//		boolean disponible = true;
+//		
+//		PersistenceManager pm = pmf.getPersistenceManager();
+//		Transaction tx = pm.currentTransaction();
+//		try {
+//			tx.begin();
+//			Query<Libro> query = pm.newQuery(Libro.class);
+//			@SuppressWarnings("unchecked")
+//			List<Libro> libro = (List<Libro>) query.execute();
+//			for (Libro l : libro) {
+//				
+//				if (l.getnombre().equals(nombre)){
+//					// No hay salas disponibles
+//					disponible = false;
+//				} 
+//			}
+//			tx.commit();
+//		} catch (Exception ex) {
+//			//System.out.println("   $ Error reservando un libro: " + ex.getMessage());
+//			logger.error("   $ Error reservando un libro:" + ex.getMessage());
+//
+//		} finally {
+//			if (tx != null && tx.isActive()) {
+//				tx.rollback();
+//			}
+//
+//			pm.close();
+//		}
+//		return disponible;
 		
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
-		try {
-			tx.begin();
-			Query<Libro> query = pm.newQuery(Libro.class);
-			@SuppressWarnings("unchecked")
-			List<Libro> libro = (List<Libro>) query.execute();
-			for (Libro l : libro) {
-				
-				if (l.getnombre().equals(nombre)){
-					// No hay salas disponibles
-					disponible = false;
-				} 
-			}
-			tx.commit();
-		} catch (Exception ex) {
-			//System.out.println("   $ Error reservando un libro: " + ex.getMessage());
-			logger.error("   $ Error reservando un libro:" + ex.getMessage());
-
-		} finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
-
-			pm.close();
-		}
-		return disponible;
+		
 	}
 
 	
@@ -238,11 +241,43 @@ public class LibroDAO implements ILibroDAO{
 
 	}
 
+	@Override
+	public boolean consultarDisponibilidadLibro(String nombre) {
+		// TODO Auto-generated method stub
+		boolean is_Reservado = true;
+
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			System.out.println("   * Consultado disponibilidad de: " + nombre);
+			tx.begin();
+			Query<Libro> query = pm.newQuery(Libro.class);
+			@SuppressWarnings("unchecked")
+			List<Libro> libros = (List<Libro>) query.execute();
+			for (Libro l : libros) {
+				if (l.getnombre().equals(nombre)) {
+					// No hay salas disponibles
+					is_Reservado = false;
+				}
+			}
+			tx.commit();
+		} catch (Exception ex) {
+			//System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+			logger.info("   $ Error comprobando disponibilidad del libro: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+		return is_Reservado;
+
+	}
+
 
 	
-	/**
-	 * OLVIDAR POR AHORA. ESPARA CUANDO SE HAGA LA RESERVA. NO ES DE SPRINT 1
-	 */
 //	@Override
 //	public String EstaDisponible(String nombre, boolean isReservado) {
 //		// TODO Auto-generated method stub
