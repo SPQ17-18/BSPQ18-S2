@@ -17,9 +17,7 @@ public class VentanaBusquedaMenu extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -33,10 +31,9 @@ public class VentanaBusquedaMenu extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public VentanaBusquedaMenu() {
+		
 		setTitle("Lista de Men\u00FAs disponibles");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
