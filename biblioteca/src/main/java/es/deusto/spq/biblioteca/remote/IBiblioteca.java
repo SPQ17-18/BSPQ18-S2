@@ -68,9 +68,8 @@ public interface IBiblioteca extends Remote {
 
 	public void consultaMenu() throws Exception;
 
-	public void seleccionarMenu(int eleccion) throws Exception;
+	public void seleccionarMenu(int eleccion,ReservaMesa rm) throws Exception;
 
-	public void comprarMenu() throws Exception;
-	
+	public void comprarMenu(ReservaMesa rm) throws Exception;	
 	
 }

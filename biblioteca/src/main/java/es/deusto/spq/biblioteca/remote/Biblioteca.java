@@ -275,15 +275,16 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 	
 	@Override
-	public void seleccionarMenu(int eleccion) throws Exception {
+	public void seleccionarMenu(int eleccion,ReservaMesa rm) throws Exception {
 		Menu menu = new Menu();
-		rComedorDAO.seleccionarMenu(menu, eleccion);
+		rComedorDAO.seleccionarMenu(menu, eleccion,rm);
 	}
 	
 	@Override
-	public void comprarMenu() throws Exception {
+	public void comprarMenu(ReservaMesa rm) throws Exception {
 		Menu menu = new Menu();
-		rComedorDAO.comprarMenu(menu);
+		
+		rComedorDAO.comprarMenu(menu,rm);
 	}
 }
 
