@@ -12,5 +12,5 @@ public interface IReservaComedorDAO {
 	ReservaMesa devolverReservaComedor(String dni, String fecha, String hora);
 	public void consultaMenu(Menu menu);
 	public void seleccionarMenu(Menu menu, int eleccion);
-	public void comprarMenu(Menu menu);
+	public void comprarMenu(Menu menu, ReservaMesa rm);
 }

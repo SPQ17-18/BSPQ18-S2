@@ -16,7 +16,7 @@ public class ReservaMesa implements Serializable{
 	String fecha;
 	String hora;
 	int Personas;
-	
+	int ID_Menu;
 	public ReservaMesa() {
 		
 	}
@@ -78,4 +78,13 @@ public class ReservaMesa implements Serializable{
 	public void setPersonas(int personas) {
 		Personas = personas;
 	}
+
+	public int getID_Menu() {
+		return ID_Menu;
+	}
+
+	public void setID_Menu(int iD_Menu) {
+		ID_Menu = iD_Menu;
+	}
+	
 }
