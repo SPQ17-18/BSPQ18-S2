@@ -10,7 +10,7 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable(detachable = "true")
 @Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
 public class Menu implements Serializable {
-
+	//atributos
 	int ID_menu;
 	String plato1 = null;
 	String plato2 = null;
