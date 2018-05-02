@@ -16,9 +16,7 @@ public class VentanaComedor extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -33,9 +31,7 @@ public class VentanaComedor extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+	
 	public VentanaComedor() {
 		setTitle("Comedor");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
