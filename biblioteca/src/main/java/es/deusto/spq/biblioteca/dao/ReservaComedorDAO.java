@@ -317,6 +317,7 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 			logger.error("   $ Error mostrando datos del menu seleccionado:" + ex.getMessage());
 
 		}*/
+		
 	}
 	
 }
