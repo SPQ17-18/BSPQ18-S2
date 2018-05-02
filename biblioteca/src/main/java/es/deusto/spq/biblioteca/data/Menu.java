@@ -73,7 +73,7 @@ public class Menu implements Serializable {
 	public void sumaValor() {
 		valor++;
 	}
-	
+	//a
 	@Override
 	public String toString() {
 		return "Menu:" + "\nPrimer plato: " + plato1 + "\nSegundo plato: " + plato2 + "\nPostre: " + postre;
