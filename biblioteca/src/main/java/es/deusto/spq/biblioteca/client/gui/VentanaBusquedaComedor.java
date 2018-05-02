@@ -12,6 +12,8 @@ import javax.swing.JScrollBar;
 import javax.swing.JList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class VentanaBusquedaComedor extends JFrame {
 
@@ -64,6 +66,12 @@ public class VentanaBusquedaComedor extends JFrame {
 		contentPane.add(botonVolver);
 		
 		JButton botonReservarMesa = new JButton("Reservar");
+		botonReservarMesa.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				
+			}
+		});
 		botonReservarMesa.setBounds(158, 55, 116, 23);
 		contentPane.add(botonReservarMesa);
 		
