@@ -69,7 +69,7 @@ public class Menu implements Serializable {
 	public void setID_menu(int iD_menu) {
 		ID_menu = iD_menu;
 	}
-
+	//le suma 1 al valor del menu
 	public void sumaValor() {
 		valor++;
 	}
