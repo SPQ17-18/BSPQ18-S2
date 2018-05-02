@@ -34,11 +34,10 @@ import es.deusto.spq.biblioteca.data.Sala;
 public class VentanaBuscar extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private JPanel panel;
-	private JLabel lnumPlazas, lfecha, lhora;
-	private JButton reservar, disponible, inicio, verReserva;
-	private JTextField txtcodSala,txtfecha, txthora;
+	private JLabel  lfecha, lhora;
+	private JButton reservar, inicio, verReserva;
+	private JTextField txtcodSala,txtdni,txtfecha, txthora,txtCapacidad;
 	int capacidad;
-	private DefaultTableModel modelo = new DefaultTableModel();
 	private Controller controller = null;
 	private JTable tablaSalasDisponibles;
 	List<Sala> consultarPlazas = new ArrayList<>();
@@ -56,14 +55,9 @@ public class VentanaBuscar extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(900, 500);
 		panel = new JPanel();
-		panel.setBounds(0, 0, 1400, 300);
+		panel.setBounds(0, 0, 1400, 100);
 		setContentPane(panel);
 		panel.setLayout(null);
-		
-		lnumPlazas = new JLabel("Numero de personas:");
-		lnumPlazas.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		lnumPlazas.setBounds(550, 150, 300, 80);
-		panel.add(lnumPlazas);
 		
 		lfecha = new JLabel("Fecha:");
 		lfecha.setFont(new Font("Times New Roman", Font.PLAIN, 18));
@@ -72,22 +66,32 @@ public class VentanaBuscar extends JFrame{
 		lhora = new JLabel("Hora:");
 		lhora.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		lhora.setBounds(550, 316, 300, 80);
-		
-		txtfecha = new JTextField();
-		txtfecha.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		txtfecha.setColumns(10);
-		txtfecha.setBounds(550, 399, 300, 80);
-		
-		txthora = new JTextField();
-		txthora.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		txthora.setColumns(10);
-		txthora.setBounds(550, 482, 300, 80);
 
 		
 		txtcodSala = new JTextField();
 		txtcodSala.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		txtcodSala.setColumns(10);
-		txtcodSala.setBounds(550, 565, 300, 80);
+		txtcodSala.setBounds(855, 175, 200, 30);
+		
+		txtdni = new JTextField();
+		txtdni.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		txtdni.setColumns(10);
+		txtdni.setBounds(1000, 175, 200, 30);
+		
+		txtfecha = new JTextField();
+		txtfecha.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		txtfecha.setColumns(10);
+		txtfecha.setBounds(855, 300, 200, 30);
+		
+		txthora = new JTextField();
+		txthora.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		txthora.setColumns(10);
+		txthora.setBounds(1000, 300, 200, 30);
+		
+		txtCapacidad = new JTextField();
+		txtCapacidad.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		txtCapacidad.setColumns(10);
+		txtCapacidad.setBounds(1100, 175, 200, 30);
 		
 		reservar = new JButton();
 		reservar.setText("Reservar una sala");
@@ -104,7 +108,11 @@ public class VentanaBuscar extends JFrame{
 		inicio.setFocusable(false);
 		inicio.setBounds(550, 316, 300, 80);
 		
-		
+		txtcodSala.setVisible(true);
+		txtdni.setVisible(true);
+		txtfecha.setVisible(true);
+		txthora.setVisible(true);
+		txtCapacidad.setVisible(true);	
 		
 		inicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -134,24 +142,32 @@ public class VentanaBuscar extends JFrame{
 		));
 		
 		reservar.addActionListener(new ActionListener() {	
-			public void actionPerformed(ActionEvent e) {
-				if (tablaSalasDisponibles.getSelectedRow() >= 0) { 
-					System.out.println(tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 0));
-					try{
-						String id_sala = (String)tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 0);
-						String dni_respon = (String)tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 1);
-						String fecha = (String)tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 2);
-						String hora = (String)tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 3);
-						int capacidad = (int)tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 4);
-						controller.getCl().getService().anyadirReserva( id_sala,  dni_respon,  fecha,  hora,  capacidad);
-		
-						modelo = (DefaultTableModel)tablaSalasDisponibles.getModel();
-						JOptionPane.showInputDialog(null, "has echo una reserva", JOptionPane.INFORMATION_MESSAGE);
+			public void actionPerformed(ActionEvent e){
+				
+				try {
+				controller.getCl().getService().anyadirReserva(txtcodSala.getText(),  
+						txtdni.getText(),  
+						txtfecha.getText(),  
+						txthora.getText(), 
+						Integer.parseInt(txtCapacidad.getText()));
+				
+//				if (tablaSalasDisponibles.getSelectedRow() >= 0) { 
+//					System.out.println(tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 0));
+//					try{
+//						String id_sala = (String)tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 0);
+//						String dni_respon = (String)tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 1);
+//						String fecha = (String)tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 2);
+//						String hora = (String)tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 3);
+//						int capacidad = (int)tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 4);
+//						controller.getCl().getService().anyadirReserva( id_sala,  dni_respon,  fecha,  hora,  capacidad);
+//		
+//						modelo = (DefaultTableModel)tablaSalasDisponibles.getModel();
+//						JOptionPane.showInputDialog(null, "has echo una reserva", JOptionPane.INFORMATION_MESSAGE);
 					}catch (RemoteException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 				
-			}	
+//			}	
 	
 	}
 			}
@@ -159,20 +175,13 @@ public class VentanaBuscar extends JFrame{
 		panel.add(reservar);
 		panel.add(inicio);
 		panel.add(verReserva);
+		panel.add(txtcodSala);
+		panel.add(txtdni);
+		panel.add(txtfecha);
+		panel.add(txthora);
+		panel.add(txtCapacidad);
+		panel.setBackground(Color.GRAY);
 
-
-
-	}
-	private void cargarReserva(Reserva r){
-		modelo = (DefaultTableModel)tablaSalasDisponibles.getModel();
-		String id_sala = r.getId_sala();
-		String dni_respon = r.getDni_respon();
-		String fecha = r.getFecha();
-		String hora = r.getHora();
-		int capacidad = r.getPlazas();
-
-		Object[] fila = {id_sala, dni_respon, fecha,hora, capacidad};
-		modelo.addRow(fila);                    
 	}
 	
 	

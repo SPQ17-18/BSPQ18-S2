@@ -18,11 +18,7 @@ public class Menu implements Serializable {
 	int valor;
 	
 	public Menu() {
-		this.ID_menu = 1;
-		this.plato1 = "Macarrones";
-		this.plato2 = "Pechuga de pollo";
-		this.postre = "Helado de chocolate";
-		this.valor = 0;
+		
 	}
 	
 	public Menu(int ID_menu, String plato1, String plato2, String postre) {
@@ -78,7 +74,6 @@ public class Menu implements Serializable {
 		valor++;
 	}
 	//a
-	
 	@Override
 	public String toString() {
 		return "Menu:" + "\nPrimer plato: " + plato1 + "\nSegundo plato: " + plato2 + "\nPostre: " + postre;

@@ -28,7 +28,6 @@ public class VerReservas extends JFrame{
 	private JTextArea area;
 	private JButton ver, inicio;
 	private Controller controller;
-	private static String DELIMITER = "/";
 
 	public  VerReservas(Controller controller) {
 		this.controller=controller;
@@ -38,19 +37,19 @@ public class VerReservas extends JFrame{
 
 
 	public void ventana() {
-	this.setSize(1000,500);
+	this.setSize(1000,1000);
 	Ventana = new JPanel();
 		setTitle("Reservas");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		Titulo = new JPanel();
-		Titulo.setBounds(0, 0, 1400, 300);
+		Titulo.setBounds(0, 0, 1400, 100);
 		getContentPane().add(Titulo);
 		
 		txtdni = new JTextField();
-		txtdni.setBounds(150,60,200,30);
+		txtdni.setBounds(855,175,200,30);
 		
 		area = new JTextArea();
-		area.setBounds(300,100,650,500);
+		area.setBounds(300,100,200,800);
 		area.setVisible(true);
 		area.setEditable(false);
 		
@@ -97,11 +96,10 @@ public class VerReservas extends JFrame{
 		Ventana.add(txtdni);
 		Ventana.add(dni);
 		Ventana.add(area);
+		Ventana.setSize(1400,1000);
+		add(Ventana, BorderLayout.CENTER);
 		Ventana.setLayout(null);
-		Ventana.setBackground(Color.white);
-		Ventana.setSize(1280, 800);
-		setResizable(false);
-		add(Ventana, BorderLayout.CENTER);	
+		Ventana.setBackground(Color.GRAY);
 	}
 	
 	public void ControllerVer() {
@@ -111,11 +109,11 @@ public class VerReservas extends JFrame{
 			int cuenta = 0;
 			for (String cadena : primera) {
 				String[] segunda = cadena.split("#");
-				area.append("Dni responsable: " + cuenta + "\n");
-				area.append("Codigo sala: " + segunda[0] + "\n");
-				area.append("Fecha: " + segunda[1] + "\n");
-				area.append("Hora: " + segunda[4] + "\n");
-				area.append("Plazas: " + segunda[3] + "\n");
+				area.append("Dni responsable: " + txtdni.getText()+ "\n");
+				area.append("Codigo sala: " + segunda[1] + "\n");
+				area.append("Fecha: " + segunda[2] + "\n");
+				area.append("Hora: " + segunda[3] + "\n");
+				area.append("Plazas: " + segunda[4] + "\n");
 				cuenta++;
 
 			}

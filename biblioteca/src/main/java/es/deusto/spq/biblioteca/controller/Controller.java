@@ -91,10 +91,6 @@ private VentanaLogin vl;
 
 		c.getCl().getService().verReservaComedor("12345678X");
 		c.getCl().getService().eliminarReservaComedor("12345678X", "30/04/18", "14:30");
-		//menu
-		c.getCl().getService().consultaMenu();
-		
-		
 	}
 
 	

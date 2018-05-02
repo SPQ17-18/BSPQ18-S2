@@ -285,24 +285,17 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 	}
 	
 
-	public void seleccionarMenu(Menu menu, int eleccion,ReservaMesa rm){
+	public void seleccionarMenu(Menu menu){
 		try {
 			//System.out.println("   * Mostrando datos del libro: " + nombre);
-//			logger.info("\"   * 1.-Votar menu " + "\n2.-Añadir valoracion " 
-//			+ "\n3.-Comprar menu ");
-			if(eleccion==1) {
-				menu.sumaValor();
-			}
-			if(eleccion==2) {
-				
-			}
-			if(eleccion==3) {
-				comprarMenu(menu, rm);
-			}
+			logger.info("\"   * 1.-Votar menu " + "\n2.-Añadir valoracion " 
+			+ "\n3.-Comprar menu ");
 			
+			menu.sumaValor();
+			comprarMenu();
 		} catch (Exception ex) {
 			//System.out.println("   $ Error mostrando datos del libro seleccionado: " + ex.getMessage());
-			//logger.error("   $ Error mostrando datos del menu seleccionado:" + ex.getMessage());
+			logger.error("   $ Error mostrando datos del menu seleccionado:" + ex.getMessage());
 
 		}
 	}
@@ -310,10 +303,20 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 	
 
 
-	public void comprarMenu(Menu menu,ReservaMesa rm){
-		rm.setID_Menu(menu.getID_menu());
-		
-		
+	public void comprarMenu(){
+		/*
+		try {
+			//System.out.println("   * Mostrando datos del libro: " + nombre);
+			logger.info("\"   * 1.-Votar menu " + "\n2.-Añadir valoracion " 
+			+ "\n3.-Comprar menu ");
+			
+			menu.sumaValor();
+			comprarMenu();
+		} catch (Exception ex) {
+			//System.out.println("   $ Error mostrando datos del libro seleccionado: " + ex.getMessage());
+			logger.error("   $ Error mostrando datos del menu seleccionado:" + ex.getMessage());
+
+		}*/
 	}
 	
 }
