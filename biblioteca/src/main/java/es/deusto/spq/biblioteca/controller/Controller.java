@@ -57,7 +57,12 @@ private VentanaLogin vl;
 		 */
 		c.getCl().getService().buscarLibro("Las almas de Brandom");
 		//c.getCl().getService().reserveBook("Las almas de Brandom");
+		c.getCl().getService().consultarDiponibilidadLibro("Las almas de Brandom");
 		c.getCl().getService().mostrarLibro("Las almas de Brandom");
+		
+		//Mostrar catalogo y prueba en logger
+		c.getCl().getService().getLibros();
+		logger.info("Mostrando catalogo de libros...\n" + c.getCl().getService().getLibros());
 
 		//Anyadir sala
 		c.getCl().getService().anyadirSala("S1", 10);
