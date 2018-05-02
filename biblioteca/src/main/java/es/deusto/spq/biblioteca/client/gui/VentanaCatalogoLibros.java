@@ -12,6 +12,8 @@ import javax.swing.JTextPane;
 import javax.swing.JTextArea;
 import javax.swing.JScrollBar;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class VentanaCatalogoLibros extends JFrame {
 
@@ -45,6 +47,12 @@ public class VentanaCatalogoLibros extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton botonMostrarCatalogo = new JButton("Mostrar Cat\u00E1logo");
+		botonMostrarCatalogo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
 		botonMostrarCatalogo.setBounds(20, 54, 150, 23);
 		contentPane.add(botonMostrarCatalogo);
 		
