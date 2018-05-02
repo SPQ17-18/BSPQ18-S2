@@ -1,4 +1,5 @@
 package es.deusto.spq.biblioteca.dao;
+import es.deusto.spq.biblioteca.data.Menu;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
 
 public interface IReservaComedorDAO {
@@ -9,5 +10,7 @@ public interface IReservaComedorDAO {
 	public void eliminarReservaComedor(ReservaMesa r) throws Exception;
 	public void editarReservaComedor(String id_reserva, String fecha_nueva, String hora_nueva);
 	ReservaMesa devolverReservaComedor(String dni, String fecha, String hora);
-	
+	public void consultaMenu(Menu menu);
+	public void seleccionarMenu(Menu menu);
+	public void comprarMenu();
 }

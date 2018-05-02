@@ -265,6 +265,24 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 
 	}
 	
+	
+	@Override
+	public void consultaMenu() throws Exception {
+		// TODO Auto-generated method stub
+		rComedorDAO.consultaMenu(menu);
+	}
+	
+	@Override
+	public void seleccionarMenu() throws Exception {
+		// TODO Auto-generated method stub
+		rComedorDAO.seleccionarMenu(menu);
+	}
+	
+	@Override
+	public void comprarMenu() throws Exception {
+		// TODO Auto-generated method stub
+		rComedorDAO.comprarMenu();
+	}
 }
 
 	
