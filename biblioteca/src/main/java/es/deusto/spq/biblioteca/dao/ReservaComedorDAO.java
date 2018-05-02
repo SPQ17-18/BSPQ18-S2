@@ -292,7 +292,7 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 			+ "\n3.-Comprar menu ");
 			
 			menu.sumaValor();
-			comprarMenu();
+			comprarMenu(menu);
 		} catch (Exception ex) {
 			//System.out.println("   $ Error mostrando datos del libro seleccionado: " + ex.getMessage());
 			logger.error("   $ Error mostrando datos del menu seleccionado:" + ex.getMessage());

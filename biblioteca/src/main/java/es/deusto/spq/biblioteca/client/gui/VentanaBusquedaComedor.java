@@ -10,6 +10,8 @@ import javax.swing.JTextPane;
 import javax.swing.JButton;
 import javax.swing.JScrollBar;
 import javax.swing.JList;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class VentanaBusquedaComedor extends JFrame {
 
@@ -48,8 +50,21 @@ public class VentanaBusquedaComedor extends JFrame {
 		scrollBar.setBounds(407, 102, 17, 148);
 		contentPane.add(scrollBar);
 		
+		JButton botonVolver = new JButton("Volver");
+		botonVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				VentanaComedor abrirVentana3 = new VentanaComedor();
+				abrirVentana3.setVisible(true);
+				VentanaBusquedaComedor.this.dispose();
+				
+			}
+		});
+		botonVolver.setBounds(284, 55, 126, 23);
+		contentPane.add(botonVolver);
+		
 		JButton botonReservarMesa = new JButton("Reservar");
-		botonReservarMesa.setBounds(287, 55, 126, 23);
+		botonReservarMesa.setBounds(158, 55, 116, 23);
 		contentPane.add(botonReservarMesa);
 		
 		

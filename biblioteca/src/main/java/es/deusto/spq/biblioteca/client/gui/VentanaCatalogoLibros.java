@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import es.deusto.spq.biblioteca.remote.Biblioteca;
+
 import javax.swing.JComboBox;
 import javax.swing.JList;
 import javax.swing.JTextPane;
@@ -39,6 +42,9 @@ public class VentanaCatalogoLibros extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaCatalogoLibros() {
+		
+		//Biblioteca bli = new Biblioteca;
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
