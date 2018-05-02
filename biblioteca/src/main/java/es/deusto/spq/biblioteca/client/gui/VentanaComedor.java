@@ -27,6 +27,7 @@ public class VentanaComedor extends JFrame {
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
+					
 				}
 			}
 		});
