@@ -43,7 +43,7 @@ public class VentanaBusquedaMenu extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton botonReservarMenu = new JButton("Reservar");
-		botonReservarMenu.setBounds(286, 56, 126, 23);
+		botonReservarMenu.setBounds(161, 56, 119, 23);
 		contentPane.add(botonReservarMenu);
 		
 		JButton botonMostrarMenu = new JButton("Mostrar Men\u00FA");
@@ -53,6 +53,20 @@ public class VentanaBusquedaMenu extends JFrame {
 				
 			}
 		});
+		
+		JButton button = new JButton("Volver");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				VentanaComedor abrirVentana4 = new VentanaComedor();
+				abrirVentana4.setVisible(true);
+				VentanaBusquedaMenu.this.dispose();
+				
+				
+			}
+		});
+		button.setBounds(292, 56, 126, 23);
+		contentPane.add(button);
 		botonMostrarMenu.setBounds(20, 56, 126, 23);
 		contentPane.add(botonMostrarMenu);
 		
