@@ -26,6 +26,7 @@ public class VentanaBusquedaComedor extends JFrame {
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
+					
 				}
 			}
 		});
@@ -50,6 +51,7 @@ public class VentanaBusquedaComedor extends JFrame {
 		JButton botonReservarMesa = new JButton("Reservar");
 		botonReservarMesa.setBounds(287, 55, 126, 23);
 		contentPane.add(botonReservarMesa);
+		
 		
 		JButton botonMostrarMesas = new JButton("Mostrar Mesas");
 		botonMostrarMesas.setBounds(22, 55, 126, 23);
