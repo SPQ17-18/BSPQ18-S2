@@ -33,12 +33,12 @@ public class VentanaLogin extends JFrame  {
 
 	public void ventana() {
 		setTitle("VentanaLogin");
-		this.setSize(900, 500);
+		this.setSize(1000,1000);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		lbnPanel = new JLabel("Biblioteca");
 		lbnPanel.setFont(new Font("Times New Roman", Font.BOLD, 22));
 		panel = new JPanel();
-		panel.setBounds(0, 0, 1400, 300);
+		panel.setBounds(0, 0, 1400, 100);
 		getContentPane().add(panel);
 		panel.add(lbnPanel);
 		Salas = new JButton();
@@ -81,6 +81,7 @@ public class VentanaLogin extends JFrame  {
 	Ventana.add(Comedor);
 	Ventana.add(Salas);
 	add(Ventana,BorderLayout.CENTER);
+	Ventana.setBackground(Color.GRAY);
 	Ventana.setLayout(null);
 	setResizable(true);
 	}
