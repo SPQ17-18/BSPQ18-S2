@@ -32,6 +32,7 @@ public class VentanaLogin extends JFrame  {
 	}
 
 	public void ventana() {
+		setTitle("VentanaLogin");
 		this.setSize(900, 500);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		lbnPanel = new JLabel("Biblioteca");

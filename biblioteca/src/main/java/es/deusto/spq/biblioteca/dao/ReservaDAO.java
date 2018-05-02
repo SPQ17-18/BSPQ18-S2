@@ -159,11 +159,11 @@ public class ReservaDAO implements IReservaDAO {
 		// TODO Auto-generated method stub
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-
+		String datos = null;
 		try {
 			//System.out.println("   * Consultado reservas de: " + dni);
 			logger.info("   * Consultado reservas de: " + dni);
-
+			
 			tx.begin();
 			Query<Reserva> query = pm.newQuery(Reserva.class);
 			@SuppressWarnings("unchecked")
@@ -175,6 +175,7 @@ public class ReservaDAO implements IReservaDAO {
 					+ "\nHora : " + r.getHora()
 					+"\nNº plazas : " + r.getPlazas()
 					+ "\n======================================\n");
+					datos += r.getDni_respon() + "#" + r.getId_sala() + "#" + r.getFecha() + "#" + r.getHora() + "#" + r.getPlazas() + "/" ;
 				}
 			}
 			tx.commit();
@@ -189,7 +190,7 @@ public class ReservaDAO implements IReservaDAO {
 
 			pm.close();
 		}
-		return dni;
+		return datos;
 	}
 
 	public void EliminarParticipanteR(String id_reserva, String plazas) {

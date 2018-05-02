@@ -38,6 +38,9 @@ public class VerReservas extends JFrame{
 
 
 	public void ventana() {
+	this.setSize(1000,500);
+	Ventana = new JPanel();
+		setTitle("Reservas");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		Titulo = new JPanel();
 		Titulo.setBounds(0, 0, 1400, 300);
@@ -48,7 +51,8 @@ public class VerReservas extends JFrame{
 		
 		area = new JTextArea();
 		area.setBounds(300,100,650,500);
-		area.setVisible(false);
+		area.setVisible(true);
+		area.setEditable(false);
 		
 		Panel = new JLabel("Tus reservas");
 		Panel.setFont(new Font("Times New Roman", Font.BOLD, 22));
@@ -87,7 +91,7 @@ public class VerReservas extends JFrame{
 			}
 		});
 		
-		add(Ventana, BorderLayout.CENTER);
+		
 		Ventana.add(ver);
 		Ventana.add(inicio);
 		Ventana.add(txtdni);
@@ -95,9 +99,9 @@ public class VerReservas extends JFrame{
 		Ventana.add(area);
 		Ventana.setLayout(null);
 		Ventana.setBackground(Color.white);
-		setSize(1280, 800);
+		Ventana.setSize(1280, 800);
 		setResizable(false);
-		
+		add(Ventana, BorderLayout.CENTER);	
 	}
 	
 	public void ControllerVer() {

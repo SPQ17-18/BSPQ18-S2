@@ -52,6 +52,7 @@ public class VentanaBuscar extends JFrame{
 
 	
 	public void lanzarventana(){
+		setTitle("ventana buscar");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(900, 500);
 		panel = new JPanel();
@@ -103,7 +104,7 @@ public class VentanaBuscar extends JFrame{
 		inicio.setFocusable(false);
 		inicio.setBounds(550, 316, 300, 80);
 		
-
+		
 		
 		inicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
