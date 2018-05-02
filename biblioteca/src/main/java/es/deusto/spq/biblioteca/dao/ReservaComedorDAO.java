@@ -285,17 +285,24 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 	}
 	
 
-	public void seleccionarMenu(Menu menu){
+	public void seleccionarMenu(Menu menu, int eleccion){
 		try {
 			//System.out.println("   * Mostrando datos del libro: " + nombre);
-			logger.info("\"   * 1.-Votar menu " + "\n2.-Añadir valoracion " 
-			+ "\n3.-Comprar menu ");
+//			logger.info("\"   * 1.-Votar menu " + "\n2.-Añadir valoracion " 
+//			+ "\n3.-Comprar menu ");
+			if(eleccion==1) {
+				menu.sumaValor();
+			}
+			if(eleccion==2) {
+				
+			}
+			if(eleccion==3) {
+				comprarMenu(menu);
+			}
 			
-			menu.sumaValor();
-			comprarMenu();
 		} catch (Exception ex) {
 			//System.out.println("   $ Error mostrando datos del libro seleccionado: " + ex.getMessage());
-			logger.error("   $ Error mostrando datos del menu seleccionado:" + ex.getMessage());
+			//logger.error("   $ Error mostrando datos del menu seleccionado:" + ex.getMessage());
 
 		}
 	}
