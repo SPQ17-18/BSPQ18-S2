@@ -155,7 +155,7 @@ public class ReservaDAO implements IReservaDAO {
 	}
 
 	@Override
-	public void verReservas(String dni) {
+	public String verReservas(String dni) {
 		// TODO Auto-generated method stub
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -189,6 +189,7 @@ public class ReservaDAO implements IReservaDAO {
 
 			pm.close();
 		}
+		return dni;
 	}
 
 	public void EliminarParticipanteR(String id_reserva, String plazas) {

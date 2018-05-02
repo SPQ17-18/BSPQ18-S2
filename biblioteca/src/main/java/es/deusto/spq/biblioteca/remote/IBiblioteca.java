@@ -4,13 +4,13 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 import es.deusto.spq.biblioteca.data.Libro;
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
 import es.deusto.spq.biblioteca.data.Libro;
-
 import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
 
@@ -37,7 +37,7 @@ public interface IBiblioteca extends Remote {
 	public boolean consultarDisponibilidad(String Id_Sala, String fecha, String hora, int personas)
 			throws RemoteException;
 
-	public void verReservas(String dni) throws RemoteException;
+	public String verReservas(String dni) throws RemoteException;
 
 	void editarReserva(String dni, String fecha, String hora, String sala, String fecha_nueva, String hora_nueva,
 			String SalaNueva) throws RemoteException;

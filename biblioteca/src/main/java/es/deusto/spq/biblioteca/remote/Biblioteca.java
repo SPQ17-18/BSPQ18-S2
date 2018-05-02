@@ -6,6 +6,8 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mysql.fabric.xmlrpc.base.Data;
+
 import es.deusto.spq.biblioteca.dao.ILibroDAO;
 import es.deusto.spq.biblioteca.dao.IMesaDAO;
 import es.deusto.spq.biblioteca.dao.IReservaComedorDAO;
@@ -83,9 +85,9 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 	@Override
-	public void verReservas(String dni) throws RemoteException {
-		// TODO Auto-generated method stub
-		reservaDAO.verReservas(dni);
+	public String verReservas(String dni) throws RemoteException {
+		String s = reservaDAO.verReservas(dni);
+		return s;
 	}
 
 	

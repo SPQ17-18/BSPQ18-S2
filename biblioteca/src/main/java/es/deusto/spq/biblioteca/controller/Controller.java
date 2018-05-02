@@ -6,20 +6,26 @@ import java.util.ArrayList;
 import org.apache.log4j.Logger;
 
 import es.deusto.spq.biblioteca.client.Client;
-import es.deusto.spq.biblioteca.dao.LibroDAO;
-import es.deusto.spq.biblioteca.data.Reserva;
+import es.deusto.spq.biblioteca.client.gui.VentanaBuscar;
+import es.deusto.spq.biblioteca.client.gui.VentanaLogin;
+import es.deusto.spq.biblioteca.client.gui.VerReservas;
+import es.deusto.spq.biblioteca.dao.LibroDAO;import es.deusto.spq.biblioteca.data.Reserva;
 
 public class Controller {
 	@SuppressWarnings("unused")
 	private Client cl;
-	
+private VentanaLogin vl;
+	private VentanaBuscar vb;
+	private VerReservas vr;	
 	private static final Logger logger = Logger.getLogger(Controller.class);
-
 
 	public Controller(String[] args) throws RemoteException {
 
 		cl = new Client();
 		cl.setService(args);
+		vl = new VentanaLogin(this);
+		vl.ejecutarVentana();
+		
 	}
 
 	public Client getCl() {
@@ -87,5 +93,5 @@ public class Controller {
 		c.getCl().getService().eliminarReservaComedor("12345678X", "30/04/18", "14:30");
 	}
 
-
+	
 }
