@@ -71,27 +71,27 @@ public class VentanaBuscar extends JFrame{
 		txtcodSala = new JTextField();
 		txtcodSala.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		txtcodSala.setColumns(10);
-		txtcodSala.setBounds(855, 175, 200, 30);
+		txtcodSala.setBounds(900, 175, 200, 30);
 		
 		txtdni = new JTextField();
 		txtdni.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		txtdni.setColumns(10);
-		txtdni.setBounds(1000, 175, 200, 30);
+		txtdni.setBounds(1100, 175, 200, 30);
 		
 		txtfecha = new JTextField();
 		txtfecha.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		txtfecha.setColumns(10);
-		txtfecha.setBounds(855, 300, 200, 30);
+		txtfecha.setBounds(1300, 175, 200, 30);
 		
 		txthora = new JTextField();
 		txthora.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		txthora.setColumns(10);
-		txthora.setBounds(1000, 300, 200, 30);
+		txthora.setBounds(1500, 175, 200, 30);
 		
 		txtCapacidad = new JTextField();
 		txtCapacidad.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		txtCapacidad.setColumns(10);
-		txtCapacidad.setBounds(1100, 175, 200, 30);
+		txtCapacidad.setBounds(1700, 175, 200, 30);
 		
 		reservar = new JButton();
 		reservar.setText("Reservar una sala");
@@ -150,7 +150,7 @@ public class VentanaBuscar extends JFrame{
 						txtfecha.getText(),  
 						txthora.getText(), 
 						Integer.parseInt(txtCapacidad.getText()));
-				
+				//c.getCl().getService().anyadirReserva("S1", "12345678X", "11/04/18", "21:20", 3);
 //				if (tablaSalasDisponibles.getSelectedRow() >= 0) { 
 //					System.out.println(tablaSalasDisponibles.getValueAt(tablaSalasDisponibles.getSelectedRow(), 0));
 //					try{
