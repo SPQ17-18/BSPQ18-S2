@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.apache.log4j.Logger;
 
 import es.deusto.spq.biblioteca.client.Client;
+import es.deusto.spq.biblioteca.client.gui.VentanaBuscar;
 import es.deusto.spq.biblioteca.client.gui.VentanaLogin;
 import es.deusto.spq.biblioteca.client.gui.VerReservas;
 import es.deusto.spq.biblioteca.dao.LibroDAO;import es.deusto.spq.biblioteca.data.Reserva;
