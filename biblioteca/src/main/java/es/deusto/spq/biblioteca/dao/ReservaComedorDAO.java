@@ -301,7 +301,7 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 	}
 
 
-	public void comprarMenu(){
+	public void comprarMenu(Menu menu){
 		/*
 		try {
 			//System.out.println("   * Mostrando datos del libro: " + nombre);

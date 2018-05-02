@@ -17,6 +17,7 @@ import es.deusto.spq.biblioteca.dao.ReservaComedorDAO;
 import es.deusto.spq.biblioteca.dao.IReservaDAO;
 import es.deusto.spq.biblioteca.dao.ReservaDAO;
 import es.deusto.spq.biblioteca.data.Libro;
+import es.deusto.spq.biblioteca.data.Menu;
 import es.deusto.spq.biblioteca.data.Mesa;
 import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
@@ -269,19 +270,20 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	@Override
 	public void consultaMenu() throws Exception {
 		// TODO Auto-generated method stub
-		//rComedorDAO.consultaMenu(menu);
+		Menu menu = new Menu();
+		rComedorDAO.consultaMenu(menu);
 	}
 	
 	@Override
 	public void seleccionarMenu() throws Exception {
-		// TODO Auto-generated method stub
-		//rComedorDAO.seleccionarMenu(menu);
+		Menu menu = new Menu();
+		rComedorDAO.seleccionarMenu(menu);
 	}
 	
 	@Override
 	public void comprarMenu() throws Exception {
-		// TODO Auto-generated method stub
-		rComedorDAO.comprarMenu();
+		Menu menu = new Menu();
+		rComedorDAO.comprarMenu(menu);
 	}
 }
 
