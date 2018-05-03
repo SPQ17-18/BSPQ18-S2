@@ -26,9 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.deusto.spq.biblioteca.controller.*;
-import es.deusto.spq.biblioteca.dao.ReservaDAO;
-import es.deusto.spq.biblioteca.data.Reserva;
-import es.deusto.spq.biblioteca.data.Sala;
 
 
 public class VentanaBuscar extends JFrame{
@@ -40,7 +37,7 @@ public class VentanaBuscar extends JFrame{
 	int capacidad;
 	private Controller controller = null;
 	private JTable tablaSalasDisponibles;
-	List<Sala> consultarPlazas = new ArrayList<>();
+	
 
 	
 	public VentanaBuscar(Controller controller){
@@ -143,9 +140,7 @@ public class VentanaBuscar extends JFrame{
 		
 		reservar.addActionListener(new ActionListener() {	
 			public void actionPerformed(ActionEvent e){
-				
-				try {
-				controller.getCl().getService().anyadirReserva(txtcodSala.getText(),  
+				controller.anyadirReserva(txtcodSala.getText(),  
 						txtdni.getText(),  
 						txtfecha.getText(),  
 						txthora.getText(), 
@@ -163,14 +158,11 @@ public class VentanaBuscar extends JFrame{
 //		
 //						modelo = (DefaultTableModel)tablaSalasDisponibles.getModel();
 //						JOptionPane.showInputDialog(null, "has echo una reserva", JOptionPane.INFORMATION_MESSAGE);
-					}catch (RemoteException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
 				
 //			}	
 	
 	}
-			}
+			
 	});
 		panel.add(reservar);
 		panel.add(inicio);

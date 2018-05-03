@@ -103,10 +103,9 @@ public class VerReservas extends JFrame{
 	}
 	
 	public void ControllerVer() {
-		try {
-			String s = controller.getCl().getService().verReservas(txtdni.getText());
+		String s;
+			s= controller.verReservas(txtdni.getText());
 			String[] primera = s.split("/");
-			int cuenta = 0;
 			for (String cadena : primera) {
 				String[] segunda = cadena.split("#");
 				area.append("Dni responsable: " + txtdni.getText()+ "\n");
@@ -114,15 +113,12 @@ public class VerReservas extends JFrame{
 				area.append("Fecha: " + segunda[2] + "\n");
 				area.append("Hora: " + segunda[3] + "\n");
 				area.append("Plazas: " + segunda[4] + "\n");
-				cuenta++;
 
 			}
 
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 	}
+	
 	
 	
 	public void lanzarVentana() {

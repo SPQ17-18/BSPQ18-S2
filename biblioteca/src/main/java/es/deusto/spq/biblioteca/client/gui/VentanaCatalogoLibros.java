@@ -15,33 +15,29 @@ import javax.swing.JTextPane;
 import javax.swing.JTextArea;
 import javax.swing.JScrollBar;
 import javax.swing.JButton;
+import javax.swing.SwingUtilities;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import es.deusto.spq.biblioteca.controller.*;
+
 
 public class VentanaCatalogoLibros extends JFrame {
 
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaCatalogoLibros frame = new VentanaCatalogoLibros();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	private Controller controller = null;
+	
+	public VentanaCatalogoLibros(Controller controller){
+		this.controller = controller;
+		VentanaCatalogoLibrosejecutor();
+		this.setVisible(true);
 	}
 
 	/**
 	 * Create the frame.
 	 */
-	public VentanaCatalogoLibros() {
+	public void VentanaCatalogoLibrosejecutor() {
 		
 		//Biblioteca bli = new Biblioteca;
 		
@@ -74,5 +70,21 @@ public class VentanaCatalogoLibros extends JFrame {
 		JTextPane textPane = new JTextPane();
 		textPane.setBounds(10, 88, 414, 162);
 		contentPane.add(textPane);
+	}
+	
+	public void ejecutarVentana() {
+		// TODO Auto-generated method stub
+		try {
+			final VentanaCatalogoLibros ventanaCatalogoLibros = new VentanaCatalogoLibros(controller);
+			SwingUtilities.invokeAndWait(new Runnable() {
+				@Override
+				public void run() {
+					ventanaCatalogoLibros.setVisible(true);
+				}
+			});
+		} catch (Exception e) {
+			System.exit(1); 
+		}
+
 	}
 }

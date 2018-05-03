@@ -7,6 +7,10 @@ import org.apache.log4j.Logger;
 
 import es.deusto.spq.biblioteca.client.Client;
 import es.deusto.spq.biblioteca.client.gui.VentanaBuscar;
+import es.deusto.spq.biblioteca.client.gui.VentanaBusquedaComedor;
+import es.deusto.spq.biblioteca.client.gui.VentanaBusquedaMenu;
+import es.deusto.spq.biblioteca.client.gui.VentanaCatalogoLibros;
+import es.deusto.spq.biblioteca.client.gui.VentanaComedor;
 import es.deusto.spq.biblioteca.client.gui.VentanaLogin;
 import es.deusto.spq.biblioteca.client.gui.VerReservas;
 import es.deusto.spq.biblioteca.dao.LibroDAO;import es.deusto.spq.biblioteca.data.Reserva;
@@ -14,13 +18,17 @@ import es.deusto.spq.biblioteca.dao.LibroDAO;import es.deusto.spq.biblioteca.dat
 public class Controller {
 	@SuppressWarnings("unused")
 	private Client cl;
-private VentanaLogin vl;
+	private VentanaLogin vl;
 	private VentanaBuscar vb;
-	private VerReservas vr;	
+	private VerReservas vr;
+	private VentanaComedor vc;
+	private VentanaBusquedaComedor vbc;
+	private VentanaBusquedaMenu vbm;
+	private VentanaCatalogoLibros vcl;
+	
 	private static final Logger logger = Logger.getLogger(Controller.class);
 
 	public Controller(String[] args) throws RemoteException {
-
 		cl = new Client();
 		cl.setService(args);
 		vl = new VentanaLogin(this);
@@ -34,6 +42,33 @@ private VentanaLogin vl;
 
 	public void setCl(Client cl) {
 		this.cl = cl;
+	}
+	
+	public void anyadirSala(String id_sala, int capacidad){
+		try{
+    		cl.getService().anyadirSala(id_sala, capacidad);
+    	}catch(Exception e){
+    		e.printStackTrace();
+    	}
+	}
+	
+	public void anyadirReserva(String id_Sala, String dni_respon, String fecha, String hora, int plazas){
+		try{
+    		cl.getService().anyadirReserva(id_Sala, dni_respon, fecha,hora,plazas);
+    	}catch(Exception e){
+    		e.printStackTrace();
+    	}
+    }
+	
+	public String verReservas(String dni) {
+		String s = null;
+		try{
+			
+    	 s = cl.getService().verReservas(dni);
+    	}catch(Exception e){
+    		e.printStackTrace();
+    	}
+		return s;
 	}
 
 	public static void main(String[] args) throws Exception {
