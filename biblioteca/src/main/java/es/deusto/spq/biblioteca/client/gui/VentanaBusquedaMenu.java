@@ -10,29 +10,27 @@ import javax.swing.JTextPane;
 import javax.swing.JScrollBar;
 import javax.swing.JButton;
 import javax.swing.JList;
+import javax.swing.SwingUtilities;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import es.deusto.spq.biblioteca.controller.*;
+
+
 public class VentanaBusquedaMenu extends JFrame {
-
-	private JPanel contentPane;
-
 	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaBusquedaMenu frame = new VentanaBusquedaMenu();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private Controller controller = null;
+	
+	public VentanaBusquedaMenu(Controller controller){
+		this.controller = controller;
+		VentanaBusquedaMenuejecutor();
+		this.setVisible(true);
 	}
 
-
-	public VentanaBusquedaMenu() {
+	public void VentanaBusquedaMenuejecutor() {
 		
 		setTitle("Lista de Men\u00FAs disponibles");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -58,7 +56,7 @@ public class VentanaBusquedaMenu extends JFrame {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				VentanaComedor abrirVentana4 = new VentanaComedor();
+				VentanaComedor abrirVentana4 = new VentanaComedor(controller);
 				abrirVentana4.setVisible(true);
 				VentanaBusquedaMenu.this.dispose();
 				
@@ -82,6 +80,22 @@ public class VentanaBusquedaMenu extends JFrame {
 		JList list = new JList();
 		list.setBounds(10, 102, 414, 148);
 		contentPane.add(list);
+	}
+	
+	public void ejecutarVentana() {
+		// TODO Auto-generated method stub
+		try {
+			final VentanaBusquedaMenu ventanaBusquedaMenu = new VentanaBusquedaMenu(controller);
+			SwingUtilities.invokeAndWait(new Runnable() {
+				@Override
+				public void run() {
+					ventanaBusquedaMenu.setVisible(true);
+				}
+			});
+		} catch (Exception e) {
+			System.exit(1); 
+		}
+
 	}
 
 }

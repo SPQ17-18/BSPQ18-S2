@@ -9,30 +9,27 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextPane;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.SwingUtilities;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import es.deusto.spq.biblioteca.controller.*;
+
 
 public class VentanaComedor extends JFrame {
 
 	private JPanel contentPane;
-
+	private Controller controller = null;
 	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaComedor frame = new VentanaComedor();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-					
-				}
-			}
-		});
+	public VentanaComedor(Controller controller){
+		this.controller = controller;
+		VentanaComedorejecutor();
+		this.setVisible(true);
 	}
 
 	
-	public VentanaComedor() {
+	public void VentanaComedorejecutor() {
 		setTitle("Comedor");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 310);
@@ -45,7 +42,7 @@ public class VentanaComedor extends JFrame {
 		botonComrpobarMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				VentanaBusquedaMenu abrirVentana2 = new VentanaBusquedaMenu();
+				VentanaBusquedaMenu abrirVentana2 = new VentanaBusquedaMenu(controller);
 				abrirVentana2.setVisible(true);
 				VentanaComedor.this.dispose();
 				
@@ -58,7 +55,7 @@ public class VentanaComedor extends JFrame {
 		botonComprobarComedor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				VentanaBusquedaComedor abrirVentana = new VentanaBusquedaComedor();
+				VentanaBusquedaComedor abrirVentana = new VentanaBusquedaComedor(controller);
 				abrirVentana.setVisible(true);
 				VentanaComedor.this.dispose();
 				
@@ -76,5 +73,21 @@ public class VentanaComedor extends JFrame {
 		txtpnBienvendioAlMen.setText(" Bienvendio al men\u00FA comedor. Aqu\u00ED podr\u00E1 ver la lista de men\u00FAs a su disposici\u00F3n, as\u00ED como reservar el men\u00FA que m\u00E1s le guste. Adem\u00E1s, tambi\u00E9n podr\u00E1 comprobar la lista de mesas disponibles para reservar con antelaci\u00F3n si as\u00ED lo desea.");
 		txtpnBienvendioAlMen.setBounds(10, 11, 464, 249);
 		contentPane.add(txtpnBienvendioAlMen);
+	}
+	
+	public void ejecutarVentana() {
+		// TODO Auto-generated method stub
+		try {
+			final VentanaComedor ventanaComedor = new VentanaComedor(controller);
+			SwingUtilities.invokeAndWait(new Runnable() {
+				@Override
+				public void run() {
+					ventanaComedor.setVisible(true);
+				}
+			});
+		} catch (Exception e) {
+			System.exit(1); 
+		}
+
 	}
 }

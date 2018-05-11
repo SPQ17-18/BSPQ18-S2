@@ -58,7 +58,7 @@ public class VentanaLogin extends JFrame  {
 		
 		Salas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaLogin.this.setVisible(true);
+				VentanaLogin.this.setVisible(false);
 				VentanaBuscar Salas = new VentanaBuscar(controller);
 				Salas.setVisible(true);
 			}
@@ -66,12 +66,14 @@ public class VentanaLogin extends JFrame  {
 		Comedor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				VentanaLogin.this.setVisible(true);
+				VentanaComedor Comedor = new VentanaComedor(controller);
 				Comedor.setVisible(true);
 			}
 		});	
 		Biblioteca.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				VentanaLogin.this.setVisible(true);
+				VentanaCatalogoLibros Biblioteca = new VentanaCatalogoLibros(controller);
 				Biblioteca.setVisible(true);
 			}
 		});

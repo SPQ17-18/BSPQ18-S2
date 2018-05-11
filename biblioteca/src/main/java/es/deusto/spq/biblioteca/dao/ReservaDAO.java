@@ -170,7 +170,7 @@ public class ReservaDAO implements IReservaDAO {
 			List<Reserva> reservas = (List<Reserva>) query.execute();
 			for (Reserva r : reservas) {
 				if (r.getDni_respon().equals(dni)) {
-					System.out.println("============DNI : " + r.getDni_respon() +"==========================\nSala : " + r.getId_sala() 
+					logger.info("============DNI : " + r.getDni_respon() +"==========================\nSala : " + r.getId_sala() 
 					+ "\nFecha : " + r.getFecha()
 					+ "\nHora : " + r.getHora()
 					+"\nNº plazas : " + r.getPlazas()

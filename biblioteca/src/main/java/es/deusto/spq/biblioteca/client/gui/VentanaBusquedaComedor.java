@@ -10,36 +10,34 @@ import javax.swing.JTextPane;
 import javax.swing.JButton;
 import javax.swing.JScrollBar;
 import javax.swing.JList;
+import javax.swing.SwingUtilities;
+
+import es.deusto.spq.biblioteca.controller.Controller;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import es.deusto.spq.biblioteca.controller.*;
+
+
 public class VentanaBusquedaComedor extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaBusquedaComedor frame = new VentanaBusquedaComedor();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-					
-				}
-			}
-		});
+	private Controller controller = null;
+	
+	public VentanaBusquedaComedor(Controller controller){
+		this.controller = controller;
+		VentanaBusquedaComedorejecutor();
+		this.setVisible(true);
 	}
 
 	/**
 	 * Create the frame.
 	 */
-	public VentanaBusquedaComedor() {
+	public void VentanaBusquedaComedorejecutor() {
 		setTitle("Lista de mesas disponibles");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -56,7 +54,7 @@ public class VentanaBusquedaComedor extends JFrame {
 		botonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				VentanaComedor abrirVentana3 = new VentanaComedor();
+				VentanaComedor abrirVentana3 = new VentanaComedor(controller);
 				abrirVentana3.setVisible(true);
 				VentanaBusquedaComedor.this.dispose();
 				
@@ -88,5 +86,21 @@ public class VentanaBusquedaComedor extends JFrame {
 		JList list = new JList();
 		list.setBounds(10, 102, 414, 148);
 		contentPane.add(list);
+	}
+	
+	public void ejecutarVentana() {
+		// TODO Auto-generated method stub
+		try {
+			final VentanaBusquedaComedor ventanaBusquedaComedor = new VentanaBusquedaComedor(controller);
+			SwingUtilities.invokeAndWait(new Runnable() {
+				@Override
+				public void run() {
+					ventanaBusquedaComedor.setVisible(true);
+				}
+			});
+		} catch (Exception e) {
+			System.exit(1); 
+		}
+
 	}
 }
