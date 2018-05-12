@@ -13,7 +13,10 @@ import es.deusto.spq.biblioteca.client.gui.VentanaCatalogoLibros;
 import es.deusto.spq.biblioteca.client.gui.VentanaComedor;
 import es.deusto.spq.biblioteca.client.gui.VentanaLogin;
 import es.deusto.spq.biblioteca.client.gui.VerReservas;
-import es.deusto.spq.biblioteca.dao.LibroDAO;import es.deusto.spq.biblioteca.data.Reserva;
+import es.deusto.spq.biblioteca.data.Libro;
+import es.deusto.spq.biblioteca.data.Mesa;
+import es.deusto.spq.biblioteca.data.Reserva;
+import es.deusto.spq.biblioteca.data.ReservaMesa;
 
 public class Controller {
 	@SuppressWarnings("unused")
@@ -70,7 +73,185 @@ public class Controller {
     	}
 		return s;
 	}
+	
+	public void eliminarReserva(String id_Sala, String dni_respon){
+	try{
+		cl.getService().eliminarReserva(id_Sala, dni_respon);
+	
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+	}
+	
+	public Libro buscarLibro(String nombre) {
+		Libro lib = null;
+		try{
+		 lib = cl.getService().buscarLibro(nombre);
+		}catch(Exception e){
+			e.printStackTrace();
+			}
+		return lib;
+	}
+	
+	public void anyadirUsuario(Reserva r){
+	try{
+		cl.getService().anyadirUsuario(r);
+	}catch(Exception e){
+		e.printStackTrace();
+		}
+	}
+	
+	public void almacenarLibro(int isbn, String nombre, String autor, String editorial, boolean isReservado) {
+		try{
+		cl.getService().almacenarLibro(isbn, nombre, autor, editorial, isReservado);
+		}catch(Exception e){
+			e.printStackTrace();
+			}
+	}
+	
+	public boolean consultarDisponibilidad(String Id_Sala, String fecha, String hora, int personas) {
+		boolean reservar = false;
+		try{
+			boolean disponible =cl.getService().consultarDisponibilidad(Id_Sala, fecha, hora, personas);
+			if (disponible == true) {
+				reservar = true;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			}
+		return reservar;
+	
+	}
+	
+	public void EliminarParticipante(Reserva r) {
+	try{
+		cl.getService().EliminarParticipante(r);
+	}catch(Exception e){
+		e.printStackTrace();
+		}
+	}
+	
+	public void EliminarLibro(Libro l){
+	try{
+		cl.getService().EliminarLibro(l);
+	}catch(Exception e){
+		e.printStackTrace();
+		}
+	}
+	
+	public boolean consultarDisponibilidadLibro(String nombre){
+		boolean isReservado = false;
+		try{
+		boolean disponible = cl.getService().consultarDiponibilidadLibro(nombre);
+		if (disponible == true) {
+			isReservado = true;
+		}
+	}catch(Exception e){
+		e.printStackTrace();
+		}
+		return isReservado;
+	}
+	
+	public void mostrarLibro(String nombre) {
+	try{
+		cl.getService().mostrarLibro(nombre);
+	}catch(Exception e){
+		e.printStackTrace();
+		}
+	}
+	
+	public Reserva DevolverReserva(String dni, String fecha, String hora) {
+		Reserva r = null;
+	try{
+		r = cl.getService().DevolverReserva(dni, fecha, hora);
+	}catch(Exception e){
+		e.printStackTrace();
+		}
+	return r;
+	}
+	
+	public boolean consultarDisponibilidadComedor(String Id_Mesa, String fecha, String hora, int personas){
+		boolean disponible = false;
+	try{
+		boolean disponibleComedor = cl.getService().consultarDisponibilidadComedor(Id_Mesa, fecha, hora, personas);
+		if (disponibleComedor == true) {
+			disponible = true;
+		}
+		}catch(Exception e){
+			e.printStackTrace();
+			}
+		return disponible;
+	}
+	
+	public void anyadirReservaComedor(String id_Mesa, String dni_respon, String fecha, String hora, int plazas){
+		try{
+    		cl.getService().anyadirReservaComedor(id_Mesa, dni_respon, fecha,hora,plazas);
+    	}catch(Exception e){
+    		e.printStackTrace();
+    	}
+	}
+	
+	public void anyadirMesa(String id_mesa, int capacidad) {
+		try{
+    		cl.getService().anyadirMesa(id_mesa,capacidad);
+    	}catch(Exception e){
+    		e.printStackTrace();
+    	}
+	}
+	
+	public void verReservaComedor(String dni){
+		try{
+		cl.getService().verReservaComedor(dni);
+		}catch(Exception e){
+    		e.printStackTrace();
+    	}
+	}
 
+	public void editarReservaComedor(String id_reserva, String fecha_nueva, String hora_nueva){
+		try{
+		cl.getService().editarReservaComedor(id_reserva, fecha_nueva, hora_nueva);
+		}catch(Exception e){
+    		e.printStackTrace();
+    	}
+	}
+	
+	public ReservaMesa DevolverReservaMesa(String dni, String fecha, String hora){
+		ReservaMesa r = null;
+		try{
+		r = cl.getService().DevolverReservaMesa(dni, fecha, hora);
+		}catch(Exception e){
+    		e.printStackTrace();
+    	}
+		return r;
+	}
+
+	public void eliminarReservaComedor(String dni, String fecha, String hora){
+		try{
+		cl.getService().eliminarReservaComedor( dni, fecha, hora);
+		}catch(Exception e){
+    		e.printStackTrace();
+    	}
+		}
+
+
+	public void editarReserva(String dni, String fecha, String hora, String sala, String fecha_nueva, String hora_nueva,String SalaNueva){
+		try{
+		cl.getService().editarReserva(dni, fecha, hora, sala, fecha_nueva, hora_nueva, SalaNueva);
+		}catch(Exception e){
+    		e.printStackTrace();
+    	}
+		}
+	public ArrayList<Libro> getLibros() throws RemoteException {
+		ArrayList<Libro> catalogo = null;
+		try{
+		catalogo = cl.getService().getLibros();
+		
+		}catch(Exception e){
+    		e.printStackTrace();
+    	}
+		return catalogo;
+	}
+	
 	public static void main(String[] args) throws Exception {
 		Controller c = new Controller(args);
 

@@ -138,13 +138,13 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		salaDAO.anyadirSala(s);
 	}
 
-	public void EliminarParticipante(Reserva r) {
+	public void EliminarParticipante(Reserva r)throws RemoteException {
 		String plazas = "";
 		plazas = String.valueOf(r.getPlazas());
 		reservaDAO.EliminarParticipanteR(r.getId_reserva(), plazas);
 	}
 
-	public void EliminarLibro(Libro l) {
+	public void EliminarLibro(Libro l)throws RemoteException {
 		// int numeroEjemplares = 00;
 		// numeroEjemplares
 		String Isbn;

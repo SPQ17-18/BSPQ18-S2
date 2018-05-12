@@ -19,14 +19,14 @@ import org.slf4j.LoggerFactory;
 import es.deusto.spq.biblioteca.data.Libro;
 import junit.framework.JUnit4TestAdapter;
 
-@PerfTest(invocations = 5)
-@Required(max = 1500, average = 300)
+@PerfTest(invocations = 4)
+@Required(max = 1200, average = 250)
 public class LibroDataTest {
 	
-	private Libro l;
-	private Libro l1;
-	private Libro l2;
-	private Libro l3;
+	private Libro L1;
+	private Libro L2;
+	private Libro L3;
+	private Libro L4;
 	
 	final Logger logger= LoggerFactory.getLogger(LibroDataTest.class);
 	static int iteration = 0;
@@ -41,10 +41,10 @@ public class LibroDataTest {
 	public void setUp() throws Exception {
 		logger.info("Entering setUp: {}", iteration++);
 		
-		l = new Libro(1, "Libro 1", "Autor 1", "Editorial 1", false);
-		l1 = new Libro(2, "Libro 2", "Autor 2", "Editorial 2", false);
-		l2 = new Libro(3, "Libro 3", "Autor 3", "Editorial 3", false);
-		l3 = new Libro(4, "Libro 4", "Autor 4", "Editorial 4", true);
+		L1 = new Libro(1, "Libro 1", "Autor 1", "Editorial 1", false);
+		L2 = new Libro(2, "Libro 2", "Autor 2", "Editorial 2", false);
+		L3 = new Libro(3, "Libro 3", "Autor 3", "Editorial 3", false);
+		L4 = new Libro(4, "Libro 4", "Autor 4", "Editorial 4", true);
 		
 		logger.info("Leaving setUp");
 
@@ -52,47 +52,47 @@ public class LibroDataTest {
 	}
 
 	//Teses hechos para que no fallen
-	@Test
-	@PerfTest(invocations = 100, threads = 10)
+	@Test 
+    @PerfTest(invocations = 100, threads = 10)
     @Required(max = 500, average = 200)
 	public void testCreacionLibro() throws Exception {
 		logger.info("Iniciando test de creacion del primer libro");
 		Libro expected = new Libro(111, "Libro 1", "Autor 1", "Editorial 1", false);
-		assertEquals(expected.getIsbn(), l.getIsbn());
-		assertEquals(expected.getnombre(), l.getnombre());
-		assertEquals(expected.getAutor(), l.getAutor());
-		assertEquals(expected.getEditorial(), l.getEditorial());
-		assertEquals(expected.isReservado(), l.isReservado());
+		assertEquals(expected.getIsbn(), L1.getIsbn());
+		assertEquals(expected.getnombre(), L1.getnombre());
+		assertEquals(expected.getAutor(), L1.getAutor());
+		assertEquals(expected.getEditorial(), L1.getEditorial());
+		assertEquals(expected.isReservado(), L1.isReservado());
 		logger.info("Fin de test de creacion del primer libro");
 		
 	}
 	
-	@Test
-	@PerfTest(invocations = 200, threads = 30)
-    @Required(max = 600, average = 20)
+	@Test 
+    @PerfTest(invocations = 600, threads = 100)
+    @Required(max = 1000, average = 400)
 	public void testCreacionLibro2() throws Exception {
 		logger.info("Iniciando test de creacion del primer libro");
 		Libro expected = new Libro(222, "Libro 2", "Autor 2", "Editorial 2", false);
-		assertEquals(expected.getIsbn(), l1.getIsbn());
-		assertEquals(expected.getnombre(), l1.getnombre());
-		assertEquals(expected.getAutor(), l1.getAutor());
-		assertEquals(expected.getEditorial(), l1.getEditorial());
-		assertEquals(expected.isReservado(), l1.isReservado());
+		assertEquals(expected.getIsbn(), L2.getIsbn());
+		assertEquals(expected.getnombre(), L2.getnombre());
+		assertEquals(expected.getAutor(), L2.getAutor());
+		assertEquals(expected.getEditorial(), L2.getEditorial());
+		assertEquals(expected.isReservado(), L2.isReservado());
 		logger.info("Fin de test de creacion del segundo libro");
 		
 	}
 	
-	@Test
-	@PerfTest(invocations = 400, threads = 80)
-    @Required(max = 200, average = 300)
+	@Test 
+    @PerfTest(invocations = 300, threads = 50)
+    @Required(max = 200, average = 20)
 	public void testCreacionLibro3() throws Exception {
 		logger.info("Iniciando test de creacion del primer libro");
 		Libro expected = new Libro(333, "Libro 3", "Autor 3", "Editorial 3", false);
-		assertEquals(expected.getIsbn(), l2.getIsbn());
-		assertEquals(expected.getnombre(), l.getnombre());
-		assertEquals(expected.getAutor(), l2.getAutor());
-		assertEquals(expected.getEditorial(), l2.getEditorial());
-		assertEquals(expected.isReservado(), l2.isReservado());
+		assertEquals(expected.getIsbn(), L3.getIsbn());
+		assertEquals(expected.getnombre(), L3.getnombre());
+		assertEquals(expected.getAutor(), L3.getAutor());
+		assertEquals(expected.getEditorial(), L3.getEditorial());
+		assertEquals(expected.isReservado(), L3.isReservado());
 		logger.info("Fin de test de creacion del tercer libro");
 		
 	}
@@ -102,11 +102,11 @@ public class LibroDataTest {
 	public void testCreacionLibro4() throws Exception {
 		logger.info("Iniciando test de creacion de creacion mala del cuarto libro");
 		Libro expected = new Libro(444, "Libro 4", "Autor 2", "Editorial 3", true);
-		assertEquals(expected.getIsbn(), l3.getIsbn());
-		assertEquals(expected.getnombre(), l3.getnombre());
-		assertEquals(expected.getAutor(), l3.getAutor());
-		assertEquals(expected.getEditorial(), l3.getEditorial());
-		assertEquals(expected.isReservado(), l3.isReservado());
+		assertEquals(expected.getIsbn(), L4.getIsbn());
+		assertEquals(expected.getnombre(), L4.getnombre());
+		assertEquals(expected.getAutor(), L4.getAutor());
+		assertEquals(expected.getEditorial(), L4.getEditorial());
+		assertEquals(expected.isReservado(), L4.isReservado());
 		logger.info("Fin de test de creacion mala del cuarto libro");
 		
 	}
