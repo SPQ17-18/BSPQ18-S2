@@ -3,15 +3,15 @@ package es.deusto.spq.biblioteca.data;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.jdo.annotations.Inheritance;
-import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
 
 @PersistenceCapable(detachable = "true")
 public class Sala implements Serializable {
-
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	String id_sala;
 	int capacidad;
 

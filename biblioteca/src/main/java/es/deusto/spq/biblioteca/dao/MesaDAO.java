@@ -8,13 +8,16 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
+import org.apache.log4j.Logger;
+
 import es.deusto.spq.biblioteca.data.Mesa;
-import es.deusto.spq.biblioteca.data.Sala;
+
 
 public class MesaDAO implements IMesaDAO{
 
 	private PersistenceManagerFactory pmf;
-
+	private static final Logger logger = Logger.getLogger(MesaDAO.class);
+	
 	public MesaDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
@@ -25,11 +28,11 @@ public class MesaDAO implements IMesaDAO{
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
-			System.out.println("   * Guardando mesa: " + m.getId_Mesa());
+			logger.info("* Guardando mesa: " + m.getId_Mesa());
 			pm.makePersistent(m);
 			tx.commit();
 		} catch (Exception ex) {
-			System.out.println("   $ Error guardando mesa: " + ex.getMessage());
+			logger.error("$ Error guardando mesa: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -48,7 +51,7 @@ public class MesaDAO implements IMesaDAO{
 		Transaction tx = pm.currentTransaction();
 
 		try {
-			System.out.println("   * Consultado plazas de: " + Id_Mesa);
+			logger.info("* Consultado plazas de: " + Id_Mesa);
 			tx.begin();
 			Query<Mesa> query = pm.newQuery(Mesa.class);
 			@SuppressWarnings("unchecked")
@@ -61,7 +64,7 @@ public class MesaDAO implements IMesaDAO{
 			}
 			tx.commit();
 		} catch (Exception ex) {
-			System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+			logger.error("$ Error retreiving an extent: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();

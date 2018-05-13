@@ -9,16 +9,9 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
-import javax.naming.spi.DirStateFactory.Result;
-
 import org.apache.log4j.Logger;
-
-import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Mesa;
-import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
-import es.deusto.spq.biblioteca.data.Sala;
-import es.deusto.spq.biblioteca.data.Menu;
 
 public class ReservaComedorDAO implements IReservaComedorDAO{
 	
@@ -266,37 +259,5 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 		}
 
 		return R;
-	}
-	
-	
-	
-	public void consultaMenu(Menu menu){
-		try {
-			//System.out.println("   * Mostrando datos del libro: " + nombre);
-			logger.info("\"   * Mostrando menu: " + menu.toString());
-
-			System.out.println(menu.toString());
-			
-		} catch (Exception ex) {
-			//System.out.println("   $ Error mostrando datos del libro seleccionado: " + ex.getMessage());
-			logger.error("   $ Error mostrando datos del menu seleccionado:" + ex.getMessage());
-
-		}
-	}
-	
-
-	public void seleccionarMenu(Menu menu){
-		try {
-			//System.out.println("   * Mostrando datos del libro: " + nombre);
-			logger.info("\"   * 1.-Votar menu " + "\n2.-Añadir valoracion " 
-			+ "\n3.-Comprar menu ");
-			
-			menu.sumaValor();
-			comprarMenu();
-		} catch (Exception ex) {
-			//System.out.println("   $ Error mostrando datos del libro seleccionado: " + ex.getMessage());
-			logger.error("   $ Error mostrando datos del menu seleccionado:" + ex.getMessage());
-
-		}
 	}	
 }

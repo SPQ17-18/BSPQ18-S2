@@ -2,13 +2,14 @@ package es.deusto.spq.biblioteca.data;
 
 import java.io.Serializable;
 
-import javax.jdo.annotations.Inheritance;
-import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 
 @PersistenceCapable(detachable = "true")
-public class Reserva implements Serializable  {
-	
+public class Reserva implements Serializable  {	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	String id_reserva;
 	String id_sala;
 	String dni_respon;

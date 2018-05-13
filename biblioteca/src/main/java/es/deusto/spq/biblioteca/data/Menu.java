@@ -1,34 +1,51 @@
 package es.deusto.spq.biblioteca.data;
 
 import java.io.Serializable;
-
-import javax.jdo.annotations.Inheritance;
-import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable(detachable = "true")
 public class Menu implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	//atributos
-	int ID_menu;
-	String plato1 = null;
-	String plato2 = null;
-	String postre = null;
+	String ID_menu;
+	String fecha;
+	String plato1;
+	String plato2;
+	String postre;
 	int valor;
 	
 	public Menu() {
 		
 	}
-	
-	public Menu(int ID_menu, String plato1, String plato2, String postre) {
-		this.ID_menu = ID_menu;
+
+	public Menu(String iD_menu, String fecha, String plato1, String plato2, String postre) {
+		super();
+		ID_menu = iD_menu;
+		this.fecha = fecha;
 		this.plato1 = plato1;
 		this.plato2 = plato2;
 		this.postre = postre;
-		this.valor = 0;
 	}
-	
-	//Getters y Setters
+
+	public String getID_menu() {
+		return ID_menu;
+	}
+
+	public void setID_menu(String iD_menu) {
+		ID_menu = iD_menu;
+	}
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
 	public String getPlato1() {
 		return plato1;
 	}
@@ -60,22 +77,10 @@ public class Menu implements Serializable {
 	public void setValor(int valor) {
 		this.valor = valor;
 	}
-	
-	public int getID_menu() {
-		return ID_menu;
-	}
 
-	public void setID_menu(int iD_menu) {
-		ID_menu = iD_menu;
-	}
-	//le suma 1 al valor del menu
-	public void sumaValor() {
-		valor++;
-	}
-	//a
 	@Override
 	public String toString() {
-		return "Menu:" + "\nPrimer plato: " + plato1 + "\nSegundo plato: " + plato2 + "\nPostre: " + postre;
+		return "Menu [ID_menu=" + ID_menu + ", fecha=" + fecha + ", plato1=" + plato1 + ", plato2=" + plato2
+				+ ", postre=" + postre + ", valor=" + valor + "]";
 	}
-
 }

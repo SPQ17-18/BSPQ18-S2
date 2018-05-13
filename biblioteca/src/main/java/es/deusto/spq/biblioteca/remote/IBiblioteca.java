@@ -66,11 +66,11 @@ public interface IBiblioteca extends Remote {
 	
 	public void editarReservaComedor(String id_reserva, String fecha_nueva, String hora_nueva) throws RemoteException;
 
-	public void consultaMenu() throws Exception;
+	public void anyadirMenu(String fecha, String plato1, String plato2, String postre) throws Exception;
 
-	public void seleccionarMenu() throws Exception;
+	public void anyadirValoracion(String id_menu, int valoracion) throws Exception;
 
-	public void comprarMenu() throws Exception;
+	public void verMenu(String fecha) throws Exception;
 	
 	
 }
