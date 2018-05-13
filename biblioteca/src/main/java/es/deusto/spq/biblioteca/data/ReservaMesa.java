@@ -78,4 +78,11 @@ public class ReservaMesa implements Serializable{
 	public void setPersonas(int personas) {
 		Personas = personas;
 	}
+	
+	@Override
+	public String toString() {
+		return "ReservaMesa [id_Mesa=" + id_Mesa + ", id_Reserva=" + id_Reserva + ", dni_respon=" + dni_respon
+				+ ", fecha=" + fecha + ", hora=" + hora + ", Personas=" + Personas + "]";
+	}
+
 }

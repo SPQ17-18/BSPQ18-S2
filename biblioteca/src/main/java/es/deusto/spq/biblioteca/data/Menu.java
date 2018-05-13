@@ -11,41 +11,24 @@ import javax.jdo.annotations.PrimaryKey;
 public class Menu implements Serializable {
 	//atributos
 	int ID_menu;
-	String fecha;
-	String plato1;
-	String plato2;
-	String postre;
+	String plato1 = null;
+	String plato2 = null;
+	String postre = null;
 	int valor;
 	
 	public Menu() {
 		
 	}
-
-	public Menu(int iD_menu, String fecha, String plato1, String plato2, String postre) {
-		super();
-		ID_menu = iD_menu;
-		this.fecha = fecha;
+	
+	public Menu(int ID_menu, String plato1, String plato2, String postre) {
+		this.ID_menu = ID_menu;
 		this.plato1 = plato1;
 		this.plato2 = plato2;
 		this.postre = postre;
+		this.valor = 0;
 	}
-
-	public int getID_menu() {
-		return ID_menu;
-	}
-
-	public void setID_menu(int iD_menu) {
-		ID_menu = iD_menu;
-	}
-
-	public String getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(String fecha) {
-		this.fecha = fecha;
-	}
-
+	
+	//Getters y Setters
 	public String getPlato1() {
 		return plato1;
 	}
@@ -77,10 +60,22 @@ public class Menu implements Serializable {
 	public void setValor(int valor) {
 		this.valor = valor;
 	}
+	
+	public int getID_menu() {
+		return ID_menu;
+	}
 
+	public void setID_menu(int iD_menu) {
+		ID_menu = iD_menu;
+	}
+	//le suma 1 al valor del menu
+	public void sumaValor() {
+		valor++;
+	}
+	//a
 	@Override
 	public String toString() {
-		return "Menu [ID_menu=" + ID_menu + ", fecha=" + fecha + ", plato1=" + plato1 + ", plato2=" + plato2
-				+ ", postre=" + postre + ", valor=" + valor + "]";
+		return "Menu:" + "\nPrimer plato: " + plato1 + "\nSegundo plato: " + plato2 + "\nPostre: " + postre;
 	}
+
 }

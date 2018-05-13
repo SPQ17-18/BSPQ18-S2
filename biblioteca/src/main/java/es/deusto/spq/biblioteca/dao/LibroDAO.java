@@ -3,6 +3,7 @@ package es.deusto.spq.biblioteca.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jdo.Extent;
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
@@ -12,6 +13,7 @@ import org.apache.log4j.Logger;
 
 import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Reserva;
+import es.deusto.spq.biblioteca.data.ReservaMesa;
 import es.deusto.spq.biblioteca.data.Sala;
 
 public class LibroDAO implements ILibroDAO{
@@ -91,46 +93,57 @@ public class LibroDAO implements ILibroDAO{
 
 
 	//Funcion que devuelve el catalogo de libros
-//	@Override
-//	public ArrayList<Libro> getLibros() {
-//		// TODO Auto-generated method stub
-//		PersistenceManager pm = pmf.getPersistenceManager();
-//		pm.getFetchPlan().setMaxFetchDepth(3);
-//
-//		Transaction tx = pm.currentTransaction();
-//		
-//		ArrayList<Libro> catalogo = new ArrayList<Libro>();
-//		
-//		try {
-//			System.out.println("   * Mostrando catalogo de libros...");
-//
-//			tx.begin();
+	@Override
+	public ArrayList<Libro> getLibros() {
+		// TODO Auto-generated method stub
+		
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+
+		Transaction tx = pm.currentTransaction();
+		
+		ArrayList<Libro> catalogo = new ArrayList<Libro>();
+		
+		try {
+			//System.out.println("   * Mostrando catalogo de libros...");
+			logger.info("  * Mostrando catalogo de libros...");
+			
+			pm = pmf.getPersistenceManager();
+			tx = pm.currentTransaction();
+			tx.begin();
+			
 //			Query<?> query2 = pm.newQuery("SELECT FROM " + Libro.class.getName());
-//	
 //			List<Libro> l = (List<Libro>) query2.execute();
-//		
+			
+			Extent<Libro> extent = pm.getExtent(Libro.class, true);
+			
 //			for(int i = 0; i < l.size(); i++) {
 //				catalogo.add(new Libro());
 //				catalogo.get(i);
 //			}
-//		
-//			tx.commit();
-//
-//		} catch (Exception ex) {
-//			System.out.println("   $ Error recuperando todos los libros: " + ex.getMessage());
-//		} finally {
-//			if (tx != null && tx.isActive()) {
-//				tx.rollback();
-//			}
-//
-//			pm.close();
-//		}
-//		
-//		
-//		
-//		return null;
-//	}	
-//	
+			for (Libro libro : extent) {
+				catalogo.add(new Libro(libro.getIsbn(), libro.getnombre(), libro.getAutor(), libro.getEditorial(), libro.isReservado()));
+			}
+			
+			tx.commit();
+
+		} catch (Exception ex) {
+			//System.out.println("   $ Error recuperando todos los libros: " + ex.getMessage());
+			logger.error("   $ Error recuperando todos los libros: " + ex.getMessage());
+		
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+		
+		
+		
+		return null;
+	}	
+	
 	public void EliminarLibro(String isbn) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -161,37 +174,39 @@ public class LibroDAO implements ILibroDAO{
 	}
 
 	@Override
-	public boolean reservarLibro(String nombre) {
+	public void reservarLibro(Libro l) {
 		// TODO Auto-generated method stub
-		boolean disponible = true;
+//		boolean disponible = true;
+//		
+//		PersistenceManager pm = pmf.getPersistenceManager();
+//		Transaction tx = pm.currentTransaction();
+//		try {
+//			tx.begin();
+//			Query<Libro> query = pm.newQuery(Libro.class);
+//			@SuppressWarnings("unchecked")
+//			List<Libro> libro = (List<Libro>) query.execute();
+//			for (Libro l : libro) {
+//				
+//				if (l.getnombre().equals(nombre)){
+//					// No hay salas disponibles
+//					disponible = false;
+//				} 
+//			}
+//			tx.commit();
+//		} catch (Exception ex) {
+//			//System.out.println("   $ Error reservando un libro: " + ex.getMessage());
+//			logger.error("   $ Error reservando un libro:" + ex.getMessage());
+//
+//		} finally {
+//			if (tx != null && tx.isActive()) {
+//				tx.rollback();
+//			}
+//
+//			pm.close();
+//		}
+//		return disponible;
 		
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
-		try {
-			tx.begin();
-			Query<Libro> query = pm.newQuery(Libro.class);
-			@SuppressWarnings("unchecked")
-			List<Libro> libro = (List<Libro>) query.execute();
-			for (Libro l : libro) {
-				
-				if (l.getnombre().equals(nombre)){
-					// No hay salas disponibles
-					disponible = false;
-				} 
-			}
-			tx.commit();
-		} catch (Exception ex) {
-			//System.out.println("   $ Error reservando un libro: " + ex.getMessage());
-			logger.error("   $ Error reservando un libro:" + ex.getMessage());
-
-		} finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
-
-			pm.close();
-		}
-		return disponible;
+		
 	}
 
 	
@@ -238,11 +253,43 @@ public class LibroDAO implements ILibroDAO{
 
 	}
 
+	@Override
+	public boolean consultarDisponibilidadLibro(String nombre) {
+		// TODO Auto-generated method stub
+		boolean is_Reservado = true;
+
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			System.out.println("   * Consultado disponibilidad de: " + nombre);
+			tx.begin();
+			Query<Libro> query = pm.newQuery(Libro.class);
+			@SuppressWarnings("unchecked")
+			List<Libro> libros = (List<Libro>) query.execute();
+			for (Libro l : libros) {
+				if (l.getnombre().equals(nombre)) {
+					// No hay salas disponibles
+					is_Reservado = false;
+				}
+			}
+			tx.commit();
+		} catch (Exception ex) {
+			//System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+			logger.info("   $ Error comprobando disponibilidad del libro: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+		return is_Reservado;
+
+	}
+
 
 	
-	/**
-	 * OLVIDAR POR AHORA. ESPARA CUANDO SE HAGA LA RESERVA. NO ES DE SPRINT 1
-	 */
 //	@Override
 //	public String EstaDisponible(String nombre, boolean isReservado) {
 //		// TODO Auto-generated method stub

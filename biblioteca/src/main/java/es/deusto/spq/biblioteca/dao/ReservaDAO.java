@@ -98,12 +98,14 @@ public class ReservaDAO implements IReservaDAO {
 	}
 
 	@Override
-	public void editarReserva(Reserva r, String fecha_nueva, String hora_nueva) {
+	public void editarReserva(String dni,String fecha,String hora,String sala, String fecha_nueva, String hora_nueva,String SalaNueva) {
 
-		if (consultarDisponibilidad(r.getId_sala(), fecha_nueva, hora_nueva)) {
-			Reserva aux = new Reserva(r.getId_reserva(), r.getId_sala(), r.getDni_respon(), fecha_nueva, hora_nueva,
+		Reserva r = devolverReserva(dni, fecha, hora);
+		if(sala.equals(r.getId_sala()))	logger.debug("Sala correcta");
+		if (consultarDisponibilidad(SalaNueva, fecha_nueva, hora_nueva)) {
+			Reserva aux = new Reserva(r.getId_reserva(), SalaNueva, r.getDni_respon(), fecha_nueva, hora_nueva,
 					r.getPlazas());
-			// eliminarReserva(r);
+			eliminarReserva(r);
 			anyadirReserva(aux);
 			//System.out.println("Reserva modificada satisfactoriamente");
 			logger.info("Reserva modificada satisfactoriamente");
@@ -153,27 +155,27 @@ public class ReservaDAO implements IReservaDAO {
 	}
 
 	@Override
-	public void verReservas(String dni) {
+	public String verReservas(String dni) {
 		// TODO Auto-generated method stub
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-
+		String datos = null;
 		try {
 			//System.out.println("   * Consultado reservas de: " + dni);
 			logger.info("   * Consultado reservas de: " + dni);
-
+			
 			tx.begin();
 			Query<Reserva> query = pm.newQuery(Reserva.class);
 			@SuppressWarnings("unchecked")
 			List<Reserva> reservas = (List<Reserva>) query.execute();
 			for (Reserva r : reservas) {
 				if (r.getDni_respon().equals(dni)) {
-					System.out.println("======================================");
-					System.out.println("\nSala : " + r.getId_sala());
-					System.out.println("\nFecha : " + r.getFecha());
-					System.out.println("\nHora : " + r.getHora());
-					System.out.println("\nNº plazas : " + r.getPlazas());
-					System.out.println("\n======================================\n");
+					logger.info("============DNI : " + r.getDni_respon() +"==========================\nSala : " + r.getId_sala() 
+					+ "\nFecha : " + r.getFecha()
+					+ "\nHora : " + r.getHora()
+					+"\nNº plazas : " + r.getPlazas()
+					+ "\n======================================\n");
+					datos += r.getDni_respon() + "#" + r.getId_sala() + "#" + r.getFecha() + "#" + r.getHora() + "#" + r.getPlazas() + "/" ;
 				}
 			}
 			tx.commit();
@@ -188,6 +190,7 @@ public class ReservaDAO implements IReservaDAO {
 
 			pm.close();
 		}
+		return datos;
 	}
 
 	public void EliminarParticipanteR(String id_reserva, String plazas) {

@@ -6,6 +6,8 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mysql.fabric.xmlrpc.base.Data;
+
 import es.deusto.spq.biblioteca.dao.ILibroDAO;
 import es.deusto.spq.biblioteca.dao.IMesaDAO;
 import es.deusto.spq.biblioteca.dao.IReservaComedorDAO;
@@ -83,16 +85,12 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 	@Override
-	public void verReservas(String dni) throws RemoteException {
-		// TODO Auto-generated method stub
-		reservaDAO.verReservas(dni);
+	public String verReservas(String dni) throws RemoteException {
+		String s = reservaDAO.verReservas(dni);
+		return s;
 	}
 
-	@Override
-	public void editarReserva(Reserva r, String fecha_nueva, String hora_nueva) throws RemoteException {
-		// TODO Auto-generated method stub
-		reservaDAO.editarReserva(r, fecha_nueva, hora_nueva);
-	}
+	
 
 	@Override
 	public void anyadirUsuario(Reserva r) throws RemoteException {
@@ -140,13 +138,13 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		salaDAO.anyadirSala(s);
 	}
 
-	public void EliminarParticipante(Reserva r) {
+	public void EliminarParticipante(Reserva r)throws RemoteException {
 		String plazas = "";
 		plazas = String.valueOf(r.getPlazas());
 		reservaDAO.EliminarParticipanteR(r.getId_reserva(), plazas);
 	}
 
-	public void EliminarLibro(Libro l) {
+	public void EliminarLibro(Libro l)throws RemoteException {
 		// int numeroEjemplares = 00;
 		// numeroEjemplares
 		String Isbn;
@@ -156,17 +154,31 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		libroDAO.EliminarLibro(Isbn);
 
 	}
-
+	
 	@Override
-	public boolean reserveBook(String nombre) throws RemoteException {
+	public boolean consultarDiponibilidadLibro(String nombre) throws RemoteException {
 		// TODO Auto-generated method stub
 		boolean isReservado = false;
-		boolean reserva = libroDAO.reservarLibro(nombre);
-		if (reserva) {
+		boolean disponible = libroDAO.consultarDisponibilidadLibro(nombre);
+		if (disponible) {
 			isReservado = true;
 		}
-		
-	return isReservado;
+		return isReservado;
+	}
+
+	//Esta descartado
+	@Override
+	public boolean reserveBook(Libro l/*String nombre*/) throws RemoteException {
+//		// TODO Auto-generated method stub
+//		boolean isReservado = false;
+//		boolean reserva = libroDAO.reservarLibro(nombre);
+//		if (reserva) {
+//			isReservado = true;
+//		}
+//		libroDAO.reservarLibro(l);
+//		
+//	return isReservado;
+	return false;
 		
 	}
 
@@ -220,8 +232,8 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		}
 
 	@Override
-	public void editarReservaComedor(ReservaMesa m, String fecha_nueva, String hora_nueva) throws RemoteException {
-		rComedorDAO.editarReservaComedor(m, fecha_nueva, hora_nueva);
+	public void editarReservaComedor(String id_reserva, String fecha_nueva, String hora_nueva) throws RemoteException {
+		rComedorDAO.editarReservaComedor(id_reserva, fecha_nueva, hora_nueva);
 		}
 
 	@Override
@@ -231,12 +243,46 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 	@Override
-	public void eliminarReservaComedor(String dni, String fecha, String hora) throws RemoteException {
+	public void eliminarReservaComedor(String dni, String fecha, String hora) throws Exception {
 		// TODO Auto-generated method stub
 		ReservaMesa r = DevolverReservaMesa(dni, fecha, hora);
 		rComedorDAO.eliminarReservaComedor(r);
 	}
+
+
+	@Override
+	public void editarReserva(String dni, String fecha, String hora, String sala, String fecha_nueva, String hora_nueva,
+			String SalaNueva) throws RemoteException {
+		reservaDAO.editarReserva(dni, fecha, hora, sala, fecha_nueva, hora_nueva, SalaNueva);
+		
+	}
+
+	@Override
+	public ArrayList<Libro> getLibros() throws RemoteException {
+		// TODO Auto-generated method stub
+		ArrayList<Libro> catalogo = libroDAO.getLibros();
+		return catalogo;
+
+	}
 	
+	
+	@Override
+	public void consultaMenu() throws Exception {
+		// TODO Auto-generated method stub
+	//	rComedorDAO.consultaMenu(menu);
+	}
+	
+	@Override
+	public void seleccionarMenu() throws Exception {
+		// TODO Auto-generated method stub
+	//	rComedorDAO.seleccionarMenu(menu);
+	}
+	
+	@Override
+	public void comprarMenu() throws Exception {
+		// TODO Auto-generated method stub
+		rComedorDAO.comprarMenu();
+	}
 }
 
 	
