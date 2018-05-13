@@ -1,22 +1,20 @@
 package es.deusto.spq.biblioteca.dao;
 
+import java.util.Collection;
 import java.util.List;
 
+import javax.jdo.Extent;
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
-
 import org.apache.log4j.Logger;
-
 import es.deusto.spq.biblioteca.data.Mesa;
-import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
-import es.deusto.spq.biblioteca.data.Sala;
 
 public class ReservaComedorDAO implements IReservaComedorDAO{
-
+	
 	private PersistenceManagerFactory pmf;
 	private static final Logger logger = Logger.getLogger(ReservaComedorDAO.class);
 
@@ -124,36 +122,102 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 		}
 	}
 
+	//Koldo: Tengo que editarlo
 	@Override
-	public void eliminarReservaComedor(ReservaMesa r) {
+	public void eliminarReservaComedor(ReservaMesa r){
+//		PersistenceManager pm = pmf.getPersistenceManager();
+//		Transaction tx = pm.currentTransaction();
+//
+//		try {
+//			tx.begin();
+//			System.out.println("   * Eliminando reserva: " + r.getId_Reserva());
+//			pm.deletePersistent(r);
+//			tx.commit();
+//		} catch (Exception ex) {
+//			System.out.println("   $ Error Eliminando reserva de comedor: " + ex.getMessage());
+//		} finally {
+//			if (tx != null && tx.isActive()) {
+//				tx.rollback();
+//			}
+//
+//			pm.close();
+//		}
+		
+		//No se si va. Hay que mirarlo
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-
+		
 		try {
+			
 			tx.begin();
-			System.out.println("   * Eliminando reserva: " + r.getId_Reserva());
-			pm.deletePersistent(r);
+			Query<ReservaMesa> query = pm.newQuery(ReservaMesa.class, "id_reserva =='" + r.getId_Reserva() + "'");
+			Collection<?> e = (Collection<?>) query.execute();
+			
+			ReservaMesa rm = (ReservaMesa) e.iterator().next();
+					
+			query.close();
+			pm.deletePersistent(rm);
 			tx.commit();
+			logger.info("Se ha eliminado correctamente la reserva");
+			
 		} catch (Exception ex) {
-			System.out.println("   $ Error Eliminando reserva de comedor: " + ex.getMessage());
+			logger.error("Error eliminando una reserva de una mesa: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
 			}
-
-			pm.close();
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
 		}
+		
 	}
 
+	//Koldo: Tengo que editarlo
 	@Override
-	public void editarReservaComedor(ReservaMesa r, String fecha_nueva, String hora_nueva) {
-		if (consultarDisponibilidadComedor(r.getId_Mesa(), fecha_nueva, hora_nueva)) {
-			ReservaMesa aux = new ReservaMesa(r.getId_Reserva(),r.getId_Mesa(), r.getDni_respon(),r.getFecha(),r.getHora(),r.getPersonas());
-			// eliminarReserva(r);
-			anyadirReservaComedor(aux);
-			System.out.println("Reserva modificada satisfactoriamente");
-		} else {
-			System.out.println("Reserva no modificada.No se puede reservar en la fecha/hora seleccionadas");
+	public void editarReservaComedor(String id_reserva, String fecha_nueva, String hora_nueva) {
+//		if (consultarDisponibilidadComedor(r.getId_Mesa(), fecha_nueva, hora_nueva)) {
+//			ReservaMesa aux = new ReservaMesa(r.getId_Reserva(),r.getId_Mesa(), r.getDni_respon(),r.getFecha(),r.getHora(),r.getPersonas());
+//			// eliminarReserva(r);
+//			anyadirReservaComedor(aux);
+//			System.out.println("Reserva modificada satisfactoriamente");
+//		} else {
+//			System.out.println("Reserva no modificada.No se puede reservar en la fecha/hora seleccionadas");
+//		}
+		
+		//Hay que verificar si funciona
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		
+		tx.begin();
+		Extent<ReservaMesa> extent = pm.getExtent(ReservaMesa.class, true);
+		
+		for (ReservaMesa rm : extent) {
+			if (id_reserva.equals(rm.getId_Reserva())) {
+				rm.setFecha(fecha_nueva);
+				rm.setHora(hora_nueva);
+				pm.makePersistent(rm);
+				
+				logger.info("Se ha editado correctamente la reserva del comedor");
+				break;
+					
+			}
+			
+		}
+		tx.commit();
+		
+		try {
+			
+		} catch (Exception e) {
+			logger.error("Hubo un error editando la reserva" + e.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+			
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
 		}
 
 	}
