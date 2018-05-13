@@ -10,7 +10,6 @@ import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
 
 @PersistenceCapable(detachable = "true")
-@Inheritance(strategy = InheritanceStrategy.NEW_TABLE)
 public class Sala implements Serializable {
 
 	String id_sala;
