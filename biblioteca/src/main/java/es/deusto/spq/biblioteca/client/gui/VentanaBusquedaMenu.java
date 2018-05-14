@@ -56,7 +56,7 @@ public class VentanaBusquedaMenu extends JFrame {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				VentanaComedor abrirVentana4 = new VentanaComedor(controller);
+				VentanaComedor abrirVentana4 = new VentanaComedor();
 				abrirVentana4.setVisible(true);
 				VentanaBusquedaMenu.this.dispose();
 				

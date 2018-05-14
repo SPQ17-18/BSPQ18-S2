@@ -28,7 +28,7 @@ import java.util.List;
 import es.deusto.spq.biblioteca.controller.*;
 
 
-public class VentanaBuscar extends JFrame{
+public class VentanaBuscarX extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private JPanel panel;
 	private JLabel  lfecha, lhora;
@@ -40,7 +40,7 @@ public class VentanaBuscar extends JFrame{
 	
 
 	
-	public VentanaBuscar(Controller controller){
+	public VentanaBuscarX(Controller controller){
 		this.controller = controller;
 		lanzarventana();
 		this.setVisible(true);
@@ -113,8 +113,8 @@ public class VentanaBuscar extends JFrame{
 		
 		inicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaBuscar.this.setVisible(false);
-				VentanaLogin v = new VentanaLogin(controller);
+				VentanaBuscarX.this.setVisible(false);
+				VentanaLoginX v = new VentanaLoginX(controller);
 				v.setVisible(true);
 		
 			}
@@ -122,8 +122,8 @@ public class VentanaBuscar extends JFrame{
 		
 		verReserva.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaBuscar.this.setVisible(true);
-				VerReservas vr = new VerReservas(controller);
+				VentanaBuscarX.this.setVisible(true);
+				VerReservasX vr = new VerReservasX(controller);
 				vr.setVisible(true);
 			}
 		});	
@@ -180,7 +180,7 @@ public class VentanaBuscar extends JFrame{
 	public void ejecutarVentana() {
 		// TODO Auto-generated method stub
 		try {
-			final VentanaBuscar ventanaReserva = new VentanaBuscar(controller);
+			final VentanaBuscarX ventanaReserva = new VentanaBuscarX(controller);
 			SwingUtilities.invokeAndWait(new Runnable() {
 				@Override
 				public void run() {

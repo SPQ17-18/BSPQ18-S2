@@ -19,7 +19,7 @@ import javax.swing.SwingUtilities;
 
 import es.deusto.spq.biblioteca.controller.Controller;
 
-public class VerReservas extends JFrame{
+public class VerReservasX extends JFrame{
 
 	private static final long serialVersionUID = 1L;
 	private JPanel Ventana, Titulo;
@@ -29,7 +29,7 @@ public class VerReservas extends JFrame{
 	private JButton ver, inicio;
 	private Controller controller;
 
-	public  VerReservas(Controller controller) {
+	public  VerReservasX(Controller controller) {
 		this.controller=controller;
 		ventana();
 		Ventana.setVisible(true);
@@ -83,8 +83,8 @@ public class VerReservas extends JFrame{
 		
 		inicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VerReservas.this.setVisible(false);
-				VentanaLogin v = new VentanaLogin(controller);
+				VerReservasX.this.setVisible(false);
+				VentanaLoginX v = new VentanaLoginX(controller);
 				v.setVisible(true);
 		
 			}
@@ -123,7 +123,7 @@ public class VerReservas extends JFrame{
 	
 	public void lanzarVentana() {
 		try {
-			final VerReservas Ventana = new VerReservas(controller);
+			final VerReservasX Ventana = new VerReservasX(controller);
 			SwingUtilities.invokeAndWait(new Runnable() {
 				@Override
 				public void run() {
