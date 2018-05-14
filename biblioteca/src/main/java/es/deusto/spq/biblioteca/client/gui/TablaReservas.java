@@ -17,10 +17,15 @@ import java.awt.Image;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.table.DefaultTableModel;
+import java.awt.Color;
+import java.awt.ScrollPane;
+import javax.swing.JCheckBox;
 
 public class TablaReservas extends JFrame {
 
 	private JPanel contentPane;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -42,8 +47,9 @@ public class TablaReservas extends JFrame {
 	 * Create the frame.
 	 */
 	public TablaReservas() {
+		setTitle("Reservas");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 870, 456);
+		setBounds(100, 100, 870, 431);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -57,14 +63,59 @@ public class TablaReservas extends JFrame {
 				TablaReservas.this.dispose();
 			}
 		});
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, "", null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+			},
+			new String[] {
+				"DNI", "FECHA", "HORA", "PERSONAS", ""
+			}
+		));
+		table.getColumnModel().getColumn(0).setPreferredWidth(85);
+		table.getColumnModel().getColumn(0).setMinWidth(50);
+		table.getColumnModel().getColumn(1).setPreferredWidth(85);
+		table.getColumnModel().getColumn(1).setMinWidth(25);
+		table.getColumnModel().getColumn(2).setPreferredWidth(85);
+		table.getColumnModel().getColumn(2).setMinWidth(25);
+		table.getColumnModel().getColumn(3).setPreferredWidth(82);
+		table.getColumnModel().getColumn(3).setMinWidth(25);
+		table.getColumnModel().getColumn(4).setPreferredWidth(36);
+		table.getColumnModel().getColumn(4).setMinWidth(0);
+		
+		JButton btnEliminar = new JButton("Eliminar");
+		btnEliminar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnEliminar.setFont(new Font("Times New Roman", Font.ITALIC, 17));
+		btnEliminar.setBounds(687, 284, 156, 29);
+		contentPane.add(btnEliminar);
+		
+		JCheckBox chckbxNewCheckBox = new JCheckBox("");
+		chckbxNewCheckBox.setBackground(Color.WHITE);
+		chckbxNewCheckBox.setBounds(611, 36, 21, 15);
+		contentPane.add(chckbxNewCheckBox);
+		table.setBounds(10, 36, 660, 160);
+		contentPane.add(table);
 		button.setFont(new Font("Times New Roman", Font.ITALIC, 17));
-		button.setBounds(687, 343, 157, 29);
+		button.setBounds(687, 352, 157, 29);
 		contentPane.add(button);
 		
 		JLabel label = new JLabel("");
 		Image img = new ImageIcon(this.getClass().getResource("/bibliotecadeusto.jpg")).getImage();
 		label.setIcon(new ImageIcon(img));
-		label.setBounds(0, 0, 854, 417);
+		label.setBounds(0, 0, 854, 397);
 		contentPane.add(label);
 	}
 }

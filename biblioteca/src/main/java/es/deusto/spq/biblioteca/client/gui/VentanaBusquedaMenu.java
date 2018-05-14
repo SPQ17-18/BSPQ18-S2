@@ -55,7 +55,7 @@ public class VentanaBusquedaMenu extends JFrame {
 			}
 		});
 		btnComprar.setFont(new Font("Times New Roman", Font.ITALIC, 17));
-		btnComprar.setBounds(473, 278, 103, 29);
+		btnComprar.setBounds(473, 281, 103, 26);
 		contentPane.add(btnComprar);
 		
 		JButton button = new JButton("Volver");
@@ -67,7 +67,7 @@ public class VentanaBusquedaMenu extends JFrame {
 			}
 		});
 		button.setFont(new Font("Times New Roman", Font.ITALIC, 17));
-		button.setBounds(599, 278, 101, 29);
+		button.setBounds(599, 281, 101, 26);
 		contentPane.add(button);
 		
 		JScrollBar scrollBar = new JScrollBar();
