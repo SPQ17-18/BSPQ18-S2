@@ -7,7 +7,7 @@ import org.apache.log4j.Logger;
 
 import es.deusto.spq.biblioteca.client.Client;
 import es.deusto.spq.biblioteca.client.gui.VentanaBuscarX;
-import es.deusto.spq.biblioteca.client.gui.VentanaBusquedaComedor;
+import es.deusto.spq.biblioteca.client.gui.VentanaReservaMesa;
 import es.deusto.spq.biblioteca.client.gui.VentanaBusquedaMenu;
 import es.deusto.spq.biblioteca.client.gui.VentanaCatalogoLibros;
 import es.deusto.spq.biblioteca.client.gui.VentanaComedor;
@@ -25,7 +25,7 @@ public class Controller {
 	private VentanaBuscarX vb;
 	private VerReservasX vr;
 	private VentanaComedor vc;
-	private VentanaBusquedaComedor vbc;
+	private VentanaReservaMesa vbc;
 	private VentanaBusquedaMenu vbm;
 	private VentanaCatalogoLibros vcl;
 	

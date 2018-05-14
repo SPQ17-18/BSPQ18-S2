@@ -74,11 +74,25 @@ public class VentanaComedor extends JFrame {
 		contentPane.add(button_2);
 		
 		JButton button_1 = new JButton("Ver Menú");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VentanaBusquedaMenu abrirVentana3 = new VentanaBusquedaMenu(null);
+				abrirVentana3.setVisible(true);
+				VentanaComedor.this.dispose();
+			}
+		});
 		button_1.setFont(new Font("Times New Roman", Font.ITALIC, 17));
 		button_1.setBounds(224, 316, 156, 39);
 		contentPane.add(button_1);
 		
 		JButton button = new JButton("Reservar Mesa");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VentanaReservaMesa abrirVentana4 = new VentanaReservaMesa();
+				abrirVentana4.setVisible(true);
+				VentanaComedor.this.dispose();
+			}
+		});
 		button.setFont(new Font("Times New Roman", Font.ITALIC, 17));
 		button.setBounds(24, 316, 156, 39);
 		contentPane.add(button);
