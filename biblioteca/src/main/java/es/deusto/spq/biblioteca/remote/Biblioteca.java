@@ -4,27 +4,23 @@ package es.deusto.spq.biblioteca.remote;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
-import java.util.List;
-
-import com.mysql.fabric.xmlrpc.base.Data;
-
 import es.deusto.spq.biblioteca.dao.ILibroDAO;
+import es.deusto.spq.biblioteca.dao.IMenuDAO;
 import es.deusto.spq.biblioteca.dao.IMesaDAO;
 import es.deusto.spq.biblioteca.dao.IReservaComedorDAO;
 import es.deusto.spq.biblioteca.dao.LibroDAO;
+import es.deusto.spq.biblioteca.dao.MenuDAO;
 import es.deusto.spq.biblioteca.dao.MesaDAO;
 import es.deusto.spq.biblioteca.dao.ReservaComedorDAO;
 import es.deusto.spq.biblioteca.dao.IReservaDAO;
 import es.deusto.spq.biblioteca.dao.ReservaDAO;
 import es.deusto.spq.biblioteca.data.Libro;
+import es.deusto.spq.biblioteca.data.Menu;
 import es.deusto.spq.biblioteca.data.Mesa;
 import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
 import es.deusto.spq.biblioteca.dao.ISalaDAO;
-import es.deusto.spq.biblioteca.dao.ReservaDAO;
 import es.deusto.spq.biblioteca.dao.SalaDAO;
-import es.deusto.spq.biblioteca.data.Libro;
-import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.Sala;
 
 public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
@@ -38,6 +34,8 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	private IMesaDAO mesaDAO;
 	
 	private IReservaComedorDAO rComedorDAO;
+	
+	private IMenuDAO menuDAO;
 
 	public Biblioteca(IReservaDAO reservaDAO ) throws RemoteException {
 		super();
@@ -56,6 +54,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		this.libroDAO = new LibroDAO();
 		this.mesaDAO = new MesaDAO();
 		this.rComedorDAO = new ReservaComedorDAO();
+		this.menuDAO = new MenuDAO();
 
 	}
 
@@ -264,25 +263,33 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		return catalogo;
 
 	}
-	
-	
+
 	@Override
-	public void consultaMenu() throws Exception {
+	public void anyadirMenu(String fecha, String plato1, String plato2, String postre)
+			throws Exception {
 		// TODO Auto-generated method stub
-	//	rComedorDAO.consultaMenu(menu);
+		int cod = 00;
+		cod++;
+		String codg = "";
+		codg = String.valueOf(cod);
+		codg = Integer.toString(cod);
+
+		Menu m = new Menu(codg, fecha, plato1, plato2, postre);
+		menuDAO.anyadirMenu(m);
+		
 	}
-	
+
 	@Override
-	public void seleccionarMenu() throws Exception {
+	public void anyadirValoracion(String id_menu, int valoracion) throws Exception {
 		// TODO Auto-generated method stub
-	//	rComedorDAO.seleccionarMenu(menu);
+		menuDAO.anyadirValoracion(id_menu, valoracion);
+		
 	}
-	
+
 	@Override
-	public void comprarMenu() throws Exception {
-		// TODO Auto-generated method stub
-		rComedorDAO.comprarMenu();
-	}
+	public void verMenu(String fecha) throws Exception {
+		menuDAO.verMenu(fecha);
+	}	
 }
 
 	
