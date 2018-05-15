@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-public class VentanaLoginFondo extends JPanel {
+public class VentanaLoginFondoX extends JPanel {
 	private URL url = getClass().getResource("");
 	Image image = new ImageIcon(url).getImage();
 	

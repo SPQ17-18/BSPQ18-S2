@@ -18,14 +18,14 @@ import javax.swing.border.EmptyBorder;
 import es.deusto.spq.biblioteca.controller.*;
 
 
-public class VentanaLogin extends JFrame  {
+public class VentanaLoginX extends JFrame  {
 	private static final long serialVersionUID = 1L;
 	private JPanel panel,Ventana;
 	private JLabel lbnPanel;
 	private JButton Salas, Comedor,Biblioteca ;
 	private Controller controller;
 	
-	public VentanaLogin(Controller controller) {
+	public VentanaLoginX(Controller controller) {
 		this.controller = controller;
 		ventana();
 		this.setVisible(true);
@@ -58,21 +58,21 @@ public class VentanaLogin extends JFrame  {
 		
 		Salas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaLogin.this.setVisible(false);
-				VentanaBuscar Salas = new VentanaBuscar(controller);
+				VentanaLoginX.this.setVisible(false);
+				VentanaBuscarX Salas = new VentanaBuscarX(controller);
 				Salas.setVisible(true);
 			}
 		});	
 		Comedor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaLogin.this.setVisible(true);
-				VentanaComedor Comedor = new VentanaComedor(controller);
+				VentanaLoginX.this.setVisible(true);
+				VentanaComedor Comedor = new VentanaComedor();
 				Comedor.setVisible(true);
 			}
 		});	
 		Biblioteca.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaLogin.this.setVisible(true);
+				VentanaLoginX.this.setVisible(true);
 				VentanaCatalogoLibros Biblioteca = new VentanaCatalogoLibros(controller);
 				Biblioteca.setVisible(true);
 			}
@@ -90,7 +90,7 @@ public class VentanaLogin extends JFrame  {
 
 			public void ejecutarVentana() {
 				try {
-					final VentanaLogin Ventana = new VentanaLogin(controller);
+					final VentanaLoginX Ventana = new VentanaLoginX(controller);
 					SwingUtilities.invokeAndWait(new Runnable() {
 						public void run() {
 							Ventana.setVisible(true);

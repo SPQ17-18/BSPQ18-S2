@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import org.apache.log4j.Logger;
 
 import es.deusto.spq.biblioteca.client.Client;
-import es.deusto.spq.biblioteca.client.gui.VentanaBuscar;
-import es.deusto.spq.biblioteca.client.gui.VentanaBusquedaComedor;
+import es.deusto.spq.biblioteca.client.gui.VentanaBuscarX;
+import es.deusto.spq.biblioteca.client.gui.VentanaReservaMesa;
 import es.deusto.spq.biblioteca.client.gui.VentanaBusquedaMenu;
 import es.deusto.spq.biblioteca.client.gui.VentanaCatalogoLibros;
 import es.deusto.spq.biblioteca.client.gui.VentanaComedor;
-import es.deusto.spq.biblioteca.client.gui.VentanaLogin;
-import es.deusto.spq.biblioteca.client.gui.VerReservas;
+import es.deusto.spq.biblioteca.client.gui.VentanaLoginX;
+import es.deusto.spq.biblioteca.client.gui.VerReservasX;
 import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Mesa;
 import es.deusto.spq.biblioteca.data.Reserva;
@@ -21,11 +21,11 @@ import es.deusto.spq.biblioteca.data.ReservaMesa;
 public class Controller {
 	@SuppressWarnings("unused")
 	private Client cl;
-	private VentanaLogin vl;
-	private VentanaBuscar vb;
-	private VerReservas vr;
+	private VentanaLoginX vl;
+	private VentanaBuscarX vb;
+	private VerReservasX vr;
 	private VentanaComedor vc;
-	private VentanaBusquedaComedor vbc;
+	private VentanaReservaMesa vbc;
 	private VentanaBusquedaMenu vbm;
 	private VentanaCatalogoLibros vcl;
 	
@@ -34,7 +34,7 @@ public class Controller {
 	public Controller(String[] args) throws RemoteException {
 		cl = new Client();
 		cl.setService(args);
-		vl = new VentanaLogin(this);
+		vl = new VentanaLoginX(this);
 		vl.ejecutarVentana();
 		
 	}
