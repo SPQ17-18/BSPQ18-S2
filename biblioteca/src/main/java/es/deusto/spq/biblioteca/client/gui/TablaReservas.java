@@ -101,12 +101,7 @@ public class TablaReservas extends JFrame {
 		btnEliminar.setFont(new Font("Times New Roman", Font.ITALIC, 17));
 		btnEliminar.setBounds(687, 284, 156, 29);
 		contentPane.add(btnEliminar);
-		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("");
-		chckbxNewCheckBox.setBackground(Color.WHITE);
-		chckbxNewCheckBox.setBounds(611, 36, 21, 15);
-		contentPane.add(chckbxNewCheckBox);
-		table.setBounds(10, 36, 660, 160);
+		table.setBounds(10, 43, 660, 160);
 		contentPane.add(table);
 		button.setFont(new Font("Times New Roman", Font.ITALIC, 17));
 		button.setBounds(687, 352, 157, 29);
