@@ -96,7 +96,7 @@ public class Controller {
 		String s = null;
 		try{
 			
-    	 s = cl.getService().verReservas(dni);
+//    	 s = cl.getService().verReservas(dni);
     	}catch(Exception e){
     		e.printStackTrace();
     	}

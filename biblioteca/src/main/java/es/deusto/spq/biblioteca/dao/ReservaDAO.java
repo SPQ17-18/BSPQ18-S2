@@ -1,5 +1,6 @@
 package es.deusto.spq.biblioteca.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.jdo.JDOHelper;
@@ -155,11 +156,14 @@ public class ReservaDAO implements IReservaDAO {
 	}
 
 	@Override
-	public String verReservas(String dni) {
+	public ArrayList<String> verReservas(String dni) {
 		// TODO Auto-generated method stub
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-		String datos = null;
+		
+		ArrayList<String> datos  = new ArrayList<String>();
+		String d=null;
+		
 		try {
 			//System.out.println("   * Consultado reservas de: " + dni);
 			logger.info("   * Consultado reservas de: " + dni);
@@ -170,12 +174,11 @@ public class ReservaDAO implements IReservaDAO {
 			List<Reserva> reservas = (List<Reserva>) query.execute();
 			for (Reserva r : reservas) {
 				if (r.getDni_respon().equals(dni)) {
-					logger.info("============DNI : " + r.getDni_respon() +"==========================\nSala : " + r.getId_sala() 
-					+ "\nFecha : " + r.getFecha()
-					+ "\nHora : " + r.getHora()
-					+"\nNº plazas : " + r.getPlazas()
-					+ "\n======================================\n");
-					datos += r.getDni_respon() + "#" + r.getId_sala() + "#" + r.getFecha() + "#" + r.getHora() + "#" + r.getPlazas() + "/" ;
+					logger.info("============DNI : " + r.getDni_respon() + "==========================\nSala : "
+							+ r.getId_sala() + "\nFecha : " + r.getFecha() + "\nHora : " + r.getHora()
+							+ "\nNº plazas : " + r.getPlazas() + "\n======================================\n");
+					d += r.getId_reserva() + "#"+r.getDni_respon() + "#" + r.getId_sala() + "#" + r.getFecha() + "#" + r.getHora() + "#" + r.getPlazas() + "/" ;
+					datos.add(d);
 				}
 			}
 			tx.commit();

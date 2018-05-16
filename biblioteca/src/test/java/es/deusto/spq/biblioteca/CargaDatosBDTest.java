@@ -2,6 +2,8 @@ package es.deusto.spq.biblioteca;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;

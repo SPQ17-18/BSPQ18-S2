@@ -35,7 +35,7 @@ public interface IBiblioteca extends Remote {
 	public boolean consultarDisponibilidad(String Id_Sala, String fecha, String hora, int personas)
 			throws RemoteException;
 
-	public String verReservas(String dni) throws RemoteException;
+	public ArrayList<String> verReservas(String dni) throws RemoteException;
 
 	void editarReserva(String dni, String fecha, String hora, String sala, String fecha_nueva, String hora_nueva,
 			String SalaNueva) throws RemoteException;
@@ -56,7 +56,7 @@ public interface IBiblioteca extends Remote {
 	
 	public void anyadirMesa(String id_mesa, int capacidad) throws RemoteException;
 	
-	public void verReservaComedor(String dni) throws RemoteException;
+	public ArrayList <String>verReservaComedor(String dni) throws RemoteException;
 	
 	public void eliminarReservaComedor(String dni, String fecha, String hora) throws RemoteException, Exception;
 	

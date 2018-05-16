@@ -1,5 +1,6 @@
 package es.deusto.spq.biblioteca.dao;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -90,11 +91,14 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 	}
 
 	@Override
-	public void verReservaComedor(String dni) {
+	public ArrayList<String> verReservaComedor(String dni) {
 		// TODO Auto-generated method stub
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 
+		ArrayList<String> datos  = new ArrayList<String>();
+		String d=null;
+		
 		try {
 			System.out.println("   * Consultado reservas de: " + dni);
 			tx.begin();
@@ -103,13 +107,11 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 			List<ReservaMesa> reservas = (List<ReservaMesa>) query.execute();
 			for (ReservaMesa r : reservas) {
 				if (r.getDni_respon().equals(dni)) {
-					System.out.println("======================================");
-					System.out.println("\nReserva : " + r.getId_Reserva());
-					System.out.println("\nMesa : " + r.getId_Mesa());
-					System.out.println("\nFecha : " + r.getFecha());
-					System.out.println("\nHora : " + r.getHora());
-					System.out.println("\nNº personas : " + r.getPersonas());
-					System.out.println("\n======================================\n");
+					logger.info("============DNI : " + r.getDni_respon() + "==========================\nSala : "
+							+ r.getId_Mesa() + "\nFecha : " + r.getFecha() + "\nHora : " + r.getHora()
+							+ "\nNº plazas : " + r.getPersonas() + "\n======================================\n");
+					d += r.getId_Reserva() + "#"+r.getDni_respon() + "#" + r.getId_Mesa() + "#" + r.getFecha() + "#" + r.getHora() + "#" + r.getPersonas() + "/" ;
+					datos.add(d);
 				}
 			}
 			tx.commit();
@@ -122,6 +124,7 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 
 			pm.close();
 		}
+		return datos;
 	}
 
 	//Koldo: Tengo que editarlo

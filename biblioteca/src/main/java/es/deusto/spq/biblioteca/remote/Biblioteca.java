@@ -84,9 +84,8 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 	@Override
-	public String verReservas(String dni) throws RemoteException {
-		String s = reservaDAO.verReservas(dni);
-		return s;
+	public ArrayList<String> verReservas(String dni) throws RemoteException {
+		return reservaDAO.verReservas(dni);
 	}
 
 	
@@ -213,8 +212,8 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 	@Override
-	public void verReservaComedor(String dni) throws RemoteException {
-		rComedorDAO.verReservaComedor(dni);
+	public ArrayList<String> verReservaComedor(String dni) throws RemoteException {
+		return rComedorDAO.verReservaComedor(dni);
 		}
 
 	@Override
