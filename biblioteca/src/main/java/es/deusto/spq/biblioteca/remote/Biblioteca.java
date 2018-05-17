@@ -61,14 +61,14 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	@Override
 	public void eliminarReserva(String id_Sala, String dni_respon) throws RemoteException {
 		// TODO Auto-generated method stub
-		int cod = 00;
-		cod++;
-		String codg = "";
-		codg = String.valueOf(cod);
-		codg = Integer.toString(cod);
-
-		Reserva r = new Reserva(codg, id_Sala, dni_respon, null, null, 0);
-		reservaDAO.eliminarReserva(r);
+//		int cod = 00;
+//		cod++;
+//		String codg = "";
+//		codg = String.valueOf(cod);
+//		codg = Integer.toString(cod);
+//
+//		Reserva r = new Reserva(codg, id_Sala, dni_respon, null, null, 0);
+//		reservaDAO.eliminarReserva(r);
 	}
 
 	@Override
@@ -112,10 +112,11 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		int cod = 00;
 		cod++;
 		String codg = "";
+		String c="RE";
 		codg = String.valueOf(cod);
 		codg = Integer.toString(cod);
 
-		Reserva r = new Reserva(codg, id_Sala, dni_respon, fecha, hora, plazas);
+		Reserva r = new Reserva(c.concat(codg), id_Sala, dni_respon, fecha, hora, plazas);
 		reservaDAO.anyadirReserva(r);
 	}
 
@@ -213,9 +214,10 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		int cod = 00;
 		cod++;
 		String codg = "";
+		String c="REC";
 		codg = String.valueOf(cod);
 		codg = Integer.toString(cod);
-		ReservaMesa r = new ReservaMesa(id_Mesa,codg,dni_respon, fecha, hora, plazas);
+		ReservaMesa r = new ReservaMesa(c.concat(codg),codg,dni_respon, fecha, hora, plazas);
 		rComedorDAO.anyadirReservaComedor(r);
 	}
 
@@ -271,10 +273,11 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		int cod = 00;
 		cod++;
 		String codg = "";
+		String c="MEN";
 		codg = String.valueOf(cod);
 		codg = Integer.toString(cod);
 
-		Menu m = new Menu(codg, fecha, plato1, plato2, postre);
+		Menu m = new Menu(c.concat(codg), fecha, plato1, plato2, postre);
 		menuDAO.anyadirMenu(m);
 		
 	}
