@@ -92,7 +92,7 @@ public class VentanaSala extends JFrame {
 	
 	public void ejecutarVentana() {
 		try {
-			final VentanaMensaje Ventana = new VentanaMensaje(controller);
+			final VentanaSala Ventana = new VentanaSala(controller);
 			SwingUtilities.invokeAndWait(new Runnable() {
 				public void run() {
 					Ventana.setVisible(true);

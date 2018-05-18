@@ -7,6 +7,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -84,4 +85,17 @@ public class TablaReservasSala extends JFrame {
 		contentPane.add(label);
 	}
 	
+	public void ejecutarVentana() {
+		try {
+			final TablaReservasSala Ventana = new TablaReservasSala(controller);
+			SwingUtilities.invokeAndWait(new Runnable() {
+				public void run() {
+					Ventana.setVisible(true);
+				}
+			});
+		} catch (Exception e) {
+			System.exit(1);  
+		}
+}
+
 }

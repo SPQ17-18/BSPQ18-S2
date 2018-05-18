@@ -5,35 +5,28 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.JButton;
+
+import es.deusto.spq.biblioteca.controller.Controller;
 
 public class InfoLibro2 extends JFrame {
 
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					InfoLibro2 frame = new InfoLibro2();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	private Controller controller;
+	
+	public InfoLibro2(Controller controller) {
+		this.controller = controller;
+		ventana();
+		this.setVisible(true);
 	}
-
-	/**
-	 * Create the frame.
-	 */
-	public InfoLibro2() {
+	
+	public void ventana() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 350, 235);
 		contentPane = new JPanel();
@@ -52,5 +45,18 @@ public class InfoLibro2 extends JFrame {
 		button.setFont(new Font("Times New Roman", Font.ITALIC, 17));
 		contentPane.add(button);
 	}
+	
+	public void ejecutarVentana() {
+		try {
+			final InfoLibro2 Ventana = new InfoLibro2(controller);
+			SwingUtilities.invokeAndWait(new Runnable() {
+				public void run() {
+					Ventana.setVisible(true);
+				}
+			});
+		} catch (Exception e) {
+			System.exit(1);  
+		}
+}
 
 }

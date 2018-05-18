@@ -5,37 +5,31 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.JButton;
+
+import es.deusto.spq.biblioteca.controller.Controller;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class InfoLibro3 extends JFrame {
 
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					InfoLibro3 frame = new InfoLibro3();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	private Controller controller;
+	
+	public InfoLibro3(Controller controller) {
+		this.controller = controller;
+		ventana();
+		this.setVisible(true);
 	}
-
-	/**
-	 * Create the frame.
-	 */
-	public InfoLibro3() {
+	
+	public void ventana() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 448, 203);
 		contentPane = new JPanel();
@@ -52,7 +46,7 @@ public class InfoLibro3 extends JFrame {
 		JButton btnLibros = new JButton("Menú");
 		btnLibros.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaLibros abrirVentana4 = new VentanaLibros();
+				VentanaLibros abrirVentana4 = new VentanaLibros(controller);
 				abrirVentana4.setVisible(true);
 				InfoLibro3.this.dispose();
 			}
@@ -73,5 +67,18 @@ public class InfoLibro3 extends JFrame {
 		btnCatlogo.setBounds(39, 103, 148, 29);
 		contentPane.add(btnCatlogo);
 	}
+	
+	public void ejecutarVentana() {
+		try {
+			final InfoLibro3 Ventana = new InfoLibro3(controller);
+			SwingUtilities.invokeAndWait(new Runnable() {
+				public void run() {
+					Ventana.setVisible(true);
+				}
+			});
+		} catch (Exception e) {
+			System.exit(1);  
+		}
+}
 
 }

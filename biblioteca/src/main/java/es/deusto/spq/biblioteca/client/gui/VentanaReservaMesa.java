@@ -81,6 +81,7 @@ public class VentanaReservaMesa extends JFrame {
 		label.setBounds(0, 0, 692, 340);
 		contentPane.add(label);
 	}
+	
 	public void ejecutarVentana() {
 		try {
 			final VentanaReservaMesa Ventana = new VentanaReservaMesa(controller);

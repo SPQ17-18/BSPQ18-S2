@@ -7,11 +7,17 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+
 import java.awt.Font;
+
 import javax.swing.JTextField;
+
+import es.deusto.spq.biblioteca.controller.Controller;
+
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -20,27 +26,15 @@ public class VentanaLibros extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaLibros frame = new VentanaLibros();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	private Controller controller;
+	
+	public VentanaLibros(Controller controller) {
+		this.controller = controller;
+		ventana();
+		this.setVisible(true);
 	}
-
-	/**
-	 * Create the frame.
-	 */
-	public VentanaLibros() {
+	
+	public void ventana() {
 		setTitle("Libros");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 710, 392);
@@ -66,7 +60,7 @@ public class VentanaLibros extends JFrame {
 		JButton button = new JButton("Volver");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MenuPrincipal abrirVentana = new MenuPrincipal();
+				MenuPrincipal abrirVentana = new MenuPrincipal(controller);
 				abrirVentana.setVisible(true);
 				VentanaLibros.this.dispose();
 			}
@@ -90,7 +84,7 @@ public class VentanaLibros extends JFrame {
 		JButton btnBuscar = new JButton("Buscar");
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaReservaLibro abrirVentana3 = new VentanaReservaLibro();
+				VentanaReservaLibro abrirVentana3 = new VentanaReservaLibro(controller);
 				abrirVentana3.setVisible(true);
 				VentanaLibros.this.dispose();
 			}
@@ -102,5 +96,18 @@ public class VentanaLibros extends JFrame {
 		label.setBounds(0, 0, 702, 353);
 		contentPane.add(label);
 	}
+	
+	public void ejecutarVentana() {
+		try {
+			final VentanaLibros Ventana = new VentanaLibros(controller);
+			SwingUtilities.invokeAndWait(new Runnable() {
+				public void run() {
+					Ventana.setVisible(true);
+				}
+			});
+		} catch (Exception e) {
+			System.exit(1);  
+		}
+}
 
 }

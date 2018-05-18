@@ -79,7 +79,7 @@ public class VentanaVerReservasSala extends JFrame {
 	
 	public void ejecutarVentana() {
 		try {
-			final VentanaMensaje Ventana = new VentanaMensaje(controller);
+			final VentanaVerReservasSala Ventana = new VentanaVerReservasSala(controller);
 			SwingUtilities.invokeAndWait(new Runnable() {
 				public void run() {
 					Ventana.setVisible(true);

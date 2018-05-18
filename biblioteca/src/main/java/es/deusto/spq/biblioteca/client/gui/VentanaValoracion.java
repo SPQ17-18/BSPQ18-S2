@@ -88,7 +88,7 @@ public class VentanaValoracion extends JFrame {
 	}
 	public void ejecutarVentana() {
 		try {
-			final VentanaMensaje Ventana = new VentanaMensaje(controller);
+			final VentanaValoracion Ventana = new VentanaValoracion(controller);
 			SwingUtilities.invokeAndWait(new Runnable() {
 				public void run() {
 					Ventana.setVisible(true);

@@ -41,9 +41,7 @@ public class VentanaCatalogoLibros extends JFrame {
 		this.setVisible(true);
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public void VentanaCatalogoLibrosejecutor() {
 		
 		//Biblioteca bli = new Biblioteca;
@@ -58,7 +56,7 @@ public class VentanaCatalogoLibros extends JFrame {
 		JButton button = new JButton("Volver");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaLibros abrirVentana = new VentanaLibros();
+				VentanaLibros abrirVentana = new VentanaLibros(controller);
 				abrirVentana.setVisible(true);
 				VentanaCatalogoLibros.this.dispose();
 			}
@@ -70,7 +68,7 @@ public class VentanaCatalogoLibros extends JFrame {
 		JButton btnL_4 = new JButton("L6");
 		btnL_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaReservaLibro abrirVentana7 = new VentanaReservaLibro();
+				VentanaReservaLibro abrirVentana7 = new VentanaReservaLibro(controller);
 				abrirVentana7.setVisible(true);
 				VentanaCatalogoLibros.this.dispose();
 			}
@@ -82,7 +80,7 @@ public class VentanaCatalogoLibros extends JFrame {
 		JButton btnL_3 = new JButton("L5");
 		btnL_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaReservaLibro abrirVentana6 = new VentanaReservaLibro();
+				VentanaReservaLibro abrirVentana6 = new VentanaReservaLibro(controller);
 				abrirVentana6.setVisible(true);
 				VentanaCatalogoLibros.this.dispose();
 			}
@@ -94,7 +92,7 @@ public class VentanaCatalogoLibros extends JFrame {
 		JButton btnL_2 = new JButton("L4");
 		btnL_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaReservaLibro abrirVentana5 = new VentanaReservaLibro();
+				VentanaReservaLibro abrirVentana5 = new VentanaReservaLibro(controller);
 				abrirVentana5.setVisible(true);
 				VentanaCatalogoLibros.this.dispose();
 			}
@@ -106,7 +104,7 @@ public class VentanaCatalogoLibros extends JFrame {
 		JButton btnL_1 = new JButton("L3");
 		btnL_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaReservaLibro abrirVentana4 = new VentanaReservaLibro();
+				VentanaReservaLibro abrirVentana4 = new VentanaReservaLibro(controller);
 				abrirVentana4.setVisible(true);
 				VentanaCatalogoLibros.this.dispose();
 			}
@@ -118,7 +116,7 @@ public class VentanaCatalogoLibros extends JFrame {
 		JButton btnL = new JButton("L2");
 		btnL.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaReservaLibro abrirVentana3 = new VentanaReservaLibro();
+				VentanaReservaLibro abrirVentana3 = new VentanaReservaLibro(controller);
 				abrirVentana3.setVisible(true);
 				VentanaCatalogoLibros.this.dispose();
 			}
@@ -130,7 +128,7 @@ public class VentanaCatalogoLibros extends JFrame {
 		JButton btnNewButton = new JButton("L1");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaReservaLibro abrirVentana2 = new VentanaReservaLibro();
+				VentanaReservaLibro abrirVentana2 = new VentanaReservaLibro(controller);
 				abrirVentana2.setVisible(true);
 				VentanaCatalogoLibros.this.dispose();
 			}
@@ -140,14 +138,13 @@ public class VentanaCatalogoLibros extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JLabel label = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/libros.jpg")).getImage();
-		label.setIcon(new ImageIcon(img));
+	//	Image img = new ImageIcon(this.getClass().getResource("/libros.jpg")).getImage();
+	//	label.setIcon(new ImageIcon(img));
 		label.setBounds(0, 0, 542, 278);
 		contentPane.add(label);
 	}
 	
 	public void ejecutarVentana() {
-		// TODO Auto-generated method stub
 		try {
 			final VentanaCatalogoLibros ventanaCatalogoLibros = new VentanaCatalogoLibros(controller);
 			SwingUtilities.invokeAndWait(new Runnable() {

@@ -127,7 +127,7 @@ public class VentanaHacerReservaSala extends JFrame {
 	
 	public void ejecutarVentana() {
 		try {
-			final VentanaComedor Ventana = new VentanaComedor(controller);
+			final VentanaHacerReservaSala Ventana = new VentanaHacerReservaSala(controller);
 			SwingUtilities.invokeAndWait(new Runnable() {
 				public void run() {
 					Ventana.setVisible(true);

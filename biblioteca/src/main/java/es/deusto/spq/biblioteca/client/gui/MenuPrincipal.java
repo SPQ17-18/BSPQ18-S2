@@ -54,7 +54,7 @@ public class MenuPrincipal extends JFrame {
 		JButton botonLibros = new JButton("Libros");
 		botonLibros.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				VentanaLibros abrirVentana5 = new VentanaLibros();
+				VentanaLibros abrirVentana5 = new VentanaLibros(controller);
 				abrirVentana5.setVisible(true);
 				MenuPrincipal.this.dispose();
 				

@@ -5,13 +5,19 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+
 import java.awt.Font;
 import java.awt.Color;
+
 import javax.swing.JTextPane;
 import javax.swing.JButton;
+
+import es.deusto.spq.biblioteca.controller.Controller;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -25,27 +31,15 @@ public class VentanaReservaLibro extends JFrame {
 	private JTextPane textPane_3;
 	private JButton btnReservarLibro;
 	private JButton btnVolver;
+	private Controller controller;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaReservaLibro frame = new VentanaReservaLibro();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	public VentanaReservaLibro(Controller controller) {
+		this.controller = controller;
+		ventana();
+		this.setVisible(true);
 	}
-
-	/**
-	 * Create the frame.
-	 */
-	public VentanaReservaLibro() {
+	
+	public void ventana() {
 		setTitle("Libro");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 420, 418);
@@ -68,7 +62,7 @@ public class VentanaReservaLibro extends JFrame {
 		btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InfoLibro3 abrirVentana5 = new InfoLibro3();
+				InfoLibro3 abrirVentana5 = new InfoLibro3(controller);
 				abrirVentana5.setVisible(true);
 				VentanaReservaLibro.this.dispose();
 			}
@@ -117,4 +111,17 @@ public class VentanaReservaLibro extends JFrame {
 		textPane.setBounds(214, 24, 147, 30);
 		contentPane.add(textPane);
 	}
+	
+	public void ejecutarVentana() {
+		try {
+			final VentanaReservaLibro Ventana = new VentanaReservaLibro(controller);
+			SwingUtilities.invokeAndWait(new Runnable() {
+				public void run() {
+					Ventana.setVisible(true);
+				}
+			});
+		} catch (Exception e) {
+			System.exit(1);  
+		}
+}
 }

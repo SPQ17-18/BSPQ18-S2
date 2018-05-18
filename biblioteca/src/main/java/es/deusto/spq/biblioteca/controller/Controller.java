@@ -6,9 +6,27 @@ import java.util.ArrayList;
 import org.apache.log4j.Logger;
 
 import es.deusto.spq.biblioteca.client.Client;
+import es.deusto.spq.biblioteca.client.gui.InfoLibro1;
+import es.deusto.spq.biblioteca.client.gui.InfoLibro2;
+import es.deusto.spq.biblioteca.client.gui.InfoLibro3;
+import es.deusto.spq.biblioteca.client.gui.MenuPrincipal;
+import es.deusto.spq.biblioteca.client.gui.TablaReservas;
+import es.deusto.spq.biblioteca.client.gui.TablaReservasSala;
 import es.deusto.spq.biblioteca.client.gui.VentanaBusquedaMenu;
 import es.deusto.spq.biblioteca.client.gui.VentanaCatalogoLibros;
 import es.deusto.spq.biblioteca.client.gui.VentanaComedor;
+import es.deusto.spq.biblioteca.client.gui.VentanaHacerReservaMesa;
+import es.deusto.spq.biblioteca.client.gui.VentanaHacerReservaSala;
+import es.deusto.spq.biblioteca.client.gui.VentanaLibros;
+import es.deusto.spq.biblioteca.client.gui.VentanaMensaje;
+import es.deusto.spq.biblioteca.client.gui.VentanaMensaje2;
+import es.deusto.spq.biblioteca.client.gui.VentanaMensaje3;
+import es.deusto.spq.biblioteca.client.gui.VentanaReservaLibro;
+import es.deusto.spq.biblioteca.client.gui.VentanaReservaMesa;
+import es.deusto.spq.biblioteca.client.gui.VentanaSala;
+import es.deusto.spq.biblioteca.client.gui.VentanaValoracion;
+import es.deusto.spq.biblioteca.client.gui.VentanaVerReservas;
+import es.deusto.spq.biblioteca.client.gui.VentanaVerReservasSala;
 import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Mesa;
 import es.deusto.spq.biblioteca.data.Reserva;
@@ -17,12 +35,36 @@ import es.deusto.spq.biblioteca.data.ReservaMesa;
 public class Controller {
 	@SuppressWarnings("unused")
 	private Client cl;
+	private InfoLibro1 i1;
+	private InfoLibro2 i2;
+	private InfoLibro3 i3;
+	private MenuPrincipal mp;
+	private TablaReservas tr;
+	private TablaReservasSala trs;
+	private VentanaBusquedaMenu vbm;
+	private VentanaCatalogoLibros vcl;
+	private VentanaComedor vc;
+	private VentanaHacerReservaMesa vhrm;
+	private VentanaHacerReservaSala vhrs;
+	private VentanaLibros vl;
+	private VentanaMensaje vm;
+	private VentanaMensaje2 vm2;
+	private VentanaMensaje3 vm3;
+	private VentanaReservaLibro vrl;
+	private VentanaReservaMesa vrm;
+	private VentanaSala vs;
+	private VentanaValoracion vv;
+	private VentanaVerReservas vvr;
+	private VentanaVerReservasSala vvrs;
 	
 	private static final Logger logger = Logger.getLogger(Controller.class);
 
 	public Controller(String[] args) throws RemoteException {
 		cl = new Client();
 		cl.setService(args);
+		mp = new MenuPrincipal(this);
+		mp.ejecutarVentana();
+		
 		
 	}
 
