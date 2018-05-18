@@ -12,7 +12,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class VentanaMensaje extends JFrame {
+public class VentanaMensaje2 extends JFrame {
 
 	private JPanel contentPane;
 
@@ -23,7 +23,7 @@ public class VentanaMensaje extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VentanaMensaje frame = new VentanaMensaje();
+					VentanaMensaje2 frame = new VentanaMensaje2();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +35,7 @@ public class VentanaMensaje extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VentanaMensaje() {
+	public VentanaMensaje2() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 350, 235);
 		contentPane = new JPanel();
@@ -43,23 +43,22 @@ public class VentanaMensaje extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnAceptar = new JButton("Aceptar");
-		btnAceptar.addActionListener(new ActionListener() {
+		JButton button = new JButton("Aceptar");
+		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				VentanaComedor abrirVentana3 = new VentanaComedor();
 				abrirVentana3.setVisible(true);
-				VentanaMensaje.this.dispose();
-				
+				VentanaMensaje2.this.dispose();
 			}
 		});
-		btnAceptar.setFont(new Font("Times New Roman", Font.ITALIC, 17));
-		btnAceptar.setBounds(87, 141, 148, 29);
-		contentPane.add(btnAceptar);
+		button.setFont(new Font("Times New Roman", Font.ITALIC, 17));
+		button.setBounds(88, 138, 148, 29);
+		contentPane.add(button);
 		
-		JLabel lblNewLabel = new JLabel("¡Compra exitosa!");
-		lblNewLabel.setFont(new Font("Times New Roman", Font.ITALIC, 25));
-		lblNewLabel.setBounds(70, 30, 190, 87);
-		contentPane.add(lblNewLabel);
+		JLabel lblgraciasPorSu = new JLabel("¡Gracias por su atención!");
+		lblgraciasPorSu.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+		lblgraciasPorSu.setBounds(59, 34, 216, 87);
+		contentPane.add(lblgraciasPorSu);
 	}
 
 }

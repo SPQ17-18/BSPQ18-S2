@@ -69,8 +69,20 @@ public class VentanaComedor extends JFrame {
 				VentanaComedor.this.dispose();
 			}
 		});
+		
+		JButton btnAadirValoracin = new JButton("Añadir Valoración");
+		btnAadirValoracin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				VentanaValoracion abrirVentana4 = new VentanaValoracion();
+				abrirVentana4.setVisible(true);
+				VentanaComedor.this.dispose();
+			}
+		});
+		btnAadirValoracin.setFont(new Font("Times New Roman", Font.ITALIC, 15));
+		btnAadirValoracin.setBounds(424, 316, 156, 39);
+		contentPane.add(btnAadirValoracin);
 		button_2.setFont(new Font("Times New Roman", Font.ITALIC, 17));
-		button_2.setBounds(424, 315, 156, 39);
+		button_2.setBounds(629, 226, 156, 39);
 		contentPane.add(button_2);
 		
 		JButton button_1 = new JButton("Ver Menú");
