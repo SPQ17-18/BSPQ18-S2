@@ -49,7 +49,7 @@ public class TablaReservas extends JFrame {
 	public TablaReservas() {
 		setTitle("Reservas");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 870, 431);
+		setBounds(100, 100, 871, 434);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

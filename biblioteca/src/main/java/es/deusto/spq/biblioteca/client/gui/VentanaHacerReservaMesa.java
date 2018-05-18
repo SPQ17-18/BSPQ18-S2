@@ -76,6 +76,13 @@ public class VentanaHacerReservaMesa extends JFrame {
 		contentPane.add(button);
 		
 		JButton btnReserva = new JButton("Reserva");
+		btnReserva.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VentanaMensaje3 abrirVentana7 = new VentanaMensaje3();
+				abrirVentana7.setVisible(true);
+				VentanaHacerReservaMesa.this.dispose();
+			}
+		});
 		btnReserva.setFont(new Font("Times New Roman", Font.ITALIC, 17));
 		btnReserva.setBounds(529, 49, 156, 29);
 		contentPane.add(btnReserva);

@@ -51,6 +51,13 @@ public class VentanaSala extends JFrame {
 		Image img = new ImageIcon(this.getClass().getResource("/salas.jpg")).getImage();
 		
 		JButton btnReservarSala = new JButton("Reservar Sala");
+		btnReservarSala.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VentanaHacerReservaSala abrirVentana5 = new VentanaHacerReservaSala();
+				abrirVentana5.setVisible(true);
+				VentanaSala.this.dispose();
+			}
+		});
 		btnReservarSala.setFont(new Font("Times New Roman", Font.ITALIC, 17));
 		btnReservarSala.setBounds(410, 189, 157, 29);
 		contentPane.add(btnReservarSala);
@@ -68,6 +75,13 @@ public class VentanaSala extends JFrame {
 		contentPane.add(button_1);
 		
 		JButton btnVerSalas = new JButton("Ver Salas");
+		btnVerSalas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VentanaVerReservasSala abrirVentana6 = new VentanaVerReservasSala();
+				abrirVentana6.setVisible(true);
+				VentanaSala.this.dispose();
+			}
+		});
 		btnVerSalas.setFont(new Font("Times New Roman", Font.ITALIC, 17));
 		btnVerSalas.setBounds(411, 234, 156, 29);
 		contentPane.add(btnVerSalas);
