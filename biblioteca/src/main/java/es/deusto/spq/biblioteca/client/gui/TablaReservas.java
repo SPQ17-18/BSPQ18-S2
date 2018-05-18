@@ -11,42 +11,38 @@ import javax.swing.JList;
 import javax.swing.JComboBox;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.SwingUtilities;
+
 import java.awt.Font;
 import java.awt.Image;
 
 import javax.swing.JLabel;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.table.DefaultTableModel;
+
 import java.awt.Color;
 import java.awt.ScrollPane;
+
 import javax.swing.JCheckBox;
+
+import es.deusto.spq.biblioteca.controller.Controller;
 
 public class TablaReservas extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
+	private Controller controller;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TablaReservas frame = new TablaReservas();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	public TablaReservas(Controller controller) {
+		this.controller = controller;
+		ventana();
+		this.setVisible(true);
 	}
-
-	/**
-	 * Create the frame.
-	 */
-	public TablaReservas() {
+	
+	public void ventana() {
 		setTitle("Reservas");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 870, 431);
@@ -58,7 +54,7 @@ public class TablaReservas extends JFrame {
 		JButton button = new JButton("Volver");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaVerReservas abrirVentana7 = new VentanaVerReservas();
+				VentanaVerReservas abrirVentana7 = new VentanaVerReservas(controller);
 				abrirVentana7.setVisible(true);
 				TablaReservas.this.dispose();
 			}
@@ -118,4 +114,18 @@ public class TablaReservas extends JFrame {
 		label.setBounds(0, 0, 854, 397);
 		contentPane.add(label);
 	}
+	
+	public void ejecutarVentana() {
+		try {
+			final TablaReservas Ventana = new TablaReservas(controller);
+			SwingUtilities.invokeAndWait(new Runnable() {
+				public void run() {
+					Ventana.setVisible(true);
+				}
+			});
+		} catch (Exception e) {
+			System.exit(1);  
+		}
+}
+
 }

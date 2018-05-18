@@ -26,7 +26,7 @@ public class VentanaBusquedaMenu extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private Controller controller = null;
+	private Controller controller;
 	
 	public VentanaBusquedaMenu(Controller controller){
 		this.controller = controller;
@@ -43,12 +43,12 @@ public class VentanaBusquedaMenu extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		Image img = new ImageIcon(this.getClass().getResource("/menu3.jpg")).getImage();
+//		Image img = new ImageIcon(this.getClass().getResource("/menu3.jpg")).getImage();
 		
 		JButton btnComprar = new JButton("Comprar");
 		btnComprar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaMensaje abrirVentana3 = new VentanaMensaje();
+				VentanaMensaje abrirVentana3 = new VentanaMensaje(controller);
 				abrirVentana3.setVisible(true);
 				VentanaBusquedaMenu.this.dispose();
 				
@@ -61,7 +61,7 @@ public class VentanaBusquedaMenu extends JFrame {
 		JButton button = new JButton("Volver");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaComedor abrirVentana3 = new VentanaComedor();
+				VentanaComedor abrirVentana3 = new VentanaComedor(controller);
 				abrirVentana3.setVisible(true);
 				VentanaBusquedaMenu.this.dispose();
 			}
@@ -79,12 +79,13 @@ public class VentanaBusquedaMenu extends JFrame {
 		lblNewLabel.setBounds(473, 0, 206, 26);
 		contentPane.add(lblNewLabel);
 		
+		
 		JTextPane textPane = new JTextPane();
 		textPane.setBounds(473, 28, 206, 251);
 		contentPane.add(textPane);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(img));
+//		label.setIcon(new ImageIcon(img));
 		label.setBounds(0, 0, 466, 307);
 		contentPane.add(label);
 	}

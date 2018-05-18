@@ -8,48 +8,35 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
 
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.JButton;
+
+import es.deusto.spq.biblioteca.controller.Controller;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class VentanaComedor extends JFrame {
 
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaComedor frame = new VentanaComedor();
-					
-					//UIDefaults uiDefaults = UIManager.getDefaults();
-					//uiDefaults.put("activeCaption", new javax.swing.plaf.ColorUIResource(Color.gray));
-					//uiDefaults.put("activeCaptionText", new javax.swing.plaf.ColorUIResource(Color.white));
-					//JFrame.setDefaultLookAndFeelDecorated(true);
-					
-					frame.setVisible(true);
-					
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	private Controller controller;
+	
+	public VentanaComedor(Controller controller) {
+		this.controller = controller;
+		ventana();
+		this.setVisible(true);
 	}
-
-	/**
-	 * Create the frame.
-	 */
-	public VentanaComedor() {
+	
+	public void ventana() {
 		setTitle("Comedor");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 810, 420);
@@ -59,12 +46,12 @@ public class VentanaComedor extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel label = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/comedor.jpg")).getImage();
+//		Image img = new ImageIcon(this.getClass().getResource("/comedor.jpg")).getImage();
 		
 		JButton button_2 = new JButton("Volver");
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MenuPrincipal abrirVentana2 = new MenuPrincipal();
+				MenuPrincipal abrirVentana2 = new MenuPrincipal(controller);
 				abrirVentana2.setVisible(true);
 				VentanaComedor.this.dispose();
 			}
@@ -76,7 +63,7 @@ public class VentanaComedor extends JFrame {
 		JButton button_1 = new JButton("Ver Menú");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaBusquedaMenu abrirVentana3 = new VentanaBusquedaMenu(null);
+				VentanaBusquedaMenu abrirVentana3 = new VentanaBusquedaMenu(controller);
 				abrirVentana3.setVisible(true);
 				VentanaComedor.this.dispose();
 			}
@@ -88,7 +75,7 @@ public class VentanaComedor extends JFrame {
 		JButton button = new JButton("Reservar Mesa");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaReservaMesa abrirVentana4 = new VentanaReservaMesa();
+				VentanaReservaMesa abrirVentana4 = new VentanaReservaMesa(controller);
 				abrirVentana4.setVisible(true);
 				VentanaComedor.this.dispose();
 			}
@@ -102,9 +89,23 @@ public class VentanaComedor extends JFrame {
 		label_1.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 38));
 		label_1.setBounds(10, 177, 354, 122);
 		contentPane.add(label_1);
-		label.setIcon(new ImageIcon(img));
+//		label.setIcon(new ImageIcon(img));
 		label.setBounds(0, 0, 795, 382);
 		contentPane.add(label);
 	}
+	
+	public void ejecutarVentana() {
+		try {
+			final VentanaComedor Ventana = new VentanaComedor(controller);
+			SwingUtilities.invokeAndWait(new Runnable() {
+				public void run() {
+					Ventana.setVisible(true);
+				}
+			});
+		} catch (Exception e) {
+			System.exit(1);  
+		}
+}
+
 
 }

@@ -195,24 +195,9 @@ public class RMITest {
 		
 		
 	}
-	
-	@Test 
-	public void reserveBookTest() {
-		try{
-			System.out.println("Test 3 - Register new user");
-			String a="Festin de cuervos, Cancion de Hielo y fuego IV";
-			Libro l =new Libro();
-			l.setnombre(a);
-			assertTrue( Ibiblioteca.reserveBook(l) );
-		}
-		catch (Exception re) {
-			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue( false );
-		}
+
 		
 		
-	}
-	
 	@Test 
 	public void mostrarLibroTest() {
 		try{

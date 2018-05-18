@@ -6,13 +6,14 @@ import java.util.ArrayList;
 import org.apache.log4j.Logger;
 
 import es.deusto.spq.biblioteca.client.Client;
-import es.deusto.spq.biblioteca.client.gui.VentanaBuscarX;
-import es.deusto.spq.biblioteca.client.gui.VentanaReservaMesa;
+import es.deusto.spq.biblioteca.client.gui.MenuPrincipal;
+import es.deusto.spq.biblioteca.client.gui.TablaReservas;
 import es.deusto.spq.biblioteca.client.gui.VentanaBusquedaMenu;
 import es.deusto.spq.biblioteca.client.gui.VentanaCatalogoLibros;
 import es.deusto.spq.biblioteca.client.gui.VentanaComedor;
-import es.deusto.spq.biblioteca.client.gui.VentanaLoginX;
-import es.deusto.spq.biblioteca.client.gui.VerReservasX;
+import es.deusto.spq.biblioteca.client.gui.VentanaMensaje;
+import es.deusto.spq.biblioteca.client.gui.VentanaReservaMesa;
+import es.deusto.spq.biblioteca.client.gui.VentanaVerReservas;
 import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Mesa;
 import es.deusto.spq.biblioteca.data.Reserva;
@@ -21,21 +22,22 @@ import es.deusto.spq.biblioteca.data.ReservaMesa;
 public class Controller {
 	@SuppressWarnings("unused")
 	private Client cl;
-	private VentanaLoginX vl;
-	private VentanaBuscarX vb;
-	private VerReservasX vr;
-	private VentanaComedor vc;
-	private VentanaReservaMesa vbc;
-	private VentanaBusquedaMenu vbm;
-	private VentanaCatalogoLibros vcl;
+	private MenuPrincipal MP;
+	private TablaReservas TR;
+	private VentanaBusquedaMenu VBM;
+	private VentanaCatalogoLibros VCL;
+	private VentanaComedor  VC;
+	private VentanaMensaje VM;
+	private VentanaReservaMesa VRM;
+	private VentanaVerReservas VR;
 	
 	private static final Logger logger = Logger.getLogger(Controller.class);
 
 	public Controller(String[] args) throws RemoteException {
 		cl = new Client();
 		cl.setService(args);
-		vl = new VentanaLoginX(this);
-		vl.ejecutarVentana();
+		MP = new MenuPrincipal(this);
+		MP.ejecutarVentana();
 		
 	}
 
@@ -252,50 +254,61 @@ public class Controller {
 		return catalogo;
 	}
 	
+	public String verMenu(String fecha) throws Exception {
+		String menu = null;
+		try{
+		menu = cl.getService().verMenu(fecha);
+		
+		}catch(Exception e){
+    		e.printStackTrace();
+    	}
+		return menu;
+	}
+	
 	public static void main(String[] args) throws Exception {
 		Controller c = new Controller(args);
 
-		System.out.println(c.getCl().getService());
-		System.out.println("Hola");
-
-		//Almacenamos libros 
-		c.getCl().getService().almacenarLibro(1, "Las almas de Brandom", "Cesar Brandom", "S.L.U. Espasa Libros", false);
-		c.getCl().getService().almacenarLibro(2, "Festin de cuervos, Cancion de Hielo y fuego IV", "George R.R. Martin", "Gigamesh", false);
-		c.getCl().getService().almacenarLibro(3, "FYellowstar: Conviértete en un campeón de League of Legends", "Bora Kim ", "Editorial Planeta S.A", false);	
-
-		//Busqueda de libro por nombre
-		c.getCl().getService().buscarLibro("Festin de cuervos, Cancion de Hielo y fuego IV");
-		c.getCl().getService().buscarLibro("Paco Jemez: Grandes exitos en el Rayo Vallecano");
-
-		/**
-		 * Consultar disponiblididad de un libro
-		 * Primero buscamos el libro, luego lo reservamos y despues miramos si ha cambiado su disponibilidad
-		 */
-		c.getCl().getService().buscarLibro("Las almas de Brandom");
-		//c.getCl().getService().reserveBook("Las almas de Brandom");
-		c.getCl().getService().consultarDiponibilidadLibro("Las almas de Brandom");
-		c.getCl().getService().mostrarLibro("Las almas de Brandom");
-		
-		//Mostrar catalogo y prueba en logger
-		c.getCl().getService().getLibros();
-		logger.info("Mostrando catalogo de libros...\n" + c.getCl().getService().getLibros());
-
-		//Anyadir sala
-		c.getCl().getService().anyadirSala("S1", 10);
-		c.getCl().getService().anyadirSala("S2", 8);
+//		System.out.println(c.getCl().getService());
+//		System.out.println("Hola");
+//
+//		//Almacenamos libros 
+//		c.getCl().getService().almacenarLibro(1, "Las almas de Brandom", "Cesar Brandom", "S.L.U. Espasa Libros", false);
+//		c.getCl().getService().almacenarLibro(2, "Festin de cuervos, Cancion de Hielo y fuego IV", "George R.R. Martin", "Gigamesh", false);
+//		c.getCl().getService().almacenarLibro(3, "FYellowstar: Conviértete en un campeón de League of Legends", "Bora Kim ", "Editorial Planeta S.A", false);	
+//
+//		//Busqueda de libro por nombre
+//		c.getCl().getService().buscarLibro("Festin de cuervos, Cancion de Hielo y fuego IV");
+//		c.getCl().getService().buscarLibro("Paco Jemez: Grandes exitos en el Rayo Vallecano");
+//
+//		/**
+//		 * Consultar disponiblididad de un libro
+//		 * Primero buscamos el libro, luego lo reservamos y despues miramos si ha cambiado su disponibilidad
+//		 */
+//		c.getCl().getService().buscarLibro("Las almas de Brandom");
+//		//c.getCl().getService().reserveBook("Las almas de Brandom");
+//		c.getCl().getService().consultarDiponibilidadLibro("Las almas de Brandom");
+//		c.getCl().getService().mostrarLibro("Las almas de Brandom");
+//		
+//		//Mostrar catalogo y prueba en logger
+//		c.getCl().getService().getLibros();
+//		logger.info("Mostrando catalogo de libros...\n" + c.getCl().getService().getLibros());
+//
+//		//Anyadir sala
+//		c.getCl().getService().anyadirSala("S1", 10);
+//		c.getCl().getService().anyadirSala("S2", 8);
 		c.getCl().getService().anyadirReserva("S1", "12345678X", "11/04/18", "21:20", 3);
-		c.getCl().getService().anyadirReserva("S2", "23456789Y", "12/05/18", "19:26", 2);
-		Boolean disponible = c.getCl().getService().consultarDisponibilidad("S1", "11/04/18", "10:00", 4);
-		if (disponible) {
-			c.getCl().getService().anyadirReserva("S1", "34567890X", "11/04/18", "10:00", 4);
-		}
-		c.getCl().getService().verReservas("12345678X");
-
-		c.getCl().getService().editarReserva("12345678X", "11/04/18", "21:20", "S1", "20/12/15", "12:00", "S2");
-
-		c.getCl().getService().verReservas("12345678X");
-
-		//Anyadir mesa
+//		c.getCl().getService().anyadirReserva("S2", "23456789Y", "12/05/18", "19:26", 2);
+//		Boolean disponible = c.getCl().getService().consultarDisponibilidad("S1", "11/04/18", "10:00", 4);
+//		if (disponible) {
+//			c.getCl().getService().anyadirReserva("S1", "34567890X", "11/04/18", "10:00", 4);
+//		}
+//		c.getCl().getService().verReservas("12345678X");
+//
+//		c.getCl().getService().editarReserva("12345678X", "11/04/18", "21:20", "S1", "20/12/15", "12:00", "S2");
+//
+//		c.getCl().getService().verReservas("12345678X");
+//
+//		//Anyadir mesa
 		c.getCl().getService().anyadirMesa("M1", 4);
 		c.getCl().getService().anyadirMesa("M2", 6);
 		c.getCl().getService().anyadirReservaComedor("M1", "12345678X", "30/04/18", "14:30", 2);
@@ -307,7 +320,7 @@ public class Controller {
 
 		c.getCl().getService().verReservaComedor("12345678X");
 		c.getCl().getService().eliminarReservaComedor("12345678X", "30/04/18", "14:30");
-	}
-
 	
+
+	}
 }

@@ -26,7 +26,7 @@ import es.deusto.spq.biblioteca.controller.*;
 public class VentanaCatalogoLibros extends JFrame {
 
 	private JPanel contentPane;
-	private Controller controller = null;
+	private Controller controller;
 	
 	public VentanaCatalogoLibros(Controller controller){
 		this.controller = controller;

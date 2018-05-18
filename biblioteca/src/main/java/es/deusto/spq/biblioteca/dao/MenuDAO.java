@@ -82,11 +82,11 @@ public class MenuDAO implements IMenuDAO{
 	}
 
 	@Override
-	public void verMenu(String fecha) {
+	public String verMenu(String fecha) {
 		// TODO Auto-generated method stub
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-
+		String datos = null;
 		try {
 			logger.info("   *Consultando Menu del dia: " + fecha);
 			tx.begin();
@@ -95,13 +95,15 @@ public class MenuDAO implements IMenuDAO{
 			List<Menu> menus = (List<Menu>) query.execute();
 			for (Menu m : menus) {
 				if (m.getFecha().equals(fecha)) {
-					System.out.println("======================================");
-					System.out.println("\nFecha : " + m.getFecha());
-					System.out.println("\n1º Plato : " + m.getPlato1());
-					System.out.println("\n2º Plato : " + m.getPlato2());
-					System.out.println("\nPostre : " + m.getPostre());
-					System.out.println("\nValoración : " + m.getValor());
-					System.out.println("\n======================================\n");
+//					System.out.println("======================================");
+//					System.out.println("\nFecha : " + m.getFecha());
+//					System.out.println("\n1º Plato : " + m.getPlato1());
+//					System.out.println("\n2º Plato : " + m.getPlato2());
+//					System.out.println("\nPostre : " + m.getPostre());
+//					System.out.println("\nValoración : " + m.getValor());
+//					System.out.println("\n======================================\n");
+					datos += m.getFecha() + "#" + m.getPlato1() + "#" + m.getPlato2() + "#" + m.getPostre() + "#" +m.getValor() + "/" ;
+
 				}
 			}
 			tx.commit();
@@ -114,6 +116,7 @@ public class MenuDAO implements IMenuDAO{
 
 			pm.close();
 		}
+		return datos;
 	}
 
 }

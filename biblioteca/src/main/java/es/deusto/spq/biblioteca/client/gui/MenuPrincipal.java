@@ -6,8 +6,8 @@ import java.awt.EventQueue;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
-
 import javax.swing.JTextPane;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
@@ -16,42 +16,30 @@ import java.awt.Font;
 import java.awt.Image;
 
 import javax.swing.JLabel;
+
 import java.awt.Color;
 import java.awt.SystemColor;
+
 import javax.swing.JButton;
+
+import es.deusto.spq.biblioteca.controller.Controller;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class MenuPrincipal extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MenuPrincipal frame = new MenuPrincipal();
-					
-					//UIDefaults uiDefaults = UIManager.getDefaults();
-					//uiDefaults.put("activeCaption", new javax.swing.plaf.ColorUIResource(Color.gray));
-					//uiDefaults.put("activeCaptionText", new javax.swing.plaf.ColorUIResource(Color.white));
-					//JFrame.setDefaultLookAndFeelDecorated(true);
-					
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	private Controller controller;
+	
+	public MenuPrincipal(Controller controller) {
+		this.controller = controller;
+		ventana();
+		this.setVisible(true);
 	}
-
-	/**
-	 * Create the frame.
-	 */
-	public MenuPrincipal() {
+	
+	public void ventana() {
 		setTitle("Biblioteca");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 748, 386);
@@ -61,7 +49,7 @@ public class MenuPrincipal extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel label = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/bibliotecadeusto.jpg")).getImage();
+		//Image img = new ImageIcon(this.getClass().getResource("/bibliotecadeusto.jpg")).getImage();
 		
 		JButton botonLibros = new JButton("Libros");
 		botonLibros.addActionListener(new ActionListener() {
@@ -80,7 +68,7 @@ public class MenuPrincipal extends JFrame {
 		JButton botonComedor = new JButton("Comedor");
 		botonComedor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaComedor abrirVentana = new VentanaComedor();
+				VentanaComedor abrirVentana = new VentanaComedor(controller);
 				abrirVentana.setVisible(true);
 				MenuPrincipal.this.dispose();
 				
@@ -96,8 +84,21 @@ public class MenuPrincipal extends JFrame {
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setBounds(97, 44, 232, 63);
 		contentPane.add(lblNewLabel);
-		label.setIcon(new ImageIcon(img));
+	//	label.setIcon(new ImageIcon(img));
 		label.setBounds(0, 0, 732, 346);
 		contentPane.add(label);
 	}
+	public void ejecutarVentana() {
+		try {
+			final MenuPrincipal Ventana = new MenuPrincipal(controller);
+			SwingUtilities.invokeAndWait(new Runnable() {
+				public void run() {
+					Ventana.setVisible(true);
+				}
+			});
+		} catch (Exception e) {
+			System.exit(1);  
+		}
+}
+
 }
