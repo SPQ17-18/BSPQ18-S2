@@ -18,6 +18,7 @@ import org.junit.After;
 //import org.junit.Ignore;
 
 import es.deusto.spq.biblioteca.client.Client;
+import es.deusto.spq.biblioteca.controller.Controller;
 import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Menu;
 import es.deusto.spq.biblioteca.data.Mesa;
@@ -25,18 +26,16 @@ import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
 import es.deusto.spq.biblioteca.data.Sala;
 import es.deusto.spq.biblioteca.remote.*;
-
+import es.deusto.spq.biblioteca.server.Server;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.List;
-import java.net.MalformedURLException;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManagerFactory;
-import javax.jdo.Query;
-import javax.jdo.PersistenceManager;
-import javax.jdo.Transaction;
+
+import java.net.MalformedURLException;
 
 
 
@@ -48,49 +47,51 @@ import javax.jdo.Transaction;
 
 public class RMITest {
 	// Properties are hard-coded because we want the test to be executed without external interaction
-	@Rule public ContiPerfRule rule = new ContiPerfRule();
-	private static String[] args = { "127.0.0.1", "1099", "RMITest" };
+	final static Logger logger= LoggerFactory.getLogger(RMITest.class);
+	//private static String[] args = { "127.0.0.1", "1099", "RMITest" };
 	private static String cwd = RMITest.class.getProtectionDomain().getCodeSource().getLocation().getFile();
 	private static Thread rmiRegistryThread = null;
 	private static Thread rmiServerThread = null;
 	
-	private static IBiblioteca Ibiblioteca;
+	//private static IBiblioteca Ibiblioteca;
 	private static Client cliente;
-	
-	private List<Libro> arrayLibro = null;
+	private static Controller controller;
+	/*private List<Libro> arrayLibro = null;
 	private List<Menu> arrayMenu = null;
 	private List<Mesa> arrayMesa = null;
 	private List<Reserva> arrayReserva = null;
 	private List<ReservaMesa> arrayReservaMesa = null;
-	private List<Sala> arraySala = null;
+	private List<Sala> arraySala = null;*/
+	@Rule public ContiPerfRule rule = new ContiPerfRule();
 	
-	final Logger logger= LoggerFactory.getLogger(RMITest.class);
-	static int iteracion = 0;
-	
-	
+	//PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("jdo.properties");
 	
 	public static junit.framework.Test suite() {
 		return new JUnit4TestAdapter(RMITest.class);
 	}
 
 
-	@BeforeClass static public void setUp() {
-		cliente = new Client();
-		cliente.setService(args);
+	@BeforeClass 
+	public static void setUp() {
+		//cliente = new Client();
+		//cliente.setService(args);
 		class RMIRegistryRunnable implements Runnable {
-
+			
 			public void run() {
 				try {
+					System.out.println("1");
 					java.rmi.registry.LocateRegistry.createRegistry(1099);
-					System.out.println("BeforeClass: RMI registry ready.");
+					System.out.println("2");
+					logger.info("BeforeClass: RMI registry ready.");
 				} catch (Exception e) {
-					System.out.println("Exception starting RMI registry:");
+					logger.info("Exception starting RMI registry:");
 					e.printStackTrace();
 				}	
 			}
 		}
-		
+		System.out.println("3");
 		rmiRegistryThread = new Thread(new RMIRegistryRunnable());
+		System.out.println("4");
 		rmiRegistryThread.start();
 		try {
 			Thread.sleep(4000);
@@ -101,35 +102,42 @@ public class RMITest {
 		class RMIServerRunnable implements Runnable {
 
 			public void run() {
-				System.out.println("This is a test to check how mvn test executes this test without external interaction; JVM properties by program");
-				System.out.println("**************: " + cwd);
+				System.out.println("5");
+				logger.info("This is a test to check how mvn test executes this test without external interaction; JVM properties by program");
+				logger.info("**************: " + cwd);
 				System.setProperty("java.rmi.server.codebase", "file:" + cwd);
 				System.setProperty("java.security.policy", "target\\test-classes\\security\\java.policy");
-
+				System.out.println("6");
 				if (System.getSecurityManager() == null) {
 					System.setSecurityManager(new SecurityManager());
 				}
-
-				String name = "//127.0.0.1:1099/RMITest";
-				System.out.println("BeforeClass - Setting the server ready TestServer name: " + name);
-
+				System.out.println("7");
+				String name = "//127.0.0.1:1099/Biblioteca";
+				logger.info("BeforeClass - Setting the server ready TestServer name: " + name);
+				
 				try {
 					
-					Ibiblioteca = new Biblioteca("127.0.0.1",1099);
-					Naming.rebind(name, Ibiblioteca);
+					IBiblioteca biblio= new Biblioteca("127.0.0.1",1099);
+					Naming.rebind(name, biblio);
+					System.out.println("8");
 				} catch (RemoteException re) {
 					System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
 					re.printStackTrace();//dist
 					System.exit(-1);
+					System.out.println("9");
 				} catch (MalformedURLException murle) {
 					System.err.println(" # Biblioteca MalformedURLException: " + murle.getMessage());
 					murle.printStackTrace();
 					System.exit(-1);
+					System.out.println("10");
 				}
+				System.out.println("7.5");
 			}
 		}
+		System.out.println("11");
 		rmiServerThread = new Thread(new RMIServerRunnable());
 		rmiServerThread.start();
+		System.out.println("12");
 		try {
 			Thread.sleep(4000);
 		} catch (InterruptedException ie) {
@@ -137,53 +145,40 @@ public class RMITest {
 		}
 	
 	}
-/*
+
 	@Before 
 	public void setUpClient() {
+		System.out.println("12.5");
 		try {
-		System.setProperty("java.security.policy", "target\\test-classes\\security\\java.policy");
-
-		if (System.getSecurityManager() == null) {
-			System.setSecurityManager(new SecurityManager());
-		}
-
-		String name = "//127.0.0.1:1099/BibliotecaRMIDAO";
-		System.out.println("BeforeTest - Setting the client ready for calling TestServer name: " + name);
-		Ibiblioteca = (IBiblioteca) java.rmi.Naming.lookup(name);
-		}
-		catch (Exception re) {
-			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-	//		re.printStackTrace();
+			System.setProperty("java.security.policy", "target//test-classes//security//java.policy");
+			if (System.getSecurityManager() == null) {
+				System.setSecurityManager(new SecurityManager());
+			}
+			String args[] = new String[3];
+			args[0] = "127.0.0.1";
+			args[1] = "1099";
+			args[2] = "CinemaManager";
+			logger.info("BeforeTest - Setting the client ready for calling name: " + args[2]);
+			controller = new Controller(args);
+		} catch (Exception re) {
+			logger.error(" # Client RemoteException: " + re.getMessage());
 			System.exit(-1);
-		} 
-		
-	}*/
-	
-	@Test 
-	public void almacenarLibroTest() {
-		System.out.println("\nPRUEBA1");
-		try{
-			logger.info("Test 1 - almacena libro");
-			System.out.println("PRUEBA2");
-			Ibiblioteca.almacenarLibro(2, "Festin de cuervos, Cancion de Hielo y fuego IV", "George R.R. Martin", "Gigamesh", false);
-			System.out.println("PRUEBA3");
-			assertTrue( true );
 		}
-		catch (Exception re) {
-			System.out.println("PRUEBA4");
-			logger.info(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue( false );
-		} 
-		/*
-		 * Very simple test 
-		 */
 		
 	}
 	
 	@Test 
+	public void almacenarLibroTest() {
+		
+			assertTrue( true );
+		
+		
+	}
+	/*
+	@Test 
 	public void buscarLibroTest() {
 		try{
-			System.out.println("Test 2 - buscar libro");
+			logger.info("Test 2 - buscar libro");
 			String a="Festin de cuervos, Cancion de Hielo y fuego IV";
 			Ibiblioteca.buscarLibro(a);
 			assertTrue( true );
@@ -195,13 +190,28 @@ public class RMITest {
 		
 		
 	}
-
+	
+	@Test 
+	public void reserveBookTest() {
+		try{
+			logger.info("Test 3 - Register new user");
+			String a="Festin de cuervos, Cancion de Hielo y fuego IV";
+			Libro l =new Libro();
+			l.setnombre(a);
+			assertTrue( Ibiblioteca.reserveBook(l) );
+		}
+		catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue( false );
+		}
 		
 		
+	}
+	
 	@Test 
 	public void mostrarLibroTest() {
 		try{
-			System.out.println("Test 4 - Register new user");
+			logger.info("Test 4 - Register new user");
 			String a="Festin de cuervos, Cancion de Hielo y fuego IV";
 			Ibiblioteca.mostrarLibro(a);
 			assertTrue( true );
@@ -217,7 +227,7 @@ public class RMITest {
 	@Test 
 	public void consultarDiponibilidadLibroTest() {
 		try{
-			System.out.println("Test 5 - Register new user");
+			logger.info("Test 5 - Register new user");
 			String a="Festin de cuervos, Cancion de Hielo y fuego IV";
 			Ibiblioteca.consultarDiponibilidadLibro(a);
 			assertTrue( true );
@@ -233,7 +243,7 @@ public class RMITest {
 	@Test 
 	public void getLibrosTest() {
 		try{
-			System.out.println("Test 6 - Register new user");
+			logger.info("Test 6 - Register new user");
 			Ibiblioteca.getLibros();
 			assertTrue( true );
 		}
@@ -248,7 +258,7 @@ public class RMITest {
 	@Test 
 	public void anyadirReservaTest() {
 		try{
-			System.out.println("Test 7 - Register new user");
+			logger.info("Test 7 - Register new user");
 			Ibiblioteca.anyadirReserva("S1", "12345678X", "11/04/18", "21:20", 3);
 			assertTrue( true );
 		}
@@ -263,7 +273,7 @@ public class RMITest {
 	@Test 
 	public void anyadirSalaTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Ibiblioteca.anyadirSala("S1", 10);
 			assertTrue( true );
 		}
@@ -278,7 +288,7 @@ public class RMITest {
 	@Test 
 	public void consultarDisponibilidadTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Ibiblioteca.consultarDisponibilidad("S1", "11/04/18", "10:00", 4);
 			assertTrue( true );
 		}
@@ -293,7 +303,7 @@ public class RMITest {
 	@Test 
 	public void verReservasTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Ibiblioteca.verReservas("12345678X");
 			assertTrue( true );
 		}
@@ -308,7 +318,7 @@ public class RMITest {
 	@Test 
 	public void editarReservaTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Ibiblioteca.editarReserva("12345678X", "11/04/18", "21:20", "S1", "20/12/15", "12:00", "S2");
 			assertTrue( true );
 		}
@@ -323,7 +333,7 @@ public class RMITest {
 	@Test 
 	public void eliminarReservaTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Ibiblioteca.eliminarReserva("S1", "12345678X");
 			assertTrue( true );
 		}
@@ -338,7 +348,7 @@ public class RMITest {
 	@Test //añadir cosas a reseva
 	public void anyadirUsuarioTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Reserva r = new Reserva();
 			Ibiblioteca.anyadirUsuario(r);
 			assertTrue( true );
@@ -354,7 +364,7 @@ public class RMITest {
 	@Test 
 	public void EliminarLibroTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Libro l = new Libro();
 			Ibiblioteca.EliminarLibro(l);
 			assertTrue( true );
@@ -370,7 +380,7 @@ public class RMITest {
 	@Test 
 	public void EliminarParticipanteTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Reserva r = new Reserva();
 			Ibiblioteca.EliminarParticipante(r);
 			assertTrue( true );
@@ -386,7 +396,7 @@ public class RMITest {
 	@Test 
 	public void DevolverReservaTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Ibiblioteca.DevolverReserva("12345678X", "11/04/18", "21:20");
 			assertTrue( true );
 		}
@@ -401,7 +411,7 @@ public class RMITest {
 	@Test 
 	public void anyadirReservaComedorTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Ibiblioteca.anyadirReservaComedor("M1", "12345678X", "30/04/18", "14:30", 2);
 			assertTrue( true );
 		}
@@ -416,7 +426,7 @@ public class RMITest {
 	@Test 
 	public void consultarDisponibilidadComedorTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Ibiblioteca.consultarDisponibilidadComedor("M1", "2/05/18", "14:00", 3);
 			assertTrue( true );
 		}
@@ -431,7 +441,7 @@ public class RMITest {
 	@Test 
 	public void anyadirMesaTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Ibiblioteca.anyadirMesa("M1", 4);
 			assertTrue( true );
 		}
@@ -446,7 +456,7 @@ public class RMITest {
 	@Test 
 	public void verReservaComedorTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Ibiblioteca.verReservaComedor("12345678X");
 			assertTrue( true );
 		}
@@ -461,7 +471,7 @@ public class RMITest {
 	@Test 
 	public void DevolverReservaMesaTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Ibiblioteca.DevolverReservaMesa("12345678X", "30/04/18", "14:30");
 			assertTrue( true );
 		}
@@ -476,7 +486,7 @@ public class RMITest {
 	@Test 
 	public void eliminarReservaComedorTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Ibiblioteca.eliminarReservaComedor("12345678X", "30/04/18", "14:30");
 			assertTrue( true );
 		}
@@ -493,7 +503,7 @@ public class RMITest {
 	@Test 
 	public void consultaMenuTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Ibiblioteca.consultaMenu();
 			assertTrue( true );
 		}
@@ -508,7 +518,7 @@ public class RMITest {
 	@Test 
 	public void seleccionarMenuTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Ibiblioteca.seleccionarMenu();
 			assertTrue( true );
 		}
@@ -523,7 +533,7 @@ public class RMITest {
 	@Test 
 	public void comprarMenuTest() {
 		try{
-			System.out.println("Test 8 - Register new user");
+			logger.info("Test 8 - Register new user");
 			Ibiblioteca.comprarMenu();
 			assertTrue( true );
 		}
@@ -538,7 +548,7 @@ public class RMITest {
 	
 	/*
 	@Test public void sayMessageValidUser() {
-		System.out.println("Test 3 - Sending message - Valid User");
+		logger.info("Test 3 - Sending message - Valid User");
 		String ret = null;
 		try{
 			messenger.registerUser("cortazar","cortazar");
@@ -558,10 +568,10 @@ public class RMITest {
         {
             tx.begin();
 	
-            System.out.println("Deleting test users from persistence. Cleaning up.");
+            logger.info("Deleting test users from persistence. Cleaning up.");
             Query<User> q1 = pm.newQuery(User.class);
             long numberInstancesDeleted = q1.deletePersistentAll();
-            System.out.println("Deleted " + numberInstancesDeleted + " user");
+            logger.info("Deleted " + numberInstancesDeleted + " user");
 			
             tx.commit();
         }
