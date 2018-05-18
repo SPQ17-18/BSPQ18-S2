@@ -6,14 +6,9 @@ import java.util.ArrayList;
 import org.apache.log4j.Logger;
 
 import es.deusto.spq.biblioteca.client.Client;
-import es.deusto.spq.biblioteca.client.gui.MenuPrincipal;
-import es.deusto.spq.biblioteca.client.gui.TablaReservas;
 import es.deusto.spq.biblioteca.client.gui.VentanaBusquedaMenu;
 import es.deusto.spq.biblioteca.client.gui.VentanaCatalogoLibros;
 import es.deusto.spq.biblioteca.client.gui.VentanaComedor;
-import es.deusto.spq.biblioteca.client.gui.VentanaMensaje;
-import es.deusto.spq.biblioteca.client.gui.VentanaReservaMesa;
-import es.deusto.spq.biblioteca.client.gui.VentanaVerReservas;
 import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Mesa;
 import es.deusto.spq.biblioteca.data.Reserva;
@@ -22,22 +17,12 @@ import es.deusto.spq.biblioteca.data.ReservaMesa;
 public class Controller {
 	@SuppressWarnings("unused")
 	private Client cl;
-	private MenuPrincipal MP;
-	private TablaReservas TR;
-	private VentanaBusquedaMenu VBM;
-	private VentanaCatalogoLibros VCL;
-	private VentanaComedor  VC;
-	private VentanaMensaje VM;
-	private VentanaReservaMesa VRM;
-	private VentanaVerReservas VR;
 	
 	private static final Logger logger = Logger.getLogger(Controller.class);
 
 	public Controller(String[] args) throws RemoteException {
 		cl = new Client();
 		cl.setService(args);
-		MP = new MenuPrincipal(this);
-		MP.ejecutarVentana();
 		
 	}
 

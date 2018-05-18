@@ -42,7 +42,7 @@ public class MenuPrincipal extends JFrame {
 	public void ventana() {
 		setTitle("Biblioteca");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 748, 386);
+		setBounds(100, 100, 750, 387);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -58,6 +58,13 @@ public class MenuPrincipal extends JFrame {
 		});
 		
 		JButton botonSalas = new JButton("Salas");
+		botonSalas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				VentanaSala abrirVentana3 = new VentanaSala(controller);
+				abrirVentana3.setVisible(true);
+				MenuPrincipal.this.dispose();
+			}
+		});
 		botonSalas.setFont(new Font("Times New Roman", Font.ITALIC, 17));
 		botonSalas.setBounds(524, 269, 156, 39);
 		contentPane.add(botonSalas);
