@@ -54,6 +54,10 @@ public class MenuPrincipal extends JFrame {
 		JButton botonLibros = new JButton("Libros");
 		botonLibros.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				VentanaLibros abrirVentana5 = new VentanaLibros();
+				abrirVentana5.setVisible(true);
+				MenuPrincipal.this.dispose();
+				
 			}
 		});
 		
@@ -78,7 +82,6 @@ public class MenuPrincipal extends JFrame {
 				VentanaComedor abrirVentana = new VentanaComedor(controller);
 				abrirVentana.setVisible(true);
 				MenuPrincipal.this.dispose();
-				
 			}
 		});
 		botonComedor.setFont(new Font("Times New Roman", Font.ITALIC, 17));
