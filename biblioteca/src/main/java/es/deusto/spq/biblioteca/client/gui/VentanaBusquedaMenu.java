@@ -2,14 +2,12 @@ package es.deusto.spq.biblioteca.client.gui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.Image;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextPane;
 import javax.swing.JScrollBar;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.SwingUtilities;
@@ -18,15 +16,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import es.deusto.spq.biblioteca.controller.*;
-import javax.swing.JLabel;
-import java.awt.Font;
 
 
 public class VentanaBusquedaMenu extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private Controller controller;
+	private Controller controller = null;
 	
 	public VentanaBusquedaMenu(Controller controller){
 		this.controller = controller;
@@ -38,56 +34,52 @@ public class VentanaBusquedaMenu extends JFrame {
 		
 		setTitle("Lista de Men\u00FAs disponibles");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 716, 346);
+		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-//		Image img = new ImageIcon(this.getClass().getResource("/menu3.jpg")).getImage();
 		
-		JButton btnComprar = new JButton("Comprar");
-		btnComprar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				VentanaMensaje abrirVentana3 = new VentanaMensaje(controller);
-				abrirVentana3.setVisible(true);
-				VentanaBusquedaMenu.this.dispose();
+		JButton botonReservarMenu = new JButton("Reservar");
+		botonReservarMenu.setBounds(161, 56, 119, 23);
+		contentPane.add(botonReservarMenu);
+		
+		JButton botonMostrarMenu = new JButton("Mostrar Men\u00FA");
+		botonMostrarMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
 				
 			}
 		});
-		btnComprar.setFont(new Font("Times New Roman", Font.ITALIC, 17));
-		btnComprar.setBounds(473, 281, 103, 26);
-		contentPane.add(btnComprar);
 		
 		JButton button = new JButton("Volver");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaComedor abrirVentana3 = new VentanaComedor(controller);
-				abrirVentana3.setVisible(true);
+				
+				VentanaComedor abrirVentana4 = new VentanaComedor(controller);
+				abrirVentana4.setVisible(true);
 				VentanaBusquedaMenu.this.dispose();
+				
+				
 			}
 		});
-		button.setFont(new Font("Times New Roman", Font.ITALIC, 17));
-		button.setBounds(599, 281, 101, 26);
+		button.setBounds(292, 56, 126, 23);
 		contentPane.add(button);
+		botonMostrarMenu.setBounds(20, 56, 126, 23);
+		contentPane.add(botonMostrarMenu);
 		
 		JScrollBar scrollBar = new JScrollBar();
-		scrollBar.setBounds(683, 28, 17, 251);
+		scrollBar.setBounds(407, 102, 17, 148);
 		contentPane.add(scrollBar);
 		
-		JLabel lblNewLabel = new JLabel("Menú disponible:");
-		lblNewLabel.setFont(new Font("Times New Roman", Font.ITALIC, 29));
-		lblNewLabel.setBounds(473, 0, 206, 26);
-		contentPane.add(lblNewLabel);
+		JTextPane txtpnAquPodrVer = new JTextPane();
+		txtpnAquPodrVer.setText("Aqu\u00ED podr\u00E1 ver a continuaci\u00F3n la lista de men\u00FAs del d\u00EDa disponibles, y reserva el que m\u00E1s resulte de su agrado.");
+		txtpnAquPodrVer.setBounds(10, 11, 414, 80);
+		contentPane.add(txtpnAquPodrVer);
 		
-		
-		JTextPane textPane = new JTextPane();
-		textPane.setBounds(473, 28, 206, 251);
-		contentPane.add(textPane);
-		
-		JLabel label = new JLabel("");
-//		label.setIcon(new ImageIcon(img));
-		label.setBounds(0, 0, 466, 307);
-		contentPane.add(label);
+		JList list = new JList();
+		list.setBounds(10, 102, 414, 148);
+		contentPane.add(list);
 	}
 	
 	public void ejecutarVentana() {
@@ -105,4 +97,5 @@ public class VentanaBusquedaMenu extends JFrame {
 		}
 
 	}
+
 }

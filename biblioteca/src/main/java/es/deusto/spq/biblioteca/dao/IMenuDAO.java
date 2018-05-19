@@ -6,6 +6,6 @@ public interface IMenuDAO {
 	
 	public void anyadirMenu(Menu m);
 	public void anyadirValoracion(String ID_Menu, int valoracion);
-	public String verMenu(String fecha);
+	public void verMenu(String fecha);
 
 }
