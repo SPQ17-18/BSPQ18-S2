@@ -12,20 +12,21 @@ import java.util.List;
 
 import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Reserva;
+import es.deusto.spq.biblioteca.data.ReservaLibro;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
 
 public interface IBiblioteca extends Remote {
 
 	public Libro buscarLibro(String nombre) throws RemoteException;
 
-	public void almacenarLibro(int isbn, String nombre, String autor, String editorial, boolean isReservado)
+	public void almacenarLibro(String isbn, String nombre, String autor, String editorial)
 			throws RemoteException;
 	
-	public boolean reserveBook(Libro l/*String nombre*/) throws RemoteException;
+	public void reservarLibro(String isbn) throws RemoteException;
 	
 	public void mostrarLibro(String nombre) throws RemoteException;
 	
-	public boolean consultarDiponibilidadLibro(String nombre) throws RemoteException;
+	public boolean consultarDiponibilidadLibro(String isbn) throws RemoteException;
 	
 	public ArrayList<Libro> getLibros() throws RemoteException;
 	

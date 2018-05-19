@@ -13,11 +13,14 @@ import es.deusto.spq.biblioteca.dao.MenuDAO;
 import es.deusto.spq.biblioteca.dao.MesaDAO;
 import es.deusto.spq.biblioteca.dao.ReservaComedorDAO;
 import es.deusto.spq.biblioteca.dao.IReservaDAO;
+import es.deusto.spq.biblioteca.dao.IReservaLibroDAO;
 import es.deusto.spq.biblioteca.dao.ReservaDAO;
+import es.deusto.spq.biblioteca.dao.ReservaLibroDAO;
 import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Menu;
 import es.deusto.spq.biblioteca.data.Mesa;
 import es.deusto.spq.biblioteca.data.Reserva;
+import es.deusto.spq.biblioteca.data.ReservaLibro;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
 import es.deusto.spq.biblioteca.dao.ISalaDAO;
 import es.deusto.spq.biblioteca.dao.SalaDAO;
@@ -36,6 +39,8 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	private IReservaComedorDAO rComedorDAO;
 	
 	private IMenuDAO menuDAO;
+	
+	private IReservaLibroDAO reservaLibroDAO;
 
 	public Biblioteca(IReservaDAO reservaDAO ) throws RemoteException {
 		super();
@@ -46,6 +51,11 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		super();
 		this.libroDAO = libroDAO;
 	}
+	
+	public Biblioteca(IReservaLibroDAO reservaLibroDAO) throws RemoteException {
+		super();
+		this.reservaLibroDAO = reservaLibroDAO;
+	}
 
 	public Biblioteca(String serverIP, int ServerPort) throws RemoteException {
 		super();
@@ -55,6 +65,8 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		this.mesaDAO = new MesaDAO();
 		this.rComedorDAO = new ReservaComedorDAO();
 		this.menuDAO = new MenuDAO();
+		this.reservaLibroDAO = new ReservaLibroDAO();
+		
 
 	}
 
@@ -97,11 +109,20 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 	@Override
-	public void almacenarLibro(int isbn, String nombre, String autor, String editorial, boolean isReservado) {
+	public void almacenarLibro(String isbn, String nombre, String autor, String editorial) {
 		// TODO Auto-generated method stub
-		Libro l = new Libro(isbn, nombre, autor, editorial, isReservado);
+		Libro l = new Libro(isbn, nombre, autor, editorial);
 		libroDAO.almacenarLibro(l);
 
+	}
+	
+	@Override
+	public void reservarLibro(String isbn) throws RemoteException {
+		// TODO Auto-generated method stub
+		ReservaLibro rl = new ReservaLibro(isbn);
+		reservaLibroDAO.reservarLibro(rl);
+
+		
 	}
 
 	@Override
@@ -144,42 +165,27 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 	public void EliminarLibro(Libro l)throws RemoteException {
+	//Que lo arregle quien lo hizo pls
 		// int numeroEjemplares = 00;
 		// numeroEjemplares
-		String Isbn;
-		Isbn = String.valueOf(l.getIsbn());
+	//	isbn = l.getIsbn();  --> Lo que funcionaba cuando isbn era int
 		// String nya="R#";
 		// nya=nya.concat(Isbn);
-		libroDAO.EliminarLibro(Isbn);
+	//	libroDAO.EliminarLibro(isbn);--> Lo que funcionaba cuando isbn era int
 
 	}
 	
 	@Override
-	public boolean consultarDiponibilidadLibro(String nombre) throws RemoteException {
+	public boolean consultarDiponibilidadLibro(String isbn) throws RemoteException {
 		// TODO Auto-generated method stub
 		boolean isReservado = false;
-		boolean disponible = libroDAO.consultarDisponibilidadLibro(nombre);
-		if (disponible) {
+		boolean free = reservaLibroDAO.consultarDisponibilidadLibro(isbn);
+		if (free) {
 			isReservado = true;
 		}
 		return isReservado;
 	}
 
-	//Esta descartado
-	@Override
-	public boolean reserveBook(Libro l/*String nombre*/) throws RemoteException {
-//		// TODO Auto-generated method stub
-//		boolean isReservado = false;
-//		boolean reserva = libroDAO.reservarLibro(nombre);
-//		if (reserva) {
-//			isReservado = true;
-//		}
-//		libroDAO.reservarLibro(l);
-//		
-//	return isReservado;
-	return false;
-		
-	}
 
 	@Override
 	public void mostrarLibro(String nombre) throws RemoteException {
@@ -292,6 +298,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	public void verMenu(String fecha) throws Exception {
 		menuDAO.verMenu(fecha);
 	}	
+	
 }
 
 	

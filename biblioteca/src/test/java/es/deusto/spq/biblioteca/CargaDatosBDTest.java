@@ -80,13 +80,13 @@ public class CargaDatosBDTest {
 		try {
 			logger.info("-Creando 3 libros...");
 			
-			Libro l1 = new Libro(1, "Las almas de Brandom", "Cesar Brandom", "S.L.U. Espasa Libros", false);
+			Libro l1 = new Libro("1", "Las almas de Brandom", "Cesar Brandom", "S.L.U. Espasa Libros");
 			libroDAO.almacenarLibro(l1);
 			
-			Libro l2 = new Libro(2, "Festin de cuervos, Cancion de Hielo y fuego IV", "George R.R. Martin", "Gigamesh", false);
+			Libro l2 = new Libro("2", "Festin de cuervos, Cancion de Hielo y fuego IV", "George R.R. Martin", "Gigamesh");
 			libroDAO.almacenarLibro(l2);
 			
-			Libro l3 = new Libro(3, "FYellowstar: Conviértete en un campeón de League of Legends", "Bora Kim ", "Editorial Planeta S.A", false);
+			Libro l3 = new Libro("3", "FYellowstar: Conviértete en un campeón de League of Legends", "Bora Kim ", "Editorial Planeta S.A");
 			libroDAO.almacenarLibro(l3);
 				
 		}catch(Exception ex) {

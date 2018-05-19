@@ -1,6 +1,13 @@
 package es.deusto.spq.biblioteca.data;
 
 import java.io.Serializable;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.jdo.annotations.Inheritance;
+import javax.jdo.annotations.InheritanceStrategy;
+import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
 
 @PersistenceCapable(detachable = "true")
@@ -9,33 +16,41 @@ public class Libro implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 2763690162513004091L;
-	int isbn = 0;
+	String isbn = null; //0
 	String nombre = null;
 	String autor = null;
 	String editorial = null;
-	boolean isReservado = false; //Inicializado a false pues de primeras ninguno lo esta. Se cambiara a true cuando se reserve
-
+	
 	//Añadir mas???
+	@Join List<ReservaLibro> reservasLibros = new ArrayList<ReservaLibro>();
 	
 	public Libro() {
 		
 	}
 	
-	public Libro(int isbn, String nombre, String autor, String editorial, boolean isReservado) {
+	public Libro(String isbn, String nombre, String autor, String editorial) {
 		this.isbn = isbn;
 		this.nombre = nombre;
 		this.autor = autor;
 		this.editorial = editorial;
-		this.isReservado = isReservado;
 	}
 	
 
 	//Getters y Setters
-	public int getIsbn() {
+	
+	public List<ReservaLibro> getReservasLibros() {
+		return reservasLibros;
+	}
+
+	public void setReservasLibros(List<ReservaLibro> reservasLibros) {
+		this.reservasLibros = reservasLibros;
+	}
+
+	public String getIsbn() {
 		return isbn;
 	}
 
-	public void setIsbn(int isbn) {
+	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 
@@ -63,27 +78,20 @@ public class Libro implements Serializable {
 		this.editorial = editorial;
 	}
 	
-	public boolean isReservado() {
-		return isReservado;
-	}
-
-	public void setReservado(boolean isReservado) {
-		this.isReservado = isReservado;
-	}
 	
-	int numeroEjemplares = 0;
-	public int getNumeroEjemplares() {
+	String numeroEjemplares = null;
+	public String getNumeroEjemplares() {
 		return numeroEjemplares;
 	}
 
-	public void setNumeroEjemplares(int numeroEjemplares) {
-		this.numeroEjemplares = numeroEjemplares;
+	public void setNumeroEjemplares(String nuevaLista) {
+		this.numeroEjemplares = nuevaLista;
 	}
 
 	@Override
 	public String toString() {
 		return "libro [isbn=" + isbn + ", nombre=" + nombre + ", autor=" + autor + ", editorial=" + editorial
-				+ ", isReservado=" + isReservado + ", numeroEjemplares=" + numeroEjemplares +"]";
+				+ ", numeroEjemplares=" + numeroEjemplares +"]";
 	}
 
 }
