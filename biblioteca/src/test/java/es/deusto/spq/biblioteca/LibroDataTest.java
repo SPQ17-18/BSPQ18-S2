@@ -41,10 +41,10 @@ public class LibroDataTest {
 	public void setUp() throws Exception {
 		logger.info("Entering setUp: {}", iteration++);
 		
-		l = new Libro(1, "Libro 1", "Autor 1", "Editorial 1");
-		l1 = new Libro(2, "Libro 2", "Autor 2", "Editorial 2");
-		l2 = new Libro(3, "Libro 3", "Autor 3", "Editorial 3");
-		l3 = new Libro(4, "Libro 4", "Autor 4", "Editorial 4");
+		l = new Libro("1", "Libro 1", "Autor 1", "Editorial 1");
+		l1 = new Libro("2", "Libro 2", "Autor 2", "Editorial 2");
+		l2 = new Libro("3", "Libro 3", "Autor 3", "Editorial 3");
+		l3 = new Libro("4", "Libro 4", "Autor 4", "Editorial 4");
 		
 		logger.info("Leaving setUp");
 
@@ -57,7 +57,7 @@ public class LibroDataTest {
     @Required(max = 500, average = 200)
 	public void testCreacionLibro() throws Exception {
 		logger.info("Iniciando test de creacion del primer libro");
-		Libro expected = new Libro(111, "Libro 1", "Autor 1", "Editorial 1");
+		Libro expected = new Libro("111", "Libro 1", "Autor 1", "Editorial 1");
 		assertEquals(expected.getIsbn(), l.getIsbn());
 		assertEquals(expected.getnombre(), l.getnombre());
 		assertEquals(expected.getAutor(), l.getAutor());
@@ -71,7 +71,7 @@ public class LibroDataTest {
     @Required(max = 600, average = 20)
 	public void testCreacionLibro2() throws Exception {
 		logger.info("Iniciando test de creacion del primer libro");
-		Libro expected = new Libro(222, "Libro 2", "Autor 2", "Editorial 2");
+		Libro expected = new Libro("2", "Libro 2", "Autor 2", "Editorial 2");
 		assertEquals(expected.getIsbn(), l1.getIsbn());
 		assertEquals(expected.getnombre(), l1.getnombre());
 		assertEquals(expected.getAutor(), l1.getAutor());
@@ -85,7 +85,7 @@ public class LibroDataTest {
     @Required(max = 200, average = 300)
 	public void testCreacionLibro3() throws Exception {
 		logger.info("Iniciando test de creacion del primer libro");
-		Libro expected = new Libro(333, "Libro 3", "Autor 3", "Editorial 3");
+		Libro expected = new Libro("3", "Libro 3", "Autor 3", "Editorial 3");
 		assertEquals(expected.getIsbn(), l2.getIsbn());
 		assertEquals(expected.getnombre(), l.getnombre());
 		assertEquals(expected.getAutor(), l2.getAutor());
@@ -98,7 +98,7 @@ public class LibroDataTest {
 	@Test
 	public void testCreacionLibro4() throws Exception {
 		logger.info("Iniciando test de creacion de creacion mala del cuarto libro");
-		Libro expected = new Libro(444, "Libro 4", "Autor 2", "Editorial 3");
+		Libro expected = new Libro("444", "Libro 4", "Autor 2", "Editorial 3");
 		assertEquals(expected.getIsbn(), l3.getIsbn());
 		assertEquals(expected.getnombre(), l3.getnombre());
 		assertEquals(expected.getAutor(), l3.getAutor());
