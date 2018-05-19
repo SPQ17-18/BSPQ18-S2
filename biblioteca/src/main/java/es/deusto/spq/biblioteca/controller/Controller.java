@@ -16,6 +16,7 @@ import es.deusto.spq.biblioteca.client.gui.VerReservas;
 import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Mesa;
 import es.deusto.spq.biblioteca.data.Reserva;
+import es.deusto.spq.biblioteca.data.ReservaLibro;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
 
 public class Controller {
@@ -183,6 +184,16 @@ public class Controller {
 		cl.getService().mostrarLibro(nombre);
 	}catch(Exception e){
 		e.printStackTrace();
+		}
+	}
+	
+	public ReservaLibro DevolverLibro(String isbn) {
+		ReservaLibro  rl = null;
+		try {
+			rl = cl.getService().DevolverLibro(isbn);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
 		}
 	}
 	

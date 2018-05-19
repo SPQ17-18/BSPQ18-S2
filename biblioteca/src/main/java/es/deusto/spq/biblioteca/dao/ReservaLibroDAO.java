@@ -99,7 +99,7 @@ public class ReservaLibroDAO implements IReservaLibroDAO {
 	}
 
 	@Override
-	public ReservaLibro devolverLibro(String ISBN) {
+	public ReservaLibro devolverLibro(String isbn) {
 		// TODO Auto-generated method stub
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -109,13 +109,13 @@ public class ReservaLibroDAO implements IReservaLibroDAO {
 			tx.begin();
 
 			//System.out.println("   * Buscando reserva de: " + dni);
-			logger.info("   * Buscando reserva de: " + ISBN);
+			logger.info("   * Buscando reserva de: " + isbn);
 			Query<ReservaLibro> query = pm.newQuery(ReservaLibro.class);
 			@SuppressWarnings("unchecked")
 			List<ReservaLibro> reservasLibros = (List<ReservaLibro>) query.execute();
 			for(ReservaLibro rel : reservasLibros)
 			{
-				if(rel.getIsbn().equals(ISBN)) {
+				if(rel.getIsbn().equals(isbn)) {
 					rl = rel;
 				}
 			}
