@@ -98,4 +98,41 @@ public class ReservaLibroDAO implements IReservaLibroDAO {
 		return isReservado;
 	}
 
+	@Override
+	public ReservaLibro devolverLibro(String ISBN) {
+		// TODO Auto-generated method stub
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		ReservaLibro rl = null;
+		try {
+			tx.begin();
+
+			//System.out.println("   * Buscando reserva de: " + dni);
+			logger.info("   * Buscando reserva de: " + ISBN);
+			Query<ReservaLibro> query = pm.newQuery(ReservaLibro.class);
+			@SuppressWarnings("unchecked")
+			List<ReservaLibro> reservasLibros = (List<ReservaLibro>) query.execute();
+			for(ReservaLibro rel : reservasLibros)
+			{
+				if(rel.getIsbn().equals(ISBN)) {
+					rl = rel;
+				}
+			}
+			tx.commit();
+
+		
+			} catch (Exception e) {
+				// TODO: handle exception
+				logger.error("   $ Error devolviendo reserva: " + e.getMessage());
+
+			} finally {
+				if (tx != null && tx.isActive()) {
+					tx.rollback();
+				}	
+
+				pm.close();
+			}
+			return rl;
+	}	
 }

@@ -201,6 +201,13 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		r = reservaDAO.devolverReserva(dni, fecha, hora);
 		return r;
 	}
+	
+	@Override
+	public ReservaLibro DevolverLibro (String isbn) throws RemoteException {
+		ReservaLibro rl = null;
+		rl = reservaLibroDAO.devolverLibro(isbn);
+		return rl;
+	}
 
 	@Override
 	public boolean consultarDisponibilidadComedor(String Id_Mesa, String fecha, String hora, int personas)

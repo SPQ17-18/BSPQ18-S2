@@ -6,5 +6,6 @@ public interface IReservaLibroDAO {
 	
 	public void reservarLibro(ReservaLibro rl);
 	public boolean consultarDisponibilidadLibro(String isbn);
+	public ReservaLibro devolverLibro(String ISBN);
 
 }
