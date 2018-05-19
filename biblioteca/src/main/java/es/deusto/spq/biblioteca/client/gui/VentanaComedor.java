@@ -55,8 +55,8 @@ public class VentanaComedor extends JFrame {
 		botonComprobarComedor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				VentanaBusquedaComedor abrirVentana = new VentanaBusquedaComedor(controller);
-				abrirVentana.setVisible(true);
+			//	VentanaBusquedaComedor abrirVentana = new VentanaBusquedaComedor(controller);
+			//	abrirVentana.setVisible(true);
 				VentanaComedor.this.dispose();
 				
 			}

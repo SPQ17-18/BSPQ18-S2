@@ -57,6 +57,11 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		this.menuDAO = new MenuDAO();
 
 	}
+	
+	public Biblioteca(ISalaDAO dao) throws RemoteException {
+		super();
+		this.salaDAO = dao;
+	}
 
 	@Override
 	public void eliminarReserva(String id_Sala, String dni_respon) throws RemoteException {

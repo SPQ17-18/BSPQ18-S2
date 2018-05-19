@@ -61,6 +61,27 @@ public class ReservaDAOTest {
 		rn.setPlazas(rn.getPlazas()+1);
 		assertEquals(9,rn.getPlazas());
 	}
+	
+	@Test
+	public void testEditarReserva() throws RemoteException {
+		Reserva r = new Reserva("RE1", "S1", "12345678X", "11/04/18", "21:20", 3);
+		Reserva rMod = new Reserva("RE1", "S2", "12345678X", "12/04/18", "21:21", 3);
+		dao.editarReserva(r.getDni_respon(), r.getFecha(), r.getHora(), r.getId_sala(), "12/04/18", "21:21", "S2");
+		Reserva rAct = b.DevolverReserva(r.getDni_respon(),"12/04/18" , "21:21");
+		System.out.println(rMod.getFecha()+"  1"+"wqqe");
+		System.out.println("  2");
+		System.out.println(rAct.getFecha()+"  2");
+		System.out.println("  3");
+		assertEquals(rMod.getFecha(), rAct.getFecha());
+		assertEquals(rMod.getHora(), rAct.getHora());
+		assertEquals(rMod.getId_sala(), rAct.getId_sala());
+	}
+	
+	@Test
+	public void testEliminarReserva() throws RemoteException {
+		dao.eliminarReserva(b.DevolverReserva("12345678X", "11/04/18", "21:20"));
+		assertEquals(null, b.DevolverReserva("12345678X", "11/04/18", "21:20"));
+	}
 }
 
 

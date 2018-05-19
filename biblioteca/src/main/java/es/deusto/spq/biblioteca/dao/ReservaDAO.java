@@ -100,12 +100,12 @@ public class ReservaDAO implements IReservaDAO {
 
 	@Override
 	public void editarReserva(String dni,String fecha,String hora,String sala, String fecha_nueva, String hora_nueva,String SalaNueva) {
-
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
 		Reserva r = devolverReserva(dni, fecha, hora);
 		if(sala.equals(r.getId_sala()))	logger.debug("Sala correcta");
 		if (consultarDisponibilidad(SalaNueva, fecha_nueva, hora_nueva)) {
-			Reserva aux = new Reserva(r.getId_reserva(), SalaNueva, r.getDni_respon(), fecha_nueva, hora_nueva,
-					r.getPlazas());
+			Reserva aux = new Reserva(r.getId_reserva(), SalaNueva, r.getDni_respon(), fecha_nueva, hora_nueva,r.getPlazas());
 			eliminarReserva(r);
 			anyadirReserva(aux);
 			//System.out.println("Reserva modificada satisfactoriamente");
@@ -116,7 +116,6 @@ public class ReservaDAO implements IReservaDAO {
 			logger.info("Reserva no modificada.No se puede reservar en la fecha/hora seleccionadas");
 
 		}
-
 	}
 
 	@Override
@@ -205,7 +204,6 @@ public class ReservaDAO implements IReservaDAO {
 		try {
 			//System.out.println(" *Eliminando: " + Plazas);
 			logger.info(" *Eliminando: " + Plazas);
-
 			tx.begin();
 			Query<?> query = pm.newQuery("SELECT FROM " + Reserva.class.getName() + " WHERE id_reserva == " + reserva);
 			query.setUnique(true);

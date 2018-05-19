@@ -153,17 +153,19 @@ public class RMITest {
 		assertTrue(true);
 
 	}
-	/*
-	 * @Test public void buscarLibroTest() { try{
-	 * logger.info("Test 2 - buscar libro"); String
-	 * a="Festin de cuervos, Cancion de Hielo y fuego IV";
-	 * Ibiblioteca.buscarLibro(a); assertTrue( true ); } catch (Exception re) {
-	 * System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-	 * assertTrue( false ); }
-	 * 
-	 * 
-	 * }
-	 * 
+	
+	  @Test public void buscarLibroTest() { 
+		  try{
+		  logger.info("Test 2 - buscar libro"); 
+		  String a="Festin de cuervos, Cancion de Hielo y fuego IV";
+		  service.buscarLibro(a); 
+		  assertTrue( true ); 
+		  } catch (Exception re) {
+		  System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+		  assertTrue( false ); 
+		  }
+	  }
+	/* 
 	 * @Test public void reserveBookTest() { try{
 	 * logger.info("Test 3 - Register new user"); String
 	 * a="Festin de cuervos, Cancion de Hielo y fuego IV"; Libro l =new Libro();
