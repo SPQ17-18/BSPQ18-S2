@@ -21,7 +21,9 @@ public class Server {
 		String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
 
 		try {
-			IBiblioteca server = new Biblioteca(args[0],Integer.parseInt(args[1]));
+			
+			//IBiblioteca server = new Biblioteca(args[0],Integer.parseInt(args[1])); --> Estaba puesto antes asi
+			IBiblioteca server = new Biblioteca();
 			Naming.rebind(name, server);
 			//System.out.println("* Servidor '" + name + "' activo y esperando...");
 			logger.info("* Servidor '" + name + "' activo y esperando...");

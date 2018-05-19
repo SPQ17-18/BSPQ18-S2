@@ -1,5 +1,6 @@
 package es.deusto.spq.biblioteca.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.jdo.JDOHelper;
@@ -129,11 +130,11 @@ public class ReservaDAO implements IReservaDAO {
 	}
 
 	@Override
-	public String verReservas(String dni) {
+	public ArrayList<String> verReservas(String dni) {
 		// TODO Auto-generated method stub
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-		String datos = null;
+		ArrayList<String> datos = new ArrayList<String>();
 		try {
 			//System.out.println("   * Consultado reservas de: " + dni);
 			logger.info("   * Consultado reservas de: " + dni);
@@ -144,12 +145,9 @@ public class ReservaDAO implements IReservaDAO {
 			List<Reserva> reservas = (List<Reserva>) query.execute();
 			for (Reserva r : reservas) {
 				if (r.getDni_respon().equals(dni)) {
-					logger.info("============DNI : " + r.getDni_respon() +"==========================\nSala : " + r.getId_sala() 
-					+ "\nFecha : " + r.getFecha()
-					+ "\nHora : " + r.getHora()
-					+"\nNº plazas : " + r.getPlazas()
-					+ "\n======================================\n");
-					datos += r.getDni_respon() + "#" + r.getId_sala() + "#" + r.getFecha() + "#" + r.getHora() + "#" + r.getPlazas() + "/" ;
+					String reserva;
+					reserva = r.getId_reserva()+"#"+  r.getId_sala()  + "#" +r.getDni_respon() + "#" + r.getFecha() + "#" + r.getHora() + "#" + r.getPlazas() + "/" ;
+					datos.add(reserva);
 				}
 			}
 			tx.commit();
@@ -165,35 +163,5 @@ public class ReservaDAO implements IReservaDAO {
 			pm.close();
 		}
 		return datos;
-	}
-
-	public void EliminarParticipanteR(String id_reserva, String plazas) {
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
-		int reserva = Integer.parseInt(id_reserva);
-		int Plazas = Integer.parseInt(plazas);
-		Reserva r = null;
-		try {
-			//System.out.println(" *Eliminando: " + Plazas);
-			logger.info(" *Eliminando: " + Plazas);
-
-			tx.begin();
-			Query<?> query = pm.newQuery("SELECT FROM " + Reserva.class.getName() + " WHERE id_reserva == " + reserva);
-			query.setUnique(true);
-			r = (Reserva) query.execute();
-			int nuevoNumero = r.getPlazas() - Plazas;
-			tx.commit();
-			tx.begin();
-			r.setPlazas(nuevoNumero);
-			pm.makePersistent(r);
-			tx.commit();
-			//System.out.println(" *Eliminando: " + Plazas + "Nuevo numero de asistentes: " + nuevoNumero);
-			logger.info(" *Eliminando: " + Plazas + "Nuevo numero de asistentes: " + nuevoNumero);
-
-		} catch (Exception ex) {
-			//System.out.println(" $ Error eliminando participantes: " + ex.getMessage());
-			logger.error(" $ Error eliminando participantes: " + ex.getMessage());
-
-		}
 	}
 }

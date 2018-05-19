@@ -28,6 +28,8 @@ import es.deusto.spq.biblioteca.data.Sala;
 
 public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 
+	private static final long serialVersionUID = 1L;
+
 	private IReservaDAO reservaDAO;
 
 	private ISalaDAO salaDAO;
@@ -92,12 +94,16 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 	@Override
-	public String verReservas(String dni) throws RemoteException {
-		String s = reservaDAO.verReservas(dni);
+	public ArrayList<String> verReservaComedor(String dni) throws RemoteException {
+		ArrayList<String> s = rComedorDAO.verReservaComedor(dni);
+		return s;
+		}
+
+	@Override
+	public ArrayList<String> verReservas(String dni) throws RemoteException {
+		ArrayList<String> s = reservaDAO.verReservas(dni);
 		return s;
 	}
-
-
 
 	@Override
 	public void almacenarLibro(String isbn, String nombre, String autor, String editorial) {
@@ -222,12 +228,6 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	public void editarReservaComedor(String id_reserva, String fecha_nueva, String hora_nueva) throws RemoteException {
 		rComedorDAO.editarReservaComedor(id_reserva, fecha_nueva, hora_nueva);
 	}
-	
-	@Override
-	public void verReservaComedor(String dni) throws RemoteException {
-		rComedorDAO.verReservaComedor(dni);
-	}
-	
 
 	@Override
 	public void eliminarReservaComedor(String dni, String fecha, String hora) throws Exception {
