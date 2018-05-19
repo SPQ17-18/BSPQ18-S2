@@ -168,7 +168,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 
 	//Esta descartado
 	@Override
-	public boolean reserveBook(Libro l/*String nombre*/) throws RemoteException {
+	public boolean reserveBook(Libro l) throws RemoteException {
 //		// TODO Auto-generated method stub
 //		boolean isReservado = false;
 //		boolean reserva = libroDAO.reservarLibro(nombre);

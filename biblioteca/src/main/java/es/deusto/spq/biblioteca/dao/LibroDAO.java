@@ -173,8 +173,8 @@ public class LibroDAO implements ILibroDAO{
 		}
 	}
 
-	@Override
-	public void reservarLibro(Libro l) {
+//	@Override
+//	public void reservarLibro(Libro l) {
 		// TODO Auto-generated method stub
 //		boolean disponible = true;
 //		
@@ -206,6 +206,44 @@ public class LibroDAO implements ILibroDAO{
 //		}
 //		return disponible;
 		
+		
+//	}
+	
+	@Override
+	public void reservarLibro(Libro l) {
+		// TODO Auto-generated method stub
+		boolean reservarLibro = false;
+		
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		
+		try {
+			
+			tx.begin();
+			Query<Libro> query = pm.newQuery(Libro.class);
+			List<Libro> libros = (List<Libro>) query.execute();
+			
+			if(l.getnombre().equals(l.getnombre())) {
+				pm.makePersistent(l);
+				logger.info("   * Reservando libro: " + l.getnombre());
+
+				tx.commit();
+			}
+			
+
+			
+			
+		}catch (Exception ex) {
+			//System.out.println("   $ Error reservando un libro: " + ex.getMessage());
+			logger.error("   $ Error reservando un libro:" + ex.getMessage());
+
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
 		
 	}
 
