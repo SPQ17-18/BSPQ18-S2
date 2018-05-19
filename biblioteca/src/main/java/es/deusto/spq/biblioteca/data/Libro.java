@@ -19,7 +19,7 @@ public class Libro implements Serializable {
 	String nombre = null;
 	String autor = null;
 	String editorial = null;
-	boolean isReservado = false; //Inicializado a false pues de primeras ninguno lo esta. Se cambiara a true cuando se reserve
+	
 
 	//Añadir mas???
 	
@@ -27,12 +27,11 @@ public class Libro implements Serializable {
 		
 	}
 	
-	public Libro(int isbn, String nombre, String autor, String editorial, boolean isReservado) {
+	public Libro(int isbn, String nombre, String autor, String editorial) {
 		this.isbn = isbn;
 		this.nombre = nombre;
 		this.autor = autor;
 		this.editorial = editorial;
-		this.isReservado = isReservado;
 	}
 	
 
@@ -69,13 +68,6 @@ public class Libro implements Serializable {
 		this.editorial = editorial;
 	}
 	
-	public boolean isReservado() {
-		return isReservado;
-	}
-
-	public void setReservado(boolean isReservado) {
-		this.isReservado = isReservado;
-	}
 	
 	int numeroEjemplares = 0;
 	public int getNumeroEjemplares() {
@@ -89,7 +81,7 @@ public class Libro implements Serializable {
 	@Override
 	public String toString() {
 		return "libro [isbn=" + isbn + ", nombre=" + nombre + ", autor=" + autor + ", editorial=" + editorial
-				+ ", isReservado=" + isReservado + ", numeroEjemplares=" + numeroEjemplares +"]";
+				+ ", numeroEjemplares=" + numeroEjemplares +"]";
 	}
 
 }

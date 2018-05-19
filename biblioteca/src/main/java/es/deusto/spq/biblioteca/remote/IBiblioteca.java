@@ -18,7 +18,7 @@ public interface IBiblioteca extends Remote {
 
 	public Libro buscarLibro(String nombre) throws RemoteException;
 
-	public void almacenarLibro(int isbn, String nombre, String autor, String editorial, boolean isReservado)
+	public void almacenarLibro(int isbn, String nombre, String autor, String editorial)
 			throws RemoteException;
 	
 	public boolean reserveBook(Libro l) throws RemoteException;

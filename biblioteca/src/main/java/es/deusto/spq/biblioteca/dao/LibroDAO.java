@@ -122,7 +122,8 @@ public class LibroDAO implements ILibroDAO{
 //				catalogo.get(i);
 //			}
 			for (Libro libro : extent) {
-				catalogo.add(new Libro(libro.getIsbn(), libro.getnombre(), libro.getAutor(), libro.getEditorial(), libro.isReservado()));
+				catalogo.add(new Libro(libro.getIsbn(), libro.getnombre(), libro.getAutor(), libro.getEditorial()));
+				
 			}
 			
 			tx.commit();
@@ -144,26 +145,26 @@ public class LibroDAO implements ILibroDAO{
 		return null;
 	}	
 	
-	public void EliminarLibro(String isbn) {
+	public void EliminarLibro(int isbn) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-		int codigo = Integer.parseInt(isbn);
+		//int codigo = Integer.parseInt(isbn);
 		Libro l = null;
 		try {
 			//System.out.println(" *Eliminando: " + codigo );
-			logger.info(" *Eliminando: " + codigo );
+			logger.info(" *Eliminando: " + isbn );
 			tx.begin();
-			Query<?> query = pm.newQuery("SELECT FROM " + Reserva.class.getName() + " WHERE isbn == " + codigo );
+			Query<?> query = pm.newQuery("SELECT FROM " + Reserva.class.getName() + " WHERE isbn == " + isbn );
 			query.setUnique(true);
 			l = (Libro) query.execute();
-			int nuevaLista = l.getNumeroEjemplares()-codigo;
+			int nuevaLista = l.getNumeroEjemplares()-isbn;
 			tx.commit();
 			tx.begin();
 			l.setNumeroEjemplares(nuevaLista);
 			pm.makePersistent(l);
 			tx.commit();
 			//System.out.println(" *Eliminando: " + codigo +  "Nuevo numero de asistentes: " + nuevaLista);
-			logger.info(" *Eliminando: " + codigo +  "Nuevo numero de asistentes: " + nuevaLista);
+			logger.info(" *Eliminando: " + isbn +  "Nuevo numero de asistentes: " + nuevaLista);
 
 
 		} catch (Exception ex) {
@@ -210,7 +211,7 @@ public class LibroDAO implements ILibroDAO{
 //	}
 	
 	@Override
-	public void reservarLibro(Libro l) {
+	public boolean reservarLibro(Libro l) {
 		// TODO Auto-generated method stub
 		boolean reservarLibro = false;
 		
@@ -244,6 +245,7 @@ public class LibroDAO implements ILibroDAO{
 
 			pm.close();
 		}
+		return reservarLibro;
 		
 	}
 
@@ -272,7 +274,6 @@ public class LibroDAO implements ILibroDAO{
 			System.out.println("\nNombre: " + l.getnombre());
 			System.out.println("\nAutor: " + l.getAutor());
 			System.out.println("\nEditorial: " + l.getEditorial());
-			System.out.println("\nReservado: " + l.isReservado() + "\n");				
 
 			tx.commit();
 

@@ -18,7 +18,7 @@ public class TestlibroDAO {
 		// TODO Auto-generated method stub
 		
 		try {
-			Libro l = new Libro(1, "Las almas de Brandoom", "Cesar Brandom", "S.L.U. Espasa Libros", false);
+			Libro l = new Libro(1, "Las almas de Brandoom", "Cesar Brandom", "S.L.U. Espasa Libros");
 			libroDAO.almacenarLibro(l); //No esta almacenando el libro
 //			libroDAO.buscarLibro("Las almas de Brandoom");
 			

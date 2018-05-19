@@ -45,8 +45,8 @@ public class LibroDAOTest {
 	@Test
 	public void testAlmacenarLibro() throws Exception {
 		
-		Libro l = new Libro(1, "Las almas de Brandom", "Cesar Brandom", "S.L.U. Espasa Libros", false);
-		biblioteca.almacenarLibro(1, "Las almas de Brandom", "Cesar Brandom", "S.L.U. Espasa Libros", false);
+		Libro l = new Libro(1, "Las almas de Brandom", "Cesar Brandom", "S.L.U. Espasa Libros");
+		biblioteca.almacenarLibro(1, "Las almas de Brandom", "Cesar Brandom", "S.L.U. Espasa Libros");
 		ArgumentCaptor<Libro> libroCaptor = ArgumentCaptor.forClass(Libro.class);
 		verify(ILibroDAO).almacenarLibro(libroCaptor.capture());
 		System.out.println("Almacenando libro...");
@@ -56,7 +56,6 @@ public class LibroDAOTest {
 		assertEquals(l.getnombre(), book.getnombre());
 		assertEquals(l.getAutor(), book.getAutor());
 		assertEquals(l.getEditorial(), book.getEditorial());
-		assertEquals(l.isReservado(), book.isReservado());
 
 	}
 	
@@ -64,7 +63,7 @@ public class LibroDAOTest {
 	@Ignore
 	@Test
 	public void testVerLibro() throws Exception {
-		Libro libro = new Libro(2, "Festin de cuervos, Cancion de Hielo y fuego IV", "George R.R. Martin", "Gigamesh", false);
+		Libro libro = new Libro(2, "Festin de cuervos, Cancion de Hielo y fuego IV", "George R.R. Martin", "Gigamesh");
 		biblioteca.mostrarLibro("Festin de cuervos, Cancion de Hielo y fuego IV");
 		ArgumentCaptor<Libro> libroCaptor = ArgumentCaptor.forClass(Libro.class);
 		verify(ILibroDAO).verLibro("Festin de cuervos, Cancion de Hielo y fuego IV");
@@ -74,19 +73,17 @@ public class LibroDAOTest {
 		assertEquals(libro.getIsbn(), book.getIsbn());
 		assertEquals(libro.getnombre(), book.getnombre());
 		assertEquals(libro.getAutor(), book.getAutor());
-		assertEquals(libro.getEditorial(), book.getEditorial());
-		assertEquals(libro.isReservado(), book.isReservado());
-		
+		assertEquals(libro.getEditorial(), book.getEditorial());		
 
 	}
 	//No va a funcionar pues solo vale por objetos
 	@Ignore
 	@Test
 	public void testDeleteLibro() throws Exception {
-		Libro libro = new Libro(3, "FYellowstar: Conviértete en un campeón de League of Legends", "Bora Kim ", "Editorial Planeta S.A", false);
+		Libro libro = new Libro(3, "FYellowstar: Conviértete en un campeón de League of Legends", "Bora Kim ", "Editorial Planeta S.A");
 		biblioteca.EliminarLibro(libro);
 		ArgumentCaptor<Libro> libroCaptor = ArgumentCaptor.forClass(Libro.class);
-		verify(ILibroDAO).EliminarLibro("3");
+		verify(ILibroDAO).EliminarLibro(3);
 		System.out.println("Eliminando libro...");
 		
 		Libro book = libroCaptor.getValue();
@@ -94,8 +91,6 @@ public class LibroDAOTest {
 		assertEquals(libro.getnombre(), book.getnombre());
 		assertEquals(libro.getAutor(), book.getAutor());
 		assertEquals(libro.getEditorial(), book.getEditorial());
-		assertEquals(libro.isReservado(), book.isReservado());
-
 
 		
 	}

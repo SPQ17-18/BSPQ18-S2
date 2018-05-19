@@ -99,9 +99,9 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 	@Override
-	public void almacenarLibro(int isbn, String nombre, String autor, String editorial, boolean isReservado) {
+	public void almacenarLibro(int isbn, String nombre, String autor, String editorial) {
 		// TODO Auto-generated method stub
-		Libro l = new Libro(isbn, nombre, autor, editorial, isReservado);
+		Libro l = new Libro(isbn, nombre, autor, editorial);
 		libroDAO.almacenarLibro(l);
 
 	}
@@ -147,8 +147,8 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	public void EliminarLibro(Libro l) {
 		// int numeroEjemplares = 00;
 		// numeroEjemplares
-		String Isbn;
-		Isbn = String.valueOf(l.getIsbn());
+		int Isbn;
+		Isbn = l.getIsbn();
 		// String nya="R#";
 		// nya=nya.concat(Isbn);
 		libroDAO.EliminarLibro(Isbn);
