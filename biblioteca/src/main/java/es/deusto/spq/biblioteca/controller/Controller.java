@@ -63,6 +63,31 @@ public class Controller {
     	}
     }
 	
+	public boolean consultarDiponibilidadLibro(String isbn) throws RemoteException {
+		
+		boolean is_reservado = false;
+		try{
+			boolean free =cl.getService().consultarDiponibilidadLibro(isbn);
+			if (free == true) {
+				is_reservado = true;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			}
+		return is_reservado;
+		
+	}
+	
+	public void reservarLibro(String isbn) throws RemoteException {
+		
+		try {
+			cl.getService().reservarLibro(isbn);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+	
 	public String verReservas(String dni) {
 		String s = null;
 		try{
@@ -101,13 +126,14 @@ public class Controller {
 		}
 	}
 	
-	public void almacenarLibro(int isbn, String nombre, String autor, String editorial, boolean isReservado) {
+	public void almacenarLibro(String isbn, String nombre, String autor, String editorial) {
 		try{
-		cl.getService().almacenarLibro(isbn, nombre, autor, editorial, isReservado);
+		cl.getService().almacenarLibro(isbn, nombre, autor, editorial);
 		}catch(Exception e){
 			e.printStackTrace();
 			}
 	}
+	
 	
 	public boolean consultarDisponibilidad(String Id_Sala, String fecha, String hora, int personas) {
 		boolean reservar = false;
