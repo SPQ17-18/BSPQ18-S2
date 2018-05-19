@@ -69,3 +69,4 @@ public class VentanaMensaje2 extends JFrame {
 }
 
 }
+

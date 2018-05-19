@@ -86,27 +86,18 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	@Override
 	public Libro buscarLibro(String nombre) {
 		// TODO Auto-generated method stub
-		// libro l = new libro(1, "Las almas de Brandoom", "Cesar Brandom", "S.L.U.
-		// Espasa Libros", false);
-		// libroDAO.almacenarLibro(l); //No esta almacenando el libro
-		// libroDAO.buscarLibro("Las almas de Brandoom");
 		Libro lib = libroDAO.getLibro(nombre);
 
 		return lib;
 	}
 
 	@Override
-	public ArrayList<String> verReservas(String dni) throws RemoteException {
-		return reservaDAO.verReservas(dni);
+	public String verReservas(String dni) throws RemoteException {
+		String s = reservaDAO.verReservas(dni);
+		return s;
 	}
 
-	
 
-	@Override
-	public void anyadirUsuario(Reserva r) throws RemoteException {
-		// TODO Auto-generated method stub
-		reservaDAO.anyadirUsuario(r);
-	}
 
 	@Override
 	public void almacenarLibro(String isbn, String nombre, String autor, String editorial) {
@@ -158,20 +149,16 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		salaDAO.anyadirSala(s);
 	}
 
-	public void EliminarParticipante(Reserva r)throws RemoteException {
-		String plazas = "";
-		plazas = String.valueOf(r.getPlazas());
-		reservaDAO.EliminarParticipanteR(r.getId_reserva(), plazas);
-	}
 
 	public void EliminarLibro(Libro l)throws RemoteException {
 	//Que lo arregle quien lo hizo pls
 		// int numeroEjemplares = 00;
 		// numeroEjemplares
-	//	isbn = l.getIsbn();  --> Lo que funcionaba cuando isbn era int
+		String isbn;
+		isbn = l.getIsbn();  
 		// String nya="R#";
 		// nya=nya.concat(Isbn);
-	//	libroDAO.EliminarLibro(isbn);--> Lo que funcionaba cuando isbn era int
+		libroDAO.EliminarLibro(isbn);
 
 	}
 	
@@ -191,14 +178,6 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	public void mostrarLibro(String nombre) throws RemoteException {
 		// TODO Auto-generated method stub
 		libroDAO.verLibro(nombre);
-	}
-
-	
-	@Override
-	public Reserva DevolverReserva(String dni, String fecha, String hora) throws RemoteException {
-		Reserva r = null;
-		r = reservaDAO.devolverReserva(dni, fecha, hora);
-		return r;
 	}
 	
 	@Override
@@ -240,32 +219,26 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 	@Override
-	public ArrayList<String> verReservaComedor(String dni) throws RemoteException {
-		return rComedorDAO.verReservaComedor(dni);
-		}
-
-	@Override
 	public void editarReservaComedor(String id_reserva, String fecha_nueva, String hora_nueva) throws RemoteException {
 		rComedorDAO.editarReservaComedor(id_reserva, fecha_nueva, hora_nueva);
-		}
-
-	@Override
-	public ReservaMesa DevolverReservaMesa(String dni, String fecha, String hora) throws RemoteException {
-		ReservaMesa r = rComedorDAO.devolverReservaComedor(dni, fecha, hora);
-		return r;
 	}
+	
+	@Override
+	public void verReservaComedor(String dni) throws RemoteException {
+		rComedorDAO.verReservaComedor(dni);
+	}
+	
 
 	@Override
 	public void eliminarReservaComedor(String dni, String fecha, String hora) throws Exception {
 		// TODO Auto-generated method stub
-		ReservaMesa r = DevolverReservaMesa(dni, fecha, hora);
-		rComedorDAO.eliminarReservaComedor(r);
+//		ReservaMesa r = DevolverReservaMesa(dni, fecha, hora);
+//		rComedorDAO.eliminarReservaComedor(r);
 	}
 
 
 	@Override
-	public void editarReserva(String dni, String fecha, String hora, String sala, String fecha_nueva, String hora_nueva,
-			String SalaNueva) throws RemoteException {
+	public void editarReserva(String dni, String fecha, String hora, String sala, String fecha_nueva, String hora_nueva, String SalaNueva) throws RemoteException {
 		reservaDAO.editarReserva(dni, fecha, hora, sala, fecha_nueva, hora_nueva, SalaNueva);
 		
 	}
@@ -302,9 +275,12 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 	@Override
-	public void verMenu(String fecha) throws Exception {
-		menuDAO.verMenu(fecha);
-	}	
+	public String verMenu(String fecha) throws Exception {
+		String menu = null;
+		menu = menuDAO.verMenu(fecha);
+		return menu;
+	}
+
 	
 }
 

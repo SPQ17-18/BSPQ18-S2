@@ -17,6 +17,7 @@
 		<server.Name>BibliotecaRMI</server.Name>
 		<config.files.dir>${basedir}/src/main/resources</config.files.dir>
 		<policy.file>${basedir}/src/main/resources/security/java.policy</policy.file>
+		<doxygen.config.file>${basedir}/src/main/resources/Doxyfile</doxygen.config.file>
 	</properties>
 
 	<dependencies>
@@ -127,6 +128,10 @@
 						<format>html</format>
 					</formats>
 					<instrumentation>
+						<excludes>
+							<exclude>es/deusto/spq/biblioteca/client/gui/*</exclude>
+							<exclude>es/deusto/spq/biblioteca/client/client/Client.class</exclude>
+						</excludes>
 						<!-- This line is for skipping set/get and constructor trivial methods. 
 							The coverage is higher -->
 						<ignoreTrivial>true</ignoreTrivial>
@@ -156,6 +161,14 @@
 
 	<reporting>
 		<plugins>
+			<plugin>
+				<groupId>com.soebes.maven.plugins</groupId>
+				<artifactId>doxygen-maven-plugin</artifactId>
+				<version>1.1.0</version>
+				<configuration>
+					<configurationFile>${doxygen.config.file}</configurationFile>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-project-info-reports-plugin</artifactId>

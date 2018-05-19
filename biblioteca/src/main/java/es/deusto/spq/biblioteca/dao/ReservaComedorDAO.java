@@ -1,6 +1,5 @@
 package es.deusto.spq.biblioteca.dao;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -91,14 +90,11 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 	}
 
 	@Override
-	public ArrayList<String> verReservaComedor(String dni) {
+	public void verReservaComedor(String dni) {
 		// TODO Auto-generated method stub
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 
-		ArrayList<String> datos  = new ArrayList<String>();
-		String d=null;
-		
 		try {
 			System.out.println("   * Consultado reservas de: " + dni);
 			tx.begin();
@@ -107,11 +103,13 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 			List<ReservaMesa> reservas = (List<ReservaMesa>) query.execute();
 			for (ReservaMesa r : reservas) {
 				if (r.getDni_respon().equals(dni)) {
-					logger.info("============DNI : " + r.getDni_respon() + "==========================\nSala : "
-							+ r.getId_Mesa() + "\nFecha : " + r.getFecha() + "\nHora : " + r.getHora()
-							+ "\nNº plazas : " + r.getPersonas() + "\n======================================\n");
-					d += r.getId_Reserva() + "#"+r.getDni_respon() + "#" + r.getId_Mesa() + "#" + r.getFecha() + "#" + r.getHora() + "#" + r.getPersonas() + "/" ;
-					datos.add(d);
+					System.out.println("======================================");
+					System.out.println("\nReserva : " + r.getId_Reserva());
+					System.out.println("\nMesa : " + r.getId_Mesa());
+					System.out.println("\nFecha : " + r.getFecha());
+					System.out.println("\nHora : " + r.getHora());
+					System.out.println("\nNº personas : " + r.getPersonas());
+					System.out.println("\n======================================\n");
 				}
 			}
 			tx.commit();
@@ -124,7 +122,6 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 
 			pm.close();
 		}
-		return datos;
 	}
 
 	//Koldo: Tengo que editarlo
@@ -227,40 +224,4 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 		}
 
 	}
-
-	@Override
-	public ReservaMesa devolverReservaComedor(String dni, String fecha, String hora) {
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
-		ReservaMesa R = null;
-
-		try {
-			//System.out.println("   * Buscando reserva de: " + dni);
-			logger.info("   * Buscando reserva de: " + dni);
-
-			tx.begin();
-			Query<ReservaMesa> query = pm.newQuery(ReservaMesa.class);
-			@SuppressWarnings("unchecked")
-			List<ReservaMesa> reservas = (List<ReservaMesa>) query.execute();
-			for (ReservaMesa r : reservas) {
-				if (r.getDni_respon().equals(dni) && r.getFecha().equals(fecha) && r.getHora().equals(hora)) {
-					R = r;
-				}
-
-			}
-			tx.commit();
-		} catch (Exception ex) {
-			//System.out.println("   $ Error devolviendo reserva: " + ex.getMessage());
-			logger.error("   $ Error devolviendo reserva: " + ex.getMessage());
-
-		} finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
-
-			pm.close();
-		}
-
-		return R;
-	}	
 }
