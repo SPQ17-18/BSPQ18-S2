@@ -36,12 +36,19 @@ public class TablaReservas extends JFrame {
 	private JTable table;
 	private Controller controller;
 
+	/**
+	 *Clase constructor
+	 * @param controller controller de la aplicacion
+	 */
 	public TablaReservas(Controller controller) {
 		this.controller = controller;
 		ventana();
 		this.setVisible(true);
 	}
 	
+	/**
+	 * Inicialización de la ventana
+	 */
 	public void ventana() {
 		setTitle("Reservas");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -109,7 +116,9 @@ public class TablaReservas extends JFrame {
 		label.setBounds(0, 0, 854, 397);
 		contentPane.add(label);
 	}
-	
+	/**
+	 * Visualizacion de la ventana
+	 */
 	public void ejecutarVentana() {
 		try {
 			final TablaReservas Ventana = new TablaReservas(controller);

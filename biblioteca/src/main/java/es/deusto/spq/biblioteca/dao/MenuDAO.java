@@ -13,15 +13,28 @@ import org.apache.log4j.Logger;
 import es.deusto.spq.biblioteca.data.Menu;
 import es.deusto.spq.biblioteca.data.Sala;
 
+/**
+ * Clase para el manejo de la Base de Daatos
+ * @author koldo
+ *
+ */
 public class MenuDAO implements IMenuDAO{
 	
 	private PersistenceManagerFactory pmf;
 	private static final Logger logger = Logger.getLogger(ReservaComedorDAO.class);
-
+	
+	/**
+	 * Contructor de la clase
+	 */
 	public MenuDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
+	/**
+	 * Metodo que anyade un libro.
+	 * @Menu anyade menu.
+	 * @throws Exception Lanza una excepccion si ocurre un error.
+	 */
 	@Override
 	public void anyadirMenu(Menu m) {
 		// TODO Auto-generated method stub
@@ -43,6 +56,11 @@ public class MenuDAO implements IMenuDAO{
 		}
 	}
 
+	/**
+	 * Permite añyadr una valoracion al menu.
+	 * @param ID_menu Identificador del menu.
+	 * @param valoracion Valoracion dada al menu.
+	 */
 	@Override
 	public void anyadirValoracion(String ID_Menu, int valoracion) {
 		// TODO Auto-generated method stub
@@ -81,6 +99,10 @@ public class MenuDAO implements IMenuDAO{
 		}
 	}
 
+	/**
+	 * Permite ver el menu.
+	 * @param fecha Fecha del dia que quieres ver el menu
+	 */
 	@Override
 	public String verMenu(String fecha) {
 		// TODO Auto-generated method stub

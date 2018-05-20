@@ -33,12 +33,19 @@ public class VentanaReservaLibro extends JFrame {
 	private JButton btnVolver;
 	private Controller controller;
 
+	/**
+	 *Clase constructor
+	 * @param controller controller de la aplicacion
+	 */
 	public VentanaReservaLibro(Controller controller) {
 		this.controller = controller;
 		ventana();
 		this.setVisible(true);
 	}
 	
+	/**
+	 * Inicialización de la ventana
+	 */
 	public void ventana() {
 		setTitle("Libro");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -112,6 +119,9 @@ public class VentanaReservaLibro extends JFrame {
 		contentPane.add(textPane);
 	}
 	
+	/**
+	 * Visualizacion de la ventana
+	 */
 	public void ejecutarVentana() {
 		try {
 			final VentanaReservaLibro Ventana = new VentanaReservaLibro(controller);

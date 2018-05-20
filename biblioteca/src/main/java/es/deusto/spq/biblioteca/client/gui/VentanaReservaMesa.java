@@ -23,12 +23,19 @@ public class VentanaReservaMesa extends JFrame {
 	private JPanel contentPane;
 	private Controller controller;
 	
+	/**
+	 *Clase constructor
+	 * @param controller controller de la aplicacion
+	 */
 	public VentanaReservaMesa(Controller controller) {
 		this.controller = controller;
 		ventana();
 		this.setVisible(true);
 	}
 	
+	/**
+	 * Inicialización de la ventana
+	 */
 	public void ventana() {
 		setTitle("Reserva de mesas");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -82,6 +89,9 @@ public class VentanaReservaMesa extends JFrame {
 		contentPane.add(label);
 	}
 	
+	/**
+	 * Visualizacion de la ventana
+	 */
 	public void ejecutarVentana() {
 		try {
 			final VentanaReservaMesa Ventana = new VentanaReservaMesa(controller);

@@ -11,7 +11,9 @@ public class Server {
 	
 	private static final Logger logger = Logger.getLogger(Server.class);
 
-	
+	/**
+	 * Metodo main del servidor
+	 */
 	public static void main(String[] args) {
 
 		if (System.getSecurityManager() == null) {

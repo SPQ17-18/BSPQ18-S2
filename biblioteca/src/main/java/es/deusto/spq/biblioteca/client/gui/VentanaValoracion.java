@@ -25,12 +25,19 @@ public class VentanaValoracion extends JFrame {
 	private JPanel contentPane;
 	private Controller controller;
 	
+	/**
+	 *Clase constructor
+	 * @param controller controller de la aplicacion
+	 */
 	public VentanaValoracion(Controller controller) {
 		this.controller = controller;
 		ventana();
 		this.setVisible(true);
 	}
 	
+	/**
+	 * Inicialización de la ventana
+	 */
 	public void ventana() {
 		setTitle("Valoración");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -86,6 +93,10 @@ public class VentanaValoracion extends JFrame {
 		lblCalificacin.setBounds(10, 115, 192, 44);
 		contentPane.add(lblCalificacin);
 	}
+	
+	/**
+	 * Visualizacion de la ventana
+	 */
 	public void ejecutarVentana() {
 		try {
 			final VentanaValoracion Ventana = new VentanaValoracion(controller);

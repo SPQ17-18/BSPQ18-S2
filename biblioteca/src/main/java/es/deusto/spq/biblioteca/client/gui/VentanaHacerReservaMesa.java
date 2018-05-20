@@ -34,12 +34,19 @@ public class VentanaHacerReservaMesa extends JFrame {
 	private JTextField textField_3;
 	private Controller controller;
 	
+	/**
+	 *Clase constructor
+	 * @param controller controller de la aplicacion
+	 */
 	public VentanaHacerReservaMesa(Controller controller) {
 		this.controller = controller;
 		ventana();
 		this.setVisible(true);
 	}
 	
+	/**
+	 * Inicialización de la ventana
+	 */
 	public void ventana() {
 		setTitle("Reservar Mesa");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -143,6 +150,9 @@ public class VentanaHacerReservaMesa extends JFrame {
 		
 	}
 	
+	/**
+	 * Visualizacion de la ventana
+	 */
 	public void ejecutarVentana() {
 		try {
 			final VentanaHacerReservaMesa Ventana = new VentanaHacerReservaMesa(controller);

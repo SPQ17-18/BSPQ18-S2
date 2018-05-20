@@ -13,16 +13,27 @@ import org.apache.log4j.Logger;
 import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.Sala;
 
+/**
+ * Clase para el manejo de la Base de Daatos
+ * @author koldo
+ *
+ */
 public class SalaDAO implements ISalaDAO {
 
 	private PersistenceManagerFactory pmf;
 	private static final Logger logger = Logger.getLogger(SalaDAO.class);
 
-
+	/**
+	 * Contructor de la clase
+	 */
 	public SalaDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
+	/**
+	 * Anyade una nueva sala.
+	 * @Sala Sala de la biblioteca.
+	 */
 	@Override
 	public void anyadirSala(Sala s) {
 		// TODO Auto-generated method stub
@@ -46,6 +57,11 @@ public class SalaDAO implements ISalaDAO {
 		}
 	}
 
+	/**
+	 * Consulta las plazas que hay para una sala.
+	 * @param Id_sala Identificador de la sala.
+	 * @param Personas Numero de personas.
+	 */
 	@Override
 	public boolean consultarPlazas(String Id_Sala, int personas) {
 		// TODO Auto-generated method stub

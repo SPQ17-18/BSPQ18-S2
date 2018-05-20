@@ -23,12 +23,19 @@ public class VentanaMensaje2 extends JFrame {
 	private JPanel contentPane;
 	private Controller controller;
 	
+	/**
+	 *Clase constructor
+	 * @param controller controller de la aplicacion
+	 */
 	public VentanaMensaje2(Controller controller) {
 		this.controller = controller;
 		ventana();
 		this.setVisible(true);
 	}
 	
+	/**
+	 * Inicialización de la ventana
+	 */
 	public void ventana() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 350, 235);
@@ -55,6 +62,9 @@ public class VentanaMensaje2 extends JFrame {
 		contentPane.add(lblgraciasPorSu);
 	}
 	
+	/**
+	 * Visualizacion de la ventana
+	 */
 	public void ejecutarVentana() {
 		try {
 			final VentanaMensaje2 Ventana = new VentanaMensaje2(controller);

@@ -24,13 +24,20 @@ public class VentanaSala extends JFrame {
 	private JPanel contentPane;
 	private Controller controller;
 	
+	/**
+	 *Clase constructor
+	 * @param controller controller de la aplicacion
+	 */
 	public VentanaSala(Controller controller) {
 		this.controller = controller;
 		ventana();
 		this.setVisible(true);
 	}
 	
-	
+	/**
+	 *Clase constructor
+	 * @param controller controller de la aplicacion
+	 */
 	public void ventana() {
 		setTitle("Salas de Trabajo");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -90,6 +97,9 @@ public class VentanaSala extends JFrame {
 		contentPane.add(label);
 	}
 	
+	/**
+	 * Visualizacion de la ventana
+	 */
 	public void ejecutarVentana() {
 		try {
 			final VentanaSala Ventana = new VentanaSala(controller);

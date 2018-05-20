@@ -33,12 +33,18 @@ public class MenuPrincipal extends JFrame {
 	private JPanel contentPane;
 	private Controller controller;
 	
+	/**
+	 * Clase constructor
+	 * @param controller controller de la aplicacion
+	 */
 	public MenuPrincipal(Controller controller) {
 		this.controller = controller;
 		ventana();
 		this.setVisible(true);
 	}
-	
+	/**
+	 * Inicialización de la ventana
+	 */
 	public void ventana() {
 		setTitle("Biblioteca");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -98,6 +104,10 @@ public class MenuPrincipal extends JFrame {
 		label.setBounds(0, 0, 732, 346);
 		contentPane.add(label);
 	}
+	
+	/**
+	 * Visualizacion de la ventana
+	 */
 	public void ejecutarVentana() {
 		try {
 			final MenuPrincipal Ventana = new MenuPrincipal(controller);

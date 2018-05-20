@@ -13,18 +13,29 @@ import org.apache.log4j.Logger;
 
 import es.deusto.spq.biblioteca.data.Libro;
 
-
+/**
+ * Clase para el manejo de la Base de Daatos
+ * @author koldo
+ *
+ */
 public class LibroDAO implements ILibroDAO{
 	
 	private PersistenceManagerFactory pmf;
 	private static final Logger logger = Logger.getLogger(LibroDAO.class);
 
-
+	/**
+	 * Contructor de la clase
+	 */
 	public LibroDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
 }
 	
+	/**
+	 * Metodo que almacena un libro.
+	 * @Libro anyade libro.
+	 * @throws Exception Lanza una excepccion si ocurre un error.
+	 */
 	@Override
 	public void almacenarLibro(Libro l) {
 		// TODO Auto-generated method stub
@@ -49,7 +60,12 @@ public class LibroDAO implements ILibroDAO{
 		}
 		
 	}
-
+	
+	/**
+	 * Metodo que devuelve un libro de la BD dado su nombre.
+	 * @nombre Nombre del libro.
+	 * @return Devuleve el un libro de la BD
+	 */
 	//Funcion de busqueda de un libro por su nombre
 	@Override
 	public Libro getLibro(String nombre) {
@@ -89,7 +105,10 @@ public class LibroDAO implements ILibroDAO{
 	}
 	
 
-
+	/**
+	 * Metodo que devuelve todos los libros
+	 * @return Devuelve todos los libros de la BD
+	 */
 	//Funcion que devuelve el catalogo de libros
 	@Override
 	public ArrayList<String> getLibros() {
@@ -155,6 +174,10 @@ public class LibroDAO implements ILibroDAO{
 		return null;
 	}	
 	
+	/**
+	 * Metodo que elimina un libro
+	 * @param isbn Isbn del libro
+	 */
 	//El que hizo esto que lo revise pls
 	public void EliminarLibro(String isbn) {
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -261,7 +284,10 @@ public class LibroDAO implements ILibroDAO{
 //		
 //	}
 
-	
+	/**
+	 * Permite ver la información de un libro
+	 * @param nombre Nombre del libro
+	 */
 	@Override
 	public Libro verLibro(String nombre) {
 		PersistenceManager pm = pmf.getPersistenceManager();

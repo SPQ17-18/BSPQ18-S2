@@ -34,6 +34,7 @@ public class ReservaLibroDAOTest {
 	
 	@Before
 	public void setUp() throws Exception {
+		//Inicializado para todos los teses
 		biblio = new Biblioteca(reservaLibroDAO);
 
 	}

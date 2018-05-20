@@ -34,6 +34,10 @@ public class VentanaCatalogoLibros extends JFrame {
 	private JPanel contentPane;
 	private Controller controller;
 	
+	/**
+	 *Clase constructor
+	 * @param controller controller de la aplicacion
+	 */
 	public VentanaCatalogoLibros(Controller controller){
 		setTitle("Catálogo");
 		this.controller = controller;
@@ -41,7 +45,9 @@ public class VentanaCatalogoLibros extends JFrame {
 		this.setVisible(true);
 	}
 
-
+	/**
+	 * Inicialización de la ventana
+	 */
 	public void VentanaCatalogoLibrosejecutor() {
 		
 		//Biblioteca bli = new Biblioteca;
@@ -144,6 +150,9 @@ public class VentanaCatalogoLibros extends JFrame {
 		contentPane.add(label);
 	}
 	
+	/**
+	 * Visualizacion de la ventana
+	 */
 	public void ejecutarVentana() {
 		try {
 			final VentanaCatalogoLibros ventanaCatalogoLibros = new VentanaCatalogoLibros(controller);

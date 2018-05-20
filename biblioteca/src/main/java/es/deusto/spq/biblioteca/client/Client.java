@@ -9,6 +9,11 @@ public class Client {
 	private IBiblioteca service;
 	private static final Logger logger = Logger.getLogger(Client.class);
 
+	
+	/**
+	 * Metodo que proporciona el servicio al cliente.
+	 * @param args argumentos.
+	 */
 	public void setService(String[] args) {
 
 		try {

@@ -30,12 +30,19 @@ public class VentanaComedor extends JFrame {
 	private JPanel contentPane;
 	private Controller controller;
 	
+	/**
+	 *Clase constructor
+	 * @param controller controller de la aplicacion
+	 */
 	public VentanaComedor(Controller controller) {
 		this.controller = controller;
 		ventana();
 		this.setVisible(true);
 	}
 	
+	/**
+	 * Inicialización de la ventana
+	 */
 	public void ventana() {
 		setTitle("Comedor");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -106,6 +113,9 @@ public class VentanaComedor extends JFrame {
 		contentPane.add(label);
 	}
 	
+	/**
+	 * Visualizacion de la ventana
+	 */
 	public void ejecutarVentana() {
 		try {
 			final VentanaComedor Ventana = new VentanaComedor(controller);

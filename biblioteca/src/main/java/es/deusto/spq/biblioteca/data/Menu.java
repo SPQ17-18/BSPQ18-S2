@@ -6,7 +6,9 @@ import javax.jdo.annotations.PersistenceCapable;
 @PersistenceCapable(detachable = "true")
 public class Menu implements Serializable {
 	/**
-	 * 
+	 * Clase de Menu
+	 * @author koldo
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	//atributos
@@ -17,10 +19,21 @@ public class Menu implements Serializable {
 	String postre;
 	int valor;
 	
+	/**
+	 * Constructor vacio
+	 */
 	public Menu() {
 		
 	}
 
+	/**
+	 * Constructor de menu
+	 * @param iD_menu
+	 * @param fecha
+	 * @param plato1
+	 * @param plato2
+	 * @param postre
+	 */
 	public Menu(String iD_menu, String fecha, String plato1, String plato2, String postre) {
 		super();
 		ID_menu = iD_menu;

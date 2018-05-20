@@ -28,12 +28,19 @@ public class VentanaBusquedaMenu extends JFrame {
 	private JPanel contentPane;
 	private Controller controller;
 	
+	/**
+	 *Clase constructor
+	 * @param controller controller de la aplicacion
+	 */
 	public VentanaBusquedaMenu(Controller controller){
 		this.controller = controller;
 		VentanaBusquedaMenuejecutor();
 		this.setVisible(true);
 	}
-
+	
+	/**
+	 * Inicialización de la ventana
+	 */
 	public void VentanaBusquedaMenuejecutor() {
 		
 		setTitle("Lista de Men\u00FAs disponibles");
@@ -90,6 +97,9 @@ public class VentanaBusquedaMenu extends JFrame {
 		contentPane.add(label);
 	}
 	
+	/**
+	 * Visualizacion de la ventana
+	 */
 	public void ejecutarVentana() {
 		// TODO Auto-generated method stub
 		try {

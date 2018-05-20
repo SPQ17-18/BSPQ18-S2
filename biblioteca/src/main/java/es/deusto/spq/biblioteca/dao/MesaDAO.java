@@ -12,16 +12,28 @@ import org.apache.log4j.Logger;
 
 import es.deusto.spq.biblioteca.data.Mesa;
 
-
+/**
+ * Clase para el manejo de la Base de Daatos
+ * @author koldo
+ *
+ */
 public class MesaDAO implements IMesaDAO{
 
 	private PersistenceManagerFactory pmf;
 	private static final Logger logger = Logger.getLogger(MesaDAO.class);
 	
+	/**
+	 * Contructor de la clase
+	 */
 	public MesaDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 	
+	/**
+	 * Metodo que anyade una mesa.
+	 * @Mesa anyade mesa.
+	 * @throws Exception Lanza una excepccion si ocurre un error.
+	 */
 	@Override
 	public void anyadirMesa(Mesa m) {
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -42,6 +54,11 @@ public class MesaDAO implements IMesaDAO{
 		}
 	}
 
+	/**
+	 * Permite consultar plazas en el comedor.
+	 * @param ID_Mesa Identificador de la mesa.
+	 * @param personas Numero de personas que van a comer en la mesa.
+	 */
 	@Override
 	public boolean consultarPlazasComedor(String Id_Mesa, int personas) {
 		// TODO Auto-generated method stub

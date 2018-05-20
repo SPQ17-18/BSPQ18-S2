@@ -13,15 +13,28 @@ import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.ReservaLibro;
 
+/**
+ * Clase para el manejo de la Base de Daatos
+ * @author koldo
+ *
+ */
 public class ReservaLibroDAO implements IReservaLibroDAO {
 	
 	private PersistenceManagerFactory pmf;
 	private static final Logger logger = Logger.getLogger(ReservaLibroDAO.class);
 	
+	
+	/**
+	 * Contructor de la clase
+	 */
 	public ReservaLibroDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
+	/**
+	 * Reserva un libro de la bibilioteca
+	 * @ReservaLibro
+	 */
 	@Override
 	public void reservarLibro(ReservaLibro rl) {
 		// TODO Auto-generated method stub
@@ -60,6 +73,10 @@ public class ReservaLibroDAO implements IReservaLibroDAO {
 		
 	}
 
+	/**
+	 * Consulta la disponibilidad de un libro.
+	 * @param isbn Identificativo del libro.
+	 */
 	@Override
 	public boolean consultarDisponibilidadLibro(String isbn) {
 		// TODO Auto-generated method stub
@@ -98,6 +115,10 @@ public class ReservaLibroDAO implements IReservaLibroDAO {
 		return isReservado;
 	}
 
+	/**
+	 * Permite devolver un libro reservado.
+	 * @param isbn Identificativo del libro.
+	 */
 	@Override
 	public ReservaLibro devolverLibro(String isbn) {
 		// TODO Auto-generated method stub

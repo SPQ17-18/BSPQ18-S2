@@ -41,7 +41,7 @@ public class LibroDAOTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		
+		//Inicializado para todos los teses
 		biblioteca = new Biblioteca(ILibroDAO);
 		
 	}

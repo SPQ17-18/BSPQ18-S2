@@ -60,6 +60,11 @@ public class Controller {
 	
 	private static final Logger logger = Logger.getLogger(Controller.class);
 
+	/**
+	 * Constructor de la clase.
+	 * @param args argumentos de la linea de comandos
+	 * @throws RemoteException
+	 */
 	public Controller(String[] args) throws RemoteException {
 		cl = new Client();
 		cl.setService(args);
@@ -67,15 +72,28 @@ public class Controller {
 		mp.ejecutarVentana();
 		
 	}
-
+	
+	/**
+	 * Obtiene el servicio del cliente.
+	 * @return cl
+	 */
 	public Client getCl() {
 		return cl;
 	}
 
+	/**
+	 * Proporciona el sevicio al cliente.
+	 * @param cl
+	 */
 	public void setCl(Client cl) {
 		this.cl = cl;
 	}
 	
+	/**
+	 * Anyade una nueva sala.
+	 * @param id_sala
+	 * @param capacidad
+	 */
 	public void anyadirSala(String id_sala, int capacidad){
 		try{
     		cl.getService().anyadirSala(id_sala, capacidad);
@@ -84,6 +102,14 @@ public class Controller {
     	}
 	}
 	
+	/**
+	 * Anyade una nueva reserva.
+	 * @param id_Sala
+	 * @param dni_respon
+	 * @param fecha
+	 * @param hora
+	 * @param plazas
+	 */
 	public void anyadirReserva(String id_Sala, String dni_respon, String fecha, String hora, int plazas){
 		try{
     		cl.getService().anyadirReserva(id_Sala, dni_respon, fecha,hora,plazas);
@@ -91,7 +117,12 @@ public class Controller {
     		e.printStackTrace();
     	}
     }
-	
+	/** 
+	 * Permite consultar la disponibilidad de un Libro.
+	 * @param isbn
+	 * @return is_reservado --> Si esta disponible true, en caso contrario false.
+	 * @throws RemoteException
+	 */
 	public boolean consultarDiponibilidadLibro(String isbn) throws RemoteException {
 		
 		boolean is_reservado = false;
@@ -107,6 +138,11 @@ public class Controller {
 		
 	}
 	
+	/**
+	 * Reserva un libro.
+	 * @param isbn
+	 * @throws RemoteException
+	 */
 	public void reservarLibro(String isbn) throws RemoteException {
 		
 		try {
@@ -117,6 +153,11 @@ public class Controller {
 		}
 	}
 	
+	/**
+	 * Permite ver las reservas que ha realizado una persona.
+	 * @param dni
+	 * @return
+	 */
 	public String verReservas(String dni) {
 		String s = null;
 		try{
@@ -128,6 +169,11 @@ public class Controller {
 		return s;
 	}
 	
+	/**
+	 * Permite eliminar una reserva.
+	 * @param id_Sala
+	 * @param dni_respon
+	 */
 	public void eliminarReserva(String id_Sala, String dni_respon){
 	try{
 		cl.getService().eliminarReserva(id_Sala, dni_respon);
@@ -137,6 +183,11 @@ public class Controller {
 	}
 	}
 	
+	/**
+	 * Permite buscar un libro de todo el catalogo.
+	 * @param nombre
+	 * @return Libro
+	 */
 	public Libro buscarLibro(String nombre) {
 		Libro lib = null;
 		try{
@@ -147,7 +198,13 @@ public class Controller {
 		return lib;
 	}
 	
-	
+	/**
+	 * Permite almacenar un libro nuevo en la biblioteca.
+	 * @param isbn
+	 * @param nombre
+	 * @param autor
+	 * @param editorial
+	 */
 	public void almacenarLibro(String isbn, String nombre, String autor, String editorial) {
 		try{
 		cl.getService().almacenarLibro(isbn, nombre, autor, editorial);
@@ -156,7 +213,14 @@ public class Controller {
 			}
 	}
 	
-	
+	/**
+	 * Permite consultar la disponibilidad de una sala de estudio en la biblioteca.
+	 * @param Id_Sala
+	 * @param fecha
+	 * @param hora
+	 * @param personas
+	 * @return True or False
+	 */
 	public boolean consultarDisponibilidad(String Id_Sala, String fecha, String hora, int personas) {
 		boolean reservar = false;
 		try{
@@ -171,6 +235,10 @@ public class Controller {
 	
 	}
 	
+	/**
+	 * Permite eliminar un libro.
+	 * @param l
+	 */
 	public void EliminarLibro(Libro l){
 	try{
 		cl.getService().EliminarLibro(l);
@@ -179,6 +247,11 @@ public class Controller {
 		}
 	}
 	
+	/**
+	 * Permite consultar la disponibilidad de un libro dado su nombre.
+	 * @param nombre
+	 * @return True or False
+	 */ 
 	public boolean consultarDisponibilidadLibro(String nombre){
 		boolean isReservado = false;
 		try{
@@ -192,6 +265,10 @@ public class Controller {
 		return isReservado;
 	}
 	
+	/**
+	 * Muestra la información de un libro.
+	 * @param nombre
+	 */
 	public void mostrarLibro(String nombre) {
 	try{
 		cl.getService().mostrarLibro(nombre);
@@ -200,6 +277,11 @@ public class Controller {
 		}
 	}
 	
+	/**
+	 * Función que permite devolver un libro tras su reserva.
+	 * @param isbn
+	 * @return rl
+	 */
 	public ReservaLibro DevolverLibro(String isbn) {
 		ReservaLibro  rl = null;
 		try {
@@ -211,6 +293,14 @@ public class Controller {
 		return rl;
 	}
 	
+	/**
+	 * Función que permite consultar la disponibilidad de una sala del comedor de la biblioteca.
+	 * @param Id_Mesa
+	 * @param fecha
+	 * @param hora
+	 * @param personas
+	 * @return True or False
+	 */
 	public boolean consultarDisponibilidadComedor(String Id_Mesa, String fecha, String hora, int personas){
 		boolean disponible = false;
 	try{
@@ -224,6 +314,14 @@ public class Controller {
 		return disponible;
 	}
 	
+	/**
+	 * Función que permite anyadir una reserva nueva para el comedor.
+	 * @param id_Mesa
+	 * @param dni_respon
+	 * @param fecha
+	 * @param hora
+	 * @param plazas
+	 */
 	public void anyadirReservaComedor(String id_Mesa, String dni_respon, String fecha, String hora, int plazas){
 		try{
     		cl.getService().anyadirReservaComedor(id_Mesa, dni_respon, fecha,hora,plazas);
@@ -232,6 +330,11 @@ public class Controller {
     	}
 	}
 	
+	/**
+	 * Anyade mesesas al comedor.
+	 * @param id_mesa
+	 * @param capacidad
+	 */
 	public void anyadirMesa(String id_mesa, int capacidad) {
 		try{
     		cl.getService().anyadirMesa(id_mesa,capacidad);
@@ -240,6 +343,10 @@ public class Controller {
     	}
 	}
 	
+	/**
+	 * Para ver reservas de una persona en el comedor.
+	 * @param dni
+	 */
 	public void verReservaComedor(String dni){
 		try{
 		cl.getService().verReservaComedor(dni);
@@ -248,6 +355,12 @@ public class Controller {
     	}
 	}
 
+	/**
+	 * Para editar una reserva del comedor.
+	 * @param id_reserva
+	 * @param fecha_nueva
+	 * @param hora_nueva
+	 */
 	public void editarReservaComedor(String id_reserva, String fecha_nueva, String hora_nueva){
 		try{
 		cl.getService().editarReservaComedor(id_reserva, fecha_nueva, hora_nueva);
@@ -256,6 +369,12 @@ public class Controller {
     	}
 	}
 
+	/**
+	 * Permite eliminar una reserva del comedor.
+	 * @param dni
+	 * @param fecha
+	 * @param hora
+	 */
 	public void eliminarReservaComedor(String dni, String fecha, String hora){
 		try{
 		cl.getService().eliminarReservaComedor( dni, fecha, hora);
@@ -265,6 +384,16 @@ public class Controller {
 		}
 
 
+	/**
+	 * Permite editar una reserva.
+	 * @param dni
+	 * @param fecha
+	 * @param hora
+	 * @param sala
+	 * @param fecha_nueva
+	 * @param hora_nueva
+	 * @param SalaNueva
+	 */
 	public void editarReserva(String dni, String fecha, String hora, String sala, String fecha_nueva, String hora_nueva,String SalaNueva){
 		try{
 		cl.getService().editarReserva(dni, fecha, hora, sala, fecha_nueva, hora_nueva, SalaNueva);
@@ -272,6 +401,11 @@ public class Controller {
     		e.printStackTrace();
     	}
 		}
+	
+	/**
+	 * Permite ver el catalogo de libros al completo.
+	 * @throws RemoteException
+	 */
 	public void verCatalogoDeLibros() throws RemoteException {
 		//ArrayList<Libro> catalogo = null;
 		try{
@@ -285,6 +419,12 @@ public class Controller {
 	
 	}
 	
+	/**
+	 * Permite ver el menu disponible del comedor.
+	 * @param fecha
+	 * @return
+	 * @throws Exception
+	 */
 	public String verMenu(String fecha) throws Exception {
 		String menu = null;
 		try{
@@ -295,7 +435,11 @@ public class Controller {
     	}
 		return menu;
 	}
-	
+	/**
+	 * Inicializa un controller nuevo
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main(String[] args) throws Exception {
 		Controller c = new Controller(args);
 

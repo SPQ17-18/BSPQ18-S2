@@ -14,17 +14,28 @@ import org.apache.log4j.Logger;
 import es.deusto.spq.biblioteca.data.Mesa;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
 
+/**
+ * Clase para el manejo de la Base de Daatos
+ * @author koldo
+ *
+ */
 public class ReservaComedorDAO implements IReservaComedorDAO{
-	
-	
 	
 	private PersistenceManagerFactory pmf;
 	private static final Logger logger = Logger.getLogger(ReservaComedorDAO.class);
 
+	/**
+	 * Contructor de la clase
+	 */
 	public ReservaComedorDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
+	/**
+	 * Metodo que anyade una reserva para el comedor.
+	 * @ReservaMesa anyade una reserva para una mesa en el comedor.
+	 * @throws Exception Lanza una excepccion si ocurre un error.
+	 */
 	@Override
 	public void anyadirReservaComedor(ReservaMesa r) {
 
@@ -56,6 +67,13 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 			pm.close();
 		}
 	}
+	
+	/**
+	 * Permite consultar la disponibilidad de mesas para una hora y fecha concretas.
+	 * @param ID_Mesa Identificador de la mesa.
+	 * @param fecha Fecha.
+	 * @param hora Hora.
+	 */
 	@Override
 	public boolean consultarDisponibilidadComedor(String Id_Mesa, String fecha, String hora) {
 
@@ -89,7 +107,10 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 		return disponible;
 
 	}
-
+	/**
+	 * Metodo que devuelve todas las reservas hechas por una persona.
+	 * @return Devuelve todas las reservas de la BD de una persona.
+	 */
 	@Override
 	public ArrayList<String> verReservaComedor(String dni) {
 		// TODO Auto-generated method stub
@@ -123,7 +144,10 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 		return datos;
 	}
 
-	//Koldo: Tengo que editarlo
+	/**
+	 * Elimina una reserva del comedor.
+	 * @ReservaMesa Reserva que se elimina para una mesa en concreto.
+	 */
 	@Override
 	public void eliminarReservaComedor(ReservaMesa r) throws Exception {
 //		PersistenceManager pm = pmf.getPersistenceManager();
@@ -175,7 +199,12 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 		
 	}
 
-	//Koldo: Tengo que editarlo
+	/**
+	 * Permite editar una reserva del comedor.
+	 * @param id_reserva Identificativo de la reserva.
+	 * @param fecha_nueva Nueva fecha para la que se quiere la reserva.
+	 * @param hora_nueva Nueva hora para la que se quiere la reserva.
+	 */
 	@Override
 	public void editarReservaComedor(String id_reserva, String fecha_nueva, String hora_nueva) {
 //		if (consultarDisponibilidadComedor(r.getId_Mesa(), fecha_nueva, hora_nueva)) {

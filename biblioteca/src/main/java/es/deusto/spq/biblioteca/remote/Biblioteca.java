@@ -43,7 +43,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	private IMenuDAO menuDAO;
 	
 	private IReservaLibroDAO reservaLibroDAO;
-
+	
 	public Biblioteca(IReservaDAO reservaDAO ) throws RemoteException {
 		super();
 		this.reservaDAO = reservaDAO;
@@ -59,6 +59,10 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		this.reservaLibroDAO = reservaLibroDAO;
 	}
 
+	/**
+	 * Constructor de Biblioteca.
+	 * @throws RemoteException Lanza una excepcion en caso de error.
+	 */
 	public Biblioteca() throws RemoteException {
 		super();
 		this.reservaDAO = new ReservaDAO();
@@ -72,6 +76,11 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 
 	}
 
+	/**
+	 * Metodo que elimina una reserva.
+	 * @param id_sala Identificador de la sala.
+	 * @param dni_respon DNI del responsable del a reserva.
+	 */
 	@Override
 	public void eliminarReserva(String id_Sala, String dni_respon) throws RemoteException {
 		// TODO Auto-generated method stub
@@ -85,6 +94,10 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 //		reservaDAO.eliminarReserva(r);
 	}
 
+	/**
+	 * Metodo que busca un libro.
+	 * @param nombre Nombre del libro.
+	 */
 	@Override
 	public Libro buscarLibro(String nombre) {
 		// TODO Auto-generated method stub
@@ -93,18 +106,33 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		return lib;
 	}
 
+	/**
+	 * Metodo que permite ver todas las reservas de comedor una persona.
+	 * @param dni DNI de la persona.
+	 */
 	@Override
 	public ArrayList<String> verReservaComedor(String dni) throws RemoteException {
 		ArrayList<String> s = rComedorDAO.verReservaComedor(dni);
 		return s;
-		}
+	}
 
+	/**
+	 * Metodo que permite ver las reservas de una persona.
+	 * @param dni DNI de la persona.
+	 */
 	@Override
 	public ArrayList<String> verReservas(String dni) throws RemoteException {
 		ArrayList<String> s = reservaDAO.verReservas(dni);
 		return s;
 	}
 
+	/**
+	 * Metodo que permite almacenar un libro nuevo.
+	 * @param isbn Identificador del libro.
+	 * @param nombre Nombre del libro.
+	 * @param autor Escritor del libro.
+	 * @param editorial Distribuidora del libro (Editorial).
+	 */
 	@Override
 	public void almacenarLibro(String isbn, String nombre, String autor, String editorial) {
 		// TODO Auto-generated method stub
@@ -113,6 +141,10 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 
 	}
 	
+	/**
+	 * Metodo que permite reservar un libro.
+	 * @param isbn Identificador del libro.
+	 */
 	@Override
 	public void reservarLibro(String isbn) throws RemoteException {
 		// TODO Auto-generated method stub
@@ -122,6 +154,14 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		
 	}
 
+	/**
+	 * Metodo que permite anydir una reserva nueva.
+	 * @param id_sala Identificador de la sala.
+	 * @param dni_respon DNI del responsable de la reserva.
+	 * @param fecha Fecha de la reserva.
+	 * @param hora Hora de la reserva.
+	 * @param plazas Numero de personas para el que es la reserva.
+	 */
 	@Override
 	public void anyadirReserva(String id_Sala, String dni_respon, String fecha, String hora, int plazas)
 			throws RemoteException {
@@ -137,6 +177,13 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		reservaDAO.anyadirReserva(r);
 	}
 
+	/**
+	 * Metodo que permite consultar la disponibilidad de una sala.
+	 * @param id_sala Identificador de la sala.
+	 * @param fecha Fecha.
+	 * @param hora Hora.
+	 * @param personas Numero de personas.
+	 */
 	@Override
 	public boolean consultarDisponibilidad(String Id_Sala, String fecha, String hora, int personas) {
 		// TODO Auto-generated method stub
@@ -149,6 +196,11 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		return disponible;
 	}
 
+	/**
+	 * Metodo para anyadir una sala nueva.
+	 * @param id_sala Identificador de la sala.
+	 * @param capacidad Capacidad de la sala.
+	 */
 	@Override
 	public void anyadirSala(String id_sala, int capacidad) throws RemoteException {
 		Sala s = new Sala(id_sala, capacidad);
@@ -156,6 +208,10 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 
+	/**
+	 * Metodo para eliminar un libro de la BD.
+	 * @param Libro Libro.
+	 */
 	public void EliminarLibro(Libro l)throws RemoteException {
 	//Que lo arregle quien lo hizo pls
 		// int numeroEjemplares = 00;
@@ -168,6 +224,10 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 
 	}
 	
+	/**
+	 * Metodo que permite consultar la disponibilidad de un libro.
+	 * @param isbn Identificador del libro.
+	 */
 	@Override
 	public boolean consultarDiponibilidadLibro(String isbn) throws RemoteException {
 		// TODO Auto-generated method stub
@@ -179,13 +239,20 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		return isReservado;
 	}
 
-
+	/**
+	 * Metodo que muestra un libro.
+	 * @param nombre Nombre del libro.
+	 */
 	@Override
 	public void mostrarLibro(String nombre) throws RemoteException {
 		// TODO Auto-generated method stub
 		libroDAO.verLibro(nombre);
 	}
 	
+	/**
+	 * Metodo para devolver un libro reservado.
+	 * @param isbn Identificador del libro.
+	 */
 	@Override
 	public ReservaLibro DevolverLibro (String isbn) throws RemoteException {
 		ReservaLibro rl = null;
@@ -193,6 +260,13 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		return rl;
 	}
 
+	/**
+	 * Metodo para consultar la disponibilidad de una mesa en el comedor.
+	 * @param Id_Mesa Identificador de para la mesa que se esta comprobando la disponibilidad.
+	 * @param fecha Fecha.
+	 * @param hora Hora.
+	 * @param personas Numero de personas.
+	 */
 	@Override
 	public boolean consultarDisponibilidadComedor(String Id_Mesa, String fecha, String hora, int personas)
 			throws RemoteException {
@@ -205,6 +279,14 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		return disponible;
 	}
 
+	/**
+	 * Metodo para anyadir una reserva en el comedor.
+	 * @param Id_Mesa Identificador de para la mesa que se hace la reserva.
+	 * @param dni_repon DNI del responsable de la reserva.
+	 * @param fecha Fecha.
+	 * @param hora Hora.
+	 * @param personas Numero de personas.
+	 */
 	@Override
 	public void anyadirReservaComedor(String id_Mesa, String dni_respon, String fecha, String hora, int plazas)
 			throws RemoteException {
@@ -218,17 +300,34 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		rComedorDAO.anyadirReservaComedor(r);
 	}
 
+	/**
+	 * Metodo para anyadir una mesa nueva.
+	 * @param id_mesa Identificador de la mesa nueva.
+	 * @param capacidad Numero de personas que entran en la mesa.
+	 */
 	@Override
 	public void anyadirMesa(String id_mesa, int capacidad) throws RemoteException {
 		Mesa m = new Mesa(id_mesa, capacidad);
 		mesaDAO.anyadirMesa(m);
 	}
 
+	/**
+	 * Funcion que permite editar una reserva del comedor.
+	 * @param id_reserva Identificador de la reserva.
+	 * @param fecha_nueva Nueva fecha de reserva.
+	 * @param hora_nueva Nueva hora de reserva.
+	 */
 	@Override
 	public void editarReservaComedor(String id_reserva, String fecha_nueva, String hora_nueva) throws RemoteException {
 		rComedorDAO.editarReservaComedor(id_reserva, fecha_nueva, hora_nueva);
 	}
 
+	/**
+	 * Metodo para eliminar una reserva del comedor
+	 * @param dni DNI.
+	 * @param fecha Fecha.
+	 * @param hora Hora.
+	 */
 	@Override
 	public void eliminarReservaComedor(String dni, String fecha, String hora) throws Exception {
 		// TODO Auto-generated method stub
@@ -237,12 +336,25 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	}
 
 
+	/**
+	 * Metodo para editar una resrva
+	 * @param dni DNI de la persona que hizo la reserva.
+	 * @param fecha Fecha actual de la reserva.
+	 * @param hora Hora actual de la reserva.
+	 * @param sala Sala actual reservada.
+	 * @param fecha_nueva Nueva fecha de reserva.
+	 * @param hora_nueva Nueva hora de reserva.
+	 * @param SalaNueva Sala nueva que se va a reservar. 
+	 */
 	@Override
 	public void editarReserva(String dni, String fecha, String hora, String sala, String fecha_nueva, String hora_nueva, String SalaNueva) throws RemoteException {
 		reservaDAO.editarReserva(dni, fecha, hora, sala, fecha_nueva, hora_nueva, SalaNueva);
 		
 	}
 
+	/**
+	 * Metodo que devuelve el catalogo de libros.
+	 */
 	@Override
 	public ArrayList<String> getLibros() throws RemoteException {
 		// TODO Auto-generated method stub
@@ -251,6 +363,13 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 
 	}
 
+	/**
+	 * Metodo para anyadir un menu al comedor.
+	 * @param fecha Fecha para la que es el menu.
+	 * @param plato1 Primer plato del menu.
+	 * @param plato2 Segundo plato del menu.
+	 * @param postre Postre del menu.
+	 */
 	@Override
 	public void anyadirMenu(String fecha, String plato1, String plato2, String postre)
 			throws Exception {
@@ -267,6 +386,11 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		
 	}
 
+	/**
+	 * Funcion para anyadir valoracion a un menu.
+	 * @param id_menu Identificdor del menu a valorar.
+	 * @param valoracion Puntuacion que se le da al menu.
+	 */
 	@Override
 	public void anyadirValoracion(String id_menu, int valoracion) throws Exception {
 		// TODO Auto-generated method stub
@@ -274,6 +398,10 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		
 	}
 
+	/**
+	 * Funcion que permite ver el menu de una fecha.
+	 * @param fecha Fecha para ver menu.
+	 */
 	@Override
 	public String verMenu(String fecha) throws Exception {
 		String menu = null;

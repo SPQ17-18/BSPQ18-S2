@@ -14,17 +14,29 @@ import org.apache.log4j.Logger;
 import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.Sala;
 
+/**
+ * Clase para el manejo de la Base de Daatos
+ * @author koldo
+ *
+ */
 public class ReservaDAO implements IReservaDAO {
 
 	private PersistenceManagerFactory pmf;
 	private static final Logger logger = Logger.getLogger(ReservaDAO.class);
 
 
-
+	/**
+	 * Contructor de la clase
+	 */
 	public ReservaDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
+	/**
+	 * Metodo que anyade una reserva.
+	 * @Reserva anyade reserva.
+	 * @throws Exception Lanza una excepccion si ocurre un error.
+	 */
 	@Override
 	public void anyadirReserva(Reserva r) {
 		// TODO Auto-generated method stub
@@ -59,6 +71,12 @@ public class ReservaDAO implements IReservaDAO {
 		}
 	}
 
+	/**
+	 * Permite consultar la disponibilidad de una sala.
+	 * @param Id_Sala Identificador de la sala.
+	 * @param fecha Fecha.
+	 * @param hora Hora.
+	 */
 	@Override
 	public boolean consultarDisponibilidad(String Id_Sala, String fecha, String hora) {
 		// TODO Auto-generated method stub
@@ -98,11 +116,25 @@ public class ReservaDAO implements IReservaDAO {
 
 	}
 
+	/**
+	 * Para editar una reserva.
+	 * @param dni DNI de la persona.
+	 * @param fecha Fecha actual de la reserva.
+	 * @param hora Hora actual de la reserva.
+	 * @param sala Sala para la que esta hecha la reserva.
+	 * @param fecha_nueva Nueva fecha de reserva.
+	 * @param hora_nueva Nueva hora de reserva.
+	 * @param sala_nueva Sala nueva para la nueva reserva.
+	 */
 	@Override
 	public void editarReserva(String dni,String fecha,String hora,String sala, String fecha_nueva, String hora_nueva,String SalaNueva) {
 		//TODO
 	}
 
+	/**
+	 * Elimina una reserva de la BD.
+	 * @Reserva Reserva que se elimina.
+	 */
 	@Override
 	public void eliminarReserva(Reserva r) {
 		// TODO Auto-generated method stub
@@ -129,6 +161,10 @@ public class ReservaDAO implements IReservaDAO {
 		}
 	}
 
+	/**
+	 * Devuelve las reservas de una persona de la BD
+	 * @param dni DNI de la persona
+	 */
 	@Override
 	public ArrayList<String> verReservas(String dni) {
 		// TODO Auto-generated method stub
