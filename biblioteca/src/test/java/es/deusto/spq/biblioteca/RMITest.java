@@ -27,7 +27,6 @@ import java.net.MalformedURLException;
  * Testing the only the Remoteness
  */
 //@Ignore
-
 public class RMITest {
 	// Properties are hard-coded because we want the test to be executed without external interaction
 	final static Logger logger= LoggerFactory.getLogger(RMITest.class);
@@ -71,8 +70,8 @@ public class RMITest {
 	class RMIServerRunnable implements Runnable {
 
 		public void run() {
-			logger.info("This is a test to check how mvn test executes this test without external interaction; JVM properties by program");
-			logger.info("**************: " + cwd);
+			System.out.println("This is a test to check how mvn test executes this test without external interaction; JVM properties by program");
+			System.out.println("**************: " + cwd);
 			System.setProperty("java.rmi.server.codebase", "file:" + cwd);
 			System.setProperty("java.security.policy", "src\\main\\resources\\security\\java.policy");
 			
@@ -131,6 +130,7 @@ public class RMITest {
 		}
 
 	}
+	
 	
 	  @Test public void buscarLibroTest() { try{
 	  logger.info("Test 2 - buscar libro"); String
@@ -351,7 +351,7 @@ public class RMITest {
 		}
 
 	}
-	  
+  
 	@AfterClass
 	static public void tearDown() {
 		try {
