@@ -16,7 +16,7 @@ public interface IBiblioteca extends Remote {
 	
 	public boolean consultarDiponibilidadLibro(String nombre) throws RemoteException;
 	
-	public ArrayList<Libro> getLibros() throws RemoteException;
+	public ArrayList<String> getLibros() throws RemoteException;
 	
 	public void anyadirReserva(String id_Sala, String dni_respon, String fecha, String hora, int plazas)
 			throws RemoteException;
