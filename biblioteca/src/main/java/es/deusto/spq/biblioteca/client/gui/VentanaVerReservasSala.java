@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
@@ -18,12 +19,15 @@ import es.deusto.spq.biblioteca.controller.Controller;
 
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class VentanaVerReservasSala extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
+	private JTextArea textArea;
 	private Controller controller;
 	
 	/**
@@ -53,12 +57,34 @@ public class VentanaVerReservasSala extends JFrame {
 		textField.setBounds(58, 72, 170, 26);
 		contentPane.add(textField);
 		
+		textArea = new JTextArea();
+		textArea.setColumns(10);
+		textArea.setBounds(58, 72+30, 170, 26+80);
+		contentPane.add(textArea);
+		
 		JButton button = new JButton("Ver Reserva");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TablaReservasSala abrirVentana5 = new TablaReservasSala(controller);
-				abrirVentana5.setVisible(true);
-				VentanaVerReservasSala.this.dispose();
+				 ArrayList<String>reserva=new ArrayList<String>();
+				try {
+					
+					reserva = controller.getCl().getService().verReservas(textField.getText());
+				} catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				String s;
+				for(int i=0; i<reserva.size();i++) {
+					s=reserva.get(i);
+					String[] primera = s.split("/");
+					for (String cadena : primera) {
+						String[] segunda = cadena.split("#");
+						textArea.append("Sala: " + segunda[1] + "\n" + "DNI: " + segunda[2] + "\n" +"Fecha: " + segunda[3] + "\n" +"Hora: " + segunda[4] + "\n" + "\n"+ "Plazas: " + segunda[5] + "\n" + "\n");
+
+					}
+				}
+				
+	
 			}
 		});
 		button.setFont(new Font("Times New Roman", Font.ITALIC, 17));
