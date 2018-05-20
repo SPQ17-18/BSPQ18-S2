@@ -51,7 +51,7 @@ public class TablaReservasSala extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel label = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/bibliotecadeusto.jpg")).getImage();
+		Image img = new ImageIcon(this.getClass().getResource("/img/bibliotecadeusto.jpg")).getImage();
 		
 		table = new JTable();
 		table.setModel(new DefaultTableModel(

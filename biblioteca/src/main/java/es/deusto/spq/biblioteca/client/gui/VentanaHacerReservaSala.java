@@ -128,8 +128,8 @@ public class VentanaHacerReservaSala extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				VentanaMensaje3 abrirVentana6 = new VentanaMensaje3(controller);
 				abrirVentana6.setVisible(true);
-						
-						controller.anyadirReservaComedor(comboBox.getSelectedItem().toString(),  
+						comboBox.getSelectedItem().toString();
+						controller.anyadirReserva(comboBox.getSelectedItem().toString(),  
 								textField_2.getText(),  
 								textField.getText(),  
 								textField_3.getText(), 

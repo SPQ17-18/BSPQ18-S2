@@ -133,7 +133,8 @@ public class RMITest {
 	}
 	
 
-	@Test public void Prueba() {
+	//@Test 
+	public void Prueba() {
 		 assertTrue( true ); 
 	}
 	

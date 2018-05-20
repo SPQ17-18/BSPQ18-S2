@@ -39,7 +39,7 @@ public class ReservaComedorDAOTest {
 	@Test
 	public void testAnyadirReserva() throws RemoteException {
 			ReservaMesa rm = new ReservaMesa("M1", "R2", "45678912F", "29-04-2018", "15:34", 3);
-			b.anyadirReserva("M1", "45678912F", "29-04-2018", "15:34", 3);	
+			b.anyadirReservaComedor("M1", "45678912F", "29-04-2018", "15:34", 3);	
 			ArgumentCaptor<ReservaMesa> reservaCaptor = ArgumentCaptor.forClass( ReservaMesa.class );
 			verify(dao).anyadirReservaComedor(reservaCaptor.capture());
 			System.out.println("Anyadiendo reserva ");

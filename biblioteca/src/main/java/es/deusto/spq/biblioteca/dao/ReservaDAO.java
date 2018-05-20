@@ -205,7 +205,7 @@ public class ReservaDAO implements IReservaDAO {
 					logger.info("============DNI : " + r.getDni_respon() + "==========================\nSala : "
 							+ r.getId_sala() + "\nFecha : " + r.getFecha() + "\nHora : " + r.getHora()
 							+ "\nNº plazas : " + r.getPlazas() + "\n======================================\n");
-					d += r.getId_reserva() + "#"+r.getDni_respon() + "#" + r.getId_sala() + "#" + r.getFecha() + "#" + r.getHora() + "#" + r.getPlazas() + "/" ;
+					d = r.getId_reserva() + "#"+r.getDni_respon() + "#" + r.getId_sala() + "#" + r.getFecha() + "#" + r.getHora() + "#" + r.getPlazas() + "/" ;
 					datos.add(d);
 				}
 			}

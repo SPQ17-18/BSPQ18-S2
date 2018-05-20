@@ -9,12 +9,16 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextPane;
 import javax.swing.JScrollBar;
+import javax.swing.JTextArea;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.SwingUtilities;
 
 import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.Random;
 import java.awt.event.ActionEvent;
 
 import es.deusto.spq.biblioteca.controller.*;
@@ -89,7 +93,39 @@ public class VentanaBusquedaMenu extends JFrame {
 		
 		JTextPane textPane = new JTextPane();
 		textPane.setBounds(473, 28, 206, 251);
+		
+		String s = null;
+		try {
+
+			ArrayList<String> fechas = new ArrayList<>();
+			fechas.add("13-5-2018");
+			fechas.add("25-3-2018");
+			fechas.add("8-4-2018");
+			fechas.add("29-11-2018");
+			fechas.add("16-9-2018");
+			
+			s =controller.verMenu(fechas.get((int) Math.random()));
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		String[] primera = s.split("/");
+		for (String cadena : primera) {
+			String[] segunda = cadena.split("#");
+			
+			textPane.setText("Fecha : " + segunda[1]
+					+ "\nPlato 1 : " + segunda[2] 
+							+ "\nPlato 2 : " + segunda[3]
+									+ "\nPostre : " + segunda[4]);
+										
+			}
+		
+
+		
+		
+		
 		contentPane.add(textPane);
+		
 		
 		JLabel label = new JLabel("");
 //		label.setIcon(new ImageIcon(img));

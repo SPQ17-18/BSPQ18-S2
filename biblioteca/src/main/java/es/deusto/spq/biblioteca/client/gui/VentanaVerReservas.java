@@ -7,6 +7,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
@@ -20,12 +21,15 @@ import es.deusto.spq.biblioteca.controller.Controller;
 
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class VentanaVerReservas extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
+	private JTextArea textArea;
 	private Controller controller;
 
 	/**
@@ -58,12 +62,32 @@ public class VentanaVerReservas extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
+		textArea = new JTextArea();
+		textArea.setColumns(10);
+		textArea.setBounds(42, 76+30, 170, 26+80);
+		contentPane.add(textArea);
+		
 		JButton button_1 = new JButton("Ver Reserva");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TablaReservas abrirVentana8 = new TablaReservas(controller);
-				abrirVentana8.setVisible(true);
-				VentanaVerReservas.this.dispose();
+				 ArrayList<String>reserva=new ArrayList<String>();
+				try {
+					
+					reserva = controller.getCl().getService().verReservas(textField.getText());
+				} catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				String s;
+				for(int i=0; i<reserva.size();i++) {
+					s=reserva.get(i);
+					String[] primera = s.split("/");
+					for (String cadena : primera) {
+						String[] segunda = cadena.split("#");
+						textArea.append("Sala: " + segunda[1] + "\n" + "DNI: " + segunda[2] + "\n" +"Fecha: " + segunda[3] + "\n" +"Hora: " + segunda[4] + "\n" + "\n"+ "Plazas: " + segunda[5] + "\n" + "\n");
+
+					}
+				}
 			}
 		});
 		button_1.setFont(new Font("Times New Roman", Font.ITALIC, 17));
