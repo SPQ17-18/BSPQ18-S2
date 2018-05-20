@@ -45,6 +45,19 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	
 	private IReservaLibroDAO reservaLibroDAO;
 
+	public Biblioteca() throws RemoteException {
+		super();
+		this.reservaDAO = new ReservaDAO();
+		this.salaDAO = new SalaDAO();
+		this.libroDAO = new LibroDAO();
+		this.mesaDAO = new MesaDAO();
+		this.rComedorDAO = new ReservaComedorDAO();
+		this.menuDAO = new MenuDAO();
+		this.reservaLibroDAO = new ReservaLibroDAO();
+		
+
+	}
+
 	public Biblioteca(IReservaDAO reservaDAO ) throws RemoteException {
 		super();
 		this.reservaDAO = reservaDAO;
@@ -65,18 +78,6 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		this.reservaLibroDAO = reservaLibroDAO;
 	}
 
-	public Biblioteca() throws RemoteException {
-		super();
-		this.reservaDAO = new ReservaDAO();
-		this.salaDAO = new SalaDAO();
-		this.libroDAO = new LibroDAO();
-		this.mesaDAO = new MesaDAO();
-		this.rComedorDAO = new ReservaComedorDAO();
-		this.menuDAO = new MenuDAO();
-		this.reservaLibroDAO = new ReservaLibroDAO();
-		this.rComedorDAO = new ReservaComedorDAO();
-
-	}
 	@Override
 	public Reserva DevolverReserva(String dni, String fecha, String hora) throws RemoteException {
 		Reserva r = null;
