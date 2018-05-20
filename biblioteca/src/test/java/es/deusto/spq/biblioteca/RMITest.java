@@ -367,15 +367,4 @@ public class RMITest {
 		}
 	}
 
-}  
-	@AfterClass
-	static public void tearDown() {
-		try {
-			rmiServerThread.join();
-			rmiRegistryThread.join();
-		} catch (InterruptedException ie) {
-			ie.printStackTrace();
-		}
-	}
-
 }
