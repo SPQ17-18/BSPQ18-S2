@@ -69,9 +69,8 @@ public class MenuDAO implements IMenuDAO{
 
 		try {
 			logger.info("   * Anyadiendo valoración a menu: " + ID_Menu);
-
 			tx.begin();
-			Query<Sala> query = pm.newQuery(Sala.class);
+			Query<Menu> query = pm.newQuery(Menu.class);
 			@SuppressWarnings("unchecked")
 			List<Menu> menus = (List<Menu>) query.execute();
 			for (Menu m : menus) {
@@ -79,7 +78,7 @@ public class MenuDAO implements IMenuDAO{
 					int valor=m.getValor();
 					int media=0;
 					if(valor==0) {
-						m.setValor(valor);
+						m.setValor(valoracion);
 					}else {
 						media=(valor+valoracion)/2;
 						m.setValor(media);

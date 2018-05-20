@@ -441,6 +441,15 @@ public class Controller {
     	}
 		return menu;
 	}
+	
+	public void anyadirValoracion(String id, int val) {
+		try {
+			cl.getService().anyadirValoracion(id, val);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	/**
 	 * Inicializa un controller nuevo
 	 * @param args
@@ -501,6 +510,7 @@ public class Controller {
 //
 //		c.getCl().getService().verReservaComedor("12345678X");
 //		c.getCl().getService().eliminarReservaComedor("12345678X", "30/04/18", "14:30");
+		c.getCl().getService().anyadirValoracion("MEN1", 5);
 	}
 
 	

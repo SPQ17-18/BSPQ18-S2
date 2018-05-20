@@ -46,10 +46,35 @@ public class VentanaValoracion extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+			
+		final JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"MEN1", "MEN2", "MEN3", "MEN4", "MEN5"}));
+		comboBox.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
+		comboBox.setBounds(10, 59, 112, 29);
+		contentPane.add(comboBox);
+		
+		final JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"}));
+		comboBox_1.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
+		comboBox_1.setBounds(10, 160, 112, 29);
+		contentPane.add(comboBox_1);
+		
+		JLabel lblNewLabel = new JLabel("Valore nuestros menús:");
+		lblNewLabel.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+		lblNewLabel.setBounds(10, 11, 192, 44);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblCalificacin = new JLabel("Calificación:");
+		lblCalificacin.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+		lblCalificacin.setBounds(10, 115, 192, 44);
+		contentPane.add(lblCalificacin);
 		
 		JButton btnVolver = new JButton("Aceptar");
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String val;
+				val=comboBox_1.getSelectedItem().toString();
+				controller.anyadirValoracion(comboBox.getSelectedItem().toString(),Integer.parseInt(val));
 				VentanaMensaje2 abrirVentana5 = new VentanaMensaje2(controller);
 				abrirVentana5.setVisible(true);
 				VentanaValoracion.this.dispose();
@@ -70,28 +95,6 @@ public class VentanaValoracion extends JFrame {
 		btnAceptar.setFont(new Font("Times New Roman", Font.ITALIC, 17));
 		btnAceptar.setBounds(246, 61, 142, 29);
 		contentPane.add(btnAceptar);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Menú 1", "Menú 2", "Menú 3", "Menú 4", "Menú 5"}));
-		comboBox.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
-		comboBox.setBounds(10, 59, 112, 29);
-		contentPane.add(comboBox);
-		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"}));
-		comboBox_1.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
-		comboBox_1.setBounds(10, 160, 112, 29);
-		contentPane.add(comboBox_1);
-		
-		JLabel lblNewLabel = new JLabel("Valore nuestros menús:");
-		lblNewLabel.setFont(new Font("Times New Roman", Font.ITALIC, 20));
-		lblNewLabel.setBounds(10, 11, 192, 44);
-		contentPane.add(lblNewLabel);
-		
-		JLabel lblCalificacin = new JLabel("Calificación:");
-		lblCalificacin.setFont(new Font("Times New Roman", Font.ITALIC, 20));
-		lblCalificacin.setBounds(10, 115, 192, 44);
-		contentPane.add(lblCalificacin);
 	}
 	
 	/**
