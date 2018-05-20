@@ -51,6 +51,8 @@ public class ReservaComedorDAOTest {
 			assertEquals(rm.getPersonas(), rmn.getPersonas());
 	}
 	
+	
+	//test
 	@Test
 	public void consultarDisponibilidadComedorTest() throws RemoteException {
 		ReservaMesa rm = new ReservaMesa("M1", "R2", "45678912F", "29-04-2018", "15:34", 3);
