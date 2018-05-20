@@ -59,7 +59,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		this.reservaLibroDAO = reservaLibroDAO;
 	}
 
-	public Biblioteca(String serverIP, int ServerPort) throws RemoteException {
+	public Biblioteca() throws RemoteException {
 		super();
 		this.reservaDAO = new ReservaDAO();
 		this.salaDAO = new SalaDAO();
