@@ -51,7 +51,7 @@ public class VentanaLibros extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel label = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/libros.jpg")).getImage();
+		//Image img = new ImageIcon(this.getClass().getResource("/libros.jpg")).getImage();
 		
 		textField = new JTextField();
 		textField.setColumns(10);
@@ -99,7 +99,7 @@ public class VentanaLibros extends JFrame {
 		btnBuscar.setFont(new Font("Times New Roman", Font.ITALIC, 17));
 		btnBuscar.setBounds(258, 72, 156, 29);
 		contentPane.add(btnBuscar);
-		label.setIcon(new ImageIcon(img));
+		//label.setIcon(new ImageIcon(img));
 		label.setBounds(0, 0, 702, 353);
 		contentPane.add(label);
 	}

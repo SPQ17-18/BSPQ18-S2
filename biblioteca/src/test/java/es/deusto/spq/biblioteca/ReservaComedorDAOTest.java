@@ -27,7 +27,7 @@ public class ReservaComedorDAOTest {
 	IReservaComedorDAO dao;
 
 	public static junit.framework.Test suite() {
-		return new JUnit4TestAdapter(ReservaDAOTest.class);
+		return new JUnit4TestAdapter(ReservaComedorDAOTest.class);
 	}
 
 	@Before
