@@ -82,6 +82,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		Reserva r = null;
 		r = reservaDAO.devolverReserva(dni, fecha, hora);
 		return r;
+	
 	}
 
 	@Override
