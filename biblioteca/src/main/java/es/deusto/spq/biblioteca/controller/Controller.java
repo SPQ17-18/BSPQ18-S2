@@ -1,5 +1,6 @@
 package es.deusto.spq.biblioteca.controller;
 
+
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
@@ -156,13 +157,13 @@ public class Controller {
 	/**
 	 * Permite ver las reservas que ha realizado una persona.
 	 * @param dni
-	 * @return
+	 * @return lista de reservas
 	 */
-	public String verReservas(String dni) {
-		String s = null;
+	public ArrayList<String> verReservas(String dni) {
+		ArrayList<String> s = null;
 		try{
 			
-    	// s = cl.getService().verReservas(dni);
+    	 s = cl.getService().verReservas(dni);
     	}catch(Exception e){
     		e.printStackTrace();
     	}
@@ -171,17 +172,18 @@ public class Controller {
 	
 	/**
 	 * Permite eliminar una reserva.
-	 * @param id_Sala
 	 * @param dni_respon
+	 * @param fecha
+	 * @param hora
 	 */
-	public void eliminarReserva(String id_Sala, String dni_respon){
-	try{
-		cl.getService().eliminarReserva(id_Sala, dni_respon);
-	
-	}catch(Exception e){
-		e.printStackTrace();
-	}
-	}
+	public void eliminarReserva(String dni_respon,String fecha,String hora){
+		try{
+			cl.getService().eliminarReserva(dni_respon,fecha,hora);
+		
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		}
 	
 	/**
 	 * Permite buscar un libro de todo el catalogo.
@@ -357,13 +359,17 @@ public class Controller {
 
 	/**
 	 * Para editar una reserva del comedor.
+	 * @param dni 
+	 * @param fecha
+	 * @param hora
 	 * @param id_reserva
 	 * @param fecha_nueva
 	 * @param hora_nueva
 	 */
-	public void editarReservaComedor(String id_reserva, String fecha_nueva, String hora_nueva){
+	
+	public void editarReservaComedor(String dni,String fecha,String hora,String mesa, String fecha_nueva, String hora_nueva,String mesa_nueva){
 		try{
-		cl.getService().editarReservaComedor(id_reserva, fecha_nueva, hora_nueva);
+		cl.getService().editarReservaComedor(dni,fecha,hora, mesa, fecha_nueva,hora_nueva, mesa_nueva);
 		}catch(Exception e){
     		e.printStackTrace();
     	}
@@ -443,7 +449,7 @@ public class Controller {
 	public static void main(String[] args) throws Exception {
 		Controller c = new Controller(args);
 
-//		System.out.println(c.getCl().getService());
+		System.out.println(c.getCl().getService());
 //		System.out.println("Hola");
 //
 //		//Almacenamos libros 

@@ -4,6 +4,7 @@ package es.deusto.spq.biblioteca.remote;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
+
 import es.deusto.spq.biblioteca.dao.ILibroDAO;
 import es.deusto.spq.biblioteca.dao.IMenuDAO;
 import es.deusto.spq.biblioteca.dao.IMesaDAO;
@@ -43,7 +44,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	private IMenuDAO menuDAO;
 	
 	private IReservaLibroDAO reservaLibroDAO;
-	
+
 	public Biblioteca(IReservaDAO reservaDAO ) throws RemoteException {
 		super();
 		this.reservaDAO = reservaDAO;
@@ -52,6 +53,11 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	public Biblioteca(ILibroDAO libroDAO ) throws RemoteException {
 		super();
 		this.libroDAO = libroDAO;
+	}
+	
+	public Biblioteca(IReservaComedorDAO reservaComedorDAO ) throws RemoteException {
+		super();
+		this.rComedorDAO = reservaComedorDAO;
 	}
 	
 	public Biblioteca(IReservaLibroDAO reservaLibroDAO) throws RemoteException {
@@ -73,26 +79,29 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		this.menuDAO = new MenuDAO();
 		this.reservaLibroDAO = new ReservaLibroDAO();
 		
+	}
+		
 
+
+	@Override
+	public Reserva DevolverReserva(String dni, String fecha, String hora) throws RemoteException {
+		Reserva r = null;
+		r = reservaDAO.devolverReserva(dni, fecha, hora);
+		return r;
+	
 	}
 
+	
+
+	
 	/**
 	 * Metodo que elimina una reserva.
 	 * @param id_sala Identificador de la sala.
 	 * @param dni_respon DNI del responsable del a reserva.
 	 */
-	@Override
-	public void eliminarReserva(String id_Sala, String dni_respon) throws RemoteException {
-		// TODO Auto-generated method stub
-//		int cod = 00;
-//		cod++;
-//		String codg = "";
-//		codg = String.valueOf(cod);
-//		codg = Integer.toString(cod);
-//
-//		Reserva r = new Reserva(codg, id_Sala, dni_respon, null, null, 0);
-//		reservaDAO.eliminarReserva(r);
-	}
+	public void eliminarReserva(String dni_respon,String fecha,String hora) throws RemoteException {
+		reservaDAO.eliminarReserva(DevolverReserva(dni_respon, fecha, hora));
+		}
 
 	/**
 	 * Metodo que busca un libro.
@@ -318,8 +327,14 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	 * @param hora_nueva Nueva hora de reserva.
 	 */
 	@Override
-	public void editarReservaComedor(String id_reserva, String fecha_nueva, String hora_nueva) throws RemoteException {
-		rComedorDAO.editarReservaComedor(id_reserva, fecha_nueva, hora_nueva);
+	public void editarReservaComedor(String dni,String fecha,String hora,String mesa, String fecha_nueva, String hora_nueva,String mesa_nueva) throws RemoteException {
+		rComedorDAO.editarReservaComedor(dni, fecha, hora, mesa,  fecha_nueva,  hora_nueva, mesa_nueva);
+	}
+	
+	@Override
+	public ReservaMesa DevolverReservaMesa(String dni, String fecha, String hora) throws RemoteException {
+		ReservaMesa r = rComedorDAO.devolverReservaComedor(dni, fecha, hora);
+		return r;
 	}
 
 	/**
@@ -331,8 +346,8 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	@Override
 	public void eliminarReservaComedor(String dni, String fecha, String hora) throws Exception {
 		// TODO Auto-generated method stub
-//		ReservaMesa r = DevolverReservaMesa(dni, fecha, hora);
-//		rComedorDAO.eliminarReservaComedor(r);
+		ReservaMesa r = DevolverReservaMesa(dni, fecha, hora);
+		rComedorDAO.eliminarReservaComedor(r);
 	}
 
 

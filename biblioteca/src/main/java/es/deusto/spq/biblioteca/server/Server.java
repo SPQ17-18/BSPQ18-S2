@@ -2,8 +2,6 @@ package es.deusto.spq.biblioteca.server;
 
 import java.rmi.Naming;
 import org.apache.log4j.Logger;
-
-import es.deusto.spq.biblioteca.dao.LibroDAO;
 import es.deusto.spq.biblioteca.remote.Biblioteca;
 import es.deusto.spq.biblioteca.remote.IBiblioteca;
 

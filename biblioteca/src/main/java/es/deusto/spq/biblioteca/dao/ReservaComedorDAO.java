@@ -10,8 +10,11 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
+
 import org.apache.log4j.Logger;
+
 import es.deusto.spq.biblioteca.data.Mesa;
+import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
 
 /**
@@ -90,7 +93,6 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 			List<ReservaMesa> reservas = (List<ReservaMesa>) query.execute();
 			for (ReservaMesa r : reservas) {
 				if (r.getId_Mesa().equals(Id_Mesa) && r.getFecha().equals(fecha) && r.getHora().equals(hora)) {
-					// No hay salas disponibles
 					disponible = false;
 				}
 			}
@@ -116,8 +118,10 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 		// TODO Auto-generated method stub
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-		ArrayList<String> datos = new ArrayList<String>();
 
+		ArrayList<String> datos  = new ArrayList<String>();
+		String d=null;
+		
 		try {
 			System.out.println("   * Consultado reservas de: " + dni);
 			tx.begin();
@@ -126,9 +130,11 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 			List<ReservaMesa> reservas = (List<ReservaMesa>) query.execute();
 			for (ReservaMesa r : reservas) {
 				if (r.getDni_respon().equals(dni)) {
-					String reserva;
-					reserva = r.getId_Reserva()+"#"+  r.getId_Mesa()  + "#" +r.getId_Mesa() + "#" + r.getFecha() + "#" + r.getHora() + "#" + r.getPersonas() + "/" ;
-					datos.add(reserva);
+					logger.info("============DNI : " + r.getDni_respon() + "==========================\nSala : "
+							+ r.getId_Mesa() + "\nFecha : " + r.getFecha() + "\nHora : " + r.getHora()
+							+ "\nNº plazas : " + r.getPersonas() + "\n======================================\n");
+					d += r.getId_Reserva() + "#"+r.getDni_respon() + "#" + r.getId_Mesa() + "#" + r.getFecha() + "#" + r.getHora() + "#" + r.getPersonas() + "/" ;
+					datos.add(d);
 				}
 			}
 			tx.commit();
@@ -144,61 +150,81 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 		return datos;
 	}
 
+
 	/**
 	 * Elimina una reserva del comedor.
 	 * @ReservaMesa Reserva que se elimina para una mesa en concreto.
 	 */
 	@Override
-	public void eliminarReservaComedor(ReservaMesa r) throws Exception {
-//		PersistenceManager pm = pmf.getPersistenceManager();
-//		Transaction tx = pm.currentTransaction();
-//
-//		try {
-//			tx.begin();
-//			System.out.println("   * Eliminando reserva: " + r.getId_Reserva());
-//			pm.deletePersistent(r);
-//			tx.commit();
-//		} catch (Exception ex) {
-//			System.out.println("   $ Error Eliminando reserva de comedor: " + ex.getMessage());
-//		} finally {
-//			if (tx != null && tx.isActive()) {
-//				tx.rollback();
-//			}
-//
-//			pm.close();
-//		}
-		
-		//No se si va. Hay que mirarlo
+	public void eliminarReservaComedor(ReservaMesa r) {
+		// TODO Auto-generated method stub
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-		
+
 		try {
-			
 			tx.begin();
-			Query<ReservaMesa> query = pm.newQuery(ReservaMesa.class, "id_reserva =='" + r.getId_Reserva() + "'");
-			Collection<?> e = (Collection<?>) query.execute();
-			
-			ReservaMesa rm = (ReservaMesa) e.iterator().next();
-					
-			query.close();
-			pm.deletePersistent(rm);
+			//System.out.println("   * Eliminando reserva: ");
+			logger.info("   * Eliminando reserva: ");
+
+			pm.deletePersistent(r);
 			tx.commit();
-			logger.info("Se ha eliminado correctamente la reserva");
-			
 		} catch (Exception ex) {
-			logger.error("Error eliminando una reserva de una mesa: " + ex.getMessage());
-			throw new Exception();
+			//System.out.println("   $ Error Eliminando reserva: " + ex.getMessage());
+			logger.error("	$ Error Eliminando reserva: " + ex.getMessage());
+
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
 			}
-			if (pm != null && !pm.isClosed()) {
-				pm.close();
-			}
+			
+			pm.close();
 		}
-		
-	}
+	 }
 
+
+
+	/**
+	 * Devuelve la una reserva de un comedor.
+	 * @param dni DNI de la persona.
+	 * @param fecha Fecha de la reserva.
+	 * @param hora Hora de la reserva.
+	 */
+	@Override
+	public ReservaMesa devolverReservaComedor(String dni, String fecha, String hora) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		ReservaMesa R = null;
+
+		try {
+			//System.out.println("   * Buscando reserva de: " + dni);
+			logger.info("   * Buscando reserva de: " + dni);
+
+			tx.begin();
+			Query<ReservaMesa> query = pm.newQuery(ReservaMesa.class);
+			@SuppressWarnings("unchecked")
+			List<ReservaMesa> reservas = (List<ReservaMesa>) query.execute();
+			for (ReservaMesa r : reservas) {
+				if (r.getDni_respon().equals(dni) && r.getFecha().equals(fecha) && r.getHora().equals(hora)) {
+					R = r;
+				}
+
+			}
+			tx.commit();
+		} catch (Exception ex) {
+			//System.out.println("   $ Error devolviendo reserva: " + ex.getMessage());
+			logger.error("   $ Error devolviendo reserva: " + ex.getMessage());
+
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+
+		return R;
+	}	
+	
 	/**
 	 * Permite editar una reserva del comedor.
 	 * @param id_reserva Identificativo de la reserva.
@@ -206,50 +232,22 @@ public class ReservaComedorDAO implements IReservaComedorDAO{
 	 * @param hora_nueva Nueva hora para la que se quiere la reserva.
 	 */
 	@Override
-	public void editarReservaComedor(String id_reserva, String fecha_nueva, String hora_nueva) {
-//		if (consultarDisponibilidadComedor(r.getId_Mesa(), fecha_nueva, hora_nueva)) {
-//			ReservaMesa aux = new ReservaMesa(r.getId_Reserva(),r.getId_Mesa(), r.getDni_respon(),r.getFecha(),r.getHora(),r.getPersonas());
-//			// eliminarReserva(r);
-//			anyadirReservaComedor(aux);
-//			System.out.println("Reserva modificada satisfactoriamente");
-//		} else {
-//			System.out.println("Reserva no modificada.No se puede reservar en la fecha/hora seleccionadas");
-//		}
-		
-		//Hay que verificar si funciona
+	public void editarReservaComedor(String dni,String fecha,String hora,String mesa, String fecha_nueva, String hora_nueva,String mesa_nueva) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-		
-		tx.begin();
-		Extent<ReservaMesa> extent = pm.getExtent(ReservaMesa.class, true);
-		
-		for (ReservaMesa rm : extent) {
-			if (id_reserva.equals(rm.getId_Reserva())) {
-				rm.setFecha(fecha_nueva);
-				rm.setHora(hora_nueva);
-				pm.makePersistent(rm);
-				
-				logger.info("Se ha editado correctamente la reserva del comedor");
-				break;
-					
-			}
-			
-		}
-		tx.commit();
-		
-		try {
-			
-		} catch (Exception e) {
-			logger.error("Hubo un error editando la reserva" + e.getMessage());
-		} finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
-			
-			if (pm != null && !pm.isClosed()) {
-				pm.close();
-			}
-		}
+		ReservaMesa rm = devolverReservaComedor(dni, fecha, hora);
+		if(mesa.equals(rm.getId_Mesa()))	logger.debug("Mesa correcta");
+		if (consultarDisponibilidadComedor(mesa_nueva, fecha_nueva, hora_nueva)) {
+			ReservaMesa aux = new ReservaMesa(rm.getId_Mesa(), mesa_nueva, rm.getDni_respon(), fecha_nueva, hora_nueva,rm.getPersonas());
+			eliminarReservaComedor(rm);
+			anyadirReservaComedor(aux);
+			//System.out.println("Reserva modificada satisfactoriamente");
+			logger.info("Reserva modificada satisfactoriamente");
 
+		} else {
+			//System.out.println("Reserva no modificada.No se puede reservar en la fecha/hora seleccionadas");
+			logger.info("Reserva no modificada.No se puede reservar en la fecha/hora seleccionadas");
+
+		}
 	}
 }
