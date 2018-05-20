@@ -284,15 +284,17 @@ public class Controller {
     		e.printStackTrace();
     	}
 		}
-	public ArrayList<Libro> getLibros() throws RemoteException {
-		ArrayList<Libro> catalogo = null;
+	public void verCatalogoDeLibros() throws RemoteException {
+		//ArrayList<Libro> catalogo = null;
 		try{
-		catalogo = cl.getService().getLibros();
+		//catalogo = cl.getService().getLibros();
+		cl.getService().getLibros();
 		
 		}catch(Exception e){
     		e.printStackTrace();
     	}
-		return catalogo;
+		//return catalogo;
+	
 	}
 	
 	public String verMenu(String fecha) throws Exception {
