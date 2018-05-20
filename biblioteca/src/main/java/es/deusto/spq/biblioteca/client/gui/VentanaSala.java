@@ -48,7 +48,7 @@ public class VentanaSala extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel label = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/salas.jpg")).getImage();
+	//	Image img = new ImageIcon(this.getClass().getResource("/salas.jpg")).getImage();
 		
 		JButton btnReservarSala = new JButton("Reservar Sala");
 		btnReservarSala.addActionListener(new ActionListener() {
@@ -91,7 +91,7 @@ public class VentanaSala extends JFrame {
 		label_1.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 35));
 		label_1.setBounds(35, 23, 354, 122);
 		contentPane.add(label_1);
-		label.setIcon(new ImageIcon(img));
+//		label.setIcon(new ImageIcon(img));
 		
 		label.setBounds(0, 0, 594, 348);
 		contentPane.add(label);

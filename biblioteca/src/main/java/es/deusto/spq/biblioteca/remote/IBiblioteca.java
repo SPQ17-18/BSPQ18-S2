@@ -63,8 +63,8 @@ public interface IBiblioteca extends Remote {
 	public ReservaLibro DevolverLibro(String isbn) throws RemoteException;
 	
 	public Reserva DevolverReserva(String dni, String fecha, String hora) throws RemoteException;
-	
-	public ReservaMesa DevolverReservaMesa(String dni, String fecha, String hora) throws RemoteException ;
+		
+	public ReservaMesa devolverReservaComedor(String dni, String fecha, String hora) throws RemoteException;
 	
 	
 }

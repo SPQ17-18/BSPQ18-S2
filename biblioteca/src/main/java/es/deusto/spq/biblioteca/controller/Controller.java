@@ -449,7 +449,7 @@ public class Controller {
 	public static void main(String[] args) throws Exception {
 		Controller c = new Controller(args);
 
-		System.out.println(c.getCl().getService());
+//		System.out.println(c.getCl().getService());
 //		System.out.println("Hola");
 //
 //		//Almacenamos libros 

@@ -71,13 +71,6 @@ public class VentanaHacerReservaSala extends JFrame {
 		contentPane.add(comboBox);
 		
 		button = new JButton("Reserva");
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				VentanaMensaje3 abrirVentana6 = new VentanaMensaje3(controller);
-				abrirVentana6.setVisible(true);
-				VentanaHacerReservaSala.this.dispose();
-			}
-		});
 		button.setFont(new Font("Times New Roman", Font.ITALIC, 17));
 		button.setBounds(397, 36, 156, 29);
 		contentPane.add(button);
@@ -130,6 +123,21 @@ public class VentanaHacerReservaSala extends JFrame {
 		textField_3.setColumns(10);
 		textField_3.setBounds(24, 220, 86, 23);
 		contentPane.add(textField_3);
+	
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+		//		VentanaMensaje3 abrirVentana6 = new VentanaMensaje3(controller);
+		//		abrirVentana6.setVisible(true);
+						controller.anyadirReservaComedor(comboBox.getSelectedItem().toString(),  
+								textField.getText(),  
+								textField_1.getText(),  
+								textField_3.getText(), 
+								Integer.parseInt(textField_2.getText()));
+		//		VentanaHacerReservaSala.this.dispose();
+
+			}
+					
+			});
 	}
 	
 	/**
