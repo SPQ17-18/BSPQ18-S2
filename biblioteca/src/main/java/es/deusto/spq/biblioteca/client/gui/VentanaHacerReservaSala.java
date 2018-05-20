@@ -65,7 +65,7 @@ public class VentanaHacerReservaSala extends JFrame {
 		contentPane.add(lblSala);
 		
 		comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"S1", "S2", "S3", "S4", "S5", "S6"}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"S1", "S2", "S3", "S4", "S5"}));
 		comboBox.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
 		comboBox.setBounds(200, 39, 105, 23);
 		contentPane.add(comboBox);
@@ -126,14 +126,15 @@ public class VentanaHacerReservaSala extends JFrame {
 	
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-		//		VentanaMensaje3 abrirVentana6 = new VentanaMensaje3(controller);
-		//		abrirVentana6.setVisible(true);
+				VentanaMensaje3 abrirVentana6 = new VentanaMensaje3(controller);
+				abrirVentana6.setVisible(true);
+						
 						controller.anyadirReservaComedor(comboBox.getSelectedItem().toString(),  
+								textField_2.getText(),  
 								textField.getText(),  
-								textField_1.getText(),  
 								textField_3.getText(), 
-								Integer.parseInt(textField_2.getText()));
-		//		VentanaHacerReservaSala.this.dispose();
+								Integer.parseInt(textField_1.getText()));
+				VentanaHacerReservaSala.this.dispose();
 
 			}
 					

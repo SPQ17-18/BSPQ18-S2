@@ -305,7 +305,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		String c="REC";
 		codg = String.valueOf(cod);
 		codg = Integer.toString(cod);
-		ReservaMesa r = new ReservaMesa(c.concat(codg),codg,dni_respon, fecha, hora, plazas);
+		ReservaMesa r = new ReservaMesa(id_Mesa,c.concat(codg),dni_respon, fecha, hora, plazas);
 		rComedorDAO.anyadirReservaComedor(r);
 	}
 

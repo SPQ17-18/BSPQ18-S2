@@ -478,7 +478,7 @@ public class Controller {
 //		c.getCl().getService().anyadirSala("S1", 10);
 //		c.getCl().getService().anyadirSala("S2", 8);
 //		c.getCl().getService().anyadirReserva("S1", "12345678X", "11/04/18", "21:20", 3);
-//		c.getCl().getService().anyadirReserva("S2", "23456789Y", "12/05/18", "19:26", 2);
+//		c.getCl().getService().anyadirReserva("S5", "99999999Y", "20/05/18", "19:26", 4);
 //		Boolean disponible = c.getCl().getService().consultarDisponibilidad("S1", "11/04/18", "10:00", 4);
 //		if (disponible) {
 //			c.getCl().getService().anyadirReserva("S1", "34567890X", "11/04/18", "10:00", 4);
@@ -493,7 +493,7 @@ public class Controller {
 //		c.getCl().getService().anyadirMesa("M1", 4);
 //		c.getCl().getService().anyadirMesa("M2", 6);
 //		c.getCl().getService().anyadirReservaComedor("M1", "12345678X", "30/04/18", "14:30", 2);
-//		c.getCl().getService().anyadirReservaComedor("M2", "19182138S", "1/05/18", "15:00", 6);
+		//c.getCl().getService().anyadirReservaComedor("M2", "19182138S", "1/05/18", "15:00", 6);
 //		Boolean disponibleComedor = c.getCl().getService().consultarDisponibilidadComedor("M1", "2/05/18", "14:00", 3);
 //		if (disponibleComedor) {
 //			c.getCl().getService().anyadirReservaComedor("M1", "34567890X", "2/05/18", "14:00", 4);
