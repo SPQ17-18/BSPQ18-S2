@@ -252,7 +252,7 @@ public class RMITest {
 	public void eliminarReservaTest() {
 		try {
 			logger.info("Test 8 - Register new user");
-			biblioteca.eliminarReserva("S1", "12345678X");
+			biblioteca.eliminarReserva( "12345678X", "12/01/12", "10:00");
 			assertTrue(true);
 		} catch (Exception re) {
 			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());

@@ -4,7 +4,9 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 import es.deusto.spq.biblioteca.data.Libro;
+import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.ReservaLibro;
+import es.deusto.spq.biblioteca.data.ReservaMesa;
 
 import java.util.ArrayList;
 
@@ -31,7 +33,8 @@ public interface IBiblioteca extends Remote {
 	void editarReserva(String dni, String fecha, String hora, String sala, String fecha_nueva, String hora_nueva,
 			String SalaNueva) throws RemoteException;
 
-	public void eliminarReserva(String id_Sala, String dni_respon) throws RemoteException;
+	public void eliminarReserva(String dni_respon,String fecha,String hora) throws RemoteException ;
+
 	
 	public void EliminarLibro(Libro l) throws RemoteException;
 	
@@ -45,7 +48,7 @@ public interface IBiblioteca extends Remote {
 	
 	public void eliminarReservaComedor(String dni, String fecha, String hora) throws RemoteException, Exception;
 	
-	public void editarReservaComedor(String id_reserva, String fecha_nueva, String hora_nueva) throws RemoteException;
+	public void editarReservaComedor(String dni,String fecha,String hora,String mesa, String fecha_nueva, String hora_nueva,String mesa_nueva) throws RemoteException;
 
 	public void anyadirMenu(String fecha, String plato1, String plato2, String postre) throws Exception;
 
@@ -58,6 +61,10 @@ public interface IBiblioteca extends Remote {
 	public void reservarLibro(String isbn) throws RemoteException;
 
 	public ReservaLibro DevolverLibro(String isbn) throws RemoteException;
+	
+	public Reserva DevolverReserva(String dni, String fecha, String hora) throws RemoteException;
+	
+	public ReservaMesa DevolverReservaMesa(String dni, String fecha, String hora) throws RemoteException;
 	
 	
 }

@@ -11,5 +11,6 @@ public interface IReservaDAO {
 	public void eliminarReserva(Reserva r);
 	public ArrayList<String> verReservas(String dni);
 	void editarReserva(String dni, String fecha, String hora, String sala, String fecha_nueva, String hora_nueva,String SalaNueva);
-	
+	public Reserva devolverReserva(String dni, String fecha, String hora);
+
 }
