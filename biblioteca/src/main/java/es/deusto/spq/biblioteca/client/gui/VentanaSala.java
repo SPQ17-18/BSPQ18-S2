@@ -95,6 +95,10 @@ public class VentanaSala extends JFrame {
 		
 		label.setBounds(0, 0, 594, 348);
 		contentPane.add(label);
+		
+		FondoSala fondo = new FondoSala();
+		getContentPane().add(fondo,contentPane);
+		fondo.setBounds(0, 0, 795, 382);
 	}
 	
 	/**

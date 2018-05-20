@@ -108,6 +108,10 @@ public class VentanaVerReservasSala extends JFrame {
 		button_1.setFont(new Font("Times New Roman", Font.ITALIC, 17));
 		button_1.setBounds(311, 139, 157, 29);
 		contentPane.add(button_1);
+		
+		FondoSala fondo = new FondoSala();
+		getContentPane().add(fondo,contentPane);
+		fondo.setBounds(0, 0, 795, 382);
 	}
 	
 	/**

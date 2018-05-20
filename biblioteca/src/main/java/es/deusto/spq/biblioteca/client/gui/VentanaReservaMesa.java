@@ -87,6 +87,11 @@ public class VentanaReservaMesa extends JFrame {
 //		label.setIcon(new ImageIcon(img));
 		label.setBounds(0, 0, 692, 340);
 		contentPane.add(label);
+		
+
+		FondoComedor fondo = new FondoComedor();
+		getContentPane().add(fondo,contentPane);
+		fondo.setBounds(0, 0, 795, 382);
 	}
 	
 	/**

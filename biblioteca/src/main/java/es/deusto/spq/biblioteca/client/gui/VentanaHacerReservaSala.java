@@ -139,6 +139,18 @@ public class VentanaHacerReservaSala extends JFrame {
 			}
 					
 			});
+		
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VentanaSala abrirVentana4 = new VentanaSala(controller);
+				abrirVentana4.setVisible(true);
+				VentanaHacerReservaSala.this.dispose();
+			}
+		});
+
+		FondoSala fondo = new FondoSala();
+		getContentPane().add(fondo,contentPane);
+		fondo.setBounds(0, 0, 795, 382);
 	}
 	
 	/**

@@ -53,7 +53,7 @@ public class MenuPrincipal extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+			
 		JLabel label = new JLabel("");
 		//Image img = new ImageIcon(this.getClass().getResource("/bibliotecadeusto.jpg")).getImage();
 		
@@ -101,8 +101,12 @@ public class MenuPrincipal extends JFrame {
 		lblNewLabel.setBounds(97, 44, 232, 63);
 		contentPane.add(lblNewLabel);
 	//	label.setIcon(new ImageIcon(img));
-		label.setBounds(0, 0, 732, 346);
+	//	label.setBounds(0, 0, 732, 346);
 		contentPane.add(label);
+		
+		FondoPrincipal fondo = new FondoPrincipal();
+		getContentPane().add(fondo,contentPane);
+		fondo.setBounds(0, 0, 750, 387);
 	}
 	
 	/**

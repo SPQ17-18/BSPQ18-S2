@@ -153,6 +153,9 @@ public class VentanaHacerReservaMesa extends JFrame {
 			
 	});
 		
+		FondoComedor fondo = new FondoComedor();
+		getContentPane().add(fondo,contentPane);
+		fondo.setBounds(0, 0, 795, 382);
 	}
 	
 	/**

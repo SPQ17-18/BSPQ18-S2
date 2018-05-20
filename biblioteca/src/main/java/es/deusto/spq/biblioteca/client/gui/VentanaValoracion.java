@@ -95,6 +95,10 @@ public class VentanaValoracion extends JFrame {
 		btnAceptar.setFont(new Font("Times New Roman", Font.ITALIC, 17));
 		btnAceptar.setBounds(246, 61, 142, 29);
 		contentPane.add(btnAceptar);
+		
+		FondoMenu fondo = new FondoMenu();
+		getContentPane().add(fondo,contentPane);
+		fondo.setBounds(0, 0, 795, 382);
 	}
 	
 	/**

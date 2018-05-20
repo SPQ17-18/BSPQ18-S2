@@ -131,6 +131,11 @@ public class VentanaBusquedaMenu extends JFrame {
 //		label.setIcon(new ImageIcon(img));
 		label.setBounds(0, 0, 466, 307);
 		contentPane.add(label);
+		
+
+		FondoMenu fondo = new FondoMenu();
+		getContentPane().add(fondo,contentPane);
+		fondo.setBounds(0, 0, 795, 382);
 	}
 	
 	/**
