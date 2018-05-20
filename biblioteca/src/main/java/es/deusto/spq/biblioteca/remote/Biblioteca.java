@@ -83,6 +83,10 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		
 
 
+	public Biblioteca(ISalaDAO dao) throws RemoteException {
+		this.salaDAO = dao;
+	}
+
 	@Override
 	public Reserva DevolverReserva(String dni, String fecha, String hora) throws RemoteException {
 		Reserva r = null;
