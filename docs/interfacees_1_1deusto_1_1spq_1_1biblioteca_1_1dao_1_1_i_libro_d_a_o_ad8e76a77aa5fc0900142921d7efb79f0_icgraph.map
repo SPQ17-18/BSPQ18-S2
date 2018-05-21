@@ -1,0 +1,5 @@
+<map id="es.deusto.spq.biblioteca.dao.ILibroDAO.almacenarLibro" name="es.deusto.spq.biblioteca.dao.ILibroDAO.almacenarLibro">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_biblioteca.html#ae6389acf6f1cab24aa1bb55b38c010b0" title="es.deusto.spq.biblioteca.remote.\lBiblioteca.almacenarLibro" alt="" coords="245,5,456,47"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_carga_datos_b_d_test.html#a850161e25685402f46c6fce4b72d5f07" title="es.deusto.spq.biblioteca.\lCargaDatosBDTest.testLibro" alt="" coords="257,71,444,112"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_libro_d_a_o_test.html#ac5a22359846df59aaa015c0a074ce812" title="es.deusto.spq.biblioteca.\lLibroDAOTest.testAlmacenarLibro" alt="" coords="504,5,723,47"/>
+</map>

@@ -1,0 +1,27 @@
+var interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca =
+[
+    [ "almacenarLibro", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a680527b39d6011fe354b9410a204e8cc", null ],
+    [ "anyadirMenu", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a07c2558d19f41b795d00a7fd91783fb5", null ],
+    [ "anyadirMesa", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a99ba473aaaa6ff064cff2f354c3f64b3", null ],
+    [ "anyadirReserva", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a4d0efe1c5a592db92d9b416f59ac8d9a", null ],
+    [ "anyadirReservaComedor", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a6e1aadce8e2f541702117bf54ed6a225", null ],
+    [ "anyadirSala", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a3f32377ccce2450ce8154902b470bf5b", null ],
+    [ "anyadirValoracion", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a72b9d5541556bacfdfb37f47753972c1", null ],
+    [ "buscarLibro", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a29a3d22f9c3f8b84604eec2ab9955dfe", null ],
+    [ "consultarDiponibilidadLibro", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#ae8795f9243cf23bff712d636c182193d", null ],
+    [ "consultarDisponibilidad", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a96a133c2557486013949667cf0a14118", null ],
+    [ "consultarDisponibilidadComedor", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#ab6188ebc7f0b5e23bdfc9e4a86395373", null ],
+    [ "DevolverLibro", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#aace05bd0eeb7af574d9725203672f5c8", null ],
+    [ "DevolverReserva", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a988bc8c24da1f11665ea205e2fc9b95e", null ],
+    [ "devolverReservaComedor", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a06da4875e23b3d05c49695f01e1383df", null ],
+    [ "editarReserva", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#aa7df9834f70a04eaa4ce64e30bce0ede", null ],
+    [ "editarReservaComedor", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#ac492277af5ed00def28276cd8b0a5394", null ],
+    [ "eliminarReserva", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#abb2449f5cc79a04e38cb5898cea35ffc", null ],
+    [ "eliminarReservaComedor", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a36db52ba728865b02b2f25024d942149", null ],
+    [ "getLibros", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a84e7d607d76ccc999d384d967987ebd8", null ],
+    [ "mostrarLibro", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a9a4d21325f41bc582e7e792e0ae40857", null ],
+    [ "reservarLibro", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#af8c7a0e5361bfac62c0b8804d9112b51", null ],
+    [ "verMenu", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a7a9df6fad07fe2cfe50c261b5e048365", null ],
+    [ "verReservaComedor", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a95f0223ecd802f703977d838c72a93bf", null ],
+    [ "verReservas", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a9ad945750f5db60c869a696e276f7421", null ]
+];

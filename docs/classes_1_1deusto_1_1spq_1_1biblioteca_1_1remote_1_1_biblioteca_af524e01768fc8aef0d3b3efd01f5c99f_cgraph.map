@@ -1,0 +1,4 @@
+<map id="es.deusto.spq.biblioteca.remote.Biblioteca.consultarDisponibilidadComedor" name="es.deusto.spq.biblioteca.remote.Biblioteca.consultarDisponibilidadComedor">
+<area shape="rect" id="node2" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_reserva_comedor_d_a_o.html#aab673a0f8b0df9792d97189f934641af" title="es.deusto.spq.biblioteca.dao.\lIReservaComedorDAO.consultarDisponibilidad\lComedor" alt="" coords="269,5,557,61"/>
+<area shape="rect" id="node3" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_mesa_d_a_o.html#a82ff152d68c25134fdffa41a1b08a347" title="es.deusto.spq.biblioteca.dao.\lIMesaDAO.consultarPlazasComedor" alt="" coords="296,86,531,127"/>
+</map>

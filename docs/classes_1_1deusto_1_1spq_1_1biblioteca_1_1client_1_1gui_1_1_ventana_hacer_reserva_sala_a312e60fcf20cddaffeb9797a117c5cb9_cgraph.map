@@ -1,0 +1,6 @@
+<map id="es.deusto.spq.biblioteca.client.gui.VentanaHacerReservaSala.VentanaHacerReservaSala" name="es.deusto.spq.biblioteca.client.gui.VentanaHacerReservaSala.VentanaHacerReservaSala">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1gui_1_1_ventana_hacer_reserva_sala.html#aa5d6c1cf5f1017a242410ad04c5cc876" title="es.deusto.spq.biblioteca.client.gui.\lVentanaHacerReservaSala.ventana" alt="" coords="316,39,540,80"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1controller_1_1_controller.html#ac3d198e961cb93301dce00484cf462a8" title="es.deusto.spq.biblioteca.controller.\lController.anyadirReserva" alt="" coords="588,39,812,80"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1_client.html#a81c65efd5ee6eb820c325225532fa3fb" title="es.deusto.spq.biblioteca.client.\lClient.getService" alt="" coords="864,5,1067,47"/>
+<area shape="rect" id="node5" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a4d0efe1c5a592db92d9b416f59ac8d9a" title="es.deusto.spq.biblioteca.remote.\lIBiblioteca.anyadirReserva" alt="" coords="860,71,1071,112"/>
+</map>

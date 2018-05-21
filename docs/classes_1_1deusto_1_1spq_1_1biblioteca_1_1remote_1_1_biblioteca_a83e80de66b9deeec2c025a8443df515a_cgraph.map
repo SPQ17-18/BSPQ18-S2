@@ -1,0 +1,5 @@
+<map id="es.deusto.spq.biblioteca.remote.Biblioteca.eliminarReservaComedor" name="es.deusto.spq.biblioteca.remote.Biblioteca.eliminarReservaComedor">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_biblioteca.html#a42f0baaeb77d185634a84f10936e8f8e" title="es.deusto.spq.biblioteca.remote.\lBiblioteca.devolverReservaComedor" alt="" coords="290,13,517,54"/>
+<area shape="rect" id="node4" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_reserva_comedor_d_a_o.html#ab135ff48fa3d6c4ea1c4bf78405b96f4" title="es.deusto.spq.biblioteca.dao.\lIReservaComedorDAO.eliminarReserva\lComedor" alt="" coords="280,79,527,135"/>
+<area shape="rect" id="node3" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_reserva_comedor_d_a_o.html#a8e5a8ca90742ac0fc9231341e3a4fc5e" title="es.deusto.spq.biblioteca.dao.\lIReservaComedorDAO.devolverReserva\lComedor" alt="" coords="575,5,821,61"/>
+</map>

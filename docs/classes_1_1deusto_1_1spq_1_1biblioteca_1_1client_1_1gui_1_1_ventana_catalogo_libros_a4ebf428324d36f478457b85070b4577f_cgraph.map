@@ -1,0 +1,5 @@
+<map id="es.deusto.spq.biblioteca.client.gui.VentanaCatalogoLibros.ventana" name="es.deusto.spq.biblioteca.client.gui.VentanaCatalogoLibros.ventana">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1controller_1_1_controller.html#a14860df4246cd7cefcc7e9e460d504ce" title="es.deusto.spq.biblioteca.controller.\lController.getCl" alt="" coords="276,5,500,47"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1_client.html#a81c65efd5ee6eb820c325225532fa3fb" title="es.deusto.spq.biblioteca.client.\lClient.getService" alt="" coords="287,71,489,112"/>
+<area shape="rect" id="node4" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a84e7d607d76ccc999d384d967987ebd8" title="es.deusto.spq.biblioteca.remote.\lIBiblioteca.getLibros" alt="" coords="283,136,493,177"/>
+</map>

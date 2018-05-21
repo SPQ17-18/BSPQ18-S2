@@ -1,0 +1,8 @@
+<map id="es.deusto.spq.biblioteca.LibroDAOTest.testVerLibro" name="es.deusto.spq.biblioteca.LibroDAOTest.testVerLibro">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_biblioteca.html#a6455f223a57806146e77149429caf6db" title="es.deusto.spq.biblioteca.remote.\lBiblioteca.mostrarLibro" alt="" coords="231,5,441,47"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_libro.html#a8cb61b4acf568ba35e27fbb13d20bc82" title="es.deusto.spq.biblioteca.data.\lLibro.getIsbn" alt="" coords="238,71,434,112"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_libro.html#a9e03d89691d2549ee6702b801ad09e32" title="es.deusto.spq.biblioteca.data.\lLibro.getnombre" alt="" coords="238,136,434,177"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_libro.html#ae42d9e4ed794f598f4d05dcdb7c307d5" title="es.deusto.spq.biblioteca.data.\lLibro.getAutor" alt="" coords="238,201,434,243"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_libro.html#a246aede47ebda75d4ea896995573ab5b" title="es.deusto.spq.biblioteca.data.\lLibro.getEditorial" alt="" coords="238,267,434,308"/>
+<area shape="rect" id="node3" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_libro_d_a_o.html#ae390d687e8e4ec02a401291da5076062" title="es.deusto.spq.biblioteca.dao.\lILibroDAO.verLibro" alt="" coords="489,5,681,47"/>
+</map>

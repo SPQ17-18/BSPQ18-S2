@@ -1,0 +1,5 @@
+<map id="es.deusto.spq.biblioteca.ReservaComedorDAOTest.consultarDisponibilidadComedorTest" name="es.deusto.spq.biblioteca.ReservaComedorDAOTest.consultarDisponibilidadComedorTest">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_reserva_mesa.html#a648a94f9af08dec222847013a9833ff7" title="es.deusto.spq.biblioteca.data.\lReservaMesa.getId_Mesa" alt="" coords="284,5,480,47"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_reserva_mesa.html#a291c8790dad8c2c10954cd7731d636b9" title="es.deusto.spq.biblioteca.data.\lReservaMesa.getFecha" alt="" coords="284,71,480,112"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_reserva_mesa.html#aff2c846da031035b3fa01c50406655f1" title="es.deusto.spq.biblioteca.data.\lReservaMesa.getHora" alt="" coords="284,136,480,177"/>
+</map>
