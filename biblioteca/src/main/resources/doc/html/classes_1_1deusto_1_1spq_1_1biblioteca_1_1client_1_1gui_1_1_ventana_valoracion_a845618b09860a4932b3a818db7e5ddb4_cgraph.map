@@ -1,0 +1,7 @@
+<map id="es.deusto.spq.biblioteca.client.gui.VentanaValoracion.ejecutarVentana" name="es.deusto.spq.biblioteca.client.gui.VentanaValoracion.ejecutarVentana">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1gui_1_1_ventana_valoracion.html#a00caacf21e8061e9838ab07c295edc07" title="es.deusto.spq.biblioteca.client.gui.\lVentanaValoracion.VentanaValoracion" alt="" coords="286,37,533,76"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1gui_1_1_ventana_valoracion.html#ae8f27fb158d5eb96f275b805f40446e1" title="es.deusto.spq.biblioteca.client.gui.\lVentanaValoracion.ventana" alt="" coords="581,37,805,76"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1controller_1_1_controller.html#acec274a871e11de7635bbfbe6fea2817" title="es.deusto.spq.biblioteca.controller.\lController.anyadirValoracion" alt="" coords="853,37,1079,76"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1_client.html#a81c65efd5ee6eb820c325225532fa3fb" title="es.deusto.spq.biblioteca.client.\lClient.getService" alt="" coords="1132,5,1335,44"/>
+<area shape="rect" id="node6" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a72b9d5541556bacfdfb37f47753972c1" title="es.deusto.spq.biblioteca.remote.\lIBiblioteca.anyadirValoracion" alt="" coords="1127,68,1340,107"/>
+</map>

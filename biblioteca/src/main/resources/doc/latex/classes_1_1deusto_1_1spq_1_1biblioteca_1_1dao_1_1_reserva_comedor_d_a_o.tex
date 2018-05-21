@@ -1,0 +1,237 @@
+\hypertarget{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o}{}\section{es.\+deusto.\+spq.\+biblioteca.\+dao.\+Reserva\+Comedor\+D\+AO Class Reference}
+\label{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o}\index{es.\+deusto.\+spq.\+biblioteca.\+dao.\+Reserva\+Comedor\+D\+AO@{es.\+deusto.\+spq.\+biblioteca.\+dao.\+Reserva\+Comedor\+D\+AO}}
+
+
+Inheritance diagram for es.\+deusto.\+spq.\+biblioteca.\+dao.\+Reserva\+Comedor\+D\+AO\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for es.\+deusto.\+spq.\+biblioteca.\+dao.\+Reserva\+Comedor\+D\+AO\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_ab7a8d66a69f0deb45309fc08ed21981b}{Reserva\+Comedor\+D\+AO}} ()
+\item 
+void \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_a00a9d306bae663d51886fb00f0838d45}{anyadir\+Reserva\+Comedor}} (\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_reserva_mesa}{Reserva\+Mesa}} r)
+\item 
+boolean \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_adf9fa1cb08488112692797e7959b2ef8}{consultar\+Disponibilidad\+Comedor}} (String Id\+\_\+\+Mesa, String fecha, String hora)
+\item 
+Array\+List$<$ String $>$ \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_a4cac22c7d393f3994118317472f9ab95}{ver\+Reserva\+Comedor}} (String dni)
+\item 
+void \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_afb0004fc47c5ea34a1187d1f6433892f}{eliminar\+Reserva\+Comedor}} (\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_reserva_mesa}{Reserva\+Mesa}} r)
+\item 
+\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_reserva_mesa}{Reserva\+Mesa}} \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_aa8bb09a0de105a3b0d595fccd6f37d5b}{devolver\+Reserva\+Comedor}} (String dni, String fecha, String hora)
+\item 
+void \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_a61cbf6ed260e7a3ca7af26b6130fa054}{editar\+Reserva\+Comedor}} (String dni, String fecha, String hora, String mesa, String fecha\+\_\+nueva, String hora\+\_\+nueva, String mesa\+\_\+nueva)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Clase para el manejo de la Base de Daatos \begin{DoxyAuthor}{Author}
+koldo 
+\end{DoxyAuthor}
+
+
+Definition at line 25 of file Reserva\+Comedor\+D\+A\+O.\+java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_ab7a8d66a69f0deb45309fc08ed21981b}\label{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_ab7a8d66a69f0deb45309fc08ed21981b}} 
+\index{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO@{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO}!Reserva\+Comedor\+D\+AO@{Reserva\+Comedor\+D\+AO}}
+\index{Reserva\+Comedor\+D\+AO@{Reserva\+Comedor\+D\+AO}!es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO@{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO}}
+\subsubsection{\texorpdfstring{Reserva\+Comedor\+D\+A\+O()}{ReservaComedorDAO()}}
+{\footnotesize\ttfamily es.\+deusto.\+spq.\+biblioteca.\+dao.\+Reserva\+Comedor\+D\+A\+O.\+Reserva\+Comedor\+D\+AO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Contructor de la clase 
+
+Definition at line 33 of file Reserva\+Comedor\+D\+A\+O.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_a00a9d306bae663d51886fb00f0838d45}\label{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_a00a9d306bae663d51886fb00f0838d45}} 
+\index{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO@{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO}!anyadir\+Reserva\+Comedor@{anyadir\+Reserva\+Comedor}}
+\index{anyadir\+Reserva\+Comedor@{anyadir\+Reserva\+Comedor}!es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO@{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO}}
+\subsubsection{\texorpdfstring{anyadir\+Reserva\+Comedor()}{anyadirReservaComedor()}}
+{\footnotesize\ttfamily void es.\+deusto.\+spq.\+biblioteca.\+dao.\+Reserva\+Comedor\+D\+A\+O.\+anyadir\+Reserva\+Comedor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_reserva_mesa}{Reserva\+Mesa}}}]{r }\end{DoxyParamCaption})}
+
+Metodo que anyade una reserva para el comedor.  anyade una reserva para una mesa en el comedor. 
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & Lanza una excepccion si ocurre un error. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_reserva_comedor_d_a_o_a049782a184cf43fcead41207aaf91e0b}{es.\+deusto.\+spq.\+biblioteca.\+dao.\+I\+Reserva\+Comedor\+D\+AO}}.
+
+
+
+Definition at line 43 of file Reserva\+Comedor\+D\+A\+O.\+java.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_a00a9d306bae663d51886fb00f0838d45_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_a00a9d306bae663d51886fb00f0838d45_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_adf9fa1cb08488112692797e7959b2ef8}\label{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_adf9fa1cb08488112692797e7959b2ef8}} 
+\index{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO@{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO}!consultar\+Disponibilidad\+Comedor@{consultar\+Disponibilidad\+Comedor}}
+\index{consultar\+Disponibilidad\+Comedor@{consultar\+Disponibilidad\+Comedor}!es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO@{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO}}
+\subsubsection{\texorpdfstring{consultar\+Disponibilidad\+Comedor()}{consultarDisponibilidadComedor()}}
+{\footnotesize\ttfamily boolean es.\+deusto.\+spq.\+biblioteca.\+dao.\+Reserva\+Comedor\+D\+A\+O.\+consultar\+Disponibilidad\+Comedor (\begin{DoxyParamCaption}\item[{String}]{Id\+\_\+\+Mesa,  }\item[{String}]{fecha,  }\item[{String}]{hora }\end{DoxyParamCaption})}
+
+Permite consultar la disponibilidad de mesas para una hora y fecha concretas. 
+\begin{DoxyParams}{Parameters}
+{\em I\+D\+\_\+\+Mesa} & Identificador de la mesa. \\
+\hline
+{\em fecha} & Fecha. \\
+\hline
+{\em hora} & Hora. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_reserva_comedor_d_a_o_aab673a0f8b0df9792d97189f934641af}{es.\+deusto.\+spq.\+biblioteca.\+dao.\+I\+Reserva\+Comedor\+D\+AO}}.
+
+
+
+Definition at line 81 of file Reserva\+Comedor\+D\+A\+O.\+java.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_adf9fa1cb08488112692797e7959b2ef8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_aa8bb09a0de105a3b0d595fccd6f37d5b}\label{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_aa8bb09a0de105a3b0d595fccd6f37d5b}} 
+\index{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO@{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO}!devolver\+Reserva\+Comedor@{devolver\+Reserva\+Comedor}}
+\index{devolver\+Reserva\+Comedor@{devolver\+Reserva\+Comedor}!es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO@{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO}}
+\subsubsection{\texorpdfstring{devolver\+Reserva\+Comedor()}{devolverReservaComedor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_reserva_mesa}{Reserva\+Mesa}} es.\+deusto.\+spq.\+biblioteca.\+dao.\+Reserva\+Comedor\+D\+A\+O.\+devolver\+Reserva\+Comedor (\begin{DoxyParamCaption}\item[{String}]{dni,  }\item[{String}]{fecha,  }\item[{String}]{hora }\end{DoxyParamCaption})}
+
+Devuelve la una reserva de un comedor. 
+\begin{DoxyParams}{Parameters}
+{\em dni} & D\+NI de la persona. \\
+\hline
+{\em fecha} & Fecha de la reserva. \\
+\hline
+{\em hora} & Hora de la reserva. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_reserva_comedor_d_a_o_a8e5a8ca90742ac0fc9231341e3a4fc5e}{es.\+deusto.\+spq.\+biblioteca.\+dao.\+I\+Reserva\+Comedor\+D\+AO}}.
+
+
+
+Definition at line 193 of file Reserva\+Comedor\+D\+A\+O.\+java.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_aa8bb09a0de105a3b0d595fccd6f37d5b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_a61cbf6ed260e7a3ca7af26b6130fa054}\label{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_a61cbf6ed260e7a3ca7af26b6130fa054}} 
+\index{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO@{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO}!editar\+Reserva\+Comedor@{editar\+Reserva\+Comedor}}
+\index{editar\+Reserva\+Comedor@{editar\+Reserva\+Comedor}!es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO@{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO}}
+\subsubsection{\texorpdfstring{editar\+Reserva\+Comedor()}{editarReservaComedor()}}
+{\footnotesize\ttfamily void es.\+deusto.\+spq.\+biblioteca.\+dao.\+Reserva\+Comedor\+D\+A\+O.\+editar\+Reserva\+Comedor (\begin{DoxyParamCaption}\item[{String}]{dni,  }\item[{String}]{fecha,  }\item[{String}]{hora,  }\item[{String}]{mesa,  }\item[{String}]{fecha\+\_\+nueva,  }\item[{String}]{hora\+\_\+nueva,  }\item[{String}]{mesa\+\_\+nueva }\end{DoxyParamCaption})}
+
+Permite editar una reserva del comedor. 
+\begin{DoxyParams}{Parameters}
+{\em id\+\_\+reserva} & Identificativo de la reserva. \\
+\hline
+{\em fecha\+\_\+nueva} & Nueva fecha para la que se quiere la reserva. \\
+\hline
+{\em hora\+\_\+nueva} & Nueva hora para la que se quiere la reserva. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_reserva_comedor_d_a_o_af50553820cb529bd993f64c6496f6e2c}{es.\+deusto.\+spq.\+biblioteca.\+dao.\+I\+Reserva\+Comedor\+D\+AO}}.
+
+
+
+Definition at line 235 of file Reserva\+Comedor\+D\+A\+O.\+java.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_a61cbf6ed260e7a3ca7af26b6130fa054_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_afb0004fc47c5ea34a1187d1f6433892f}\label{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_afb0004fc47c5ea34a1187d1f6433892f}} 
+\index{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO@{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO}!eliminar\+Reserva\+Comedor@{eliminar\+Reserva\+Comedor}}
+\index{eliminar\+Reserva\+Comedor@{eliminar\+Reserva\+Comedor}!es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO@{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO}}
+\subsubsection{\texorpdfstring{eliminar\+Reserva\+Comedor()}{eliminarReservaComedor()}}
+{\footnotesize\ttfamily void es.\+deusto.\+spq.\+biblioteca.\+dao.\+Reserva\+Comedor\+D\+A\+O.\+eliminar\+Reserva\+Comedor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_reserva_mesa}{Reserva\+Mesa}}}]{r }\end{DoxyParamCaption})}
+
+Elimina una reserva del comedor.  Reserva que se elimina para una mesa en concreto. 
+
+Implements \mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_reserva_comedor_d_a_o_ab135ff48fa3d6c4ea1c4bf78405b96f4}{es.\+deusto.\+spq.\+biblioteca.\+dao.\+I\+Reserva\+Comedor\+D\+AO}}.
+
+
+
+Definition at line 159 of file Reserva\+Comedor\+D\+A\+O.\+java.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_afb0004fc47c5ea34a1187d1f6433892f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_a4cac22c7d393f3994118317472f9ab95}\label{classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o_a4cac22c7d393f3994118317472f9ab95}} 
+\index{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO@{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO}!ver\+Reserva\+Comedor@{ver\+Reserva\+Comedor}}
+\index{ver\+Reserva\+Comedor@{ver\+Reserva\+Comedor}!es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO@{es\+::deusto\+::spq\+::biblioteca\+::dao\+::\+Reserva\+Comedor\+D\+AO}}
+\subsubsection{\texorpdfstring{ver\+Reserva\+Comedor()}{verReservaComedor()}}
+{\footnotesize\ttfamily Array\+List$<$String$>$ es.\+deusto.\+spq.\+biblioteca.\+dao.\+Reserva\+Comedor\+D\+A\+O.\+ver\+Reserva\+Comedor (\begin{DoxyParamCaption}\item[{String}]{dni }\end{DoxyParamCaption})}
+
+Metodo que devuelve todas las reservas hechas por una persona. \begin{DoxyReturn}{Returns}
+Devuelve todas las reservas de la BD de una persona. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_reserva_comedor_d_a_o_ae20ad98f69700d0c47c0cb274e1f0e33}{es.\+deusto.\+spq.\+biblioteca.\+dao.\+I\+Reserva\+Comedor\+D\+AO}}.
+
+
+
+Definition at line 117 of file Reserva\+Comedor\+D\+A\+O.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/koldo/git/\+B\+S\+P\+Q18-\/\+S2/biblioteca/src/main/java/es/deusto/spq/biblioteca/dao/\mbox{\hyperlink{_reserva_comedor_d_a_o_8java}{Reserva\+Comedor\+D\+A\+O.\+java}}\end{DoxyCompactItemize}

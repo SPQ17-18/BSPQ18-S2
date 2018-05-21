@@ -1,0 +1,6 @@
+<map id="es.deusto.spq.biblioteca.remote.IBiblioteca.verMenu" name="es.deusto.spq.biblioteca.remote.IBiblioteca.verMenu">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1controller_1_1_controller.html#a33b36798ff65a516ecf45f872cb09235" title="es.deusto.spq.biblioteca.controller.\lController.verMenu" alt="" coords="267,5,493,44"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1gui_1_1_ventana_busqueda_menu.html#a2e14e0da230c4e460dd7e656b53622b0" title="es.deusto.spq.biblioteca.client.gui.\lVentanaBusquedaMenu.VentanaBusquedaMenuejecutor" alt="" coords="541,5,898,44"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1gui_1_1_ventana_busqueda_menu.html#a658523d6f90443c42cab22ed93ebede8" title="es.deusto.spq.biblioteca.client.gui.\lVentanaBusquedaMenu.VentanaBusquedaMenu" alt="" coords="946,5,1255,44"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1gui_1_1_ventana_busqueda_menu.html#a3680f3f4268980870f82f8a2c1a02890" title="es.deusto.spq.biblioteca.client.gui.\lVentanaBusquedaMenu.ejecutarVentana" alt="" coords="1303,5,1567,44"/>
+</map>

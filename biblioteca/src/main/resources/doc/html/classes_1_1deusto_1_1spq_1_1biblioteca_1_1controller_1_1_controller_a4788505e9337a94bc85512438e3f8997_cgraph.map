@@ -1,0 +1,4 @@
+<map id="es.deusto.spq.biblioteca.controller.Controller.editarReservaComedor" name="es.deusto.spq.biblioteca.controller.Controller.editarReservaComedor">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1_client.html#a81c65efd5ee6eb820c325225532fa3fb" title="es.deusto.spq.biblioteca.client.\lClient.getService" alt="" coords="290,5,493,44"/>
+<area shape="rect" id="node3" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#ac492277af5ed00def28276cd8b0a5394" title="es.deusto.spq.biblioteca.remote.\lIBiblioteca.editarReservaComedor" alt="" coords="279,68,504,107"/>
+</map>

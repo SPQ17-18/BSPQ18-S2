@@ -1,0 +1,10 @@
+<map id="es.deusto.spq.biblioteca.controller.Controller.main" name="es.deusto.spq.biblioteca.controller.Controller.main">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1controller_1_1_controller.html#a130eebcaf76a2f9ed7d3d032ab232746" title="es.deusto.spq.biblioteca.controller.\lController.Controller" alt="" coords="279,36,505,75"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1controller_1_1_controller.html#a14860df4246cd7cefcc7e9e460d504ce" title="es.deusto.spq.biblioteca.controller.\lController.getCl" alt="" coords="279,99,505,137"/>
+<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1_client.html#a81c65efd5ee6eb820c325225532fa3fb" title="es.deusto.spq.biblioteca.client.\lClient.getService" alt="" coords="291,161,494,200"/>
+<area shape="rect" id="node9" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a72b9d5541556bacfdfb37f47753972c1" title="es.deusto.spq.biblioteca.remote.\lIBiblioteca.anyadirValoracion" alt="" coords="286,224,499,263"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1_client.html#a96d3aee6ac3ad17ea896e4c50115bdf6" title="es.deusto.spq.biblioteca.client.\lClient.setService" alt="" coords="564,5,767,44"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1gui_1_1_menu_principal.html#a8f37cacc1f9ccc9b65f768d1cb5bc9c8" title="es.deusto.spq.biblioteca.client.gui.\lMenuPrincipal.ejecutarVentana" alt="" coords="553,68,778,107"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1gui_1_1_menu_principal.html#a5f5ca87246a3a113fcf053266649efd0" title="es.deusto.spq.biblioteca.client.gui.\lMenuPrincipal.MenuPrincipal" alt="" coords="826,68,1050,107"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1gui_1_1_menu_principal.html#a6d0a1420be215523ce7195628b2c3002" title="es.deusto.spq.biblioteca.client.gui.\lMenuPrincipal.ventana" alt="" coords="1098,68,1322,107"/>
+</map>
