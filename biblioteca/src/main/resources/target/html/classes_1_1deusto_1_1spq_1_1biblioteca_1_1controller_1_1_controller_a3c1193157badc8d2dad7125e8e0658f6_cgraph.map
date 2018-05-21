@@ -1,0 +1,4 @@
+<map id="es.deusto.spq.biblioteca.controller.Controller.reservarLibro" name="es.deusto.spq.biblioteca.controller.Controller.reservarLibro">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1_client.html#a81c65efd5ee6eb820c325225532fa3fb" title="es.deusto.spq.biblioteca.client.\lClient.getService" alt="" coords="284,5,487,44"/>
+<area shape="rect" id="node3" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#af8c7a0e5361bfac62c0b8804d9112b51" title="es.deusto.spq.biblioteca.remote.\lIBiblioteca.reservarLibro" alt="" coords="279,68,493,107"/>
+</map>
