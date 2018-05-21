@@ -1,9 +1,0 @@
-<map id="es.deusto.spq.biblioteca.data.ReservaLibro.getIsbn" name="es.deusto.spq.biblioteca.data.ReservaLibro.getIsbn">
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_libro_d_a_o.html#ad7f9bfdd39cff8ea2e0ac07f506bfd4f" title="es.deusto.spq.biblioteca.dao.\lReservaLibroDAO.reservarLibro" alt="" coords="275,5,477,47"/>
-<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_libro_d_a_o_test.html#a1eeb0c42a355a0e6aaf6b1333b676e8e" title="es.deusto.spq.biblioteca.\lReservaLibroDAOTest.testReservarLibro" alt="" coords="249,71,503,112"/>
-<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_libro_data_test.html#a0706319cd9d7de9f015809fdf0e1253e" title="es.deusto.spq.biblioteca.\lReservaLibroDataTest.testCreacion\lReservaDeLibro1" alt="" coords="263,137,489,193"/>
-<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_libro_data_test.html#aae6c61e6fea862e4271b91720d295d1e" title="es.deusto.spq.biblioteca.\lReservaLibroDataTest.testCreacion\lReservaDeLibro2" alt="" coords="263,217,489,273"/>
-<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_libro_data_test.html#a0a345ac93e3d79284c031066d344911c" title="es.deusto.spq.biblioteca.\lReservaLibroDataTest.testCreacion\lReservaDeLibro3" alt="" coords="263,297,489,353"/>
-<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_libro_data_test.html#a167d772b2f8d82e327939886dac6915c" title="es.deusto.spq.biblioteca.\lReservaLibroDataTest.testCreacion\lReservaDeLibro4" alt="" coords="263,377,489,433"/>
-<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_libro_data_test.html#ae0bd57ac5aca80b504f435ab2cea8855" title="es.deusto.spq.biblioteca.\lReservaLibroDataTest.testDeError\lForzado" alt="" coords="267,457,485,513"/>
-</map>

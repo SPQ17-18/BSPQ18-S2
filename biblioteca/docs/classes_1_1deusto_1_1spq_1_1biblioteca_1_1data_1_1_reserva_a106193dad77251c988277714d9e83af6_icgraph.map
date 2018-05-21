@@ -1,9 +1,0 @@
-<map id="es.deusto.spq.biblioteca.data.Reserva.getPlazas" name="es.deusto.spq.biblioteca.data.Reserva.getPlazas">
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_d_a_o.html#a88e9785413691dee23241ef307b4e93d" title="es.deusto.spq.biblioteca.dao.\lReservaDAO.editarReserva" alt="" coords="279,5,471,47"/>
-<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_d_a_o_test.html#ac79cbe8228454dd31a32c2e983ec7187" title="es.deusto.spq.biblioteca.\lReservaDAOTest.testAnyadirReserva" alt="" coords="256,71,493,112"/>
-<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_data_test.html#a151582dde61e5e72066a4de3b82e45d9" title="es.deusto.spq.biblioteca.\lReservaDataTest.testCreacionReserva" alt="" coords="253,136,496,177"/>
-<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_data_test.html#aa8e43546f3d25e40671fc8f4f34323a5" title="es.deusto.spq.biblioteca.\lReservaDataTest.testCreacionReserva2" alt="" coords="249,201,500,243"/>
-<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_data_test.html#a90341001ddf55f8f655060f182299f68" title="es.deusto.spq.biblioteca.\lReservaDataTest.testCreacionReserva3" alt="" coords="249,267,500,308"/>
-<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_data_test.html#ab8df8494aa3130f7b27862f237b01b13" title="es.deusto.spq.biblioteca.\lReservaDataTest.testCreacionReserva4" alt="" coords="249,332,500,373"/>
-<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_data_test.html#a9c6cb1f5900b1d5b83404c938f156c97" title="es.deusto.spq.biblioteca.\lReservaDataTest.plazasNegativas" alt="" coords="265,397,484,439"/>
-</map>

@@ -1,6 +1,6 @@
 <map id="es.deusto.spq.biblioteca.SalaDAOTest.anyadirSala" name="es.deusto.spq.biblioteca.SalaDAOTest.anyadirSala">
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_biblioteca.html#ada19ff59e03ece674f64ac191ba87c29" title="es.deusto.spq.biblioteca.remote.\lBiblioteca.anyadirSala" alt="" coords="227,5,437,47"/>
-<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_sala.html#ad24b42d5a886015aeed4eedfb9eab26e" title="es.deusto.spq.biblioteca.data.\lSala.getId_sala" alt="" coords="234,71,430,112"/>
-<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_sala.html#a8a1f8ca9bb4be94771c7f07ebab21d2c" title="es.deusto.spq.biblioteca.data.\lSala.getCapacidad" alt="" coords="234,136,430,177"/>
-<area shape="rect" id="node3" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_sala_d_a_o.html#a20257b6e5501dd812441aa6795fcd24a" title="es.deusto.spq.biblioteca.dao.\lISalaDAO.anyadirSala" alt="" coords="485,5,677,47"/>
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_biblioteca.html#ada19ff59e03ece674f64ac191ba87c29" title="es.deusto.spq.biblioteca.remote.\lBiblioteca.anyadirSala" alt="" coords="229,5,442,44"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_sala.html#ad24b42d5a886015aeed4eedfb9eab26e" title="es.deusto.spq.biblioteca.data.\lSala.getId_sala" alt="" coords="237,68,434,107"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_sala.html#a8a1f8ca9bb4be94771c7f07ebab21d2c" title="es.deusto.spq.biblioteca.data.\lSala.getCapacidad" alt="" coords="237,131,434,169"/>
+<area shape="rect" id="node3" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_sala_d_a_o.html#a20257b6e5501dd812441aa6795fcd24a" title="es.deusto.spq.biblioteca.dao.\lISalaDAO.anyadirSala" alt="" coords="490,5,684,44"/>
 </map>

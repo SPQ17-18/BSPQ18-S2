@@ -1,7 +1,0 @@
-<map id="es.deusto.spq.biblioteca.dao.IReservaDAO.anyadirReserva" name="es.deusto.spq.biblioteca.dao.IReservaDAO.anyadirReserva">
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_biblioteca.html#a14548a38ca53ad1037d16687093e4597" title="es.deusto.spq.biblioteca.remote.\lBiblioteca.anyadirReserva" alt="" coords="245,71,456,112"/>
-<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_carga_datos_b_d_test.html#aeb59c334d9c756bc52a4562168d53370" title="es.deusto.spq.biblioteca.\lCargaDatosBDTest.testReserva" alt="" coords="248,136,453,177"/>
-<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_d_a_o_test.html#ac79cbe8228454dd31a32c2e983ec7187" title="es.deusto.spq.biblioteca.\lReservaDAOTest.testAnyadirReserva" alt="" coords="506,5,743,47"/>
-<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_d_a_o_test.html#ae40963e983e699a4bddf69b3f2cfa232" title="es.deusto.spq.biblioteca.\lReservaDAOTest.eliminarReservaTest" alt="" coords="504,71,745,112"/>
-<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_d_a_o_test.html#a536c9f31fd26c8ad0f5f9338d7d5a436" title="es.deusto.spq.biblioteca.\lReservaDAOTest.editarReservaTest" alt="" coords="511,136,739,177"/>
-</map>

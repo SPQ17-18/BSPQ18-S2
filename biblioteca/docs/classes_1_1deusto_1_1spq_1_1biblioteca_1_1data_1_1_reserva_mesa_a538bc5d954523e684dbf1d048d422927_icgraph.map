@@ -1,6 +1,0 @@
-<map id="es.deusto.spq.biblioteca.data.ReservaMesa.getDni_respon" name="es.deusto.spq.biblioteca.data.ReservaMesa.getDni_respon">
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o.html#a61cbf6ed260e7a3ca7af26b6130fa054" title="es.deusto.spq.biblioteca.dao.\lReservaComedorDAO.editarReservaComedor" alt="" coords="249,5,532,47"/>
-<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_comedor_d_a_o_test.html#a05f82723bc10a567ebbbbe8ac626d078" title="es.deusto.spq.biblioteca.\lReservaComedorDAOTest.testAnyadir\lReserva" alt="" coords="269,71,512,127"/>
-<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_comedor_d_a_o_test.html#abf6be48cd9447f637cd265a0e0dbdb7d" title="es.deusto.spq.biblioteca.\lReservaComedorDAOTest.devolver\lReservaTest" alt="" coords="279,151,502,207"/>
-<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_comedor_d_a_o_test.html#adbf579c02c2f1fc7c314fd88485a1fd1" title="es.deusto.spq.biblioteca.\lReservaComedorDAOTest.verReservasTest" alt="" coords="255,232,526,273"/>
-</map>
