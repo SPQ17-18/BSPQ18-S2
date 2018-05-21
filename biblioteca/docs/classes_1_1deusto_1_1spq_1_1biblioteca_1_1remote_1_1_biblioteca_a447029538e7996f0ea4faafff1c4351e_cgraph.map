@@ -1,0 +1,4 @@
+<map id="es.deusto.spq.biblioteca.remote.Biblioteca.consultarDisponibilidad" name="es.deusto.spq.biblioteca.remote.Biblioteca.consultarDisponibilidad">
+<area shape="rect" id="node2" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_reserva_d_a_o.html#a81c0cf35733fcd11e44e121d72098236" title="es.deusto.spq.biblioteca.dao.\lIReservaDAO.consultarDisponibilidad" alt="" coords="269,5,505,47"/>
+<area shape="rect" id="node3" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_sala_d_a_o.html#af12c5fe6a1abe11bc65e1118d991f926" title="es.deusto.spq.biblioteca.dao.\lISalaDAO.consultarPlazas" alt="" coords="291,71,483,112"/>
+</map>

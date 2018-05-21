@@ -1,0 +1,4 @@
+<map id="es.deusto.spq.biblioteca.remote.IBiblioteca.consultarDisponibilidad" name="es.deusto.spq.biblioteca.remote.IBiblioteca.consultarDisponibilidad">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1controller_1_1_controller.html#a8817268109280bd67ae41b802e650614" title="es.deusto.spq.biblioteca.controller.\lController.consultarDisponibilidad" alt="" coords="276,5,500,47"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_r_m_i_test.html#affd96d8aa7fa42275f36ff4c2a26b16d" title="es.deusto.spq.biblioteca.\lRMITest.consultarDisponibilidadTest" alt="" coords="272,71,504,112"/>
+</map>
