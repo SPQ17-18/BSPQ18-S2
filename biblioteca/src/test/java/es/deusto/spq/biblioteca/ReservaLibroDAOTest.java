@@ -11,6 +11,8 @@ import static org.mockito.Mockito.when;
 import java.rmi.RemoteException;
 
 import org.apache.log4j.Logger;
+import org.databene.contiperf.PerfTest;
+import org.databene.contiperf.Required;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -43,7 +45,12 @@ public class ReservaLibroDAOTest {
 
 	}
 	
+	/**
+	 * Test de duration = 5000
+	 */
 	@Test
+	@PerfTest(duration = 5000)
+	@Required(max = 1550, average = 1500)
 	public void testReservarLibro() throws RemoteException {
 		ReservaLibro rl = new ReservaLibro("1");
 		biblio.reservarLibro("1");

@@ -7,6 +7,7 @@ import static org.mockito.Mockito.when;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
+import org.databene.contiperf.Required;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,7 +42,13 @@ public class ReservaDAOTest {
 
 	}
 
+	/**
+	 * Test throughput
+	 * Requiere de almenos 3 ejecuciones de teses por segundo
+	 * @throws RemoteException
+	 */
 	@Test
+	@Required(throughput = 3)
 	public void testAnyadirReserva() throws RemoteException {
 			Reserva r = new Reserva("R5", "S2", "20304050A", "29-04-2018", "18:42", 8);
 			b.anyadirReserva("S2", "20304050A", "29-04-2018", "18:42", 8);	
