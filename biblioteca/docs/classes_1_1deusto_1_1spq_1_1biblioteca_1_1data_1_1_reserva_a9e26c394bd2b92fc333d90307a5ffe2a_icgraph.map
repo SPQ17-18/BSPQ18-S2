@@ -1,8 +1,0 @@
-<map id="es.deusto.spq.biblioteca.data.Reserva.getHora" name="es.deusto.spq.biblioteca.data.Reserva.getHora">
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_d_a_o_test.html#ac79cbe8228454dd31a32c2e983ec7187" title="es.deusto.spq.biblioteca.\lReservaDAOTest.testAnyadirReserva" alt="" coords="274,5,518,44"/>
-<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_d_a_o_test.html#a6cebe995eff7daee9126a47f6237d7e7" title="es.deusto.spq.biblioteca.\lReservaDAOTest.consultarDisponibilidadTest" alt="" coords="251,68,541,107"/>
-<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_data_test.html#a151582dde61e5e72066a4de3b82e45d9" title="es.deusto.spq.biblioteca.\lReservaDataTest.testCreacionReserva" alt="" coords="270,131,522,169"/>
-<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_data_test.html#aa8e43546f3d25e40671fc8f4f34323a5" title="es.deusto.spq.biblioteca.\lReservaDataTest.testCreacionReserva2" alt="" coords="266,193,525,232"/>
-<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_data_test.html#a90341001ddf55f8f655060f182299f68" title="es.deusto.spq.biblioteca.\lReservaDataTest.testCreacionReserva3" alt="" coords="266,256,525,295"/>
-<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_data_test.html#ab8df8494aa3130f7b27862f237b01b13" title="es.deusto.spq.biblioteca.\lReservaDataTest.testCreacionReserva4" alt="" coords="266,319,525,357"/>
-</map>

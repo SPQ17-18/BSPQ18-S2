@@ -10,6 +10,7 @@ import junit.framework.JUnit4TestAdapter;
 
 import org.junit.BeforeClass;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.AfterClass;
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ import es.deusto.spq.biblioteca.remote.IBiblioteca;
 import es.deusto.spq.biblioteca.remote.Biblioteca;
 
 
+
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.net.MalformedURLException;
@@ -28,7 +30,7 @@ import java.net.MalformedURLException;
  * RMI Unit test for Simple Client / Server RMI Testing.
  * Testing the only the Remoteness
  */
-//@Ignore
+@Ignore
 public class RMITest {
 	// Properties are hard-coded because we want the test to be executed without external interaction
 	final static Logger logger= LoggerFactory.getLogger(RMITest.class);

@@ -1,9 +1,0 @@
-<map id="es.deusto.spq.biblioteca.ReservaComedorDAOTest.testAnyadirReserva" name="es.deusto.spq.biblioteca.ReservaComedorDAOTest.testAnyadirReserva">
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_biblioteca.html#ad02d14595454dd0b8e8ef7db97b673f6" title="es.deusto.spq.biblioteca.remote.\lBiblioteca.anyadirReservaComedor" alt="" coords="303,12,534,51"/>
-<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_reserva_mesa.html#a538bc5d954523e684dbf1d048d422927" title="es.deusto.spq.biblioteca.data.\lReservaMesa.getDni_respon" alt="" coords="320,75,517,113"/>
-<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_reserva_mesa.html#a648a94f9af08dec222847013a9833ff7" title="es.deusto.spq.biblioteca.data.\lReservaMesa.getId_Mesa" alt="" coords="320,137,517,176"/>
-<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_reserva_mesa.html#a291c8790dad8c2c10954cd7731d636b9" title="es.deusto.spq.biblioteca.data.\lReservaMesa.getFecha" alt="" coords="320,200,517,239"/>
-<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_reserva_mesa.html#aff2c846da031035b3fa01c50406655f1" title="es.deusto.spq.biblioteca.data.\lReservaMesa.getHora" alt="" coords="320,263,517,301"/>
-<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_reserva_mesa.html#a8f8ba1a928ae9fae7ae63785fdd06814" title="es.deusto.spq.biblioteca.data.\lReservaMesa.getPersonas" alt="" coords="320,325,517,364"/>
-<area shape="rect" id="node3" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_reserva_comedor_d_a_o.html#a049782a184cf43fcead41207aaf91e0b" title="es.deusto.spq.biblioteca.dao.\lIReservaComedorDAO.anyadirReserva\lComedor" alt="" coords="582,5,837,57"/>
-</map>
