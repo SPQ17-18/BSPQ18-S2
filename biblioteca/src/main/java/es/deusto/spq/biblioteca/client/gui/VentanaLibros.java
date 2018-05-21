@@ -21,9 +21,7 @@ public class VentanaLibros extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -37,9 +35,7 @@ public class VentanaLibros extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+	
 	public VentanaLibros() {
 		setTitle("Libros");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -96,6 +92,7 @@ public class VentanaLibros extends JFrame {
 				VentanaLibros.this.dispose();
 			}
 		});
+		
 		btnBuscar.setFont(new Font("Times New Roman", Font.ITALIC, 17));
 		btnBuscar.setBounds(258, 72, 156, 29);
 		contentPane.add(btnBuscar);

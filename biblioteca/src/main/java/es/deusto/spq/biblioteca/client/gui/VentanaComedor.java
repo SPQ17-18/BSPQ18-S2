@@ -103,6 +103,7 @@ public class VentanaComedor extends JFrame {
 				VentanaReservaMesa abrirVentana4 = new VentanaReservaMesa();
 				abrirVentana4.setVisible(true);
 				VentanaComedor.this.dispose();
+				
 			}
 		});
 		button.setFont(new Font("Times New Roman", Font.ITALIC, 17));

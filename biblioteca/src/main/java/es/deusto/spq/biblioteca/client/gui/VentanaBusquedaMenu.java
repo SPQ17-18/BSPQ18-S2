@@ -46,6 +46,7 @@ public class VentanaBusquedaMenu extends JFrame {
 		Image img = new ImageIcon(this.getClass().getResource("/menu3.jpg")).getImage();
 		
 		
+		
 		JButton btnComprar = new JButton("Comprar");
 		btnComprar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

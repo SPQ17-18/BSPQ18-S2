@@ -40,6 +40,7 @@ public class VentanaHacerReservaSala extends JFrame {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+				
 			}
 		});
 	}
