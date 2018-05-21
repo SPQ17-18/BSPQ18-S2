@@ -18,8 +18,11 @@ import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
 
 /**
- * Clase para el manejo de la Base de Daatos
- * @author koldo
+ * Clase para el manejo de la Base de Datos
+ * Metodos de anyadir y consutar disponibilidad realizados por
+ * @author Ariane
+ * Metodos de devolver, eliminar y editar reserva realizados por
+ *  @author Julen y Mikel
  *
  */
 public class ReservaComedorDAO implements IReservaComedorDAO{

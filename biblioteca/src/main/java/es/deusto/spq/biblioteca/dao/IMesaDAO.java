@@ -1,5 +1,8 @@
 package es.deusto.spq.biblioteca.dao;
-
+/**
+ * Clase de creación de interfaz DAO de mesa
+ * @author Ariane
+ */
 import es.deusto.spq.biblioteca.data.Mesa;
 
 public interface IMesaDAO {

@@ -15,7 +15,11 @@ import org.slf4j.LoggerFactory;
 
 import es.deusto.spq.biblioteca.data.Sala;
 import junit.framework.JUnit4TestAdapter;
-
+/**
+ * Test Junit sala
+ * @author Luis
+ *
+ */
 @PerfTest(invocations = 5)
 @Required(max = 1200, average = 250)
 public class SalaDataTest {
@@ -93,8 +97,9 @@ public class SalaDataTest {
 		Thread.sleep(90);
 		logger.debug("Finalizando test de creacion de Sala4");
 	}
-	/*A partir de aqui deberian de fallar
 	@Test
+	@PerfTest(invocations = 1000, threads = 50)
+    @Required(max = 100, average = 300)
 	public void testCreacionSalaFallo1() throws Exception{
 		logger.info("Empezando test de creación de SalaFallo1");
 		Sala esperada = new Sala("S4",6);
@@ -102,5 +107,5 @@ public class SalaDataTest {
 		assertEquals(esperada.getId_sala(), S4.getId_sala());
 		assertEquals(esperada.getCapacidad(), S4.getCapacidad());
 	}
-	*/
+
 }

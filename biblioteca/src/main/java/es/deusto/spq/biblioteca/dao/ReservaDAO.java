@@ -17,11 +17,14 @@ import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.Sala;
 
 /**
- * Clase para el manejo de la Base de Daatos
- * @author koldo
+ * Clase para el manejo de la Base de Datos
+ * Metodos de anyadir y consutar disponibilidad realizados por
+ * @author Ariane
+ * Metodos de devolver, eliminar y editar reserva realizados por
+ *  @author Julen y Mikel
  *
  */
-public class ReservaDAO implements IReservaDAO {
+ public class ReservaDAO implements IReservaDAO {
 
 	private PersistenceManagerFactory pmf;
 	private static final Logger logger = Logger.getLogger(ReservaDAO.class);
@@ -41,7 +44,7 @@ public class ReservaDAO implements IReservaDAO {
 	 */
 	@Override
 	public void anyadirReserva(Reserva r) {
-		// TODO Auto-generated method stub
+		
 
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -53,7 +56,7 @@ public class ReservaDAO implements IReservaDAO {
 			for (Sala s : salas) {
 				if (s.getId_sala().equals(r.getId_sala())) {
 					s.getReservas().add(r);
-					//System.out.println("   * Guardando reserva: " + r.getId_reserva());
+					
 					logger.info("   * Guardando reserva: " + r.getId_reserva());
 
 					pm.makePersistent(s);
@@ -61,7 +64,7 @@ public class ReservaDAO implements IReservaDAO {
 				}
 			}
 		} catch (Exception ex) {
-			//System.out.println("   $ Error guardando reserva: " + ex.getMessage());
+	
 			logger.error("   $ Error guardando reserva:" + ex.getMessage());
 
 		} finally {
@@ -81,7 +84,7 @@ public class ReservaDAO implements IReservaDAO {
 	 */
 	@Override
 	public boolean consultarDisponibilidad(String Id_Sala, String fecha, String hora) {
-		// TODO Auto-generated method stub
+		
 
 		boolean disponible = true;
 
@@ -89,7 +92,6 @@ public class ReservaDAO implements IReservaDAO {
 		Transaction tx = pm.currentTransaction();
 
 		try {
-			//System.out.println("   * Consultado disponibilidad de: " + Id_Sala);
 			logger.info("   * Consultado disponibilidad de: " + Id_Sala);
 
 			tx.begin();
@@ -98,13 +100,11 @@ public class ReservaDAO implements IReservaDAO {
 			List<Reserva> reservas = (List<Reserva>) query.execute();
 			for (Reserva r : reservas) {
 				if (r.getId_sala().equals(Id_Sala) && r.getFecha().equals(fecha) && r.getHora().equals(hora)) {
-					// No hay salas disponibles
 					disponible = false;
 				}
 			}
 			tx.commit();
 		} catch (Exception ex) {
-			//System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
 			logger.error("   $ Error retreiving an extent: " + ex.getMessage());
 
 		} finally {
@@ -138,11 +138,11 @@ public class ReservaDAO implements IReservaDAO {
 			Reserva aux = new Reserva(r.getId_reserva(), SalaNueva, r.getDni_respon(), fecha_nueva, hora_nueva,r.getPlazas());
 			eliminarReserva(r);
 			anyadirReserva(aux);
-			//System.out.println("Reserva modificada satisfactoriamente");
+	
 			logger.info("Reserva modificada satisfactoriamente");
 
 		} else {
-			//System.out.println("Reserva no modificada.No se puede reservar en la fecha/hora seleccionadas");
+		
 			logger.info("Reserva no modificada.No se puede reservar en la fecha/hora seleccionadas");
 
 		}
@@ -154,19 +154,18 @@ public class ReservaDAO implements IReservaDAO {
 	 */
 	@Override
 	public void eliminarReserva(Reserva r) {
-		// TODO Auto-generated method stub
+		
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 
 		try {
 			tx.begin();
-			//System.out.println("   * Eliminando reserva: ");
 			logger.info("   * Eliminando reserva: ");
 
 			pm.deletePersistent(r);
 			tx.commit();
 		} catch (Exception ex) {
-			//System.out.println("   $ Error Eliminando reserva: " + ex.getMessage());
+	
 			logger.error("	$ Error Eliminando reserva: " + ex.getMessage());
 
 		} finally {
@@ -185,7 +184,7 @@ public class ReservaDAO implements IReservaDAO {
 	 */
 	@Override
 	public ArrayList<String> verReservas(String dni) {
-		// TODO Auto-generated method stub
+	
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		
@@ -193,7 +192,7 @@ public class ReservaDAO implements IReservaDAO {
 		String d=null;
 		
 		try {
-			//System.out.println("   * Consultado reservas de: " + dni);
+		
 			logger.info("   * Consultado reservas de: " + dni);
 			
 			tx.begin();
@@ -211,7 +210,7 @@ public class ReservaDAO implements IReservaDAO {
 			}
 			tx.commit();
 		} catch (Exception ex) {
-			//System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+	
 			logger.error("   $ Error retreiving an extent: " + ex.getMessage());
 
 		} finally {
@@ -231,7 +230,7 @@ public class ReservaDAO implements IReservaDAO {
 		Reserva R = null;
 
 		try {
-			//System.out.println("   * Buscando reserva de: " + dni);
+		
 			logger.info("   * Buscando reserva de: " + dni);
 
 			tx.begin();
@@ -246,7 +245,7 @@ public class ReservaDAO implements IReservaDAO {
 			}
 			tx.commit();
 		} catch (Exception ex) {
-			//System.out.println("   $ Error devolviendo reserva: " + ex.getMessage());
+
 			logger.error("   $ Error devolviendo reserva: " + ex.getMessage());
 
 		} finally {

@@ -1,5 +1,8 @@
 package es.deusto.spq.biblioteca.dao;
-
+/**
+ * Clase de creación de interfaz DAO de sala
+ * @author Ariane
+ */
 import java.util.List;
 
 import es.deusto.spq.biblioteca.data.Reserva;

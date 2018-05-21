@@ -7,7 +7,7 @@ import javax.jdo.annotations.PersistenceCapable;
 public class Menu implements Serializable {
 	/**
 	 * Clase de Menu
-	 * @author koldo
+	 * @author Mikel
 	 *
 	 */
 	private static final long serialVersionUID = 1L;

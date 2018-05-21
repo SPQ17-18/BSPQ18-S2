@@ -14,8 +14,8 @@ import es.deusto.spq.biblioteca.data.Menu;
 import es.deusto.spq.biblioteca.data.Sala;
 
 /**
- * Clase para el manejo de la Base de Daatos
- * @author koldo
+ * Clase para el manejo de la Base de menu
+ * @author Ariane
  *
  */
 public class MenuDAO implements IMenuDAO{
@@ -37,7 +37,7 @@ public class MenuDAO implements IMenuDAO{
 	 */
 	@Override
 	public void anyadirMenu(Menu m) {
-		// TODO Auto-generated method stub
+
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
@@ -63,7 +63,7 @@ public class MenuDAO implements IMenuDAO{
 	 */
 	@Override
 	public void anyadirValoracion(String ID_Menu, int valoracion) {
-		// TODO Auto-generated method stub
+
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 
@@ -104,7 +104,7 @@ public class MenuDAO implements IMenuDAO{
 	 */
 	@Override
 	public String verMenu(String fecha) {
-		// TODO Auto-generated method stub
+
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		String datos = null;
@@ -116,13 +116,7 @@ public class MenuDAO implements IMenuDAO{
 			List<Menu> menus = (List<Menu>) query.execute();
 			for (Menu m : menus) {
 				if (m.getFecha().equals(fecha)) {
-//					System.out.println("======================================");
-//					System.out.println("\nFecha : " + m.getFecha());
-//					System.out.println("\n1º Plato : " + m.getPlato1());
-//					System.out.println("\n2º Plato : " + m.getPlato2());
-//					System.out.println("\nPostre : " + m.getPostre());
-//					System.out.println("\nValoración : " + m.getValor());
-//					System.out.println("\n======================================\n");
+
 					datos += m.getFecha() + "#" + m.getPlato1() + "#" + m.getPlato2() + "#" + m.getPostre() + "#" +m.getValor() + "/" ;
 
 				}

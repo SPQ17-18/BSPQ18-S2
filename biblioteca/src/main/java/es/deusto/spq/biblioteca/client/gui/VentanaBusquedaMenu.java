@@ -1,30 +1,30 @@
 package es.deusto.spq.biblioteca.client.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import java.awt.Image;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextPane;
 import javax.swing.JScrollBar;
-import javax.swing.JTextArea;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JList;
 import javax.swing.SwingUtilities;
 
 import java.awt.event.ActionListener;
-import java.rmi.RemoteException;
 import java.util.ArrayList;
-import java.util.Random;
 import java.awt.event.ActionEvent;
 
 import es.deusto.spq.biblioteca.controller.*;
 import javax.swing.JLabel;
 import java.awt.Font;
-
+/**
+ * Clase de creación de ventana búsqueda Menú
+ * Estructura realizada por
+ * @author Jon Martinez
+ * Fondo implementado por
+ * @author Ariane
+ * Funcionalidad del controller añadida por
+ * @author Luis
+ */
 
 public class VentanaBusquedaMenu extends JFrame {
 	

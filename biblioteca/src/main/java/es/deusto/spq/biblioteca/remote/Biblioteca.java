@@ -1,6 +1,10 @@
-//DAO DATA RMI del SERVER
-package es.deusto.spq.biblioteca.remote;
 
+package es.deusto.spq.biblioteca.remote;
+/**
+ * Clase remota realizada por
+ * @author Mikel, Ariane, Koldo y Luis
+ *
+ */
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
@@ -113,7 +117,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	 */
 	@Override
 	public Libro buscarLibro(String nombre) {
-		// TODO Auto-generated method stub
+
 		Libro lib = libroDAO.getLibro(nombre);
 
 		return lib;
@@ -148,7 +152,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	 */
 	@Override
 	public void almacenarLibro(String isbn, String nombre, String autor, String editorial) {
-		// TODO Auto-generated method stub
+		
 		Libro l = new Libro(isbn, nombre, autor, editorial);
 		libroDAO.almacenarLibro(l);
 
@@ -160,7 +164,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	 */
 	@Override
 	public void reservarLibro(String isbn) throws RemoteException {
-		// TODO Auto-generated method stub
+	
 		ReservaLibro rl = new ReservaLibro(isbn);
 		reservaLibroDAO.reservarLibro(rl);
 
@@ -178,7 +182,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	@Override
 	public void anyadirReserva(String id_Sala, String dni_respon, String fecha, String hora, int plazas)
 			throws RemoteException {
-		// TODO Auto-generated method stub
+
 		int cod = 00;
 		cod++;
 		String codg = "";
@@ -199,7 +203,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	 */
 	@Override
 	public boolean consultarDisponibilidad(String Id_Sala, String fecha, String hora, int personas) {
-		// TODO Auto-generated method stub
+
 		boolean disponible = false;
 		boolean libre = reservaDAO.consultarDisponibilidad(Id_Sala, fecha, hora);
 		boolean plazas = salaDAO.consultarPlazas(Id_Sala, personas);
@@ -219,23 +223,6 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		Sala s = new Sala(id_sala, capacidad);
 		salaDAO.anyadirSala(s);
 	}
-
-
-	/**
-	 * Metodo para eliminar un libro de la BD.
-	 * @param Libro Libro.
-	 */
-	public void EliminarLibro(Libro l)throws RemoteException {
-	//Que lo arregle quien lo hizo pls
-		// int numeroEjemplares = 00;
-		// numeroEjemplares
-		String isbn;
-		isbn = l.getIsbn();  
-		// String nya="R#";
-		// nya=nya.concat(Isbn);
-		libroDAO.EliminarLibro(isbn);
-
-	}
 	
 	/**
 	 * Metodo que permite consultar la disponibilidad de un libro.
@@ -243,7 +230,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	 */
 	@Override
 	public boolean consultarDiponibilidadLibro(String isbn) throws RemoteException {
-		// TODO Auto-generated method stub
+	
 		boolean isReservado = false;
 		boolean free = reservaLibroDAO.consultarDisponibilidadLibro(isbn);
 		if (free) {
@@ -258,7 +245,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	 */
 	@Override
 	public void mostrarLibro(String nombre) throws RemoteException {
-		// TODO Auto-generated method stub
+
 		libroDAO.verLibro(nombre);
 	}
 	
@@ -349,7 +336,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	 */
 	@Override
 	public void eliminarReservaComedor(String dni, String fecha, String hora) throws Exception {
-		// TODO Auto-generated method stub
+
 		ReservaMesa r = devolverReservaComedor(dni, fecha, hora);
 		rComedorDAO.eliminarReservaComedor(r);
 	}
@@ -376,7 +363,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	 */
 	@Override
 	public ArrayList<String> getLibros() throws RemoteException {
-		// TODO Auto-generated method stub
+
 		ArrayList<String> catalogo = libroDAO.getLibros();
 		return catalogo;
 
@@ -392,7 +379,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	@Override
 	public void anyadirMenu(String fecha, String plato1, String plato2, String postre)
 			throws Exception {
-		// TODO Auto-generated method stub
+		
 		int cod = 00;
 		cod++;
 		String codg = "";
@@ -412,7 +399,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	 */
 	@Override
 	public void anyadirValoracion(String id_menu, int valoracion) throws Exception {
-		// TODO Auto-generated method stub
+
 		menuDAO.anyadirValoracion(id_menu, valoracion);
 		
 	}

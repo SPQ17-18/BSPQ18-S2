@@ -3,7 +3,11 @@ package es.deusto.spq.biblioteca.data;
 import java.io.Serializable;
 
 import javax.jdo.annotations.PersistenceCapable;
-
+/**
+ * Clase de Reserva
+ * @author Julen
+ *
+ */
 @PersistenceCapable(detachable = "true")
 public class Reserva implements Serializable  {	
 	/**

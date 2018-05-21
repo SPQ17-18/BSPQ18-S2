@@ -1,5 +1,9 @@
 package es.deusto.spq.biblioteca;
-
+/**
+ * Test rmi
+ * @author Ariane y Mikel
+ *
+ */
 
 import static org.junit.Assert.*;
 import junit.framework.JUnit4TestAdapter;
@@ -138,225 +142,199 @@ public class RMITest {
 		 assertTrue( true ); 
 	}
 	
-//	  @Test public void buscarLibroTest() { try{
-//	  logger.info("Test 2 - buscar libro"); String
-//	  a="Festin de cuervos, Cancion de Hielo y fuego IV";
-//	  biblioteca.buscarLibro(a); assertTrue( true ); } catch (Exception re) {
-//	  System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-//	  assertTrue( false ); }
-//	  
-//	  
-//	  }
-//	  	  
-//	@Test
-//	public void mostrarLibroTest() {
-//		try {
-//			logger.info("Test 4 - Register new user");
-//			String a = "Festin de cuervos, Cancion de Hielo y fuego IV";
-//			biblioteca.mostrarLibro(a);
-//			assertTrue(true);
-//		} catch (Exception re) {
-//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-//			assertTrue(false);
-//		}
-//
-//	}
-//
-//	@Test
-//	public void consultarDiponibilidadLibroTest() {
-//		try {
-//			logger.info("Test 5 - Register new user");
-//			String a = "Festin de cuervos, Cancion de Hielo y fuego IV";
-//			biblioteca.consultarDiponibilidadLibro(a);
-//			assertTrue(true);
-//		} catch (Exception re) {
-//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-//			assertTrue(false);
-//		}
-//
-//	}
-//
-//	@Test
-//	public void getLibrosTest() {
-//		try {
-//			logger.info("Test 6 - Register new user");
-//			biblioteca.getLibros();
-//			assertTrue(true);
-//		} catch (Exception re) {
-//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-//			assertTrue(false);
-//		}
-//
-//	}
-//
-//	@Test
-//	public void anyadirReservaTest() {
-//		try {
-//			logger.info("Test 7 - Register new user");
-//			biblioteca.anyadirReserva("S1", "12345678X", "11/04/18", "21:20", 3);
-//			assertTrue(true);
-//		} catch (Exception re) {
-//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-//			assertTrue(false);
-//		}
-//
-//	}
-//
-//	@Test
-//	public void anyadirSalaTest() {
-//		try {
-//			logger.info("Test 8 - Register new user");
-//			biblioteca.anyadirSala("S1", 10);
-//			assertTrue(true);
-//		} catch (Exception re) {
-//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-//			assertTrue(false);
-//		}
-//
-//	}
-//
-//	@Test
-//	public void consultarDisponibilidadTest() {
-//		try {
-//			logger.info("Test 8 - Register new user");
-//			biblioteca.consultarDisponibilidad("S1", "11/04/18", "10:00", 4);
-//			assertTrue(true);
-//		} catch (Exception re) {
-//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-//			assertTrue(false);
-//		}
-//
-//	}
-//
-//	@Test
-//	public void verReservasTest() {
-//		try {
-//			logger.info("Test 8 - Register new user");
-//			biblioteca.verReservas("12345678X");
-//			assertTrue(true);
-//		} catch (Exception re) {
-//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-//			assertTrue(false);
-//		}
-//
-//	}
-//
-//	@Test
-//	public void editarReservaTest() {
-//		try {
-//			logger.info("Test 8 - Register new user");
-//			biblioteca.editarReserva("12345678X", "11/04/18", "21:20", "S1", "20/12/15", "12:00", "S2");
-//			assertTrue(true);
-//		} catch (Exception re) {
-//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-//			assertTrue(false);
-//		}
-//
-//	}
-//
-//	@Test
-//	public void eliminarReservaTest() {
-//		try {
-//			logger.info("Test 8 - Register new user");
-//			biblioteca.eliminarReserva("S1", "12345678X");
-//			assertTrue(true);
-//		} catch (Exception re) {
-//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-//			assertTrue(false);
-//		}
-//
-//	}
-//
-//	@Test
-//	public void EliminarLibroTest() {
-//		try {
-//			logger.info("Test 8 - Register new user");
-//			Libro l = new Libro();
-//			biblioteca.EliminarLibro(l);
-//			assertTrue(true);
-//		} catch (Exception re) {
-//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-//			assertTrue(false);
-//		}
-//	}
-//
-//	@Test
-//	public void anyadirReservaComedorTest() {
-//		try {
-//			logger.info("Test 8 - Register new user");
-//			biblioteca.anyadirReservaComedor("M1", "12345678X", "30/04/18", "14:30", 2);
-//			assertTrue(true);
-//		} catch (Exception re) {
-//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-//			assertTrue(false);
-//		}
-//
-//	}
-//
-//	@Test
-//	public void consultarDisponibilidadComedorTest() {
-//		try {
-//			logger.info("Test 8 - Register new user");
-//			biblioteca.consultarDisponibilidadComedor("M1", "2/05/18", "14:00", 3);
-//			assertTrue(true);
-//		} catch (Exception re) {
-//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-//			assertTrue(false);
-//		}
-//
-//	}
-//
-//	@Test
-//	public void anyadirMesaTest() {
-//		try {
-//			logger.info("Test 8 - Register new user");
-//			biblioteca.anyadirMesa("M1", 4);
-//			assertTrue(true);
-//		} catch (Exception re) {
-//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-//			assertTrue(false);
-//		}
-//
-//	}
-//
-//	@Test
-//	public void verReservaComedorTest() {
-//		try {
-//			logger.info("Test 8 - Register new user");
-//			biblioteca.verReservaComedor("12345678X");
-//			assertTrue(true);
-//		} catch (Exception re) {
-//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-//			assertTrue(false);
-//		}
-//
-//	}
-//
-//	@Test
-//	public void eliminarReservaComedorTest() {
-//		try {
-//			logger.info("Test 8 - Register new user");
-//			biblioteca.eliminarReservaComedor("12345678X", "30/04/18", "14:30");
-//			assertTrue(true);
-//		} catch (Exception re) {
-//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-//			assertTrue(false);
-//		}
-//
-//	}
-//
-//	@Test
-//	public void consultaMenuTest() {
-//		try {
-//			logger.info("Test 8 - Register new user");
-//			biblioteca.verMenu("12-05-2018");
-//			assertTrue(true);
-//		} catch (Exception re) {
-//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-//			assertTrue(false);
-//		}
-//
-//	}
+	  @Test public void buscarLibroTest() { try{
+	  logger.info("Test 2 - buscar libro"); String
+	  a="Festin de cuervos, Cancion de Hielo y fuego IV";
+	  biblioteca.buscarLibro(a); assertTrue( true ); } catch (Exception re) {
+	  System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+	  assertTrue( false ); }
+	  
+	  
+	  }
+	  	  
+	@Test
+	public void mostrarLibroTest() {
+		try {
+			logger.info("Test 4 - Register new user");
+			String a = "Festin de cuervos, Cancion de Hielo y fuego IV";
+			biblioteca.mostrarLibro(a);
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+
+	@Test
+	public void consultarDiponibilidadLibroTest() {
+		try {
+			logger.info("Test 5 - Register new user");
+			String a = "Festin de cuervos, Cancion de Hielo y fuego IV";
+			biblioteca.consultarDiponibilidadLibro(a);
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+
+	@Test
+	public void getLibrosTest() {
+		try {
+			logger.info("Test 6 - Register new user");
+			biblioteca.getLibros();
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+
+	@Test
+	public void anyadirReservaTest() {
+		try {
+			logger.info("Test 7 - Register new user");
+			biblioteca.anyadirReserva("S1", "12345678X", "11/04/18", "21:20", 3);
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+
+	@Test
+	public void anyadirSalaTest() {
+		try {
+			logger.info("Test 8 - Register new user");
+			biblioteca.anyadirSala("S1", 10);
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+
+	@Test
+	public void consultarDisponibilidadTest() {
+		try {
+			logger.info("Test 8 - Register new user");
+			biblioteca.consultarDisponibilidad("S1", "11/04/18", "10:00", 4);
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+
+	@Test
+	public void verReservasTest() {
+		try {
+			logger.info("Test 8 - Register new user");
+			biblioteca.verReservas("12345678X");
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+
+	@Test
+	public void editarReservaTest() {
+		try {
+			logger.info("Test 8 - Register new user");
+			biblioteca.editarReserva("12345678X", "11/04/18", "21:20", "S1", "20/12/15", "12:00", "S2");
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+
+	@Test
+	public void anyadirReservaComedorTest() {
+		try {
+			logger.info("Test 8 - Register new user");
+			biblioteca.anyadirReservaComedor("M1", "12345678X", "30/04/18", "14:30", 2);
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+
+	@Test
+	public void consultarDisponibilidadComedorTest() {
+		try {
+			logger.info("Test 8 - Register new user");
+			biblioteca.consultarDisponibilidadComedor("M1", "2/05/18", "14:00", 3);
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+
+	@Test
+	public void anyadirMesaTest() {
+		try {
+			logger.info("Test 8 - Register new user");
+			biblioteca.anyadirMesa("M1", 4);
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+
+	@Test
+	public void verReservaComedorTest() {
+		try {
+			logger.info("Test 8 - Register new user");
+			biblioteca.verReservaComedor("12345678X");
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+
+	@Test
+	public void eliminarReservaComedorTest() {
+		try {
+			logger.info("Test 8 - Register new user");
+			biblioteca.eliminarReservaComedor("12345678X", "30/04/18", "14:30");
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+
+	@Test
+	public void consultaMenuTest() {
+		try {
+			logger.info("Test 8 - Register new user");
+			biblioteca.verMenu("12-05-2018");
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
   
 	@AfterClass
 	static public void tearDown() {

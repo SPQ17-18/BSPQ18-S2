@@ -17,7 +17,13 @@ import java.rmi.RemoteException;
 import java.awt.event.ActionEvent;
 
 import es.deusto.spq.biblioteca.controller.Controller;
-
+/**
+ * Clase de creación de ventana reserva libro
+ * Estructura realizada por
+ * @author Jon Martinez
+ * Fondo y funcionalidad del controller implementado por
+ * @author Ariane
+ */
 public class VentanaReservaLibro extends JFrame {
 
 	/**

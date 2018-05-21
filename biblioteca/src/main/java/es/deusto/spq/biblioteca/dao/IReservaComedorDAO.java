@@ -2,7 +2,10 @@ package es.deusto.spq.biblioteca.dao;
 import java.util.ArrayList;
 
 import es.deusto.spq.biblioteca.data.ReservaMesa;
-
+/**
+ * Clase de creación de interfaz DAO de reserva Comedor
+ * @author Ariane
+ */
 public interface IReservaComedorDAO {
 	
 	public void anyadirReservaComedor(ReservaMesa r);

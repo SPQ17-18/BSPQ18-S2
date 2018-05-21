@@ -1,6 +1,0 @@
-<map id="es.deusto.spq.biblioteca.client.gui.MenuPrincipal.ventana" name="es.deusto.spq.biblioteca.client.gui.MenuPrincipal.ventana">
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1gui_1_1_menu_principal.html#a5f5ca87246a3a113fcf053266649efd0" title="es.deusto.spq.biblioteca.client.gui.\lMenuPrincipal.MenuPrincipal" alt="" coords="276,5,499,47"/>
-<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1gui_1_1_menu_principal.html#a8f37cacc1f9ccc9b65f768d1cb5bc9c8" title="es.deusto.spq.biblioteca.client.gui.\lMenuPrincipal.ejecutarVentana" alt="" coords="547,5,769,47"/>
-<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1controller_1_1_controller.html#a130eebcaf76a2f9ed7d3d032ab232746" title="es.deusto.spq.biblioteca.controller.\lController.Controller" alt="" coords="817,5,1041,47"/>
-<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1controller_1_1_controller.html#aebc01845557525b0f7326b2ad5c612b2" title="es.deusto.spq.biblioteca.controller.\lController.main" alt="" coords="1089,5,1313,47"/>
-</map>

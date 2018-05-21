@@ -5,7 +5,7 @@ import javax.jdo.annotations.PersistenceCapable;
 
 /**
  * Clase de reservar mesa
- * @author koldo
+ * @author Ariane
  *
  */
 @PersistenceCapable(detachable = "true")

@@ -5,7 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
-
+/**
+ * Clase de Mesa
+ * @author Ariane
+ *
+ */
 @PersistenceCapable(detachable = "true")
 public class Mesa implements Serializable{
 	/**
