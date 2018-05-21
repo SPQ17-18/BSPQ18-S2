@@ -43,6 +43,7 @@ public class VentanaHacerReservaSala extends JFrame {
 			}
 		});
 	}
+	
 
 	/**
 	 * Create the frame.

@@ -34,6 +34,7 @@ public class VentanaVerReservasSala extends JFrame {
 			}
 		});
 	}
+	
 
 	/**
 	 * Create the frame.

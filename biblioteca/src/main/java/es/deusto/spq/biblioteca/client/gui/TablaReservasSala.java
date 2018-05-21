@@ -36,6 +36,7 @@ public class TablaReservasSala extends JFrame {
 			}
 		});
 	}
+	
 
 	/**
 	 * Create the frame.
