@@ -69,6 +69,7 @@ public class VentanaLibros extends JFrame {
 				MenuPrincipal abrirVentana = new MenuPrincipal();
 				abrirVentana.setVisible(true);
 				VentanaLibros.this.dispose();
+				
 			}
 		});
 		button.setFont(new Font("Times New Roman", Font.ITALIC, 17));

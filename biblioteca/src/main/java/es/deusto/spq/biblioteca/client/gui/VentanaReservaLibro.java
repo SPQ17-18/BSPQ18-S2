@@ -71,6 +71,7 @@ public class VentanaReservaLibro extends JFrame {
 				InfoLibro3 abrirVentana5 = new InfoLibro3();
 				abrirVentana5.setVisible(true);
 				VentanaReservaLibro.this.dispose();
+				
 			}
 		});
 		btnVolver.setFont(new Font("Times New Roman", Font.ITALIC, 16));
