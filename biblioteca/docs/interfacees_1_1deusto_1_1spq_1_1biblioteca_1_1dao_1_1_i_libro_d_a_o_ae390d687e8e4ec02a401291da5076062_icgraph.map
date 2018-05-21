@@ -1,3 +1,4 @@
 <map id="es.deusto.spq.biblioteca.dao.ILibroDAO.verLibro" name="es.deusto.spq.biblioteca.dao.ILibroDAO.verLibro">
 <area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_biblioteca.html#a6455f223a57806146e77149429caf6db" title="es.deusto.spq.biblioteca.remote.\lBiblioteca.mostrarLibro" alt="" coords="247,5,461,44"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_libro_d_a_o_test.html#aa2ecffca72544c1ce8e0b6e7e9d65f70" title="es.deusto.spq.biblioteca.\lLibroDAOTest.testVerLibro" alt="" coords="509,5,688,44"/>
 </map>

@@ -33,7 +33,8 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", "functions_func" ]
+        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -45,8 +46,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_biblioteca_8java.html",
-"classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_libro_d_a_o.html#adf3ff587646760b081c538ca54512c3b",
-"namespacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote.html"
+"classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1gui_1_1_ventana_reserva_libro.html",
+"functions_func_p.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

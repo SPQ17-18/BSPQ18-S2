@@ -1,3 +1,4 @@
 <map id="es.deusto.spq.biblioteca.dao.ILibroDAO.EliminarLibro" name="es.deusto.spq.biblioteca.dao.ILibroDAO.EliminarLibro">
 <area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_biblioteca.html#aec13dff9f9d789b103b51d243e52832e" title="es.deusto.spq.biblioteca.remote.\lBiblioteca.EliminarLibro" alt="" coords="247,5,461,44"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_libro_d_a_o_test.html#a30079e815bcca290a31c5758763cf2df" title="es.deusto.spq.biblioteca.\lLibroDAOTest.testDeleteLibro" alt="" coords="509,5,706,44"/>
 </map>

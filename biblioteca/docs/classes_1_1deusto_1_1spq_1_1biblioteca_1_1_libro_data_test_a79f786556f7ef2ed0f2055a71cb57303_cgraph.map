@@ -1,0 +1,6 @@
+<map id="es.deusto.spq.biblioteca.LibroDataTest.testCreacionLibro2" name="es.deusto.spq.biblioteca.LibroDataTest.testCreacionLibro2">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_libro.html#a8cb61b4acf568ba35e27fbb13d20bc82" title="es.deusto.spq.biblioteca.data.\lLibro.getIsbn" alt="" coords="273,5,470,44"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_libro.html#a9e03d89691d2549ee6702b801ad09e32" title="es.deusto.spq.biblioteca.data.\lLibro.getnombre" alt="" coords="273,68,470,107"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_libro.html#ae42d9e4ed794f598f4d05dcdb7c307d5" title="es.deusto.spq.biblioteca.data.\lLibro.getAutor" alt="" coords="273,131,470,169"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_libro.html#a246aede47ebda75d4ea896995573ab5b" title="es.deusto.spq.biblioteca.data.\lLibro.getEditorial" alt="" coords="273,193,470,232"/>
+</map>

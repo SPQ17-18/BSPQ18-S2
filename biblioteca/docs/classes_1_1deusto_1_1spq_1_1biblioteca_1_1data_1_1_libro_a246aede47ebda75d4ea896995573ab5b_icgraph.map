@@ -1,3 +1,11 @@
 <map id="es.deusto.spq.biblioteca.data.Libro.getEditorial" name="es.deusto.spq.biblioteca.data.Libro.getEditorial">
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_libro_d_a_o.html#a8138eaa485efda1fa97a158f460301dd" title="es.deusto.spq.biblioteca.dao.\lLibroDAO.verLibro" alt="" coords="251,5,445,44"/>
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_libro_d_a_o.html#a8138eaa485efda1fa97a158f460301dd" title="es.deusto.spq.biblioteca.dao.\lLibroDAO.verLibro" alt="" coords="277,5,471,44"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_libro_d_a_o_test.html#ac5a22359846df59aaa015c0a074ce812" title="es.deusto.spq.biblioteca.\lLibroDAOTest.testAlmacenarLibro" alt="" coords="262,68,485,107"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_libro_d_a_o_test.html#aa2ecffca72544c1ce8e0b6e7e9d65f70" title="es.deusto.spq.biblioteca.\lLibroDAOTest.testVerLibro" alt="" coords="284,131,463,169"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_libro_d_a_o_test.html#a30079e815bcca290a31c5758763cf2df" title="es.deusto.spq.biblioteca.\lLibroDAOTest.testDeleteLibro" alt="" coords="275,193,473,232"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_libro_data_test.html#a969d90ce447de8f8ba76e3547216efbe" title="es.deusto.spq.biblioteca.\lLibroDataTest.testCreacionLibro" alt="" coords="268,256,480,295"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_libro_data_test.html#a79f786556f7ef2ed0f2055a71cb57303" title="es.deusto.spq.biblioteca.\lLibroDataTest.testCreacionLibro2" alt="" coords="264,319,483,357"/>
+<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_libro_data_test.html#a7a6abac53e0df1fc0fbc279bc68050b8" title="es.deusto.spq.biblioteca.\lLibroDataTest.testCreacionLibro3" alt="" coords="264,381,483,420"/>
+<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_libro_data_test.html#a6452bfb0834754c04b1058f4502cbc92" title="es.deusto.spq.biblioteca.\lLibroDataTest.testCreacionLibro4" alt="" coords="264,444,483,483"/>
+<area shape="rect" id="node10" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_libro_data_test.html#a39a0133777f2f8d4a3b1e14d33bb3c8d" title="es.deusto.spq.biblioteca.\lLibroDataTest.testDeErrorEnCreación\lDeLibro" alt="" coords="251,507,496,559"/>
 </map>
