@@ -17,7 +17,11 @@ import es.deusto.spq.biblioteca.dao.IReservaComedorDAO;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
 import es.deusto.spq.biblioteca.remote.Biblioteca;
 import junit.framework.JUnit4TestAdapter;
-
+/**
+ * Test mockito
+ * @author Julen
+ *
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class ReservaComedorDAOTest {
 

@@ -17,6 +17,11 @@ import es.deusto.spq.biblioteca.dao.IReservaDAO;
 import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.remote.Biblioteca;
 import junit.framework.JUnit4TestAdapter;
+/**
+ * Test mockito
+ * @author Ariane y Mikel
+ *
+ */
 
 @RunWith(MockitoJUnitRunner.class)
 public class ReservaDAOTest {
@@ -57,18 +62,7 @@ public class ReservaDAOTest {
 		dao.anyadirReserva(r);
 		assertEquals(false,dao.consultarDisponibilidad(r.getId_sala(), r.getFecha(), r.getHora()));
 	}
-	/*
-	@Test
-	public void devolverReservaTest() throws RemoteException {
-		Reserva r = new Reserva("R5", "S2", "20304050A", "29-04-2018", "18:42", 8);
-		dao.anyadirReserva(r);
-		Reserva n = dao.devolverReserva("20304050A", "29-04-2018", "18:42");
-		
-		assertEquals(r.getDni_respon(),n.getDni_respon());
-		assertEquals(r.getFecha(),n.getFecha());
-		assertEquals(r.getHora(),n.getHora());
-	}
-*/
+
 	@Test
 	public void verReservasTest() throws RemoteException {
 		Reserva r = new Reserva("R5", "S2", "20304050A", "29-04-2018", "18:42", 8);
@@ -90,8 +84,36 @@ public class ReservaDAOTest {
 		
 	}
 	
+	@Test
+	public void eliminarReservaTest() throws RemoteException {
+		Reserva r = new Reserva("R5", "S2", "20304050A", "29-04-2018", "18:42", 8);
+		b.anyadirReserva("S2", "20304050A", "29-04-2018", "18:42", 8);
+		dao.eliminarReserva(r);
+		ArgumentCaptor<Reserva> reservaCaptor = ArgumentCaptor.forClass( Reserva.class );
+		verify(dao).anyadirReserva(reservaCaptor.capture());
+		Reserva rn=reservaCaptor.getValue();
+		if(r.getId_reserva()!=rn.getId_reserva()) {
+			assertTrue(true);
+		}
+		else {
+			assertTrue(false);
+		}
+	}
 	
-	
+	@Test
+	public void editarReservaTest() throws RemoteException {
+		Reserva r = new Reserva("R5", "S2", "20304050A", "29-04-2018", "18:42", 8);
+		b.anyadirReserva("S2", "20304050A", "29-04-2018", "18:42", 8);
+		dao.editarReserva("20304050A", "29-04-2018", "18:42", "S2","12-05-2018", "18:42", "S2");
+		ArgumentCaptor<Reserva> reservaCaptor = ArgumentCaptor.forClass( Reserva.class );
+		verify(dao).anyadirReserva(reservaCaptor.capture());
+		Reserva rn=reservaCaptor.getValue();
+		assertEquals(r.getId_sala(), rn.getId_sala());
+		assertEquals(r.getFecha(), rn.getFecha());
+		assertEquals(r.getHora(), rn.getHora());
+		
+	}
+		
 }
 
 

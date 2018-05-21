@@ -8,7 +8,7 @@ import javax.jdo.annotations.PersistenceCapable;
 
 /**
  * Clase de sala
- * @author koldo
+ * @author Ariane
  *
  */
 @PersistenceCapable(detachable = "true")

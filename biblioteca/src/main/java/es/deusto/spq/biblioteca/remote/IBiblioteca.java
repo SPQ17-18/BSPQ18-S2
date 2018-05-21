@@ -1,5 +1,9 @@
 package es.deusto.spq.biblioteca.remote;
-
+/**
+ * Clase de interfaz remota realizada por
+ * @author Mikel, Ariane, Koldo y Luis
+ *
+ */
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
@@ -35,9 +39,6 @@ public interface IBiblioteca extends Remote {
 
 	public void eliminarReserva(String dni_respon,String fecha,String hora) throws RemoteException ;
 
-	
-	public void EliminarLibro(Libro l) throws RemoteException;
-	
 	public void anyadirReservaComedor(String id_Mesa, String dni_respon, String fecha, String hora, int plazas)throws RemoteException;
 
 	public boolean consultarDisponibilidadComedor(String Id_Mesa, String fecha, String hora, int personas) throws RemoteException;

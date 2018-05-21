@@ -2,7 +2,11 @@ package es.deusto.spq.biblioteca.client;
 
 import es.deusto.spq.biblioteca.remote.IBiblioteca;
 import org.apache.log4j.Logger;
-
+/**
+ * Clase Cliente 
+ * @author Ariane y koldo
+ *
+ */
 
 public class Client {
 

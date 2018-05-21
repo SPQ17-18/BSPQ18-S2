@@ -1,10 +1,6 @@
 package es.deusto.spq.biblioteca.client.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import java.awt.Image;
 
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -25,8 +21,21 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
+/**
+ * Clase de creación de ventana ver reservas
+ * Estructura realizada por
+ * @author Jon Martinez
+ * Fondo implementado por
+ * @author Ariane
+ * Funcionalidad del controller añadida por
+ * @author Julen
+ */
 public class VentanaVerReservas extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextArea textArea;

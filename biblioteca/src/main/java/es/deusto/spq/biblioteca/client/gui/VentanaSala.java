@@ -1,10 +1,5 @@
 package es.deusto.spq.biblioteca.client.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -18,9 +13,21 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * Clase de creación de ventana reserva sala
+ * Estructura realizada por
+ * @author Jon Martinez
+ * Fondo implementado por
+ * @author Ariane
+ * Funcionalidad del controller añadida por
+ * @author Julen
+ */
 public class VentanaSala extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private Controller controller;
 	
@@ -48,8 +55,7 @@ public class VentanaSala extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel label = new JLabel("");
-	//	Image img = new ImageIcon(this.getClass().getResource("/salas.jpg")).getImage();
-		
+	
 		JButton btnReservarSala = new JButton("Reservar Sala");
 		btnReservarSala.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -91,8 +97,7 @@ public class VentanaSala extends JFrame {
 		label_1.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 35));
 		label_1.setBounds(35, 23, 354, 122);
 		contentPane.add(label_1);
-//		label.setIcon(new ImageIcon(img));
-		
+	
 		label.setBounds(0, 0, 594, 348);
 		contentPane.add(label);
 		

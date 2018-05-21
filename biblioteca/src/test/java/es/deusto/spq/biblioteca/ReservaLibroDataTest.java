@@ -1,5 +1,9 @@
 package es.deusto.spq.biblioteca;
-
+/**
+ * Test JUnit
+ * @author Koldo
+ *
+ */
 import static org.junit.Assert.*;
 
 import org.databene.contiperf.PerfTest;
@@ -91,6 +95,8 @@ public class ReservaLibroDataTest {
 	
 	//Test de error provocado a proposito
 	@Test
+    @PerfTest(invocations = 2000, threads = 10)
+    @Required(max = 60, average = 100)
 	public void testDeErrorForzado() {
 		logger.info("Empezando test de error forzado");
 		ReservaLibro waiting = new ReservaLibro("44");

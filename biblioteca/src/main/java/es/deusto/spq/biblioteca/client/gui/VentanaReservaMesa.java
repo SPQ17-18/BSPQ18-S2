@@ -1,10 +1,5 @@
 package es.deusto.spq.biblioteca.client.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -17,9 +12,21 @@ import es.deusto.spq.biblioteca.controller.Controller;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * Clase de creación de ventana reserva mesa
+ * Estructura realizada por
+ * @author Jon Martinez
+ * Fondo implementado por
+ * @author Ariane
+ * Funcionalidad del controller añadida por
+ * @author Julen
+ */
 public class VentanaReservaMesa extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private Controller controller;
 	
@@ -46,7 +53,6 @@ public class VentanaReservaMesa extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel label = new JLabel("");
-//		Image img = new ImageIcon(this.getClass().getResource("/menu.jpg")).getImage();
 		
 		JButton botonVolver = new JButton("Volver");
 		botonVolver.addActionListener(new ActionListener() {
@@ -84,7 +90,6 @@ public class VentanaReservaMesa extends JFrame {
 		botonVolver.setFont(new Font("Times New Roman", Font.ITALIC, 17));
 		botonVolver.setBounds(506, 21, 156, 39);
 		contentPane.add(botonVolver);
-//		label.setIcon(new ImageIcon(img));
 		label.setBounds(0, 0, 692, 340);
 		contentPane.add(label);
 		

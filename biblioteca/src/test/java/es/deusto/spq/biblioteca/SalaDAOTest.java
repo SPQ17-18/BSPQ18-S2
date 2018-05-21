@@ -1,5 +1,9 @@
 package es.deusto.spq.biblioteca;
-
+/**
+ * Test mockito sala
+ * @author Luis
+ *
+ */
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -52,8 +56,6 @@ public class SalaDAOTest {
 	}
 	@Test
 	public void consultarPlazas() throws RemoteException {
-		//Sala s = new Sala("ID3",2);		
-		//b.anyadirSala(s.getId_sala(),s.getCapacidad());
 		boolean bol =	dao.consultarPlazas("S1", 200);
 		assertEquals(false,bol );
 	}

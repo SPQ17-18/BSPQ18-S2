@@ -1,8 +1,5 @@
 package es.deusto.spq.biblioteca.client.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -22,9 +19,21 @@ import java.awt.event.ActionEvent;
 import javax.swing.DefaultComboBoxModel;
 
 import es.deusto.spq.biblioteca.controller.Controller;
-
+/**
+ * Clase de creación de ventana reserva sala
+ * Estructura realizada por
+ * @author Jon Martinez
+ * Fondo implementado por
+ * @author Ariane
+ * Funcionalidad del controller añadida por
+ * @author Julen
+ */
 public class VentanaHacerReservaSala extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;

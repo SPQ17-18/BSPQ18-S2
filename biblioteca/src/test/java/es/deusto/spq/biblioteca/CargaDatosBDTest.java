@@ -1,5 +1,9 @@
 package es.deusto.spq.biblioteca;
-
+/**
+ * Clase para cargar datos en BD
+ * @author Ariane
+ *
+ */
 import static org.junit.Assert.*;
 
 import org.apache.log4j.Logger;

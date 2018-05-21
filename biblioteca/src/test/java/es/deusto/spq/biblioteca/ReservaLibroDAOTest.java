@@ -1,5 +1,9 @@
 package es.deusto.spq.biblioteca;
-
+/**
+ * Test mockito
+ * @author Koldo
+ *
+ */
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;

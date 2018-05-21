@@ -1,16 +1,9 @@
 package es.deusto.spq.biblioteca.client.gui;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
-import javax.swing.UIDefaults;
-import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
 
@@ -24,9 +17,19 @@ import es.deusto.spq.biblioteca.controller.Controller;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * Clase de creación de ventana libros
+ * Estructura realizada por
+ * @author Jon Martinez
+ * Fondo y funcionalidad del controller implementado por
+ * @author Ariane
+ */
 public class VentanaLibros extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private Controller controller;
 
@@ -53,7 +56,6 @@ public class VentanaLibros extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel label = new JLabel("");
-//		Image img = new ImageIcon(this.getClass().getResource("/comedor.jpg")).getImage();
 
 		JButton button_2 = new JButton("Volver");
 		button_2.addActionListener(new ActionListener() {
@@ -72,8 +74,8 @@ public class VentanaLibros extends JFrame {
 		JButton btnCatalogo = new JButton("Ver catalogo");
 		btnCatalogo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				VentanaCatalogoLibros abrirVentana2 = new VentanaCatalogoLibros(controller);
-//				abrirVentana2.setVisible(true);
+				VentanaCatalogoLibros abrirVentana2 = new VentanaCatalogoLibros(controller);
+				abrirVentana2.setVisible(true);
 				VentanaLibros.this.dispose();
 			}
 		});
@@ -99,7 +101,6 @@ public class VentanaLibros extends JFrame {
 		label_1.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 38));
 		label_1.setBounds(10, 177, 354, 122);
 		contentPane.add(label_1);
-//		label.setIcon(new ImageIcon(img));
 		label.setBounds(0, 0, 795, 382);
 		contentPane.add(label);
 		

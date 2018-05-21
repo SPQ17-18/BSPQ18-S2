@@ -14,7 +14,11 @@ import org.slf4j.LoggerFactory;
 import es.deusto.spq.biblioteca.dao.ReservaDAO;
 import es.deusto.spq.biblioteca.data.Reserva;
 import junit.framework.JUnit4TestAdapter;
-
+/**
+ * Test JUnit
+ * @author Ariane
+ *
+ */
 @PerfTest(invocations = 5)
 @Required(max = 1200, average = 250)
 public class ReservaDataTest {
@@ -34,7 +38,6 @@ public class ReservaDataTest {
 	}
 	
 	@Before public void Datos() {
-		//logger.info("Entering setUp");
 		logger.info("Construyendo datos: {}", iteracion++);
 		
 		R1= new Reserva("R1","S1","12345678X","1-05-2018","17:59",7);

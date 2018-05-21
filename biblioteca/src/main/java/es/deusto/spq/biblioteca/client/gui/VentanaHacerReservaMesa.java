@@ -1,10 +1,7 @@
 package es.deusto.spq.biblioteca.client.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import java.awt.Image;
 
-import javax.swing.ImageIcon;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -24,9 +21,21 @@ import java.awt.event.ActionEvent;
 import javax.swing.DefaultComboBoxModel;
 
 import es.deusto.spq.biblioteca.controller.Controller;
-
+/**
+ * Clase de creación de ventana reserva mesa
+ * Estructura realizada por
+ * @author Jon Martinez
+ * Fondo implementado por
+ * @author Ariane
+ * Funcionalidad del controller añadida por
+ * @author Julen
+ */
 public class VentanaHacerReservaMesa extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -57,8 +66,7 @@ public class VentanaHacerReservaMesa extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel label = new JLabel("");
-	//	Image img = new ImageIcon(this.getClass().getResource("/reservado.jpg")).getImage();
-		
+	
 		JButton button = new JButton("Volver");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -69,7 +77,7 @@ public class VentanaHacerReservaMesa extends JFrame {
 		});
 		
 		final JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"M1", "M2", "M3", "M4", "M5", "M6"}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"M1", "M2", "M3", "M4", "M5"}));
 		comboBox.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
 		comboBox.setBounds(295, 49, 112, 29);
 		contentPane.add(comboBox);
@@ -131,7 +139,6 @@ public class VentanaHacerReservaMesa extends JFrame {
 		lblNewLabel_3.setForeground(Color.WHITE);
 		lblNewLabel_3.setBounds(33, 188, 131, 20);
 		contentPane.add(lblNewLabel_3);
-//		label.setIcon(new ImageIcon(img));
 		label.setBounds(0, 0, 708, 353);
 		contentPane.add(label);
 		

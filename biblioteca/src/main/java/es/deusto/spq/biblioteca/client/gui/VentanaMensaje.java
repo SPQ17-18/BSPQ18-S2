@@ -1,8 +1,5 @@
 package es.deusto.spq.biblioteca.client.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -17,9 +14,17 @@ import es.deusto.spq.biblioteca.controller.Controller;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * Clase de creación de ventana mensaje
+ * Estructura realizada por
+ * @author Jon Martinez
+ */
 public class VentanaMensaje extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private Controller controller;
 

@@ -1,5 +1,9 @@
 package es.deusto.spq.biblioteca.dao;
-
+/**
+ * Clase para el manejo de la Base de Datos
+ * @author Ariane
+ *
+ */
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +40,7 @@ public class SalaDAO implements ISalaDAO {
 	 */
 	@Override
 	public void anyadirSala(Sala s) {
-		// TODO Auto-generated method stub
+
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
@@ -64,7 +68,7 @@ public class SalaDAO implements ISalaDAO {
 	 */
 	@Override
 	public boolean consultarPlazas(String Id_Sala, int personas) {
-		// TODO Auto-generated method stub
+		
 		boolean disponible = true;
 
 		PersistenceManager pm = pmf.getPersistenceManager();

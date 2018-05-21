@@ -37,7 +37,7 @@ public class ReservaLibroDAO implements IReservaLibroDAO {
 	 */
 	@Override
 	public void reservarLibro(ReservaLibro rl) {
-		// TODO Auto-generated method stub
+
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
@@ -60,7 +60,7 @@ public class ReservaLibroDAO implements IReservaLibroDAO {
 			}
 			
 		} catch (Exception ex) {
-			//System.out.println("   $ Error guardando reserva: " + ex.getMessage());
+	
 			logger.error("   $ Error guardando reserva del libro:" + ex.getMessage());
 
 		} finally {
@@ -79,14 +79,14 @@ public class ReservaLibroDAO implements IReservaLibroDAO {
 	 */
 	@Override
 	public boolean consultarDisponibilidadLibro(String isbn) {
-		// TODO Auto-generated method stub
+	
 		boolean isReservado = true;
 		
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		
 		try {
-			//System.out.println("   * Consultado disponibilidad de: " + Id_Sala);
+
 			logger.info("   * Consultado disponibilidad de: " + isbn);
 
 			tx.begin();
@@ -101,7 +101,7 @@ public class ReservaLibroDAO implements IReservaLibroDAO {
 			}
 			tx.commit();
 		} catch (Exception ex) {
-			//System.out.println("   $ Error consultando disponibilidad del libro: " + ex.getMessage());
+			
 			logger.error("   $ Error consultando disponibilidad del libro " + ex.getMessage());
 
 		} finally {
@@ -129,7 +129,6 @@ public class ReservaLibroDAO implements IReservaLibroDAO {
 		try {
 			tx.begin();
 
-			//System.out.println("   * Buscando reserva de: " + dni);
 			logger.info("   * Buscando reserva de: " + isbn);
 			Query<ReservaLibro> query = pm.newQuery(ReservaLibro.class);
 			@SuppressWarnings("unchecked")
@@ -144,7 +143,7 @@ public class ReservaLibroDAO implements IReservaLibroDAO {
 
 		
 			} catch (Exception e) {
-				// TODO: handle exception
+		
 				logger.error("   $ Error devolviendo reserva: " + e.getMessage());
 
 			} finally {

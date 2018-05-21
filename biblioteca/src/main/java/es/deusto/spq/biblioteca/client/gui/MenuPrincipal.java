@@ -1,24 +1,15 @@
 package es.deusto.spq.biblioteca.client.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTextPane;
-import javax.swing.UIDefaults;
-import javax.swing.UIManager;
 
 import java.awt.Font;
-import java.awt.Image;
-
 import javax.swing.JLabel;
 
 import java.awt.Color;
-import java.awt.SystemColor;
+
 
 import javax.swing.JButton;
 
@@ -27,6 +18,16 @@ import es.deusto.spq.biblioteca.controller.Controller;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * Clase de creación de la ventana principal
+ * Estructura realizada por
+ * @author Jon Martinez
+ * Fondo implementado por
+ * @author Ariane
+ * Funcionalidad del controller añadida por
+ * @author Julen
+ *
+ */
 public class MenuPrincipal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -55,7 +56,6 @@ public class MenuPrincipal extends JFrame {
 		contentPane.setLayout(null);
 			
 		JLabel label = new JLabel("");
-		//Image img = new ImageIcon(this.getClass().getResource("/bibliotecadeusto.jpg")).getImage();
 		
 		JButton botonLibros = new JButton("Libros");
 		botonLibros.addActionListener(new ActionListener() {
@@ -100,8 +100,6 @@ public class MenuPrincipal extends JFrame {
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setBounds(97, 44, 232, 63);
 		contentPane.add(lblNewLabel);
-	//	label.setIcon(new ImageIcon(img));
-	//	label.setBounds(0, 0, 732, 346);
 		contentPane.add(label);
 		
 		FondoPrincipal fondo = new FondoPrincipal();

@@ -1,5 +1,9 @@
 package es.deusto.spq.biblioteca;
-
+/**
+ * Test Junit libro
+ * @author Koldo
+ *
+ */
 import static org.junit.Assert.*;
 
 import org.databene.contiperf.PerfTest;
