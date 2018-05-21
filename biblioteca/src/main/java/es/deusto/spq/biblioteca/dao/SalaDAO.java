@@ -13,8 +13,7 @@ import org.apache.log4j.Logger;
 import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.Sala;
 
-
-
+//Se me ha olvidado meter tiempos
 /**
  * Clase para el manejo de la Base de Daatos
  * @author koldo
