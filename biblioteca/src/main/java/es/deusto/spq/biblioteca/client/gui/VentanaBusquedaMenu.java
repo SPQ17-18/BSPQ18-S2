@@ -36,6 +36,7 @@ public class VentanaBusquedaMenu extends JFrame {
 
 	public void VentanaBusquedaMenuejecutor() {
 		
+		
 		setTitle("Lista de Men\u00FAs disponibles");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 716, 346);
