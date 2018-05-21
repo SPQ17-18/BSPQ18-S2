@@ -1,3 +1,4 @@
 <map id="es.deusto.spq.biblioteca.data.ReservaMesa.getPersonas" name="es.deusto.spq.biblioteca.data.ReservaMesa.getPersonas">
 <area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_reserva_comedor_d_a_o.html#a61cbf6ed260e7a3ca7af26b6130fa054" title="es.deusto.spq.biblioteca.dao.\lReservaComedorDAO.editarReservaComedor" alt="" coords="251,5,547,44"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_comedor_d_a_o_test.html#a05f82723bc10a567ebbbbe8ac626d078" title="es.deusto.spq.biblioteca.\lReservaComedorDAOTest.testAnyadir\lReserva" alt="" coords="274,68,524,120"/>
 </map>

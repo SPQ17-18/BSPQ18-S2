@@ -1,4 +1,0 @@
-<map id="es.deusto.spq.biblioteca.controller.Controller.verCatalogoDeLibros" name="es.deusto.spq.biblioteca.controller.Controller.verCatalogoDeLibros">
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1_client.html#a81c65efd5ee6eb820c325225532fa3fb" title="es.deusto.spq.biblioteca.client.\lClient.getService" alt="" coords="284,5,487,44"/>
-<area shape="rect" id="node3" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1remote_1_1_i_biblioteca.html#a84e7d607d76ccc999d384d967987ebd8" title="es.deusto.spq.biblioteca.remote.\lIBiblioteca.getLibros" alt="" coords="279,68,493,107"/>
-</map>

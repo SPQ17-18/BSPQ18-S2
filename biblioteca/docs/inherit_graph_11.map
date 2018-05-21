@@ -1,9 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_libro.html" title="es.deusto.spq.biblioteca.data.\lLibro" alt="" coords="160,5,358,44"/>
-<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_menu.html" title="es.deusto.spq.biblioteca.data.Menu" alt="" coords="144,68,375,93"/>
-<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_mesa.html" title="es.deusto.spq.biblioteca.data.Mesa" alt="" coords="144,117,374,143"/>
-<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_reserva.html" title="es.deusto.spq.biblioteca.data.\lReserva" alt="" coords="160,167,358,205"/>
-<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_reserva_libro.html" title="es.deusto.spq.biblioteca.data.\lReservaLibro" alt="" coords="160,229,358,268"/>
-<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_reserva_mesa.html" title="es.deusto.spq.biblioteca.data.\lReservaMesa" alt="" coords="160,292,358,331"/>
-<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1data_1_1_sala.html" title="es.deusto.spq.biblioteca.data.Sala" alt="" coords="147,355,371,380"/>
+<area shape="rect" id="node1" href="$interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_sala_d_a_o.html" title="es.deusto.spq.biblioteca.dao.\lISalaDAO" alt="" coords="5,5,199,44"/>
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_sala_d_a_o.html" title="es.deusto.spq.biblioteca.dao.\lSalaDAO" alt="" coords="247,5,441,44"/>
 </map>

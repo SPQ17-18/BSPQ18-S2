@@ -1,5 +1,0 @@
-<map id="es.deusto.spq.biblioteca.controller.Controller.reservarLibro" name="es.deusto.spq.biblioteca.controller.Controller.reservarLibro">
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1gui_1_1_ventana_reserva_libro.html#a91e2a0b1beb4353db52c2b3b8d8a8d1a" title="es.deusto.spq.biblioteca.client.gui.\lVentanaReservaLibro.ventana" alt="" coords="279,5,504,44"/>
-<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1gui_1_1_ventana_reserva_libro.html#a99e179051bda7281c34b0a4eaddbe78d" title="es.deusto.spq.biblioteca.client.gui.\lVentanaReservaLibro.VentanaReservaLibro" alt="" coords="552,5,833,44"/>
-<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1gui_1_1_ventana_reserva_libro.html#aed223a49195d685d15baf23d7bdd8469" title="es.deusto.spq.biblioteca.client.gui.\lVentanaReservaLibro.ejecutarVentana" alt="" coords="881,5,1131,44"/>
-</map>

@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "es.deusto.spq.biblioteca.CargaDatosBDTest", "classes_1_1deusto_1_1spq_1_1biblioteca_1_1_carga_datos_b_d_test.html", null ],
     [ "es.deusto.spq.biblioteca.client.Client", "classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1_client.html", null ],
     [ "es.deusto.spq.biblioteca.controller.Controller", "classes_1_1deusto_1_1spq_1_1biblioteca_1_1controller_1_1_controller.html", null ],
     [ "es.deusto.spq.biblioteca.dao.ILibroDAO", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_libro_d_a_o.html", [
@@ -23,6 +24,16 @@ var hierarchy =
     [ "es.deusto.spq.biblioteca.dao.ISalaDAO", "interfacees_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_i_sala_d_a_o.html", [
       [ "es.deusto.spq.biblioteca.dao.SalaDAO", "classes_1_1deusto_1_1spq_1_1biblioteca_1_1dao_1_1_sala_d_a_o.html", null ]
     ] ],
+    [ "es.deusto.spq.biblioteca.LibroDAOTest", "classes_1_1deusto_1_1spq_1_1biblioteca_1_1_libro_d_a_o_test.html", null ],
+    [ "es.deusto.spq.biblioteca.LibroDataTest", "classes_1_1deusto_1_1spq_1_1biblioteca_1_1_libro_data_test.html", null ],
+    [ "es.deusto.spq.biblioteca.ReservaComedorDAOTest", "classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_comedor_d_a_o_test.html", null ],
+    [ "es.deusto.spq.biblioteca.ReservaDAOTest", "classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_d_a_o_test.html", null ],
+    [ "es.deusto.spq.biblioteca.ReservaDataTest", "classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_data_test.html", null ],
+    [ "es.deusto.spq.biblioteca.ReservaLibroDAOTest", "classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_libro_d_a_o_test.html", null ],
+    [ "es.deusto.spq.biblioteca.ReservaLibroDataTest", "classes_1_1deusto_1_1spq_1_1biblioteca_1_1_reserva_libro_data_test.html", null ],
+    [ "es.deusto.spq.biblioteca.RMITest", "classes_1_1deusto_1_1spq_1_1biblioteca_1_1_r_m_i_test.html", null ],
+    [ "es.deusto.spq.biblioteca.SalaDAOTest", "classes_1_1deusto_1_1spq_1_1biblioteca_1_1_sala_d_a_o_test.html", null ],
+    [ "es.deusto.spq.biblioteca.SalaDataTest", "classes_1_1deusto_1_1spq_1_1biblioteca_1_1_sala_data_test.html", null ],
     [ "es.deusto.spq.biblioteca.server.Server", "classes_1_1deusto_1_1spq_1_1biblioteca_1_1server_1_1_server.html", null ],
     [ "JFrame", null, [
       [ "es.deusto.spq.biblioteca.client.gui.InfoLibro3", "classes_1_1deusto_1_1spq_1_1biblioteca_1_1client_1_1gui_1_1_info_libro3.html", null ],
