@@ -86,17 +86,6 @@ public class SalaDataTest {
 		logger.debug("Finalizando test de creacion de Sala3");
 	}
 	
-	@Test 
-    @PerfTest(invocations = 200, threads = 90)
-    @Required(max = 400, average = 300)
-	public void testCreacionSala4() throws Exception {
-		logger.info("Empezando test de creacion de Sala4");
-		Sala esperada=new Sala("S4",2);
-		assertEquals(esperada.getId_sala(), S4.getId_sala());
-		assertEquals(esperada.getCapacidad(), S4.getCapacidad());
-		Thread.sleep(90);
-		logger.debug("Finalizando test de creacion de Sala4");
-	}
 	@Test
 	@PerfTest(invocations = 1000, threads = 50)
     @Required(max = 100, average = 300)

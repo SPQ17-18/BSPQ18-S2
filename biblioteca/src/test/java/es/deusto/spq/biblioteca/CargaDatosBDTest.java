@@ -4,10 +4,12 @@ package es.deusto.spq.biblioteca;
  * @author Ariane
  *
  */
+
 import static org.junit.Assert.*;
 
 import org.apache.log4j.Logger;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import es.deusto.spq.biblioteca.dao.ILibroDAO;
@@ -29,6 +31,7 @@ import es.deusto.spq.biblioteca.data.Reserva;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
 import es.deusto.spq.biblioteca.data.Sala;
 
+@Ignore
 public class CargaDatosBDTest {
 
 	private static final Logger logger = Logger.getLogger(CargaDatosBDTest.class);

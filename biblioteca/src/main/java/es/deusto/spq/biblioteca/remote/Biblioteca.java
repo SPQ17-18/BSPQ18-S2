@@ -74,7 +74,7 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 	 * @throws RemoteException Lanza una excepcion en caso de error.
 	 */
 	public Biblioteca() throws RemoteException {
-		super();
+		//super();
 		this.reservaDAO = new ReservaDAO();
 		this.salaDAO = new SalaDAO();
 		this.libroDAO = new LibroDAO();

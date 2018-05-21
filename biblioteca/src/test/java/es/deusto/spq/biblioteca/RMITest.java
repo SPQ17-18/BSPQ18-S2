@@ -10,13 +10,12 @@ import junit.framework.JUnit4TestAdapter;
 
 import org.junit.BeforeClass;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.AfterClass;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import es.deusto.spq.biblioteca.data.Libro;
+
 import es.deusto.spq.biblioteca.remote.IBiblioteca;
 import es.deusto.spq.biblioteca.remote.Biblioteca;
 
@@ -30,7 +29,7 @@ import java.net.MalformedURLException;
  * RMI Unit test for Simple Client / Server RMI Testing.
  * Testing the only the Remoteness
  */
-@Ignore
+
 public class RMITest {
 	// Properties are hard-coded because we want the test to be executed without external interaction
 	final static Logger logger= LoggerFactory.getLogger(RMITest.class);
@@ -77,7 +76,7 @@ public class RMITest {
 			System.out.println("This is a test to check how mvn test executes this test without external interaction; JVM properties by program");
 			System.out.println("**************: " + cwd);
 			System.setProperty("java.rmi.server.codebase", "file:" + cwd);
-			System.setProperty("java.security.policy", "src\\main\\resources\\security\\java.policy");
+			System.setProperty("java.security.policy", "target\\test-classes\\security\\java.policy");
 			
 			if (System.getSecurityManager() == null) {
 				System.setSecurityManager(new SecurityManager());
@@ -91,7 +90,7 @@ public class RMITest {
 				System.out.println("1");
 				IBiblioteca biblioteca = new Biblioteca();
 				System.out.println("2");
-				Naming.rebind(name, biblioteca);
+				Naming.rebind(name,biblioteca);
 				System.out.println("3");
 				System.out.println("* Servidor '" + name + "' activo y esperando...");
 			} catch (RemoteException re) {
@@ -120,7 +119,7 @@ public class RMITest {
 
 	@Before	public void setUpClient() {
 		try {
-			System.setProperty("java.security.policy", "src\\main\\resources\\security\\java.policy");
+			System.setProperty("java.security.policy", "target\\test-classes\\security\\java.policy");
 			
 			if (System.getSecurityManager() == null) {
 				System.setSecurityManager(new SecurityManager());
@@ -138,19 +137,14 @@ public class RMITest {
 
 	}
 	
-
-	//@Test 
-	public void Prueba() {
-		 assertTrue( true ); 
-	}
-	
 	  @Test public void buscarLibroTest() { try{
 	  logger.info("Test 2 - buscar libro"); String
 	  a="Festin de cuervos, Cancion de Hielo y fuego IV";
-	  biblioteca.buscarLibro(a); assertTrue( true ); } catch (Exception re) {
+	  biblioteca.buscarLibro(a); assertTrue( true ); 
+	  } catch (Exception re) {
 	  System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-	  assertTrue( false ); }
-	  
+	  assertTrue( false ); 
+	  	}
 	  
 	  }
 	  	  
@@ -181,12 +175,77 @@ public class RMITest {
 		}
 
 	}
-
+	
 	@Test
 	public void getLibrosTest() {
 		try {
 			logger.info("Test 6 - Register new user");
 			biblioteca.getLibros();
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+	
+	@Test
+	public void reservarLibrosTest() {
+		try {
+			logger.info("Test 6 - Register new user");
+			biblioteca.reservarLibro("1");
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+	
+	@Test
+	public void devolverLibrosTest() {
+		try {
+			logger.info("Test 6 - Register new user");
+			biblioteca.DevolverLibro("1");
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+	
+	@Test
+	public void devolverReservaTest() {
+		try {
+			logger.info("Test 6 - Register new user");
+			biblioteca.DevolverReserva("12345678X", "21-5-2018", "21:47");
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+	
+	@Test
+	public void devolverReservaComedorTest() {
+		try {
+			logger.info("Test 6 - Register new user");
+			biblioteca.devolverReservaComedor("12345678X", "21-5-2018", "21:48");
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+	
+	@Test
+	public void ayadirLibrosTest() {
+		try {
+			logger.info("Test 6 - Register new user");
+			biblioteca.almacenarLibro("5", "V de vendetta", "Alan Moore", "Planeta");
 			assertTrue(true);
 		} catch (Exception re) {
 			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
@@ -298,6 +357,32 @@ public class RMITest {
 		}
 
 	}
+	
+	@Test
+	public void anyadirMenuTest() {
+		try {
+			logger.info("Test 8 - Register new user");
+			biblioteca.anyadirMenu("21-5-2018", "Combo de entrantes", "The King's Bacon", "Sandy");
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+	
+	@Test
+	public void anyadirValoracionTest() {
+		try {
+			logger.info("Test 8 - Register new user");
+			biblioteca.anyadirValoracion("M1", 8);
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
 
 	@Test
 	public void verReservaComedorTest() {
@@ -324,12 +409,38 @@ public class RMITest {
 		}
 
 	}
+	
+	@Test
+	public void eliminarReservaTest() {
+		try {
+			logger.info("Test 8 - Register new user");
+			biblioteca.eliminarReserva("12345678X", "30/04/18", "14:30");
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
 
 	@Test
 	public void consultaMenuTest() {
 		try {
 			logger.info("Test 8 - Register new user");
 			biblioteca.verMenu("12-05-2018");
+			assertTrue(true);
+		} catch (Exception re) {
+			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+			assertTrue(false);
+		}
+
+	}
+	
+	@Test
+	public void editarReservaComedorTest() {
+		try {
+			logger.info("Test 8 - Register new user");
+			biblioteca.editarReservaComedor("12345678X", "11/04/18", "21:20", "S1", "20/12/15", "12:00", "S2");
 			assertTrue(true);
 		} catch (Exception re) {
 			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());

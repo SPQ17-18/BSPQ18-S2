@@ -69,27 +69,6 @@ public class ReservaDAOTest {
 		dao.anyadirReserva(r);
 		assertEquals(false,dao.consultarDisponibilidad(r.getId_sala(), r.getFecha(), r.getHora()));
 	}
-
-	@Test
-	public void verReservasTest() throws RemoteException {
-		Reserva r = new Reserva("R5", "S2", "20304050A", "29-04-2018", "18:42", 8);
-		dao.anyadirReserva(r);
-		ArgumentCaptor<Reserva> reservaCaptor = ArgumentCaptor.forClass( Reserva.class );
-		verify(dao).anyadirReserva(reservaCaptor.capture());
-		ArrayList<String> a = new ArrayList<String>();
-		System.out.println(r.getDni_respon());
-		a = dao.verReservas(r.getDni_respon());
-		String b="R5#20304050A#S2#29-04-2018#18:42#8";
-		String h = null;
-
-		for (String string : a) {
-			System.out.println(string);
-			h+=string;
-		}
-				
-		assertEquals("20304050A",h);
-		
-	}
 	
 	@Test
 	public void eliminarReservaTest() throws RemoteException {
