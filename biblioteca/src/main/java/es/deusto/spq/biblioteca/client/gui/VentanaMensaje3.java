@@ -29,6 +29,7 @@ public class VentanaMensaje3 extends JFrame {
 			}
 		});
 	}
+	
 
 	
 	public VentanaMensaje3() {
