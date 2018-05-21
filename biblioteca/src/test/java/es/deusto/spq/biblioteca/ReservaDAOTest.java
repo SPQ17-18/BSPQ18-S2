@@ -69,6 +69,7 @@ public class ReservaDAOTest {
 		assertEquals(r.getHora(),n.getHora());
 	}
 */
+//commit
 	@Test
 	public void verReservasTest() throws RemoteException {
 		Reserva r = new Reserva("R5", "S2", "20304050A", "29-04-2018", "18:42", 8);
