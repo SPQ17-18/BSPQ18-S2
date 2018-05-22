@@ -32,7 +32,7 @@ public class SalaDAOTest {
 	ISalaDAO dao;
 
 	public static junit.framework.Test suite() {
-		return new JUnit4TestAdapter(ReservaDAOTest.class);
+		return new JUnit4TestAdapter(SalaDAOTest.class);
 	}
 
 	@Before

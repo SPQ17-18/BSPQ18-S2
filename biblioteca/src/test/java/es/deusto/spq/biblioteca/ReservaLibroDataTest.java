@@ -27,13 +27,13 @@ public class ReservaLibroDataTest {
 	private ReservaLibro RL3;
 	private ReservaLibro RL4;
 	
-	final Logger logger= LoggerFactory.getLogger(ReservaDataTest.class);
+	final Logger logger= LoggerFactory.getLogger(ReservaLibroDataTest.class);
 	static int iteracion = 0;
 	
 	@Rule public ContiPerfRule rule = new ContiPerfRule();
 	
 	public static junit.framework.Test suite() {
-		 return new JUnit4TestAdapter(ReservaDataTest.class);
+		 return new JUnit4TestAdapter(ReservaLibroDataTest.class);
 	}
 	
 	

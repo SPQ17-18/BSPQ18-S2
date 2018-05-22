@@ -35,7 +35,7 @@ public class ReservaLibroDAOTest {
 	IReservaLibroDAO reservaLibroDAO;
 	
 	public static junit.framework.Test suite() {
-		return new JUnit4TestAdapter(ReservaDAOTest.class);
+		return new JUnit4TestAdapter(ReservaLibroDAOTest.class);
 	}
 	
 	@Before

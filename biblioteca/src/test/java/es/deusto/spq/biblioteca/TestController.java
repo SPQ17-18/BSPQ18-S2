@@ -12,6 +12,20 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 
 import es.deusto.spq.biblioteca.controller.Controller;
+import es.deusto.spq.biblioteca.dao.LibroDAO;
+import es.deusto.spq.biblioteca.dao.MenuDAO;
+import es.deusto.spq.biblioteca.dao.MesaDAO;
+import es.deusto.spq.biblioteca.dao.ReservaComedorDAO;
+import es.deusto.spq.biblioteca.dao.ReservaDAO;
+import es.deusto.spq.biblioteca.dao.ReservaLibroDAO;
+import es.deusto.spq.biblioteca.dao.SalaDAO;
+import es.deusto.spq.biblioteca.data.Libro;
+import es.deusto.spq.biblioteca.data.Menu;
+import es.deusto.spq.biblioteca.data.Mesa;
+import es.deusto.spq.biblioteca.data.Reserva;
+import es.deusto.spq.biblioteca.data.ReservaLibro;
+import es.deusto.spq.biblioteca.data.ReservaMesa;
+import es.deusto.spq.biblioteca.data.Sala;
 import es.deusto.spq.biblioteca.remote.Biblioteca;
 import es.deusto.spq.biblioteca.remote.IBiblioteca;
 import junit.framework.JUnit4TestAdapter;
@@ -26,6 +40,15 @@ public class TestController {
 	private static Thread rmiRegistryThread = null;
 	private static Thread rmiServerThread = null;
 	
+	private static LibroDAO libroDAO;
+	private static MenuDAO menuDAO;
+	private static MesaDAO mesaDAO;
+	private static SalaDAO salaDAO;
+	private static ReservaComedorDAO reservaComedorDAO;
+	private static ReservaDAO reservaDAO;
+	private static ReservaLibroDAO reservaLibroDAO;
+	
+	
 	private static Logger logger = Logger.getLogger(TestController.class.getName());
 	
 	public static junit.framework.Test suite() {
@@ -33,7 +56,7 @@ public class TestController {
 	}
 	
 	@BeforeClass
-	public static void setUpClass() throws Exception {
+	public static void setUp() throws Exception {
 		
 		
 		logger.info("Launch the RMI registry");
@@ -100,7 +123,7 @@ public class TestController {
 
 	
 	@Before
-	public void setUp() throws Exception {
+	public void setUpClass() throws Exception {
 		//Inicializado para todos los teses
 //		String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
 		String[] args = new String[3];
@@ -111,11 +134,32 @@ public class TestController {
 		
 	}
 	
-
+	@Before
+	public void setUpBD() {
+		
+		 libroDAO = new LibroDAO();
+		  menuDAO = new MenuDAO();
+		  mesaDAO = new MesaDAO();
+		  salaDAO = new SalaDAO();
+		  reservaComedorDAO = new ReservaComedorDAO();
+		  reservaDAO = new ReservaDAO();
+		  reservaLibroDAO = new ReservaLibroDAO();
+		  
+		  Libro L = new Libro("", null, null, null);
+		  Libro L1 = new Libro("", null, null, null);
+		  
+		  Menu m = new Menu();
+		  Menu m1 = new Menu();
+		
+		
+	}
 	
 
 	
-	  @Test public void buscarLibroTest() { try{
+
+	
+	  @Test public void buscarLibroTest() { 
+		  try{
 	  logger.info("Test 2 - buscar libro"); String
 	  a="Festin de cuervos, Cancion de Hielo y fuego IV";
 	  controller.buscarLibro(a); assertTrue(false); 
@@ -300,7 +344,7 @@ public class TestController {
 	@Test
 	public void consultarDisponibilidadComedorTest() {
 		try {
-			logger.info("Test 8 - Register new user");
+			logger.info("Test 8 - Consultar disponibilidad Comedor");
 			assertEquals(true,controller.consultarDisponibilidadComedor("M1", "2/05/18", "14:00", 3));
 		} catch (Exception re) {
 			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());

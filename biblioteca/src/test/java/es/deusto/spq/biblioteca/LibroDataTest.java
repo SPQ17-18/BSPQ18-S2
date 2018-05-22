@@ -38,7 +38,7 @@ public class LibroDataTest {
 	@Rule public ContiPerfRule rule = new ContiPerfRule();
 	
 	public static junit.framework.Test suite() {
-		 return new JUnit4TestAdapter(ReservaDataTest.class);
+		 return new JUnit4TestAdapter(LibroDataTest.class);
 	}
 	
 	@Before
