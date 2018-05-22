@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 
 import es.deusto.spq.biblioteca.controller.Controller;
 import es.deusto.spq.biblioteca.dao.LibroDAO;
@@ -30,6 +31,7 @@ import es.deusto.spq.biblioteca.remote.Biblioteca;
 import es.deusto.spq.biblioteca.remote.IBiblioteca;
 import junit.framework.JUnit4TestAdapter;
 
+@Ignore
 public class TestController {
 
 	
