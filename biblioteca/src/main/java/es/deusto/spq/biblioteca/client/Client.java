@@ -22,7 +22,6 @@ public class Client {
 
 		try {
 			String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
-
 			service=(IBiblioteca) java.rmi.Naming.lookup(name);
 			logger.info("Conectado con el servidor: " + name + "\n"+ service  );
 

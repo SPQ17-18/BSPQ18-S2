@@ -7,6 +7,7 @@ import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.Required;
 import org.databene.contiperf.junit.ContiPerfRule;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -85,7 +86,7 @@ public class SalaDataTest {
 		Thread.sleep(15);
 		logger.debug("Finalizando test de creacion de Sala3");
 	}
-	
+	@Ignore
 	@Test
 	@PerfTest(invocations = 1000, threads = 50)
     @Required(max = 100, average = 300)
