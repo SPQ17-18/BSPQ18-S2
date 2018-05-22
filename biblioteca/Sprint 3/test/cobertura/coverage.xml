@@ -1,0 +1,3257 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+
+<coverage line-rate="0.6537142857142857" branch-rate="0.5900621118012422" lines-covered="572" lines-valid="875" branches-covered="190" branches-valid="322" complexity="1.6846846846846846" version="2.0.3" timestamp="1526994685786">
+	<sources>
+		<source>--source</source>
+		<source>C:/Softlab/Blibioteca/master/BSPQ18-S2/biblioteca/src/main/java</source>
+		<source>C:/Softlab/Blibioteca/master/BSPQ18-S2/biblioteca/target/generated-sources/annotations</source>
+	</sources>
+	<packages>
+		<package name="es.deusto.spq.biblioteca.client" line-rate="1.0" branch-rate="1.0" complexity="1.5">
+			<classes>
+				<class name="es.deusto.spq.biblioteca.client.Client" filename="es/deusto/spq/biblioteca/client/Client.java" line-rate="1.0" branch-rate="1.0" complexity="1.5">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="14" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="setService" signature="([Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="24" hits="21" branch="false"/>
+								<line number="25" hits="21" branch="false"/>
+								<line number="26" hits="20" branch="false"/>
+								<line number="28" hits="1" branch="false"/>
+								<line number="29" hits="1" branch="false"/>
+								<line number="30" hits="1" branch="false"/>
+								<line number="31" hits="20" branch="false"/>
+								<line number="32" hits="21" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="14" hits="1" branch="false"/>
+						<line number="24" hits="21" branch="false"/>
+						<line number="25" hits="21" branch="false"/>
+						<line number="26" hits="20" branch="false"/>
+						<line number="28" hits="1" branch="false"/>
+						<line number="29" hits="1" branch="false"/>
+						<line number="30" hits="1" branch="false"/>
+						<line number="31" hits="20" branch="false"/>
+						<line number="32" hits="21" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="es.deusto.spq.biblioteca.controller" line-rate="0.6074074074074074" branch-rate="0.375" complexity="2.0">
+			<classes>
+				<class name="es.deusto.spq.biblioteca.controller.Controller" filename="es/deusto/spq/biblioteca/controller/Controller.java" line-rate="0.6074074074074074" branch-rate="0.375" complexity="2.0">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="55" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="([Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="62" hits="21" branch="false"/>
+								<line number="63" hits="21" branch="false"/>
+								<line number="64" hits="21" branch="false"/>
+								<line number="65" hits="21" branch="false"/>
+								<line number="66" hits="21" branch="false"/>
+								<line number="68" hits="21" branch="false"/>
+							</lines>
+						</method>
+						<method name="DevolverLibro" signature="(Ljava/lang/String;)Les/deusto/spq/biblioteca/data/ReservaLibro;" line-rate="0.6666666666666666" branch-rate="1.0">
+							<lines>
+								<line number="268" hits="1" branch="false"/>
+								<line number="270" hits="1" branch="false"/>
+								<line number="271" hits="0" branch="false"/>
+								<line number="272" hits="0" branch="false"/>
+								<line number="273" hits="1" branch="false"/>
+								<line number="274" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="almacenarLibro" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.6" branch-rate="1.0">
+							<lines>
+								<line number="204" hits="1" branch="false"/>
+								<line number="205" hits="0" branch="false"/>
+								<line number="206" hits="0" branch="false"/>
+								<line number="207" hits="1" branch="false"/>
+								<line number="208" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="anyadirMesa" signature="(Ljava/lang/String;I)V" line-rate="0.6" branch-rate="1.0">
+							<lines>
+								<line number="321" hits="1" branch="false"/>
+								<line number="322" hits="0" branch="false"/>
+								<line number="323" hits="0" branch="false"/>
+								<line number="324" hits="1" branch="false"/>
+								<line number="325" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="anyadirReserva" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V" line-rate="0.6" branch-rate="1.0">
+							<lines>
+								<line number="109" hits="1" branch="false"/>
+								<line number="110" hits="0" branch="false"/>
+								<line number="111" hits="0" branch="false"/>
+								<line number="112" hits="1" branch="false"/>
+								<line number="113" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="anyadirReservaComedor" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V" line-rate="0.6" branch-rate="1.0">
+							<lines>
+								<line number="308" hits="1" branch="false"/>
+								<line number="309" hits="0" branch="false"/>
+								<line number="310" hits="0" branch="false"/>
+								<line number="311" hits="1" branch="false"/>
+								<line number="312" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="anyadirSala" signature="(Ljava/lang/String;I)V" line-rate="0.6" branch-rate="1.0">
+							<lines>
+								<line number="93" hits="1" branch="false"/>
+								<line number="94" hits="0" branch="false"/>
+								<line number="95" hits="0" branch="false"/>
+								<line number="96" hits="1" branch="false"/>
+								<line number="97" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="anyadirValoracion" signature="(Ljava/lang/String;I)V" line-rate="0.6" branch-rate="1.0">
+							<lines>
+								<line number="426" hits="1" branch="false"/>
+								<line number="427" hits="0" branch="false"/>
+								<line number="429" hits="0" branch="false"/>
+								<line number="430" hits="1" branch="false"/>
+								<line number="431" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="buscarLibro" signature="(Ljava/lang/String;)Les/deusto/spq/biblioteca/data/Libro;" line-rate="0.6666666666666666" branch-rate="1.0">
+							<lines>
+								<line number="186" hits="1" branch="false"/>
+								<line number="188" hits="1" branch="false"/>
+								<line number="189" hits="0" branch="false"/>
+								<line number="190" hits="0" branch="false"/>
+								<line number="191" hits="1" branch="false"/>
+								<line number="192" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="consultarDiponibilidadLibro" signature="(Ljava/lang/String;)Z" line-rate="0.75" branch-rate="0.5">
+							<lines>
+								<line number="122" hits="1" branch="false"/>
+								<line number="124" hits="1" branch="false"/>
+								<line number="125" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="126" hits="1" branch="false"/>
+								<line number="128" hits="0" branch="false"/>
+								<line number="129" hits="0" branch="false"/>
+								<line number="130" hits="1" branch="false"/>
+								<line number="131" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="consultarDisponibilidad" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Z" line-rate="0.75" branch-rate="0.5">
+							<lines>
+								<line number="219" hits="1" branch="false"/>
+								<line number="221" hits="1" branch="false"/>
+								<line number="222" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="223" hits="1" branch="false"/>
+								<line number="225" hits="0" branch="false"/>
+								<line number="226" hits="0" branch="false"/>
+								<line number="227" hits="1" branch="false"/>
+								<line number="228" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="consultarDisponibilidadComedor" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Z" line-rate="0.75" branch-rate="0.5">
+							<lines>
+								<line number="286" hits="1" branch="false"/>
+								<line number="288" hits="1" branch="false"/>
+								<line number="289" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="290" hits="1" branch="false"/>
+								<line number="292" hits="0" branch="false"/>
+								<line number="293" hits="0" branch="false"/>
+								<line number="294" hits="1" branch="false"/>
+								<line number="295" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="consultarDisponibilidadLibro" signature="(Ljava/lang/String;)Z" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="238" hits="0" branch="false"/>
+								<line number="240" hits="0" branch="false"/>
+								<line number="241" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="242" hits="0" branch="false"/>
+								<line number="244" hits="0" branch="false"/>
+								<line number="245" hits="0" branch="false"/>
+								<line number="246" hits="0" branch="false"/>
+								<line number="247" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="editarReserva" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.6" branch-rate="1.0">
+							<lines>
+								<line number="384" hits="1" branch="false"/>
+								<line number="385" hits="0" branch="false"/>
+								<line number="386" hits="0" branch="false"/>
+								<line number="387" hits="1" branch="false"/>
+								<line number="388" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="editarReservaComedor" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.8" branch-rate="1.0">
+							<lines>
+								<line number="351" hits="1" branch="false"/>
+								<line number="352" hits="1" branch="false"/>
+								<line number="353" hits="1" branch="false"/>
+								<line number="354" hits="0" branch="false"/>
+								<line number="355" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="eliminarReserva" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.6" branch-rate="1.0">
+							<lines>
+								<line number="173" hits="1" branch="false"/>
+								<line number="175" hits="0" branch="false"/>
+								<line number="176" hits="0" branch="false"/>
+								<line number="177" hits="1" branch="false"/>
+								<line number="178" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="eliminarReservaComedor" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.6" branch-rate="1.0">
+							<lines>
+								<line number="365" hits="1" branch="false"/>
+								<line number="366" hits="0" branch="false"/>
+								<line number="367" hits="0" branch="false"/>
+								<line number="368" hits="1" branch="false"/>
+								<line number="369" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="main" signature="([Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="438" hits="0" branch="false"/>
+								<line number="439" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="mostrarLibro" signature="(Ljava/lang/String;)V" line-rate="0.6" branch-rate="1.0">
+							<lines>
+								<line number="256" hits="1" branch="false"/>
+								<line number="257" hits="0" branch="false"/>
+								<line number="258" hits="0" branch="false"/>
+								<line number="259" hits="1" branch="false"/>
+								<line number="260" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="reservarLibro" signature="(Ljava/lang/String;)V" line-rate="0.6" branch-rate="1.0">
+							<lines>
+								<line number="143" hits="1" branch="false"/>
+								<line number="144" hits="0" branch="false"/>
+								<line number="145" hits="0" branch="false"/>
+								<line number="146" hits="1" branch="false"/>
+								<line number="147" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="verCatalogoDeLibros" signature="()V" line-rate="0.6" branch-rate="1.0">
+							<lines>
+								<line number="398" hits="1" branch="false"/>
+								<line number="400" hits="0" branch="false"/>
+								<line number="401" hits="0" branch="false"/>
+								<line number="402" hits="1" branch="false"/>
+								<line number="405" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="verMenu" signature="(Ljava/lang/String;)Ljava/lang/String;" line-rate="0.8333333333333334" branch-rate="1.0">
+							<lines>
+								<line number="414" hits="1" branch="false"/>
+								<line number="416" hits="1" branch="false"/>
+								<line number="418" hits="1" branch="false"/>
+								<line number="419" hits="1" branch="false"/>
+								<line number="420" hits="0" branch="false"/>
+								<line number="421" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="verReservaComedor" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="333" hits="0" branch="false"/>
+								<line number="334" hits="0" branch="false"/>
+								<line number="335" hits="0" branch="false"/>
+								<line number="336" hits="0" branch="false"/>
+								<line number="337" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="verReservas" signature="(Ljava/lang/String;)Ljava/util/ArrayList;" line-rate="0.6666666666666666" branch-rate="1.0">
+							<lines>
+								<line number="155" hits="2" branch="false"/>
+								<line number="158" hits="2" branch="false"/>
+								<line number="159" hits="0" branch="false"/>
+								<line number="160" hits="0" branch="false"/>
+								<line number="161" hits="2" branch="false"/>
+								<line number="162" hits="2" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="55" hits="1" branch="false"/>
+						<line number="62" hits="21" branch="false"/>
+						<line number="63" hits="21" branch="false"/>
+						<line number="64" hits="21" branch="false"/>
+						<line number="65" hits="21" branch="false"/>
+						<line number="66" hits="21" branch="false"/>
+						<line number="68" hits="21" branch="false"/>
+						<line number="93" hits="1" branch="false"/>
+						<line number="94" hits="0" branch="false"/>
+						<line number="95" hits="0" branch="false"/>
+						<line number="96" hits="1" branch="false"/>
+						<line number="97" hits="1" branch="false"/>
+						<line number="109" hits="1" branch="false"/>
+						<line number="110" hits="0" branch="false"/>
+						<line number="111" hits="0" branch="false"/>
+						<line number="112" hits="1" branch="false"/>
+						<line number="113" hits="1" branch="false"/>
+						<line number="122" hits="1" branch="false"/>
+						<line number="124" hits="1" branch="false"/>
+						<line number="125" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="126" hits="1" branch="false"/>
+						<line number="128" hits="0" branch="false"/>
+						<line number="129" hits="0" branch="false"/>
+						<line number="130" hits="1" branch="false"/>
+						<line number="131" hits="1" branch="false"/>
+						<line number="143" hits="1" branch="false"/>
+						<line number="144" hits="0" branch="false"/>
+						<line number="145" hits="0" branch="false"/>
+						<line number="146" hits="1" branch="false"/>
+						<line number="147" hits="1" branch="false"/>
+						<line number="155" hits="2" branch="false"/>
+						<line number="158" hits="2" branch="false"/>
+						<line number="159" hits="0" branch="false"/>
+						<line number="160" hits="0" branch="false"/>
+						<line number="161" hits="2" branch="false"/>
+						<line number="162" hits="2" branch="false"/>
+						<line number="173" hits="1" branch="false"/>
+						<line number="175" hits="0" branch="false"/>
+						<line number="176" hits="0" branch="false"/>
+						<line number="177" hits="1" branch="false"/>
+						<line number="178" hits="1" branch="false"/>
+						<line number="186" hits="1" branch="false"/>
+						<line number="188" hits="1" branch="false"/>
+						<line number="189" hits="0" branch="false"/>
+						<line number="190" hits="0" branch="false"/>
+						<line number="191" hits="1" branch="false"/>
+						<line number="192" hits="1" branch="false"/>
+						<line number="204" hits="1" branch="false"/>
+						<line number="205" hits="0" branch="false"/>
+						<line number="206" hits="0" branch="false"/>
+						<line number="207" hits="1" branch="false"/>
+						<line number="208" hits="1" branch="false"/>
+						<line number="219" hits="1" branch="false"/>
+						<line number="221" hits="1" branch="false"/>
+						<line number="222" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="223" hits="1" branch="false"/>
+						<line number="225" hits="0" branch="false"/>
+						<line number="226" hits="0" branch="false"/>
+						<line number="227" hits="1" branch="false"/>
+						<line number="228" hits="1" branch="false"/>
+						<line number="238" hits="0" branch="false"/>
+						<line number="240" hits="0" branch="false"/>
+						<line number="241" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="242" hits="0" branch="false"/>
+						<line number="244" hits="0" branch="false"/>
+						<line number="245" hits="0" branch="false"/>
+						<line number="246" hits="0" branch="false"/>
+						<line number="247" hits="0" branch="false"/>
+						<line number="256" hits="1" branch="false"/>
+						<line number="257" hits="0" branch="false"/>
+						<line number="258" hits="0" branch="false"/>
+						<line number="259" hits="1" branch="false"/>
+						<line number="260" hits="1" branch="false"/>
+						<line number="268" hits="1" branch="false"/>
+						<line number="270" hits="1" branch="false"/>
+						<line number="271" hits="0" branch="false"/>
+						<line number="272" hits="0" branch="false"/>
+						<line number="273" hits="1" branch="false"/>
+						<line number="274" hits="1" branch="false"/>
+						<line number="286" hits="1" branch="false"/>
+						<line number="288" hits="1" branch="false"/>
+						<line number="289" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="290" hits="1" branch="false"/>
+						<line number="292" hits="0" branch="false"/>
+						<line number="293" hits="0" branch="false"/>
+						<line number="294" hits="1" branch="false"/>
+						<line number="295" hits="1" branch="false"/>
+						<line number="308" hits="1" branch="false"/>
+						<line number="309" hits="0" branch="false"/>
+						<line number="310" hits="0" branch="false"/>
+						<line number="311" hits="1" branch="false"/>
+						<line number="312" hits="1" branch="false"/>
+						<line number="321" hits="1" branch="false"/>
+						<line number="322" hits="0" branch="false"/>
+						<line number="323" hits="0" branch="false"/>
+						<line number="324" hits="1" branch="false"/>
+						<line number="325" hits="1" branch="false"/>
+						<line number="333" hits="0" branch="false"/>
+						<line number="334" hits="0" branch="false"/>
+						<line number="335" hits="0" branch="false"/>
+						<line number="336" hits="0" branch="false"/>
+						<line number="337" hits="0" branch="false"/>
+						<line number="351" hits="1" branch="false"/>
+						<line number="352" hits="1" branch="false"/>
+						<line number="353" hits="1" branch="false"/>
+						<line number="354" hits="0" branch="false"/>
+						<line number="355" hits="1" branch="false"/>
+						<line number="365" hits="1" branch="false"/>
+						<line number="366" hits="0" branch="false"/>
+						<line number="367" hits="0" branch="false"/>
+						<line number="368" hits="1" branch="false"/>
+						<line number="369" hits="1" branch="false"/>
+						<line number="384" hits="1" branch="false"/>
+						<line number="385" hits="0" branch="false"/>
+						<line number="386" hits="0" branch="false"/>
+						<line number="387" hits="1" branch="false"/>
+						<line number="388" hits="1" branch="false"/>
+						<line number="398" hits="1" branch="false"/>
+						<line number="400" hits="0" branch="false"/>
+						<line number="401" hits="0" branch="false"/>
+						<line number="402" hits="1" branch="false"/>
+						<line number="405" hits="1" branch="false"/>
+						<line number="414" hits="1" branch="false"/>
+						<line number="416" hits="1" branch="false"/>
+						<line number="418" hits="1" branch="false"/>
+						<line number="419" hits="1" branch="false"/>
+						<line number="420" hits="0" branch="false"/>
+						<line number="421" hits="1" branch="false"/>
+						<line number="426" hits="1" branch="false"/>
+						<line number="427" hits="0" branch="false"/>
+						<line number="429" hits="0" branch="false"/>
+						<line number="430" hits="1" branch="false"/>
+						<line number="431" hits="1" branch="false"/>
+						<line number="438" hits="0" branch="false"/>
+						<line number="439" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="es.deusto.spq.biblioteca.dao" line-rate="0.7104722792607803" branch-rate="0.5212765957446809" complexity="3.0">
+			<classes>
+				<class name="es.deusto.spq.biblioteca.dao.ILibroDAO" filename="es/deusto/spq/biblioteca/dao/ILibroDAO.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.dao.IMenuDAO" filename="es/deusto/spq/biblioteca/dao/IMenuDAO.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.dao.IMesaDAO" filename="es/deusto/spq/biblioteca/dao/IMesaDAO.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.dao.IReservaComedorDAO" filename="es/deusto/spq/biblioteca/dao/IReservaComedorDAO.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.dao.IReservaDAO" filename="es/deusto/spq/biblioteca/dao/IReservaDAO.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.dao.IReservaLibroDAO" filename="es/deusto/spq/biblioteca/dao/IReservaLibroDAO.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.dao.ISalaDAO" filename="es/deusto/spq/biblioteca/dao/ISalaDAO.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.dao.LibroDAO" filename="es/deusto/spq/biblioteca/dao/LibroDAO.java" line-rate="0.8266666666666667" branch-rate="0.5555555555555556" complexity="3.6">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="27" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="32" hits="22" branch="false"/>
+								<line number="33" hits="22" branch="false"/>
+								<line number="35" hits="22" branch="false"/>
+							</lines>
+						</method>
+						<method name="almacenarLibro" signature="(Les/deusto/spq/biblioteca/data/Libro;)V" line-rate="0.7692307692307693" branch-rate="0.5">
+							<lines>
+								<line number="45" hits="1" branch="false"/>
+								<line number="46" hits="1" branch="false"/>
+								<line number="49" hits="1" branch="false"/>
+								<line number="50" hits="1" branch="false"/>
+								<line number="51" hits="1" branch="false"/>
+								<line number="52" hits="1" branch="false"/>
+								<line number="53" hits="0" branch="false"/>
+								<line number="54" hits="0" branch="false"/>
+								<line number="56" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="57" hits="0" branch="false"/>
+								<line number="60" hits="1" branch="false"/>
+								<line number="61" hits="1" branch="false"/>
+								<line number="63" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLibro" signature="(Ljava/lang/String;)Les/deusto/spq/biblioteca/data/Libro;" line-rate="0.8235294117647058" branch-rate="0.5">
+							<lines>
+								<line number="74" hits="1" branch="false"/>
+								<line number="75" hits="1" branch="false"/>
+								<line number="77" hits="1" branch="false"/>
+								<line number="78" hits="1" branch="false"/>
+								<line number="81" hits="1" branch="false"/>
+								<line number="84" hits="1" branch="false"/>
+								<line number="85" hits="1" branch="false"/>
+								<line number="86" hits="1" branch="false"/>
+								<line number="87" hits="1" branch="false"/>
+								<line number="88" hits="1" branch="false"/>
+								<line number="90" hits="0" branch="false"/>
+								<line number="91" hits="0" branch="false"/>
+								<line number="94" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="95" hits="0" branch="false"/>
+								<line number="98" hits="1" branch="false"/>
+								<line number="99" hits="1" branch="false"/>
+								<line number="101" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLibros" signature="()Ljava/util/ArrayList;" line-rate="0.85" branch-rate="0.6666666666666666">
+							<lines>
+								<line number="115" hits="1" branch="false"/>
+								<line number="118" hits="1" branch="false"/>
+								<line number="120" hits="1" branch="false"/>
+								<line number="124" hits="1" branch="false"/>
+								<line number="126" hits="1" branch="false"/>
+								<line number="127" hits="1" branch="false"/>
+								<line number="128" hits="1" branch="false"/>
+								<line number="130" hits="1" branch="false"/>
+								<line number="132" hits="1" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="133" hits="6" branch="false"/>
+								<line number="134" hits="6" branch="false"/>
+								<line number="135" hits="6" branch="false"/>
+								<line number="136" hits="1" branch="false"/>
+								<line number="138" hits="0" branch="false"/>
+								<line number="140" hits="0" branch="false"/>
+								<line number="143" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="144" hits="0" branch="false"/>
+								<line number="147" hits="1" branch="false"/>
+								<line number="148" hits="1" branch="false"/>
+								<line number="152" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="verLibro" signature="(Ljava/lang/String;)Les/deusto/spq/biblioteca/data/Libro;" line-rate="0.8095238095238095" branch-rate="0.5">
+							<lines>
+								<line number="161" hits="1" branch="false"/>
+								<line number="162" hits="1" branch="false"/>
+								<line number="164" hits="1" branch="false"/>
+								<line number="165" hits="1" branch="false"/>
+								<line number="170" hits="1" branch="false"/>
+								<line number="173" hits="1" branch="false"/>
+								<line number="174" hits="1" branch="false"/>
+								<line number="175" hits="1" branch="false"/>
+								<line number="176" hits="1" branch="false"/>
+								<line number="179" hits="1" branch="false"/>
+								<line number="180" hits="0" branch="false"/>
+								<line number="181" hits="0" branch="false"/>
+								<line number="182" hits="0" branch="false"/>
+								<line number="184" hits="0" branch="false"/>
+								<line number="186" hits="1" branch="false"/>
+								<line number="188" hits="1" branch="false"/>
+								<line number="191" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="192" hits="1" branch="false"/>
+								<line number="195" hits="1" branch="false"/>
+								<line number="196" hits="1" branch="false"/>
+								<line number="197" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="27" hits="1" branch="false"/>
+						<line number="32" hits="22" branch="false"/>
+						<line number="33" hits="22" branch="false"/>
+						<line number="35" hits="22" branch="false"/>
+						<line number="45" hits="1" branch="false"/>
+						<line number="46" hits="1" branch="false"/>
+						<line number="49" hits="1" branch="false"/>
+						<line number="50" hits="1" branch="false"/>
+						<line number="51" hits="1" branch="false"/>
+						<line number="52" hits="1" branch="false"/>
+						<line number="53" hits="0" branch="false"/>
+						<line number="54" hits="0" branch="false"/>
+						<line number="56" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="57" hits="0" branch="false"/>
+						<line number="60" hits="1" branch="false"/>
+						<line number="61" hits="1" branch="false"/>
+						<line number="63" hits="1" branch="false"/>
+						<line number="74" hits="1" branch="false"/>
+						<line number="75" hits="1" branch="false"/>
+						<line number="77" hits="1" branch="false"/>
+						<line number="78" hits="1" branch="false"/>
+						<line number="81" hits="1" branch="false"/>
+						<line number="84" hits="1" branch="false"/>
+						<line number="85" hits="1" branch="false"/>
+						<line number="86" hits="1" branch="false"/>
+						<line number="87" hits="1" branch="false"/>
+						<line number="88" hits="1" branch="false"/>
+						<line number="90" hits="0" branch="false"/>
+						<line number="91" hits="0" branch="false"/>
+						<line number="94" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="95" hits="0" branch="false"/>
+						<line number="98" hits="1" branch="false"/>
+						<line number="99" hits="1" branch="false"/>
+						<line number="101" hits="1" branch="false"/>
+						<line number="115" hits="1" branch="false"/>
+						<line number="118" hits="1" branch="false"/>
+						<line number="120" hits="1" branch="false"/>
+						<line number="124" hits="1" branch="false"/>
+						<line number="126" hits="1" branch="false"/>
+						<line number="127" hits="1" branch="false"/>
+						<line number="128" hits="1" branch="false"/>
+						<line number="130" hits="1" branch="false"/>
+						<line number="132" hits="1" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="133" hits="6" branch="false"/>
+						<line number="134" hits="6" branch="false"/>
+						<line number="135" hits="6" branch="false"/>
+						<line number="136" hits="1" branch="false"/>
+						<line number="138" hits="0" branch="false"/>
+						<line number="140" hits="0" branch="false"/>
+						<line number="143" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="144" hits="0" branch="false"/>
+						<line number="147" hits="1" branch="false"/>
+						<line number="148" hits="1" branch="false"/>
+						<line number="152" hits="1" branch="false"/>
+						<line number="161" hits="1" branch="false"/>
+						<line number="162" hits="1" branch="false"/>
+						<line number="164" hits="1" branch="false"/>
+						<line number="165" hits="1" branch="false"/>
+						<line number="170" hits="1" branch="false"/>
+						<line number="173" hits="1" branch="false"/>
+						<line number="174" hits="1" branch="false"/>
+						<line number="175" hits="1" branch="false"/>
+						<line number="176" hits="1" branch="false"/>
+						<line number="179" hits="1" branch="false"/>
+						<line number="180" hits="0" branch="false"/>
+						<line number="181" hits="0" branch="false"/>
+						<line number="182" hits="0" branch="false"/>
+						<line number="184" hits="0" branch="false"/>
+						<line number="186" hits="1" branch="false"/>
+						<line number="188" hits="1" branch="false"/>
+						<line number="191" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="192" hits="1" branch="false"/>
+						<line number="195" hits="1" branch="false"/>
+						<line number="196" hits="1" branch="false"/>
+						<line number="197" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.dao.MenuDAO" filename="es/deusto/spq/biblioteca/dao/MenuDAO.java" line-rate="0.3050847457627119" branch-rate="0.22727272727272727" complexity="4.5">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="24" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="29" hits="22" branch="false"/>
+								<line number="30" hits="22" branch="false"/>
+								<line number="31" hits="22" branch="false"/>
+							</lines>
+						</method>
+						<method name="anyadirMenu" signature="(Les/deusto/spq/biblioteca/data/Menu;)V" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+								<line number="44" hits="0" branch="false"/>
+								<line number="45" hits="0" branch="false"/>
+								<line number="46" hits="0" branch="false"/>
+								<line number="47" hits="0" branch="false"/>
+								<line number="48" hits="0" branch="false"/>
+								<line number="49" hits="0" branch="false"/>
+								<line number="51" hits="0" branch="true" condition-coverage="0% (0/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="1" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="52" hits="0" branch="false"/>
+								<line number="55" hits="0" branch="false"/>
+								<line number="56" hits="0" branch="false"/>
+								<line number="57" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="anyadirValoracion" signature="(Ljava/lang/String;I)V" line-rate="0.6086956521739131" branch-rate="0.5">
+							<lines>
+								<line number="67" hits="1" branch="false"/>
+								<line number="68" hits="1" branch="false"/>
+								<line number="71" hits="1" branch="false"/>
+								<line number="72" hits="1" branch="false"/>
+								<line number="73" hits="1" branch="false"/>
+								<line number="75" hits="1" branch="false"/>
+								<line number="76" hits="1" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="77" hits="10" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="78" hits="0" branch="false"/>
+								<line number="79" hits="0" branch="false"/>
+								<line number="80" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="81" hits="0" branch="false"/>
+								<line number="83" hits="0" branch="false"/>
+								<line number="84" hits="0" branch="false"/>
+								<line number="87" hits="10" branch="false"/>
+								<line number="88" hits="1" branch="false"/>
+								<line number="89" hits="0" branch="false"/>
+								<line number="90" hits="0" branch="false"/>
+								<line number="93" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="94" hits="0" branch="false"/>
+								<line number="97" hits="1" branch="false"/>
+								<line number="98" hits="1" branch="false"/>
+								<line number="99" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="verMenu" signature="(Ljava/lang/String;)Ljava/lang/String;" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="108" hits="0" branch="false"/>
+								<line number="109" hits="0" branch="false"/>
+								<line number="110" hits="0" branch="false"/>
+								<line number="112" hits="0" branch="false"/>
+								<line number="113" hits="0" branch="false"/>
+								<line number="114" hits="0" branch="false"/>
+								<line number="116" hits="0" branch="false"/>
+								<line number="117" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="118" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="120" hits="0" branch="false"/>
+								<line number="123" hits="0" branch="false"/>
+								<line number="124" hits="0" branch="false"/>
+								<line number="125" hits="0" branch="false"/>
+								<line number="126" hits="0" branch="false"/>
+								<line number="128" hits="0" branch="true" condition-coverage="0% (0/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="1" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="129" hits="0" branch="false"/>
+								<line number="132" hits="0" branch="false"/>
+								<line number="133" hits="0" branch="false"/>
+								<line number="134" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="24" hits="1" branch="false"/>
+						<line number="29" hits="22" branch="false"/>
+						<line number="30" hits="22" branch="false"/>
+						<line number="31" hits="22" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="44" hits="0" branch="false"/>
+						<line number="45" hits="0" branch="false"/>
+						<line number="46" hits="0" branch="false"/>
+						<line number="47" hits="0" branch="false"/>
+						<line number="48" hits="0" branch="false"/>
+						<line number="49" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="true" condition-coverage="0% (0/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="1" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="52" hits="0" branch="false"/>
+						<line number="55" hits="0" branch="false"/>
+						<line number="56" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
+						<line number="67" hits="1" branch="false"/>
+						<line number="68" hits="1" branch="false"/>
+						<line number="71" hits="1" branch="false"/>
+						<line number="72" hits="1" branch="false"/>
+						<line number="73" hits="1" branch="false"/>
+						<line number="75" hits="1" branch="false"/>
+						<line number="76" hits="1" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="77" hits="10" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="78" hits="0" branch="false"/>
+						<line number="79" hits="0" branch="false"/>
+						<line number="80" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="81" hits="0" branch="false"/>
+						<line number="83" hits="0" branch="false"/>
+						<line number="84" hits="0" branch="false"/>
+						<line number="87" hits="10" branch="false"/>
+						<line number="88" hits="1" branch="false"/>
+						<line number="89" hits="0" branch="false"/>
+						<line number="90" hits="0" branch="false"/>
+						<line number="93" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="94" hits="0" branch="false"/>
+						<line number="97" hits="1" branch="false"/>
+						<line number="98" hits="1" branch="false"/>
+						<line number="99" hits="1" branch="false"/>
+						<line number="108" hits="0" branch="false"/>
+						<line number="109" hits="0" branch="false"/>
+						<line number="110" hits="0" branch="false"/>
+						<line number="112" hits="0" branch="false"/>
+						<line number="113" hits="0" branch="false"/>
+						<line number="114" hits="0" branch="false"/>
+						<line number="116" hits="0" branch="false"/>
+						<line number="117" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="118" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="120" hits="0" branch="false"/>
+						<line number="123" hits="0" branch="false"/>
+						<line number="124" hits="0" branch="false"/>
+						<line number="125" hits="0" branch="false"/>
+						<line number="126" hits="0" branch="false"/>
+						<line number="128" hits="0" branch="true" condition-coverage="0% (0/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="1" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="129" hits="0" branch="false"/>
+						<line number="132" hits="0" branch="false"/>
+						<line number="133" hits="0" branch="false"/>
+						<line number="134" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.dao.MesaDAO" filename="es/deusto/spq/biblioteca/dao/MesaDAO.java" line-rate="0.8055555555555556" branch-rate="0.6428571428571429" complexity="4.0">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="23" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="28" hits="22" branch="false"/>
+								<line number="29" hits="22" branch="false"/>
+								<line number="30" hits="22" branch="false"/>
+							</lines>
+						</method>
+						<method name="anyadirMesa" signature="(Les/deusto/spq/biblioteca/data/Mesa;)V" line-rate="0.7692307692307693" branch-rate="0.5">
+							<lines>
+								<line number="39" hits="1" branch="false"/>
+								<line number="40" hits="1" branch="false"/>
+								<line number="42" hits="1" branch="false"/>
+								<line number="43" hits="1" branch="false"/>
+								<line number="44" hits="1" branch="false"/>
+								<line number="45" hits="1" branch="false"/>
+								<line number="46" hits="0" branch="false"/>
+								<line number="47" hits="0" branch="false"/>
+								<line number="49" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="50" hits="0" branch="false"/>
+								<line number="53" hits="1" branch="false"/>
+								<line number="54" hits="1" branch="false"/>
+								<line number="55" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="consultarPlazasComedor" signature="(Ljava/lang/String;I)Z" line-rate="0.7894736842105263" branch-rate="0.7">
+							<lines>
+								<line number="64" hits="1" branch="false"/>
+								<line number="66" hits="1" branch="false"/>
+								<line number="67" hits="1" branch="false"/>
+								<line number="70" hits="1" branch="false"/>
+								<line number="71" hits="1" branch="false"/>
+								<line number="72" hits="1" branch="false"/>
+								<line number="74" hits="1" branch="false"/>
+								<line number="75" hits="1" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="76" hits="16" branch="true" condition-coverage="75% (3/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="77" hits="0" branch="false"/>
+								<line number="79" hits="16" branch="false"/>
+								<line number="80" hits="1" branch="false"/>
+								<line number="81" hits="0" branch="false"/>
+								<line number="82" hits="0" branch="false"/>
+								<line number="84" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="85" hits="0" branch="false"/>
+								<line number="88" hits="1" branch="false"/>
+								<line number="89" hits="1" branch="false"/>
+								<line number="90" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="23" hits="1" branch="false"/>
+						<line number="28" hits="22" branch="false"/>
+						<line number="29" hits="22" branch="false"/>
+						<line number="30" hits="22" branch="false"/>
+						<line number="39" hits="1" branch="false"/>
+						<line number="40" hits="1" branch="false"/>
+						<line number="42" hits="1" branch="false"/>
+						<line number="43" hits="1" branch="false"/>
+						<line number="44" hits="1" branch="false"/>
+						<line number="45" hits="1" branch="false"/>
+						<line number="46" hits="0" branch="false"/>
+						<line number="47" hits="0" branch="false"/>
+						<line number="49" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="50" hits="0" branch="false"/>
+						<line number="53" hits="1" branch="false"/>
+						<line number="54" hits="1" branch="false"/>
+						<line number="55" hits="1" branch="false"/>
+						<line number="64" hits="1" branch="false"/>
+						<line number="66" hits="1" branch="false"/>
+						<line number="67" hits="1" branch="false"/>
+						<line number="70" hits="1" branch="false"/>
+						<line number="71" hits="1" branch="false"/>
+						<line number="72" hits="1" branch="false"/>
+						<line number="74" hits="1" branch="false"/>
+						<line number="75" hits="1" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="76" hits="16" branch="true" condition-coverage="75% (3/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="77" hits="0" branch="false"/>
+						<line number="79" hits="16" branch="false"/>
+						<line number="80" hits="1" branch="false"/>
+						<line number="81" hits="0" branch="false"/>
+						<line number="82" hits="0" branch="false"/>
+						<line number="84" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="85" hits="0" branch="false"/>
+						<line number="88" hits="1" branch="false"/>
+						<line number="89" hits="1" branch="false"/>
+						<line number="90" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.dao.ReservaComedorDAO" filename="es/deusto/spq/biblioteca/dao/ReservaComedorDAO.java" line-rate="0.6272727272727273" branch-rate="0.4791666666666667" complexity="5.142857142857143">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="31" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="36" hits="22" branch="false"/>
+								<line number="37" hits="22" branch="false"/>
+								<line number="38" hits="22" branch="false"/>
+							</lines>
+						</method>
+						<method name="anyadirReservaComedor" signature="(Les/deusto/spq/biblioteca/data/ReservaMesa;)V" line-rate="0.9473684210526315" branch-rate="0.625">
+							<lines>
+								<line number="48" hits="1" branch="false"/>
+								<line number="49" hits="1" branch="false"/>
+								<line number="51" hits="1" branch="false"/>
+								<line number="52" hits="1" branch="false"/>
+								<line number="54" hits="1" branch="false"/>
+								<line number="55" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="56" hits="6" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="57" hits="2" branch="false"/>
+								<line number="59" hits="2" branch="false"/>
+								<line number="60" hits="2" branch="false"/>
+								<line number="61" hits="2" branch="false"/>
+								<line number="63" hits="5" branch="false"/>
+								<line number="64" hits="1" branch="false"/>
+								<line number="66" hits="1" branch="false"/>
+								<line number="69" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="70" hits="0" branch="false"/>
+								<line number="73" hits="1" branch="false"/>
+								<line number="74" hits="1" branch="false"/>
+								<line number="75" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="consultarDisponibilidadComedor" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z" line-rate="0.7894736842105263" branch-rate="0.5833333333333334">
+							<lines>
+								<line number="86" hits="1" branch="false"/>
+								<line number="88" hits="1" branch="false"/>
+								<line number="89" hits="1" branch="false"/>
+								<line number="92" hits="1" branch="false"/>
+								<line number="93" hits="1" branch="false"/>
+								<line number="94" hits="1" branch="false"/>
+								<line number="96" hits="1" branch="false"/>
+								<line number="97" hits="1" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="98" hits="15" branch="true" condition-coverage="50% (3/6)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+										<condition number="2" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="99" hits="0" branch="false"/>
+								<line number="101" hits="15" branch="false"/>
+								<line number="102" hits="1" branch="false"/>
+								<line number="103" hits="0" branch="false"/>
+								<line number="104" hits="0" branch="false"/>
+								<line number="106" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="107" hits="0" branch="false"/>
+								<line number="110" hits="1" branch="false"/>
+								<line number="111" hits="1" branch="false"/>
+								<line number="112" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="devolverReservaComedor" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Les/deusto/spq/biblioteca/data/ReservaMesa;" line-rate="0.8421052631578947" branch-rate="0.75">
+							<lines>
+								<line number="197" hits="2" branch="false"/>
+								<line number="198" hits="2" branch="false"/>
+								<line number="199" hits="2" branch="false"/>
+								<line number="203" hits="2" branch="false"/>
+								<line number="205" hits="2" branch="false"/>
+								<line number="206" hits="2" branch="false"/>
+								<line number="208" hits="2" branch="false"/>
+								<line number="209" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="210" hits="28" branch="true" condition-coverage="83% (5/6)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="100%"/>
+										<condition number="2" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="211" hits="5" branch="false"/>
+								<line number="214" hits="28" branch="false"/>
+								<line number="215" hits="2" branch="false"/>
+								<line number="216" hits="0" branch="false"/>
+								<line number="218" hits="0" branch="false"/>
+								<line number="221" hits="2" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="222" hits="0" branch="false"/>
+								<line number="225" hits="2" branch="false"/>
+								<line number="226" hits="2" branch="false"/>
+								<line number="228" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="editarReservaComedor" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.3333333333333333" branch-rate="0.0">
+							<lines>
+								<line number="239" hits="1" branch="false"/>
+								<line number="240" hits="1" branch="false"/>
+								<line number="241" hits="1" branch="false"/>
+								<line number="242" hits="1" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="243" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="244" hits="0" branch="false"/>
+								<line number="245" hits="0" branch="false"/>
+								<line number="246" hits="0" branch="false"/>
+								<line number="248" hits="0" branch="false"/>
+								<line number="250" hits="0" branch="false"/>
+								<line number="252" hits="0" branch="false"/>
+								<line number="255" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="eliminarReservaComedor" signature="(Les/deusto/spq/biblioteca/data/ReservaMesa;)V" line-rate="0.9230769230769231" branch-rate="0.5">
+							<lines>
+								<line number="164" hits="1" branch="false"/>
+								<line number="165" hits="1" branch="false"/>
+								<line number="168" hits="1" branch="false"/>
+								<line number="170" hits="1" branch="false"/>
+								<line number="172" hits="1" branch="false"/>
+								<line number="173" hits="0" branch="false"/>
+								<line number="174" hits="1" branch="false"/>
+								<line number="176" hits="1" branch="false"/>
+								<line number="179" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="180" hits="1" branch="false"/>
+								<line number="183" hits="1" branch="false"/>
+								<line number="184" hits="1" branch="false"/>
+								<line number="185" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="verReservaComedor" signature="(Ljava/lang/String;)Ljava/util/ArrayList;" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="122" hits="0" branch="false"/>
+								<line number="123" hits="0" branch="false"/>
+								<line number="125" hits="0" branch="false"/>
+								<line number="126" hits="0" branch="false"/>
+								<line number="129" hits="0" branch="false"/>
+								<line number="130" hits="0" branch="false"/>
+								<line number="131" hits="0" branch="false"/>
+								<line number="133" hits="0" branch="false"/>
+								<line number="134" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="135" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="136" hits="0" branch="false"/>
+								<line number="137" hits="0" branch="false"/>
+								<line number="138" hits="0" branch="false"/>
+								<line number="139" hits="0" branch="false"/>
+								<line number="140" hits="0" branch="false"/>
+								<line number="142" hits="0" branch="false"/>
+								<line number="143" hits="0" branch="false"/>
+								<line number="144" hits="0" branch="false"/>
+								<line number="145" hits="0" branch="false"/>
+								<line number="147" hits="0" branch="true" condition-coverage="0% (0/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="1" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="148" hits="0" branch="false"/>
+								<line number="151" hits="0" branch="false"/>
+								<line number="152" hits="0" branch="false"/>
+								<line number="153" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="31" hits="1" branch="false"/>
+						<line number="36" hits="22" branch="false"/>
+						<line number="37" hits="22" branch="false"/>
+						<line number="38" hits="22" branch="false"/>
+						<line number="48" hits="1" branch="false"/>
+						<line number="49" hits="1" branch="false"/>
+						<line number="51" hits="1" branch="false"/>
+						<line number="52" hits="1" branch="false"/>
+						<line number="54" hits="1" branch="false"/>
+						<line number="55" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="56" hits="6" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="57" hits="2" branch="false"/>
+						<line number="59" hits="2" branch="false"/>
+						<line number="60" hits="2" branch="false"/>
+						<line number="61" hits="2" branch="false"/>
+						<line number="63" hits="5" branch="false"/>
+						<line number="64" hits="1" branch="false"/>
+						<line number="66" hits="1" branch="false"/>
+						<line number="69" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="70" hits="0" branch="false"/>
+						<line number="73" hits="1" branch="false"/>
+						<line number="74" hits="1" branch="false"/>
+						<line number="75" hits="1" branch="false"/>
+						<line number="86" hits="1" branch="false"/>
+						<line number="88" hits="1" branch="false"/>
+						<line number="89" hits="1" branch="false"/>
+						<line number="92" hits="1" branch="false"/>
+						<line number="93" hits="1" branch="false"/>
+						<line number="94" hits="1" branch="false"/>
+						<line number="96" hits="1" branch="false"/>
+						<line number="97" hits="1" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="98" hits="15" branch="true" condition-coverage="50% (3/6)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+								<condition number="2" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="99" hits="0" branch="false"/>
+						<line number="101" hits="15" branch="false"/>
+						<line number="102" hits="1" branch="false"/>
+						<line number="103" hits="0" branch="false"/>
+						<line number="104" hits="0" branch="false"/>
+						<line number="106" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="107" hits="0" branch="false"/>
+						<line number="110" hits="1" branch="false"/>
+						<line number="111" hits="1" branch="false"/>
+						<line number="112" hits="1" branch="false"/>
+						<line number="122" hits="0" branch="false"/>
+						<line number="123" hits="0" branch="false"/>
+						<line number="125" hits="0" branch="false"/>
+						<line number="126" hits="0" branch="false"/>
+						<line number="129" hits="0" branch="false"/>
+						<line number="130" hits="0" branch="false"/>
+						<line number="131" hits="0" branch="false"/>
+						<line number="133" hits="0" branch="false"/>
+						<line number="134" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="135" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="136" hits="0" branch="false"/>
+						<line number="137" hits="0" branch="false"/>
+						<line number="138" hits="0" branch="false"/>
+						<line number="139" hits="0" branch="false"/>
+						<line number="140" hits="0" branch="false"/>
+						<line number="142" hits="0" branch="false"/>
+						<line number="143" hits="0" branch="false"/>
+						<line number="144" hits="0" branch="false"/>
+						<line number="145" hits="0" branch="false"/>
+						<line number="147" hits="0" branch="true" condition-coverage="0% (0/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="1" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="148" hits="0" branch="false"/>
+						<line number="151" hits="0" branch="false"/>
+						<line number="152" hits="0" branch="false"/>
+						<line number="153" hits="0" branch="false"/>
+						<line number="164" hits="1" branch="false"/>
+						<line number="165" hits="1" branch="false"/>
+						<line number="168" hits="1" branch="false"/>
+						<line number="170" hits="1" branch="false"/>
+						<line number="172" hits="1" branch="false"/>
+						<line number="173" hits="0" branch="false"/>
+						<line number="174" hits="1" branch="false"/>
+						<line number="176" hits="1" branch="false"/>
+						<line number="179" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="180" hits="1" branch="false"/>
+						<line number="183" hits="1" branch="false"/>
+						<line number="184" hits="1" branch="false"/>
+						<line number="185" hits="1" branch="false"/>
+						<line number="197" hits="2" branch="false"/>
+						<line number="198" hits="2" branch="false"/>
+						<line number="199" hits="2" branch="false"/>
+						<line number="203" hits="2" branch="false"/>
+						<line number="205" hits="2" branch="false"/>
+						<line number="206" hits="2" branch="false"/>
+						<line number="208" hits="2" branch="false"/>
+						<line number="209" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="210" hits="28" branch="true" condition-coverage="83% (5/6)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="100%"/>
+								<condition number="2" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="211" hits="5" branch="false"/>
+						<line number="214" hits="28" branch="false"/>
+						<line number="215" hits="2" branch="false"/>
+						<line number="216" hits="0" branch="false"/>
+						<line number="218" hits="0" branch="false"/>
+						<line number="221" hits="2" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="222" hits="0" branch="false"/>
+						<line number="225" hits="2" branch="false"/>
+						<line number="226" hits="2" branch="false"/>
+						<line number="228" hits="2" branch="false"/>
+						<line number="239" hits="1" branch="false"/>
+						<line number="240" hits="1" branch="false"/>
+						<line number="241" hits="1" branch="false"/>
+						<line number="242" hits="1" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="243" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="244" hits="0" branch="false"/>
+						<line number="245" hits="0" branch="false"/>
+						<line number="246" hits="0" branch="false"/>
+						<line number="248" hits="0" branch="false"/>
+						<line number="250" hits="0" branch="false"/>
+						<line number="252" hits="0" branch="false"/>
+						<line number="255" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.dao.ReservaDAO" filename="es/deusto/spq/biblioteca/dao/ReservaDAO.java" line-rate="0.8727272727272727" branch-rate="0.6458333333333334" complexity="5.142857142857143">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="30" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="36" hits="22" branch="false"/>
+								<line number="37" hits="22" branch="false"/>
+								<line number="38" hits="22" branch="false"/>
+							</lines>
+						</method>
+						<method name="anyadirReserva" signature="(Les/deusto/spq/biblioteca/data/Reserva;)V" line-rate="0.9473684210526315" branch-rate="0.5">
+							<lines>
+								<line number="49" hits="1" branch="false"/>
+								<line number="50" hits="1" branch="false"/>
+								<line number="52" hits="1" branch="false"/>
+								<line number="53" hits="1" branch="false"/>
+								<line number="55" hits="1" branch="false"/>
+								<line number="56" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="57" hits="2" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="58" hits="2" branch="false"/>
+								<line number="60" hits="2" branch="false"/>
+								<line number="62" hits="2" branch="false"/>
+								<line number="63" hits="2" branch="false"/>
+								<line number="65" hits="1" branch="false"/>
+								<line number="66" hits="1" branch="false"/>
+								<line number="68" hits="1" branch="false"/>
+								<line number="71" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="72" hits="0" branch="false"/>
+								<line number="75" hits="1" branch="false"/>
+								<line number="76" hits="1" branch="false"/>
+								<line number="77" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="consultarDisponibilidad" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z" line-rate="0.8421052631578947" branch-rate="0.8333333333333334">
+							<lines>
+								<line number="89" hits="2" branch="false"/>
+								<line number="91" hits="2" branch="false"/>
+								<line number="92" hits="2" branch="false"/>
+								<line number="95" hits="2" branch="false"/>
+								<line number="97" hits="2" branch="false"/>
+								<line number="98" hits="2" branch="false"/>
+								<line number="100" hits="2" branch="false"/>
+								<line number="101" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="102" hits="32" branch="true" condition-coverage="100% (6/6)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="100%"/>
+										<condition number="2" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="103" hits="1" branch="false"/>
+								<line number="105" hits="32" branch="false"/>
+								<line number="106" hits="2" branch="false"/>
+								<line number="107" hits="0" branch="false"/>
+								<line number="108" hits="0" branch="false"/>
+								<line number="111" hits="2" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="112" hits="0" branch="false"/>
+								<line number="115" hits="2" branch="false"/>
+								<line number="116" hits="2" branch="false"/>
+								<line number="117" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="devolverReserva" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Les/deusto/spq/biblioteca/data/Reserva;" line-rate="0.9473684210526315" branch-rate="0.6666666666666666">
+							<lines>
+								<line number="228" hits="2" branch="false"/>
+								<line number="229" hits="2" branch="false"/>
+								<line number="230" hits="2" branch="false"/>
+								<line number="234" hits="2" branch="false"/>
+								<line number="236" hits="2" branch="false"/>
+								<line number="237" hits="2" branch="false"/>
+								<line number="239" hits="2" branch="false"/>
+								<line number="240" hits="2" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="241" hits="24" branch="true" condition-coverage="83% (5/6)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="100%"/>
+										<condition number="2" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="242" hits="2" branch="false"/>
+								<line number="245" hits="22" branch="false"/>
+								<line number="246" hits="0" branch="false"/>
+								<line number="247" hits="2" branch="false"/>
+								<line number="249" hits="2" branch="false"/>
+								<line number="252" hits="2" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="253" hits="2" branch="false"/>
+								<line number="256" hits="2" branch="false"/>
+								<line number="257" hits="2" branch="false"/>
+								<line number="259" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="editarReserva" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.5833333333333334" branch-rate="0.5">
+							<lines>
+								<line number="133" hits="1" branch="false"/>
+								<line number="134" hits="1" branch="false"/>
+								<line number="135" hits="1" branch="false"/>
+								<line number="136" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="137" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="138" hits="0" branch="false"/>
+								<line number="139" hits="0" branch="false"/>
+								<line number="140" hits="0" branch="false"/>
+								<line number="142" hits="0" branch="false"/>
+								<line number="144" hits="0" branch="false"/>
+								<line number="146" hits="1" branch="false"/>
+								<line number="149" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="eliminarReserva" signature="(Les/deusto/spq/biblioteca/data/Reserva;)V" line-rate="0.7692307692307693" branch-rate="0.5">
+							<lines>
+								<line number="158" hits="1" branch="false"/>
+								<line number="159" hits="1" branch="false"/>
+								<line number="162" hits="1" branch="false"/>
+								<line number="163" hits="1" branch="false"/>
+								<line number="165" hits="1" branch="false"/>
+								<line number="166" hits="1" branch="false"/>
+								<line number="167" hits="0" branch="false"/>
+								<line number="169" hits="0" branch="false"/>
+								<line number="172" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="173" hits="0" branch="false"/>
+								<line number="176" hits="1" branch="false"/>
+								<line number="177" hits="1" branch="false"/>
+								<line number="178" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="verReservas" signature="(Ljava/lang/String;)Ljava/util/ArrayList;" line-rate="0.9583333333333334" branch-rate="0.625">
+							<lines>
+								<line number="188" hits="2" branch="false"/>
+								<line number="189" hits="2" branch="false"/>
+								<line number="191" hits="2" branch="false"/>
+								<line number="192" hits="2" branch="false"/>
+								<line number="196" hits="2" branch="false"/>
+								<line number="198" hits="2" branch="false"/>
+								<line number="199" hits="2" branch="false"/>
+								<line number="201" hits="2" branch="false"/>
+								<line number="202" hits="2" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="203" hits="24" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="204" hits="24" branch="false"/>
+								<line number="205" hits="12" branch="false"/>
+								<line number="206" hits="12" branch="false"/>
+								<line number="207" hits="12" branch="false"/>
+								<line number="208" hits="12" branch="false"/>
+								<line number="210" hits="22" branch="false"/>
+								<line number="211" hits="0" branch="false"/>
+								<line number="212" hits="2" branch="false"/>
+								<line number="214" hits="2" branch="false"/>
+								<line number="217" hits="2" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="218" hits="2" branch="false"/>
+								<line number="221" hits="2" branch="false"/>
+								<line number="222" hits="2" branch="false"/>
+								<line number="223" hits="2" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="30" hits="1" branch="false"/>
+						<line number="36" hits="22" branch="false"/>
+						<line number="37" hits="22" branch="false"/>
+						<line number="38" hits="22" branch="false"/>
+						<line number="49" hits="1" branch="false"/>
+						<line number="50" hits="1" branch="false"/>
+						<line number="52" hits="1" branch="false"/>
+						<line number="53" hits="1" branch="false"/>
+						<line number="55" hits="1" branch="false"/>
+						<line number="56" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="57" hits="2" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="58" hits="2" branch="false"/>
+						<line number="60" hits="2" branch="false"/>
+						<line number="62" hits="2" branch="false"/>
+						<line number="63" hits="2" branch="false"/>
+						<line number="65" hits="1" branch="false"/>
+						<line number="66" hits="1" branch="false"/>
+						<line number="68" hits="1" branch="false"/>
+						<line number="71" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="72" hits="0" branch="false"/>
+						<line number="75" hits="1" branch="false"/>
+						<line number="76" hits="1" branch="false"/>
+						<line number="77" hits="1" branch="false"/>
+						<line number="89" hits="2" branch="false"/>
+						<line number="91" hits="2" branch="false"/>
+						<line number="92" hits="2" branch="false"/>
+						<line number="95" hits="2" branch="false"/>
+						<line number="97" hits="2" branch="false"/>
+						<line number="98" hits="2" branch="false"/>
+						<line number="100" hits="2" branch="false"/>
+						<line number="101" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="102" hits="32" branch="true" condition-coverage="100% (6/6)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="100%"/>
+								<condition number="2" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="103" hits="1" branch="false"/>
+						<line number="105" hits="32" branch="false"/>
+						<line number="106" hits="2" branch="false"/>
+						<line number="107" hits="0" branch="false"/>
+						<line number="108" hits="0" branch="false"/>
+						<line number="111" hits="2" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="112" hits="0" branch="false"/>
+						<line number="115" hits="2" branch="false"/>
+						<line number="116" hits="2" branch="false"/>
+						<line number="117" hits="2" branch="false"/>
+						<line number="133" hits="1" branch="false"/>
+						<line number="134" hits="1" branch="false"/>
+						<line number="135" hits="1" branch="false"/>
+						<line number="136" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="137" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="138" hits="0" branch="false"/>
+						<line number="139" hits="0" branch="false"/>
+						<line number="140" hits="0" branch="false"/>
+						<line number="142" hits="0" branch="false"/>
+						<line number="144" hits="0" branch="false"/>
+						<line number="146" hits="1" branch="false"/>
+						<line number="149" hits="1" branch="false"/>
+						<line number="158" hits="1" branch="false"/>
+						<line number="159" hits="1" branch="false"/>
+						<line number="162" hits="1" branch="false"/>
+						<line number="163" hits="1" branch="false"/>
+						<line number="165" hits="1" branch="false"/>
+						<line number="166" hits="1" branch="false"/>
+						<line number="167" hits="0" branch="false"/>
+						<line number="169" hits="0" branch="false"/>
+						<line number="172" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="173" hits="0" branch="false"/>
+						<line number="176" hits="1" branch="false"/>
+						<line number="177" hits="1" branch="false"/>
+						<line number="178" hits="1" branch="false"/>
+						<line number="188" hits="2" branch="false"/>
+						<line number="189" hits="2" branch="false"/>
+						<line number="191" hits="2" branch="false"/>
+						<line number="192" hits="2" branch="false"/>
+						<line number="196" hits="2" branch="false"/>
+						<line number="198" hits="2" branch="false"/>
+						<line number="199" hits="2" branch="false"/>
+						<line number="201" hits="2" branch="false"/>
+						<line number="202" hits="2" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="203" hits="24" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="204" hits="24" branch="false"/>
+						<line number="205" hits="12" branch="false"/>
+						<line number="206" hits="12" branch="false"/>
+						<line number="207" hits="12" branch="false"/>
+						<line number="208" hits="12" branch="false"/>
+						<line number="210" hits="22" branch="false"/>
+						<line number="211" hits="0" branch="false"/>
+						<line number="212" hits="2" branch="false"/>
+						<line number="214" hits="2" branch="false"/>
+						<line number="217" hits="2" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="218" hits="2" branch="false"/>
+						<line number="221" hits="2" branch="false"/>
+						<line number="222" hits="2" branch="false"/>
+						<line number="223" hits="2" branch="false"/>
+						<line number="228" hits="2" branch="false"/>
+						<line number="229" hits="2" branch="false"/>
+						<line number="230" hits="2" branch="false"/>
+						<line number="234" hits="2" branch="false"/>
+						<line number="236" hits="2" branch="false"/>
+						<line number="237" hits="2" branch="false"/>
+						<line number="239" hits="2" branch="false"/>
+						<line number="240" hits="2" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="241" hits="24" branch="true" condition-coverage="83% (5/6)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="100%"/>
+								<condition number="2" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="242" hits="2" branch="false"/>
+						<line number="245" hits="22" branch="false"/>
+						<line number="246" hits="0" branch="false"/>
+						<line number="247" hits="2" branch="false"/>
+						<line number="249" hits="2" branch="false"/>
+						<line number="252" hits="2" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="253" hits="2" branch="false"/>
+						<line number="256" hits="2" branch="false"/>
+						<line number="257" hits="2" branch="false"/>
+						<line number="259" hits="2" branch="false"/>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.dao.ReservaLibroDAO" filename="es/deusto/spq/biblioteca/dao/ReservaLibroDAO.java" line-rate="0.7049180327868853" branch-rate="0.4583333333333333" complexity="4.75">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="24" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="30" hits="22" branch="false"/>
+								<line number="31" hits="22" branch="false"/>
+								<line number="32" hits="22" branch="false"/>
+							</lines>
+						</method>
+						<method name="consultarDisponibilidadLibro" signature="(Ljava/lang/String;)Z" line-rate="0.6842105263157895" branch-rate="0.375">
+							<lines>
+								<line number="83" hits="1" branch="false"/>
+								<line number="85" hits="1" branch="false"/>
+								<line number="86" hits="1" branch="false"/>
+								<line number="90" hits="1" branch="false"/>
+								<line number="92" hits="1" branch="false"/>
+								<line number="93" hits="1" branch="false"/>
+								<line number="95" hits="1" branch="false"/>
+								<line number="96" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="97" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="99" hits="0" branch="false"/>
+								<line number="101" hits="0" branch="false"/>
+								<line number="102" hits="1" branch="false"/>
+								<line number="103" hits="0" branch="false"/>
+								<line number="105" hits="0" branch="false"/>
+								<line number="108" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="109" hits="0" branch="false"/>
+								<line number="112" hits="1" branch="false"/>
+								<line number="113" hits="1" branch="false"/>
+								<line number="115" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="devolverLibro" signature="(Ljava/lang/String;)Les/deusto/spq/biblioteca/data/ReservaLibro;" line-rate="0.6842105263157895" branch-rate="0.375">
+							<lines>
+								<line number="125" hits="1" branch="false"/>
+								<line number="126" hits="1" branch="false"/>
+								<line number="128" hits="1" branch="false"/>
+								<line number="130" hits="1" branch="false"/>
+								<line number="132" hits="1" branch="false"/>
+								<line number="133" hits="1" branch="false"/>
+								<line number="135" hits="1" branch="false"/>
+								<line number="136" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="138" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="139" hits="0" branch="false"/>
+								<line number="141" hits="0" branch="false"/>
+								<line number="142" hits="1" branch="false"/>
+								<line number="145" hits="0" branch="false"/>
+								<line number="147" hits="0" branch="false"/>
+								<line number="150" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="151" hits="0" branch="false"/>
+								<line number="154" hits="1" branch="false"/>
+								<line number="155" hits="1" branch="false"/>
+								<line number="156" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="reservarLibro" signature="(Les/deusto/spq/biblioteca/data/ReservaLibro;)V" line-rate="0.6842105263157895" branch-rate="0.625">
+							<lines>
+								<line number="41" hits="1" branch="false"/>
+								<line number="42" hits="1" branch="false"/>
+								<line number="44" hits="1" branch="false"/>
+								<line number="45" hits="1" branch="false"/>
+								<line number="48" hits="1" branch="false"/>
+								<line number="50" hits="1" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="52" hits="6" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="53" hits="0" branch="false"/>
+								<line number="55" hits="0" branch="false"/>
+								<line number="57" hits="0" branch="false"/>
+								<line number="58" hits="0" branch="false"/>
+								<line number="60" hits="6" branch="false"/>
+								<line number="62" hits="0" branch="false"/>
+								<line number="64" hits="0" branch="false"/>
+								<line number="67" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="68" hits="1" branch="false"/>
+								<line number="71" hits="1" branch="false"/>
+								<line number="72" hits="1" branch="false"/>
+								<line number="74" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="24" hits="1" branch="false"/>
+						<line number="30" hits="22" branch="false"/>
+						<line number="31" hits="22" branch="false"/>
+						<line number="32" hits="22" branch="false"/>
+						<line number="41" hits="1" branch="false"/>
+						<line number="42" hits="1" branch="false"/>
+						<line number="44" hits="1" branch="false"/>
+						<line number="45" hits="1" branch="false"/>
+						<line number="48" hits="1" branch="false"/>
+						<line number="50" hits="1" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="52" hits="6" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="53" hits="0" branch="false"/>
+						<line number="55" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
+						<line number="58" hits="0" branch="false"/>
+						<line number="60" hits="6" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+						<line number="64" hits="0" branch="false"/>
+						<line number="67" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="68" hits="1" branch="false"/>
+						<line number="71" hits="1" branch="false"/>
+						<line number="72" hits="1" branch="false"/>
+						<line number="74" hits="1" branch="false"/>
+						<line number="83" hits="1" branch="false"/>
+						<line number="85" hits="1" branch="false"/>
+						<line number="86" hits="1" branch="false"/>
+						<line number="90" hits="1" branch="false"/>
+						<line number="92" hits="1" branch="false"/>
+						<line number="93" hits="1" branch="false"/>
+						<line number="95" hits="1" branch="false"/>
+						<line number="96" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="97" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="99" hits="0" branch="false"/>
+						<line number="101" hits="0" branch="false"/>
+						<line number="102" hits="1" branch="false"/>
+						<line number="103" hits="0" branch="false"/>
+						<line number="105" hits="0" branch="false"/>
+						<line number="108" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="109" hits="0" branch="false"/>
+						<line number="112" hits="1" branch="false"/>
+						<line number="113" hits="1" branch="false"/>
+						<line number="115" hits="1" branch="false"/>
+						<line number="125" hits="1" branch="false"/>
+						<line number="126" hits="1" branch="false"/>
+						<line number="128" hits="1" branch="false"/>
+						<line number="130" hits="1" branch="false"/>
+						<line number="132" hits="1" branch="false"/>
+						<line number="133" hits="1" branch="false"/>
+						<line number="135" hits="1" branch="false"/>
+						<line number="136" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="138" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="139" hits="0" branch="false"/>
+						<line number="141" hits="0" branch="false"/>
+						<line number="142" hits="1" branch="false"/>
+						<line number="145" hits="0" branch="false"/>
+						<line number="147" hits="0" branch="false"/>
+						<line number="150" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="151" hits="0" branch="false"/>
+						<line number="154" hits="1" branch="false"/>
+						<line number="155" hits="1" branch="false"/>
+						<line number="156" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.dao.SalaDAO" filename="es/deusto/spq/biblioteca/dao/SalaDAO.java" line-rate="0.8055555555555556" branch-rate="0.6428571428571429" complexity="4.0">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="28" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="33" hits="22" branch="false"/>
+								<line number="34" hits="22" branch="false"/>
+								<line number="35" hits="22" branch="false"/>
+							</lines>
+						</method>
+						<method name="anyadirSala" signature="(Les/deusto/spq/biblioteca/data/Sala;)V" line-rate="0.7692307692307693" branch-rate="0.5">
+							<lines>
+								<line number="44" hits="1" branch="false"/>
+								<line number="45" hits="1" branch="false"/>
+								<line number="47" hits="1" branch="false"/>
+								<line number="49" hits="1" branch="false"/>
+								<line number="50" hits="1" branch="false"/>
+								<line number="51" hits="1" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+								<line number="54" hits="0" branch="false"/>
+								<line number="56" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="57" hits="0" branch="false"/>
+								<line number="60" hits="1" branch="false"/>
+								<line number="61" hits="1" branch="false"/>
+								<line number="62" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="consultarPlazas" signature="(Ljava/lang/String;I)Z" line-rate="0.7894736842105263" branch-rate="0.7">
+							<lines>
+								<line number="72" hits="1" branch="false"/>
+								<line number="74" hits="1" branch="false"/>
+								<line number="75" hits="1" branch="false"/>
+								<line number="79" hits="1" branch="false"/>
+								<line number="81" hits="1" branch="false"/>
+								<line number="82" hits="1" branch="false"/>
+								<line number="84" hits="1" branch="false"/>
+								<line number="85" hits="1" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="86" hits="19" branch="true" condition-coverage="75% (3/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="88" hits="0" branch="false"/>
+								<line number="90" hits="19" branch="false"/>
+								<line number="91" hits="1" branch="false"/>
+								<line number="92" hits="0" branch="false"/>
+								<line number="94" hits="0" branch="false"/>
+								<line number="97" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="98" hits="0" branch="false"/>
+								<line number="101" hits="1" branch="false"/>
+								<line number="102" hits="1" branch="false"/>
+								<line number="103" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="28" hits="1" branch="false"/>
+						<line number="33" hits="22" branch="false"/>
+						<line number="34" hits="22" branch="false"/>
+						<line number="35" hits="22" branch="false"/>
+						<line number="44" hits="1" branch="false"/>
+						<line number="45" hits="1" branch="false"/>
+						<line number="47" hits="1" branch="false"/>
+						<line number="49" hits="1" branch="false"/>
+						<line number="50" hits="1" branch="false"/>
+						<line number="51" hits="1" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="54" hits="0" branch="false"/>
+						<line number="56" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="57" hits="0" branch="false"/>
+						<line number="60" hits="1" branch="false"/>
+						<line number="61" hits="1" branch="false"/>
+						<line number="62" hits="1" branch="false"/>
+						<line number="72" hits="1" branch="false"/>
+						<line number="74" hits="1" branch="false"/>
+						<line number="75" hits="1" branch="false"/>
+						<line number="79" hits="1" branch="false"/>
+						<line number="81" hits="1" branch="false"/>
+						<line number="82" hits="1" branch="false"/>
+						<line number="84" hits="1" branch="false"/>
+						<line number="85" hits="1" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="86" hits="19" branch="true" condition-coverage="75% (3/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="88" hits="0" branch="false"/>
+						<line number="90" hits="19" branch="false"/>
+						<line number="91" hits="1" branch="false"/>
+						<line number="92" hits="0" branch="false"/>
+						<line number="94" hits="0" branch="false"/>
+						<line number="97" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="98" hits="0" branch="false"/>
+						<line number="101" hits="1" branch="false"/>
+						<line number="102" hits="1" branch="false"/>
+						<line number="103" hits="1" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="es.deusto.spq.biblioteca.data" line-rate="0.4015151515151515" branch-rate="0.7368421052631579" complexity="1.0">
+			<classes>
+				<class name="es.deusto.spq.biblioteca.data.Libro" filename="es/deusto/spq/biblioteca/data/Libro.java" line-rate="0.5588235294117647" branch-rate="0.8571428571428571" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="33" hits="14" branch="false"/>
+								<line number="35" hits="14" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="22" hits="240" branch="false"/>
+								<line number="23" hits="240" branch="false"/>
+								<line number="24" hits="240" branch="false"/>
+								<line number="25" hits="240" branch="false"/>
+								<line number="28" hits="240" branch="false"/>
+								<line number="44" hits="226" branch="false"/>
+								<line number="45" hits="226" branch="false"/>
+								<line number="46" hits="226" branch="false"/>
+								<line number="47" hits="226" branch="false"/>
+								<line number="48" hits="226" branch="false"/>
+								<line number="49" hits="226" branch="false"/>
+								<line number="135" hits="240" branch="false"/>
+							</lines>
+						</method>
+						<method name="getAutor" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="107" hits="8" branch="false"/>
+							</lines>
+						</method>
+						<method name="getEditorial" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="123" hits="8" branch="false"/>
+							</lines>
+						</method>
+						<method name="getIsbn" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="75" hits="334" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNumeroEjemplares" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="142" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getReservasLibros" signature="()Ljava/util/List;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="59" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getnombre" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="91" hits="8" branch="false"/>
+							</lines>
+						</method>
+						<method name="setAutor" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="115" hits="0" branch="false"/>
+								<line number="116" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setEditorial" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="131" hits="0" branch="false"/>
+								<line number="132" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setIsbn" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="83" hits="0" branch="false"/>
+								<line number="84" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setNumeroEjemplares" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="150" hits="0" branch="false"/>
+								<line number="151" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setReservasLibros" signature="(Ljava/util/List;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="67" hits="0" branch="false"/>
+								<line number="68" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setnombre" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="99" hits="0" branch="false"/>
+								<line number="100" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="158" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="0" hits="0" branch="true" condition-coverage="85% (18/21)">
+							<conditions>
+								<condition number="0" type="switch" coverage="85%"/>
+								<condition number="1" type="switch" coverage="85%"/>
+								<condition number="2" type="switch" coverage="85%"/>
+							</conditions>
+						</line>
+						<line number="22" hits="240" branch="false"/>
+						<line number="23" hits="240" branch="false"/>
+						<line number="24" hits="240" branch="false"/>
+						<line number="25" hits="240" branch="false"/>
+						<line number="28" hits="240" branch="false"/>
+						<line number="33" hits="14" branch="false"/>
+						<line number="35" hits="14" branch="false"/>
+						<line number="44" hits="226" branch="false"/>
+						<line number="45" hits="226" branch="false"/>
+						<line number="46" hits="226" branch="false"/>
+						<line number="47" hits="226" branch="false"/>
+						<line number="48" hits="226" branch="false"/>
+						<line number="49" hits="226" branch="false"/>
+						<line number="59" hits="0" branch="false"/>
+						<line number="67" hits="0" branch="false"/>
+						<line number="68" hits="0" branch="false"/>
+						<line number="75" hits="334" branch="false"/>
+						<line number="83" hits="0" branch="false"/>
+						<line number="84" hits="0" branch="false"/>
+						<line number="91" hits="8" branch="false"/>
+						<line number="99" hits="0" branch="false"/>
+						<line number="100" hits="0" branch="false"/>
+						<line number="107" hits="8" branch="false"/>
+						<line number="115" hits="0" branch="false"/>
+						<line number="116" hits="0" branch="false"/>
+						<line number="123" hits="8" branch="false"/>
+						<line number="131" hits="0" branch="false"/>
+						<line number="132" hits="0" branch="false"/>
+						<line number="135" hits="240" branch="false"/>
+						<line number="142" hits="0" branch="false"/>
+						<line number="150" hits="0" branch="false"/>
+						<line number="151" hits="0" branch="false"/>
+						<line number="158" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.data.Menu" filename="es/deusto/spq/biblioteca/data/Menu.java" line-rate="0.05" branch-rate="0.5714285714285714" complexity="1.0">
+					<methods>
+						<method name="getFecha" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="55" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getID_menu" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="47" hits="10" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPlato1" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="63" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPlato2" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="71" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPostre" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="79" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getValor" signature="()I" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="87" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setFecha" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="59" hits="0" branch="false"/>
+								<line number="60" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setID_menu" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setPlato1" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="67" hits="0" branch="false"/>
+								<line number="68" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setPlato2" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="75" hits="0" branch="false"/>
+								<line number="76" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setPostre" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="83" hits="0" branch="false"/>
+								<line number="84" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setValor" signature="(I)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="91" hits="0" branch="false"/>
+								<line number="92" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="96" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="0" hits="0" branch="true" condition-coverage="57% (12/21)">
+							<conditions>
+								<condition number="0" type="switch" coverage="85%"/>
+								<condition number="1" type="switch" coverage="85%"/>
+								<condition number="2" type="switch" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="47" hits="10" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="55" hits="0" branch="false"/>
+						<line number="59" hits="0" branch="false"/>
+						<line number="60" hits="0" branch="false"/>
+						<line number="63" hits="0" branch="false"/>
+						<line number="67" hits="0" branch="false"/>
+						<line number="68" hits="0" branch="false"/>
+						<line number="71" hits="0" branch="false"/>
+						<line number="75" hits="0" branch="false"/>
+						<line number="76" hits="0" branch="false"/>
+						<line number="79" hits="0" branch="false"/>
+						<line number="83" hits="0" branch="false"/>
+						<line number="84" hits="0" branch="false"/>
+						<line number="87" hits="0" branch="false"/>
+						<line number="91" hits="0" branch="false"/>
+						<line number="92" hits="0" branch="false"/>
+						<line number="96" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.data.Mesa" filename="es/deusto/spq/biblioteca/data/Mesa.java" line-rate="0.5882352941176471" branch-rate="0.75" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="25" hits="35" branch="false"/>
+								<line number="27" hits="35" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;I)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="22" hits="36" branch="false"/>
+								<line number="30" hits="1" branch="false"/>
+								<line number="31" hits="1" branch="false"/>
+								<line number="32" hits="1" branch="false"/>
+								<line number="33" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCapacidad" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="44" hits="8" branch="false"/>
+							</lines>
+						</method>
+						<method name="getId_Mesa" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="36" hits="23" branch="false"/>
+							</lines>
+						</method>
+						<method name="getReservaMesas" signature="()Ljava/util/List;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="52" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="setCapacidad" signature="(I)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="48" hits="0" branch="false"/>
+								<line number="49" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setId_Mesa" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="40" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setReservaMesas" signature="(Ljava/util/List;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="56" hits="0" branch="false"/>
+								<line number="57" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="0" hits="0" branch="true" condition-coverage="75% (9/12)">
+							<conditions>
+								<condition number="0" type="switch" coverage="75%"/>
+								<condition number="1" type="switch" coverage="75%"/>
+								<condition number="2" type="switch" coverage="75%"/>
+							</conditions>
+						</line>
+						<line number="22" hits="36" branch="false"/>
+						<line number="25" hits="35" branch="false"/>
+						<line number="27" hits="35" branch="false"/>
+						<line number="30" hits="1" branch="false"/>
+						<line number="31" hits="1" branch="false"/>
+						<line number="32" hits="1" branch="false"/>
+						<line number="33" hits="1" branch="false"/>
+						<line number="36" hits="23" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+						<line number="44" hits="8" branch="false"/>
+						<line number="48" hits="0" branch="false"/>
+						<line number="49" hits="0" branch="false"/>
+						<line number="52" hits="2" branch="false"/>
+						<line number="56" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.data.Reserva" filename="es/deusto/spq/biblioteca/data/Reserva.java" line-rate="0.3" branch-rate="0.8571428571428571" complexity="1.0">
+					<methods>
+						<method name="getDni_respon" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="57" hits="3674" branch="false"/>
+							</lines>
+						</method>
+						<method name="getFecha" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="105" hits="1854" branch="false"/>
+							</lines>
+						</method>
+						<method name="getHora" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="121" hits="1838" branch="false"/>
+							</lines>
+						</method>
+						<method name="getId_reserva" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="73" hits="16" branch="false"/>
+							</lines>
+						</method>
+						<method name="getId_sala" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="89" hits="1864" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPlazas" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="135" hits="1831" branch="false"/>
+							</lines>
+						</method>
+						<method name="setDni_respon" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="65" hits="0" branch="false"/>
+								<line number="66" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setFecha" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="113" hits="0" branch="false"/>
+								<line number="114" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setHora" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="128" hits="0" branch="false"/>
+								<line number="129" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setId_reserva" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="81" hits="0" branch="false"/>
+								<line number="82" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setId_sala" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="97" hits="0" branch="false"/>
+								<line number="98" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setPlazas" signature="(I)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="142" hits="0" branch="false"/>
+								<line number="143" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="149" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="0" hits="0" branch="true" condition-coverage="85% (18/21)">
+							<conditions>
+								<condition number="0" type="switch" coverage="85%"/>
+								<condition number="1" type="switch" coverage="85%"/>
+								<condition number="2" type="switch" coverage="85%"/>
+							</conditions>
+						</line>
+						<line number="57" hits="3674" branch="false"/>
+						<line number="65" hits="0" branch="false"/>
+						<line number="66" hits="0" branch="false"/>
+						<line number="73" hits="16" branch="false"/>
+						<line number="81" hits="0" branch="false"/>
+						<line number="82" hits="0" branch="false"/>
+						<line number="89" hits="1864" branch="false"/>
+						<line number="97" hits="0" branch="false"/>
+						<line number="98" hits="0" branch="false"/>
+						<line number="105" hits="1854" branch="false"/>
+						<line number="113" hits="0" branch="false"/>
+						<line number="114" hits="0" branch="false"/>
+						<line number="121" hits="1838" branch="false"/>
+						<line number="128" hits="0" branch="false"/>
+						<line number="129" hits="0" branch="false"/>
+						<line number="135" hits="1831" branch="false"/>
+						<line number="142" hits="0" branch="false"/>
+						<line number="143" hits="0" branch="false"/>
+						<line number="149" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.data.ReservaLibro" filename="es/deusto/spq/biblioteca/data/ReservaLibro.java" line-rate="0.25" branch-rate="0.0" complexity="1.0">
+					<methods>
+						<method name="getIsbn" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="41" hits="558" branch="false"/>
+							</lines>
+						</method>
+						<method name="setIsbn" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="49" hits="0" branch="false"/>
+								<line number="50" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="0" hits="0" branch="true" condition-coverage="0% (0/6)">
+							<conditions>
+								<condition number="0" type="switch" coverage="0%"/>
+								<condition number="1" type="switch" coverage="0%"/>
+								<condition number="2" type="switch" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="41" hits="558" branch="false"/>
+						<line number="49" hits="0" branch="false"/>
+						<line number="50" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.data.ReservaMesa" filename="es/deusto/spq/biblioteca/data/ReservaMesa.java" line-rate="0.3" branch-rate="0.8571428571428571" complexity="1.0">
+					<methods>
+						<method name="getDni_respon" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="85" hits="30" branch="false"/>
+							</lines>
+						</method>
+						<method name="getFecha" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="101" hits="29" branch="false"/>
+							</lines>
+						</method>
+						<method name="getHora" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="117" hits="8" branch="false"/>
+							</lines>
+						</method>
+						<method name="getId_Mesa" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="53" hits="24" branch="false"/>
+							</lines>
+						</method>
+						<method name="getId_Reserva" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="69" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPersonas" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="133" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="setDni_respon" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="93" hits="0" branch="false"/>
+								<line number="94" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setFecha" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="109" hits="0" branch="false"/>
+								<line number="110" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setHora" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="125" hits="0" branch="false"/>
+								<line number="126" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setId_Mesa" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="61" hits="0" branch="false"/>
+								<line number="62" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setId_Reserva" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="77" hits="0" branch="false"/>
+								<line number="78" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setPersonas" signature="(I)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="141" hits="0" branch="false"/>
+								<line number="142" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="149" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="0" hits="0" branch="true" condition-coverage="85% (18/21)">
+							<conditions>
+								<condition number="0" type="switch" coverage="85%"/>
+								<condition number="1" type="switch" coverage="85%"/>
+								<condition number="2" type="switch" coverage="85%"/>
+							</conditions>
+						</line>
+						<line number="53" hits="24" branch="false"/>
+						<line number="61" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+						<line number="69" hits="2" branch="false"/>
+						<line number="77" hits="0" branch="false"/>
+						<line number="78" hits="0" branch="false"/>
+						<line number="85" hits="30" branch="false"/>
+						<line number="93" hits="0" branch="false"/>
+						<line number="94" hits="0" branch="false"/>
+						<line number="101" hits="29" branch="false"/>
+						<line number="109" hits="0" branch="false"/>
+						<line number="110" hits="0" branch="false"/>
+						<line number="117" hits="8" branch="false"/>
+						<line number="125" hits="0" branch="false"/>
+						<line number="126" hits="0" branch="false"/>
+						<line number="133" hits="2" branch="false"/>
+						<line number="141" hits="0" branch="false"/>
+						<line number="142" hits="0" branch="false"/>
+						<line number="149" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.data.Sala" filename="es/deusto/spq/biblioteca/data/Sala.java" line-rate="0.5882352941176471" branch-rate="0.75" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="27" hits="41" branch="false"/>
+								<line number="29" hits="41" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;I)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="21" hits="1056" branch="false"/>
+								<line number="37" hits="1015" branch="false"/>
+								<line number="38" hits="1015" branch="false"/>
+								<line number="39" hits="1015" branch="false"/>
+								<line number="40" hits="1015" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCapacidad" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="79" hits="2013" branch="false"/>
+							</lines>
+						</method>
+						<method name="getId_sala" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="63" hits="2025" branch="false"/>
+							</lines>
+						</method>
+						<method name="getReservas" signature="()Ljava/util/List;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="47" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="setCapacidad" signature="(I)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="87" hits="0" branch="false"/>
+								<line number="88" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setId_sala" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="71" hits="0" branch="false"/>
+								<line number="72" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setReservas" signature="(Ljava/util/List;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="55" hits="0" branch="false"/>
+								<line number="56" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="0" hits="0" branch="true" condition-coverage="75% (9/12)">
+							<conditions>
+								<condition number="0" type="switch" coverage="75%"/>
+								<condition number="1" type="switch" coverage="75%"/>
+								<condition number="2" type="switch" coverage="75%"/>
+							</conditions>
+						</line>
+						<line number="21" hits="1056" branch="false"/>
+						<line number="27" hits="41" branch="false"/>
+						<line number="29" hits="41" branch="false"/>
+						<line number="37" hits="1015" branch="false"/>
+						<line number="38" hits="1015" branch="false"/>
+						<line number="39" hits="1015" branch="false"/>
+						<line number="40" hits="1015" branch="false"/>
+						<line number="47" hits="2" branch="false"/>
+						<line number="55" hits="0" branch="false"/>
+						<line number="56" hits="0" branch="false"/>
+						<line number="63" hits="2025" branch="false"/>
+						<line number="71" hits="0" branch="false"/>
+						<line number="72" hits="0" branch="false"/>
+						<line number="79" hits="2013" branch="false"/>
+						<line number="87" hits="0" branch="false"/>
+						<line number="88" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="es.deusto.spq.biblioteca.remote" line-rate="0.845360824742268" branch-rate="0.5" complexity="1.0925925925925926">
+			<classes>
+				<class name="es.deusto.spq.biblioteca.remote.Biblioteca" filename="es/deusto/spq/biblioteca/remote/Biblioteca.java" line-rate="0.845360824742268" branch-rate="0.5" complexity="1.1666666666666667">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="76" hits="1" branch="false"/>
+								<line number="78" hits="1" branch="false"/>
+								<line number="79" hits="1" branch="false"/>
+								<line number="80" hits="1" branch="false"/>
+								<line number="81" hits="1" branch="false"/>
+								<line number="82" hits="1" branch="false"/>
+								<line number="83" hits="1" branch="false"/>
+								<line number="84" hits="1" branch="false"/>
+								<line number="86" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="DevolverLibro" signature="(Ljava/lang/String;)Les/deusto/spq/biblioteca/data/ReservaLibro;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="258" hits="1" branch="false"/>
+								<line number="259" hits="1" branch="false"/>
+								<line number="260" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="DevolverReserva" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Les/deusto/spq/biblioteca/data/Reserva;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="96" hits="1" branch="false"/>
+								<line number="97" hits="1" branch="false"/>
+								<line number="98" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="almacenarLibro" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="156" hits="2" branch="false"/>
+								<line number="157" hits="2" branch="false"/>
+								<line number="159" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="anyadirMenu" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="383" hits="0" branch="false"/>
+								<line number="384" hits="0" branch="false"/>
+								<line number="385" hits="0" branch="false"/>
+								<line number="386" hits="0" branch="false"/>
+								<line number="387" hits="0" branch="false"/>
+								<line number="388" hits="0" branch="false"/>
+								<line number="390" hits="0" branch="false"/>
+								<line number="391" hits="0" branch="false"/>
+								<line number="393" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="anyadirMesa" signature="(Ljava/lang/String;I)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="310" hits="1" branch="false"/>
+								<line number="311" hits="1" branch="false"/>
+								<line number="312" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="anyadirReserva" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="186" hits="4" branch="false"/>
+								<line number="187" hits="4" branch="false"/>
+								<line number="188" hits="4" branch="false"/>
+								<line number="189" hits="4" branch="false"/>
+								<line number="190" hits="4" branch="false"/>
+								<line number="191" hits="4" branch="false"/>
+								<line number="193" hits="4" branch="false"/>
+								<line number="194" hits="4" branch="false"/>
+								<line number="195" hits="4" branch="false"/>
+							</lines>
+						</method>
+						<method name="anyadirReservaComedor" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="293" hits="2" branch="false"/>
+								<line number="294" hits="2" branch="false"/>
+								<line number="295" hits="2" branch="false"/>
+								<line number="296" hits="2" branch="false"/>
+								<line number="297" hits="2" branch="false"/>
+								<line number="298" hits="2" branch="false"/>
+								<line number="299" hits="2" branch="false"/>
+								<line number="300" hits="2" branch="false"/>
+								<line number="301" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="anyadirSala" signature="(Ljava/lang/String;I)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="223" hits="2" branch="false"/>
+								<line number="224" hits="2" branch="false"/>
+								<line number="225" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="anyadirValoracion" signature="(Ljava/lang/String;I)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="403" hits="1" branch="false"/>
+								<line number="405" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="buscarLibro" signature="(Ljava/lang/String;)Les/deusto/spq/biblioteca/data/Libro;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="121" hits="1" branch="false"/>
+								<line number="123" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="consultarDiponibilidadLibro" signature="(Ljava/lang/String;)Z" line-rate="1.0" branch-rate="0.5">
+							<lines>
+								<line number="234" hits="1" branch="false"/>
+								<line number="235" hits="1" branch="false"/>
+								<line number="236" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="237" hits="1" branch="false"/>
+								<line number="239" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="consultarDisponibilidad" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Z" line-rate="1.0" branch-rate="0.5">
+							<lines>
+								<line number="207" hits="1" branch="false"/>
+								<line number="208" hits="1" branch="false"/>
+								<line number="209" hits="1" branch="false"/>
+								<line number="210" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="211" hits="1" branch="false"/>
+								<line number="213" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="consultarDisponibilidadComedor" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Z" line-rate="1.0" branch-rate="0.5">
+							<lines>
+								<line number="273" hits="1" branch="false"/>
+								<line number="274" hits="1" branch="false"/>
+								<line number="275" hits="1" branch="false"/>
+								<line number="276" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="277" hits="1" branch="false"/>
+								<line number="279" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="devolverReservaComedor" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Les/deusto/spq/biblioteca/data/ReservaMesa;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="327" hits="1" branch="false"/>
+								<line number="328" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="editarReserva" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="357" hits="1" branch="false"/>
+								<line number="359" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="editarReservaComedor" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.5" branch-rate="1.0">
+							<lines>
+								<line number="322" hits="1" branch="false"/>
+								<line number="323" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="eliminarReserva" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="111" hits="1" branch="false"/>
+								<line number="112" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="eliminarReservaComedor" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="340" hits="1" branch="false"/>
+								<line number="341" hits="1" branch="false"/>
+								<line number="342" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLibros" signature="()Ljava/util/ArrayList;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="367" hits="1" branch="false"/>
+								<line number="368" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="mostrarLibro" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="249" hits="1" branch="false"/>
+								<line number="250" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="reservarLibro" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="168" hits="2" branch="false"/>
+								<line number="169" hits="2" branch="false"/>
+								<line number="172" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="verMenu" signature="(Ljava/lang/String;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="413" hits="0" branch="false"/>
+								<line number="414" hits="0" branch="false"/>
+								<line number="415" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="verReservaComedor" signature="(Ljava/lang/String;)Ljava/util/ArrayList;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="132" hits="0" branch="false"/>
+								<line number="133" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="verReservas" signature="(Ljava/lang/String;)Ljava/util/ArrayList;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="142" hits="2" branch="false"/>
+								<line number="143" hits="2" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="76" hits="1" branch="false"/>
+						<line number="78" hits="1" branch="false"/>
+						<line number="79" hits="1" branch="false"/>
+						<line number="80" hits="1" branch="false"/>
+						<line number="81" hits="1" branch="false"/>
+						<line number="82" hits="1" branch="false"/>
+						<line number="83" hits="1" branch="false"/>
+						<line number="84" hits="1" branch="false"/>
+						<line number="86" hits="1" branch="false"/>
+						<line number="96" hits="1" branch="false"/>
+						<line number="97" hits="1" branch="false"/>
+						<line number="98" hits="1" branch="false"/>
+						<line number="111" hits="1" branch="false"/>
+						<line number="112" hits="1" branch="false"/>
+						<line number="121" hits="1" branch="false"/>
+						<line number="123" hits="1" branch="false"/>
+						<line number="132" hits="0" branch="false"/>
+						<line number="133" hits="0" branch="false"/>
+						<line number="142" hits="2" branch="false"/>
+						<line number="143" hits="2" branch="false"/>
+						<line number="156" hits="2" branch="false"/>
+						<line number="157" hits="2" branch="false"/>
+						<line number="159" hits="2" branch="false"/>
+						<line number="168" hits="2" branch="false"/>
+						<line number="169" hits="2" branch="false"/>
+						<line number="172" hits="2" branch="false"/>
+						<line number="186" hits="4" branch="false"/>
+						<line number="187" hits="4" branch="false"/>
+						<line number="188" hits="4" branch="false"/>
+						<line number="189" hits="4" branch="false"/>
+						<line number="190" hits="4" branch="false"/>
+						<line number="191" hits="4" branch="false"/>
+						<line number="193" hits="4" branch="false"/>
+						<line number="194" hits="4" branch="false"/>
+						<line number="195" hits="4" branch="false"/>
+						<line number="207" hits="1" branch="false"/>
+						<line number="208" hits="1" branch="false"/>
+						<line number="209" hits="1" branch="false"/>
+						<line number="210" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="211" hits="1" branch="false"/>
+						<line number="213" hits="1" branch="false"/>
+						<line number="223" hits="2" branch="false"/>
+						<line number="224" hits="2" branch="false"/>
+						<line number="225" hits="2" branch="false"/>
+						<line number="234" hits="1" branch="false"/>
+						<line number="235" hits="1" branch="false"/>
+						<line number="236" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="237" hits="1" branch="false"/>
+						<line number="239" hits="1" branch="false"/>
+						<line number="249" hits="1" branch="false"/>
+						<line number="250" hits="1" branch="false"/>
+						<line number="258" hits="1" branch="false"/>
+						<line number="259" hits="1" branch="false"/>
+						<line number="260" hits="1" branch="false"/>
+						<line number="273" hits="1" branch="false"/>
+						<line number="274" hits="1" branch="false"/>
+						<line number="275" hits="1" branch="false"/>
+						<line number="276" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="277" hits="1" branch="false"/>
+						<line number="279" hits="1" branch="false"/>
+						<line number="293" hits="2" branch="false"/>
+						<line number="294" hits="2" branch="false"/>
+						<line number="295" hits="2" branch="false"/>
+						<line number="296" hits="2" branch="false"/>
+						<line number="297" hits="2" branch="false"/>
+						<line number="298" hits="2" branch="false"/>
+						<line number="299" hits="2" branch="false"/>
+						<line number="300" hits="2" branch="false"/>
+						<line number="301" hits="2" branch="false"/>
+						<line number="310" hits="1" branch="false"/>
+						<line number="311" hits="1" branch="false"/>
+						<line number="312" hits="1" branch="false"/>
+						<line number="322" hits="1" branch="false"/>
+						<line number="323" hits="0" branch="false"/>
+						<line number="327" hits="1" branch="false"/>
+						<line number="328" hits="1" branch="false"/>
+						<line number="340" hits="1" branch="false"/>
+						<line number="341" hits="1" branch="false"/>
+						<line number="342" hits="1" branch="false"/>
+						<line number="357" hits="1" branch="false"/>
+						<line number="359" hits="1" branch="false"/>
+						<line number="367" hits="1" branch="false"/>
+						<line number="368" hits="1" branch="false"/>
+						<line number="383" hits="0" branch="false"/>
+						<line number="384" hits="0" branch="false"/>
+						<line number="385" hits="0" branch="false"/>
+						<line number="386" hits="0" branch="false"/>
+						<line number="387" hits="0" branch="false"/>
+						<line number="388" hits="0" branch="false"/>
+						<line number="390" hits="0" branch="false"/>
+						<line number="391" hits="0" branch="false"/>
+						<line number="393" hits="0" branch="false"/>
+						<line number="403" hits="1" branch="false"/>
+						<line number="405" hits="1" branch="false"/>
+						<line number="413" hits="0" branch="false"/>
+						<line number="414" hits="0" branch="false"/>
+						<line number="415" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="es.deusto.spq.biblioteca.remote.IBiblioteca" filename="es/deusto/spq/biblioteca/remote/IBiblioteca.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="es.deusto.spq.biblioteca.server" line-rate="0.0" branch-rate="0.0" complexity="3.0">
+			<classes>
+				<class name="es.deusto.spq.biblioteca.server.Server" filename="es/deusto/spq/biblioteca/server/Server.java" line-rate="0.0" branch-rate="0.0" complexity="3.0">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="14" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="main" signature="([Ljava/lang/String;)V" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="21" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="22" hits="0" branch="false"/>
+								<line number="25" hits="0" branch="false"/>
+								<line number="29" hits="0" branch="false"/>
+								<line number="30" hits="0" branch="false"/>
+								<line number="31" hits="0" branch="false"/>
+								<line number="33" hits="0" branch="false"/>
+								<line number="34" hits="0" branch="false"/>
+								<line number="35" hits="0" branch="false"/>
+								<line number="36" hits="0" branch="false"/>
+								<line number="37" hits="0" branch="false"/>
+								<line number="39" hits="0" branch="false"/>
+								<line number="40" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="14" hits="0" branch="false"/>
+						<line number="21" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="22" hits="0" branch="false"/>
+						<line number="25" hits="0" branch="false"/>
+						<line number="29" hits="0" branch="false"/>
+						<line number="30" hits="0" branch="false"/>
+						<line number="31" hits="0" branch="false"/>
+						<line number="33" hits="0" branch="false"/>
+						<line number="34" hits="0" branch="false"/>
+						<line number="35" hits="0" branch="false"/>
+						<line number="36" hits="0" branch="false"/>
+						<line number="37" hits="0" branch="false"/>
+						<line number="39" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+	</packages>
+</coverage>
