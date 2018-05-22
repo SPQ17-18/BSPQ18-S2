@@ -1,62 +1,119 @@
 package es.deusto.spq.biblioteca;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
 import java.rmi.RemoteException;
 
 import org.junit.Test;
-import org.mockito.Mock;
-
-import static org.junit.Assert.*;
-
-import org.databene.contiperf.PerfTest;
-import org.databene.contiperf.Required;
-//import org.apache.log4j.spi.LoggerFactory;
-import org.databene.contiperf.junit.ContiPerfRule;
-import org.junit.After;
-import org.junit.AfterClass;
+import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import es.deusto.spq.biblioteca.client.Client;
-import es.deusto.spq.biblioteca.client.gui.MenuPrincipal;
 import es.deusto.spq.biblioteca.controller.Controller;
-import es.deusto.spq.biblioteca.dao.ILibroDAO;
-import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.remote.Biblioteca;
+import es.deusto.spq.biblioteca.remote.IBiblioteca;
 import junit.framework.JUnit4TestAdapter;
 
-public class ControllerTest {
+public class TestController {
 
 	
-	@Mock
-	Controller controller;
+	
+	private static Controller controller;
+
+	private static String cwd = TestController.class.getProtectionDomain().getCodeSource().getLocation().getFile();
+	private static Thread rmiRegistryThread = null;
+	private static Thread rmiServerThread = null;
+	
+	private static Logger logger = Logger.getLogger(TestController.class.getName());
 	
 	public static junit.framework.Test suite() {
-		return new JUnit4TestAdapter(LibroDAOTest.class);
+		return new JUnit4TestAdapter(TestController.class);
 	}
+	
+	@BeforeClass
+	public static void setUpClass() throws Exception {
+		
+		
+		logger.info("Launch the RMI registry");
+		class RMIRegistryRunnable implements Runnable {
+			public void run() {
+				try {
+					java.rmi.registry.LocateRegistry.createRegistry(1099);
+					logger.info("BeforeClass: RMI registry ready.");
+				} catch (Exception e) {
+					logger.info("Exception starting RMI registry:");
+					e.printStackTrace();
+				}	
+			}
+		}
+		
+		rmiRegistryThread = new Thread(new RMIRegistryRunnable());
+		rmiRegistryThread.start();
+		try {
+			logger.info("sleeping 4000ms");
+			Thread.sleep(4000);
+		} catch (InterruptedException ie) {
+			ie.printStackTrace();
+		}
+		
+		//Lanzar servidor
+		class RMIServerRunnable implements Runnable {
+
+			public void run() {
+				logger.info("This is a test to check how mvn test executes this test without external interaction; JVM properties by program");
+				logger.info("**************: " + cwd);
+				System.setProperty("java.rmi.server.codebase", "file:" + cwd);
+				System.setProperty("java.security.policy", "target\\classes\\security\\java.policy");
+
+				if (System.getSecurityManager() == null) {
+					System.setSecurityManager(new SecurityManager());
+				}
+
+				String name = "//127.0.0.1:1099/BibliotecaRMI";
+				logger.info("BeforeClass - Setting the server ready TestServer name: " + name);
+
+				try {
+					
+					IBiblioteca biblioteca = new Biblioteca();
+					Naming.rebind(name, biblioteca);
+				} catch (RemoteException re) {
+					logger.error(" # BibliotecaRMI RemoteException: " + re.getMessage());
+					re.printStackTrace();
+					System.exit(-1);
+				} catch (MalformedURLException murle) {
+					logger.error(" # BibliotecaRMI MalformedURLException: " + murle.getMessage());
+					murle.printStackTrace();
+					System.exit(-1);
+				}
+			}
+		}
+		rmiServerThread = new Thread(new RMIServerRunnable());
+		rmiServerThread.start();
+		try {
+			logger.info("sleeping 4000ms");
+			Thread.sleep(4000);
+		} catch (InterruptedException ie) {
+			ie.printStackTrace();
+		}}
 
 	
 	@Before
 	public void setUp() throws Exception {
 		//Inicializado para todos los teses
 //		String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
-		String[] args = new String[] {};
+		String[] args = new String[3];
 		args[0] = "127.0.0.1";
 		args[1] = "1099";
 		args[2] = "BibliotecaRMI";
 		controller = new Controller(args);
-		cl = controller.getCl();
+		
 	}
 	
 
 	
-	final Logger logger= LoggerFactory.getLogger(LibroDataTest.class);
-	private Client cl;
+
 	
 	  @Test public void buscarLibroTest() { try{
 	  logger.info("Test 2 - buscar libro"); String
@@ -118,7 +175,7 @@ public class ControllerTest {
 			assertTrue(false);
 		} catch (Exception re) {
 			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
+			re.printStackTrace();
 		}
 
 	}
@@ -244,11 +301,10 @@ public class ControllerTest {
 	public void consultarDisponibilidadComedorTest() {
 		try {
 			logger.info("Test 8 - Register new user");
-			controller.consultarDisponibilidadComedor("M1", "2/05/18", "14:00", 3);
-			assertTrue(false);
+			assertEquals(true,controller.consultarDisponibilidadComedor("M1", "2/05/18", "14:00", 3));
 		} catch (Exception re) {
 			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
+			re.printStackTrace();
 		}
 
 	}
