@@ -17,6 +17,7 @@ import es.deusto.spq.biblioteca.dao.IMenuDAO;
 import es.deusto.spq.biblioteca.dao.IMesaDAO;
 import es.deusto.spq.biblioteca.dao.IReservaComedorDAO;
 import es.deusto.spq.biblioteca.dao.IReservaDAO;
+import es.deusto.spq.biblioteca.dao.IReservaLibroDAO;
 import es.deusto.spq.biblioteca.dao.ISalaDAO;
 import es.deusto.spq.biblioteca.dao.LibroDAO;
 import es.deusto.spq.biblioteca.dao.MenuDAO;
@@ -28,8 +29,10 @@ import es.deusto.spq.biblioteca.data.Libro;
 import es.deusto.spq.biblioteca.data.Menu;
 import es.deusto.spq.biblioteca.data.Mesa;
 import es.deusto.spq.biblioteca.data.Reserva;
+import es.deusto.spq.biblioteca.data.ReservaLibro;
 import es.deusto.spq.biblioteca.data.ReservaMesa;
 import es.deusto.spq.biblioteca.data.Sala;
+import es.deusto.spq.biblioteca.dao.ReservaLibroDAO;
 
 @Ignore
 public class CargaDatosBDTest {
@@ -42,6 +45,7 @@ public class CargaDatosBDTest {
 	private IReservaComedorDAO reservaCDAO;
 	private ISalaDAO salaDAO;	
 	private IReservaDAO reservaDAO;
+	private IReservaLibroDAO reservaLibroDAO;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -52,6 +56,7 @@ public class CargaDatosBDTest {
 		reservaCDAO = new ReservaComedorDAO();
 		salaDAO = new SalaDAO();	
 		reservaDAO = new ReservaDAO();
+		reservaLibroDAO = new ReservaLibroDAO();
 	
 	}
 	
@@ -194,4 +199,26 @@ public class CargaDatosBDTest {
 			logger.error("-Error creando nueva reserva: " + ex.getMessage());
 		}
 	}
+	@Test
+	public void testReservaLibro() {
+		try {
+			logger.info("-Creando 4 reservas de libro...");
+			
+			ReservaLibro RL1 = new ReservaLibro( "I1");
+			reservaLibroDAO.reservarLibro(RL1);
+			
+			ReservaLibro RL2 = new ReservaLibro( "I2");
+			reservaLibroDAO.reservarLibro(RL2);
+			
+			ReservaLibro RL3 = new ReservaLibro( "I3");
+			reservaLibroDAO.reservarLibro(RL3);
+			
+			ReservaLibro RL4 = new ReservaLibro( "I4");
+			reservaLibroDAO.reservarLibro(RL4);
+				
+		}catch(Exception ex) {
+			logger.error("-Error creando nueva reserva: " + ex.getMessage());
+		}
+	}
+	
 }

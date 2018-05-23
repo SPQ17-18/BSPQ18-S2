@@ -10,7 +10,6 @@ import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.Required;
 import org.databene.contiperf.junit.ContiPerfRule;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -44,8 +43,8 @@ public class ReservaLibroDataTest {
 		logger.info("Construyendo datos: {}", iteracion++);
 		RL1 = new ReservaLibro("1");
 		RL2 = new ReservaLibro("2");
-		RL3 = new ReservaLibro("3");
-		RL4 = new ReservaLibro("4");
+		RL2 = new ReservaLibro("3");
+		RL2 = new ReservaLibro("4");
 
 		
 	}
@@ -95,13 +94,13 @@ public class ReservaLibroDataTest {
 	}
 	
 	//Test de error provocado a proposito
-	@Ignore
+	@Test
     @PerfTest(invocations = 2000, threads = 10)
     @Required(max = 60, average = 100)
 	public void testDeErrorForzado() {
 		logger.info("Empezando test de error forzado");
 		ReservaLibro waiting = new ReservaLibro("44");
-		assertFalse(waiting.getIsbn().equals(RL4.getIsbn()));
+		assertEquals(waiting.getIsbn(), RL4.getIsbn());
 		logger.info("Finalizando test de error forzado ");
 
 		fail("Not yet implemented");

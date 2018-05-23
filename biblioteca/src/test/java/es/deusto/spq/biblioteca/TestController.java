@@ -8,6 +8,8 @@ import java.rmi.RemoteException;
 
 import org.junit.Test;
 import org.apache.log4j.Logger;
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -31,7 +33,6 @@ import es.deusto.spq.biblioteca.remote.Biblioteca;
 import es.deusto.spq.biblioteca.remote.IBiblioteca;
 import junit.framework.JUnit4TestAdapter;
 
-@Ignore
 public class TestController {
 
 	
@@ -134,10 +135,6 @@ public class TestController {
 		args[2] = "BibliotecaRMI";
 		controller = new Controller(args);
 		
-	}
-	
-	@Before
-	public void setUpBD() {
 		
 		 libroDAO = new LibroDAO();
 		  menuDAO = new MenuDAO();
@@ -147,78 +144,85 @@ public class TestController {
 		  reservaDAO = new ReservaDAO();
 		  reservaLibroDAO = new ReservaLibroDAO();
 		  
-		  Libro L = new Libro("", null, null, null);
-		  Libro L1 = new Libro("", null, null, null);
+		  Libro L = new Libro("I5", "FYellowstar: Conviértete en un campeón de League of Legends", "Bora Kim ", "Editorial Planeta S.A");
+		  Libro L1 = new Libro("I6", "Festin de cuervos, Cancion de Hielo y fuego 5", "George R.R. Martin", "Gigamesh");
 		  
-		  Menu m = new Menu();
-		  Menu m1 = new Menu();
+		  Menu m = new Menu("MEN3","29-3-2018","Menestra","Salmon","Tarta");
+		  Menu m1 = new Menu("MEN4","30-5-2018","Alubias","Filete","Chocolate");
+		  
+		  Mesa me1 = new Mesa("M8",4);			
+		  Mesa me2 = new Mesa("M9",6);
+		    
+		  Sala s1 = new Sala("S8",10);		
+		  Sala s2 = new Sala("S9",8);
 		
-		
+		  Reserva r1 = new Reserva("RE8", "S8", "23456789Y", "15-11-2018", "12:30", 4);
+		  Reserva r2 = new Reserva("RE9", "S9", "12345678X", "7-02-2018", "19:00", 6);
+		  
+		  ReservaMesa r3 = new ReservaMesa("M8", "REC1", "19182138S", "1-05-2018", "15:00", 6);
+		  ReservaMesa r4 = new ReservaMesa("M9", "REC2 ", "78691386P", "13-05-2018", "13:30", 8);
+		  
+		  ReservaLibro r5 = new ReservaLibro("I5");
+		  ReservaLibro r6 = new ReservaLibro("I6");
+		 
+		  libroDAO.almacenarLibro(L);
+		  libroDAO.almacenarLibro(L1);
+		  menuDAO.anyadirMenu(m);
+		  menuDAO.anyadirMenu(m1);
+		  mesaDAO.anyadirMesa(me1);
+		  mesaDAO.anyadirMesa(me2);
+		  salaDAO.anyadirSala(s1);
+		  salaDAO.anyadirSala(s2);
+		  reservaDAO.anyadirReserva(r1);
+		  reservaDAO.anyadirReserva(r2);
+		  reservaComedorDAO.anyadirReservaComedor(r3);
+		  reservaComedorDAO.anyadirReservaComedor(r4);
+		  reservaLibroDAO.reservarLibro(r5);
+		  reservaLibroDAO.reservarLibro(r6);
+		  
+
+
+
 	}
 	
-
 	
-
-	
-	  @Test public void buscarLibroTest() { 
-		  try{
-	  logger.info("Test 2 - buscar libro"); String
-	  a="Festin de cuervos, Cancion de Hielo y fuego IV";
-	  controller.buscarLibro(a); assertTrue(false); 
-	  } catch (Exception re) {
-	  System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-	  assertTrue(true); 
-	  	}
+	  @Test 
+	  public void buscarLibroTest() {
+		  logger.info("Test 1 - Buscar libro");
+		  controller.buscarLibro("Festin de cuervos, Cancion de Hielo y fuego 5");
 	  
+//			  try{
+//					logger.info("Test 1 - Buscar libro");
+//					controller.buscarLibro("Festin de cuervos, Cancion de Hielo y fuego 5");
+//					assertEquals(controller.buscarLibro("Festin de cuervos, Cancion de Hielo y fuego 5"),"Festin de cuervos, Cancion de Hielo y fuego 5" );
+//				}
+//				catch (Exception re) {
+//					logger.error(" # RDCar RemoteException: " + re.getMessage());
+//					re.printStackTrace();
+//				} 						
 	  }
 	  	  
 	@Test
 	public void mostrarLibroTest() {
-		try {
-			logger.info("Test 4 - Register new user");
-			String a = "Festin de cuervos, Cancion de Hielo y fuego IV";
-			controller.mostrarLibro(a);
-			assertTrue(false);
-		} catch (Exception re) {
-			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
-		}
-
+		logger.info("Test 2 - ver reserva");
+		controller.mostrarLibro("Festin de cuervos, Cancion de Hielo y fuego 5");
+//		try {
+//			logger.info("Test 2 - Mostrar libro");
+//			String a = "Festin de cuervos, Cancion de Hielo y fuego 5";
+//			controller.mostrarLibro(a);
+//			assertTrue(false);
+//		} catch (Exception re) {
+//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+//		}
+//		assertTrue(true);
+//
 	}
 
 	@Test
 	public void consultarDiponibilidadLibroTest() {
 		try {
-			logger.info("Test 5 - Register new user");
-			String a = "Festin de cuervos, Cancion de Hielo y fuego IV";
-			controller.consultarDiponibilidadLibro(a);
-			assertTrue(false);
-		} catch (Exception re) {
-			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
-		}
-
-	}
-	
-	@Test
-	public void getLibrosTest() {
-		try {
-			logger.info("Test 6 - Register new user");
-			controller.verCatalogoDeLibros();
-			assertTrue(false);
-		} catch (Exception re) {
-			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
-		}
-
-	}
-	
-	@Test
-	public void reservarLibrosTest() {
-		try {
-			logger.info("Test 6 - Register new user");
-			controller.reservarLibro("1");
-			assertTrue(false);
+			logger.info("Test 3 - Consultar disponibilidad Libro");
+			assertEquals(false,controller.consultarDiponibilidadLibro("I5"));
 		} catch (Exception re) {
 			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
 			re.printStackTrace();
@@ -227,126 +231,52 @@ public class TestController {
 	}
 	
 	@Test
-	public void devolverLibrosTest() {
-		try {
-			logger.info("Test 6 - Register new user");
-			controller.DevolverLibro("1");
-			assertTrue(false);
-		} catch (Exception re) {
-			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
-		}
+	public void reservarLibrosTest() throws RemoteException {
+			logger.info("Test 4 - Reservar libro");
+			String l = "I6";
+			controller.reservarLibro(l);
 
 	}
 	
-	@Test
-	public void devolverReservaTest() {
-		try {
-			logger.info("Test 6 - Register new user");
-			controller.verReservas("12345678X");
-			assertTrue(false);
-		} catch (Exception re) {
-			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
-		}
+	@Ignore
+	public void devolverLibrosTest()throws RemoteException {
+		logger.info("Test 5 - Consultar disponibilidad Libro");
+		assertEquals(String.valueOf(controller.DevolverLibro("I5").getIsbn()),"I5");
 
 	}
 	
-	@Test
-	public void devolverReservaComedorTest() {
-		try {
-			logger.info("Test 6 - Register new user");
-			controller.verReservas("12345678X");
-			assertTrue(false);
-		} catch (Exception re) {
-			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
-		}
-
-	}
 	
-	@Test
-	public void ayadirLibrosTest() {
-		try {
-			logger.info("Test 6 - Register new user");
-			controller.almacenarLibro("5", "V de vendetta", "Alan Moore", "Planeta");
-			assertTrue(false);
-		} catch (Exception re) {
-			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
-		}
-
-	}
-
-	@Test
-	public void anyadirReservaTest() {
-		try {
-			logger.info("Test 7 - Register new user");
-			controller.anyadirReserva("S1", "12345678X", "11/04/18", "21:20", 3);
-			assertTrue(false);
-		} catch (Exception re) {
-			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
-		}
-
-	}
-
-	@Test
-	public void anyadirSalaTest() {
-		try {
-			logger.info("Test 8 - Register new user");
-			controller.anyadirSala("S1", 10);
-			assertTrue(false);
-		} catch (Exception re) {
-			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
-		}
-
-	}
-
+	
 	@Test
 	public void consultarDisponibilidadTest() {
 		try {
-			logger.info("Test 8 - Register new user");
-			controller.consultarDisponibilidad("S1", "11/04/18", "10:00", 4);
-			assertTrue(false);
+			logger.info("Test 6 - Consultar disponibilidad");
+			assertEquals(true,controller.consultarDisponibilidad("S1", "16-11-2018", "12:30", 3));
 		} catch (Exception re) {
 			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
+			re.printStackTrace();
 		}
 
 	}
-
+	
+	
 	@Test
-	public void editarReservaTest() {
-		try {
-			logger.info("Test 8 - Register new user");
-			controller.editarReserva("12345678X", "11/04/18", "21:20", "S1", "20/12/15", "12:00", "S2");
-			assertTrue(false);
-		} catch (Exception re) {
-			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
-		}
+	public void ayadirLibrosTest()throws RemoteException {
+		logger.info("Test 7 - añadir libro");
+			controller.almacenarLibro("5", "V de vendetta", "Alan Moore", "Planeta");
 
 	}
-
+	
 	@Test
-	public void anyadirReservaComedorTest() {
-		try {
-			logger.info("Test 8 - Register new user");
-			controller.anyadirReservaComedor("M1", "12345678X", "30/04/18", "14:30", 2);
-			assertTrue(false);
-		} catch (Exception re) {
-			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
-		}
-
+	public void anyadirReservaTest()throws RemoteException {
+		logger.info("Test 8 - añadir reserva");
+		controller.anyadirReserva( "S6", "23456789Y", "15-11-2018", "12:30", 4);
 	}
-
+	
 	@Test
 	public void consultarDisponibilidadComedorTest() {
 		try {
-			logger.info("Test 8 - Consultar disponibilidad Comedor");
+			logger.info("Test 9 - Consultar disponibilidad Comedor");
 			assertEquals(true,controller.consultarDisponibilidadComedor("M1", "2/05/18", "14:00", 3));
 		} catch (Exception re) {
 			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
@@ -354,85 +284,124 @@ public class TestController {
 		}
 
 	}
+	
 
 	@Test
-	public void anyadirMesaTest() {
+	public void anyadirSalaTest()throws RemoteException {
+		logger.info("Test 10 - Añadir reserva");
+		controller.anyadirSala("S10", 5);
+
+	}
+
+
+	@Test
+	public void verReservasTest()throws RemoteException {
+		logger.info("Test 11 - ver reserva");
+		controller.verReservas("23456789Y");
+	}
+
+	@Test
+	public void editarReservaTest() {
 		try {
-			logger.info("Test 8 - Register new user");
-			controller.anyadirMesa("M1", 4);
-			assertTrue(false);
+			logger.info("Test 12 - Editar reserva ");
+			controller.editarReserva("12345678X", "11-04-2018", "21:20", "S1", "20/12/15", "12:00", "S2");
+			assertTrue(true);
 		} catch (Exception re) {
 			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
+			assertTrue(false);
 		}
+		assertTrue(true);
+	}
+
+	@Test
+	public void anyadirReservaComedorTest()throws RemoteException {
+		logger.info("Test 13 - Añadir reserva comedor");
+		controller.anyadirReservaComedor("M10", "78691386O", "20-10-2019", "14:17", 4);
+
+	}
+
+
+	@Test
+	public void anyadirMesaTest() throws RemoteException {
+		logger.info("Test 14 - Añadir mesa");
+		controller.anyadirMesa("M10", 5);
 
 	}
 	
 	@Test
-	public void anyadirMenuTest() {
-		try {
-			logger.info("Test 8 - Register new user");
-			controller.verMenu("21-5-2018");
-			assertTrue(false);
-		} catch (Exception re) {
-			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
-		}
+	public void anyadirValoracionTest() throws RemoteException {
+		logger.info("Test 15 - Añadir valoracion");
+		controller.anyadirValoracion("MEN4", 9);
+
+	}
+
+	@Test
+	public void verReservaComedorTest() throws RemoteException {
+		logger.info("Test 16 - Ver reserva comedor");
+		controller.verReservaComedor("19182138S");
 
 	}
 	
 	@Test
-	public void anyadirValoracionTest() {
-		try {
-			logger.info("Test 8 - Register new user");
-			controller.anyadirValoracion("M1", 8);
-			assertTrue(false);
-		} catch (Exception re) {
-			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
-		}
+	public void consultaMenuTest() throws Exception {
+		logger.info("Test 17 - Consultar menu");
+		controller.verMenu("30-5-2018");
+
 
 	}
-
 	
 	@Test
-	public void eliminarReservaComedorTest() {
+	public void editarReservaComedorTest() {
 		try {
-			logger.info("Test 8 - Register new user");
-			controller.eliminarReservaComedor("12345678X", "30/04/18", "14:30");
-			assertTrue(false);
+			logger.info("Test 18 - Editar reserva comedor");
+			controller.editarReservaComedor("12345678X", "11/04/18", "21:20", "S1", "20/12/15", "12:00", "S2");
+			assertTrue(true);
 		} catch (Exception re) {
 			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
+			assertTrue(false);
 		}
+		assertTrue(true);
+	}
+
+	@Test
+	public void eliminarReservaComedorTest() throws RemoteException{
+		logger.info("Test 19 - eliminar reserva comedor");
+		controller.editarReservaComedor("19182138S", "1-05-2018", "15:00", "M8", "2-05-2018", "14:20", "M10");
+//		try {
+//			logger.info("Test 8 - Register new user");
+//			biblioteca.eliminarReservaComedor("12345678X", "30/04/18", "14:30");
+//			assertTrue(true);
+//		} catch (Exception re) {
+//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+//			assertTrue(false);
+//		}
 
 	}
 	
 	@Test
 	public void eliminarReservaTest() {
-		try {
-			logger.info("Test 8 - Register new user");
-			controller.eliminarReserva("12345678X", "30/04/18", "14:30");
-			assertTrue(false);
-		} catch (Exception re) {
-			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
-		}
+		logger.info("Test 20 - eliminar reserva ");
+		controller.eliminarReserva( "23456789Y", "15-11-2018", "12:30");
+//		try {
+//			logger.info("Test 8 - Register new user");
+//			biblioteca.eliminarReserva("12345678X", "30/04/18", "14:30");
+//			assertTrue(true);
+//		} catch (Exception re) {
+//			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
+//			assertTrue(false);
+//		}
 
 	}
-
 	
-	@Test
-	public void editarReservaComedorTest() {
+	
+	@AfterClass
+	static public void tearDown() {
 		try {
-			logger.info("Test 8 - Register new user");
-			controller.editarReservaComedor("12345678X", "11/04/18", "21:20", "S1", "20/12/15", "12:00", "S2");
-			assertTrue(false);
-		} catch (Exception re) {
-			System.err.println(" # Biblioteca RemoteException: " + re.getMessage());
-			assertTrue(true);
+			rmiServerThread.join();
+			rmiRegistryThread.join();
+		} catch (InterruptedException ie) {
+			ie.printStackTrace();
 		}
-
 	}
 
 }
