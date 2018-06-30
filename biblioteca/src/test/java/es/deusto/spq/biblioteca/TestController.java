@@ -32,6 +32,7 @@ import es.deusto.spq.biblioteca.data.Sala;
 import es.deusto.spq.biblioteca.remote.Biblioteca;
 import es.deusto.spq.biblioteca.remote.IBiblioteca;
 import junit.framework.JUnit4TestAdapter;
+@Ignore
 
 public class TestController {
 

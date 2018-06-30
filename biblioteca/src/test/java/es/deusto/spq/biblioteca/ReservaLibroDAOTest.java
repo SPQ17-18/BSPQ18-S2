@@ -14,6 +14,7 @@ import org.apache.log4j.Logger;
 import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.Required;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
@@ -23,7 +24,7 @@ import es.deusto.spq.biblioteca.dao.IReservaLibroDAO;
 import es.deusto.spq.biblioteca.data.ReservaLibro;
 import es.deusto.spq.biblioteca.remote.Biblioteca;
 import junit.framework.JUnit4TestAdapter;
-
+@Ignore
 @RunWith(MockitoJUnitRunner.class)
 public class ReservaLibroDAOTest {
 	

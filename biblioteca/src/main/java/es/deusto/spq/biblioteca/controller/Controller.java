@@ -429,6 +429,16 @@ public class Controller {
 			e.printStackTrace();
 		}
 	}
+	
+	public void anyadirPremio(String isbn, String nombrePremio) {
+		try {
+			cl.getService().anyadirPremio(isbn, nombrePremio);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 	/**
 	 * Inicializa un controller nuevo
 	 * @param args

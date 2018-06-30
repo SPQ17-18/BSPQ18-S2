@@ -415,6 +415,12 @@ public class Biblioteca extends UnicastRemoteObject implements IBiblioteca {
 		return menu;
 	}
 
+	@Override
+	public void anyadirPremio(String isbn, String nombrePremio) throws RemoteException {
+		
+		libroDAO.anyadirPremio(isbn, nombrePremio);
+	}
+
 	
 }
 

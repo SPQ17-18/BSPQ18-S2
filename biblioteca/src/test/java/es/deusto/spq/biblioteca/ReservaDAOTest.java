@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import org.databene.contiperf.Required;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
@@ -23,7 +24,7 @@ import junit.framework.JUnit4TestAdapter;
  * @author Ariane y Mikel
  *
  */
-
+@Ignore
 @RunWith(MockitoJUnitRunner.class)
 public class ReservaDAOTest {
 

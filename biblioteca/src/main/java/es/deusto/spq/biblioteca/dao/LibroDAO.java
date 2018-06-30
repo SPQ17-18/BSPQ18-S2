@@ -15,6 +15,7 @@ import javax.jdo.Transaction;
 import org.apache.log4j.Logger;
 
 import es.deusto.spq.biblioteca.data.Libro;
+import es.deusto.spq.biblioteca.data.Menu;
 
 /**
  * Clase para el manejo de la Base de Daatos
@@ -196,5 +197,35 @@ public class LibroDAO implements ILibroDAO{
 		}
 		return l;
 
+	}
+
+	@Override
+	public void anyadirPremio(String isbn, String nombrePremio) {
+		
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			logger.info("   * Anyadiendo un nuevo premio: " + nombrePremio);
+			tx.begin();
+			Query<Libro> query = pm.newQuery(Libro.class);
+			@SuppressWarnings("unchecked")
+			List<Libro> libros = (List<Libro>) query.execute();
+			for (Libro l : libros) {
+				if (l.getIsbn().equals(isbn)) {
+					l.setPremio(nombrePremio);	
+				}
+			}
+			tx.commit();
+		} catch (Exception ex) {
+			logger.error("   $ Error retreiving an extent: " + ex.getMessage());
+
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
 	}
 }

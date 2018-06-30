@@ -8,6 +8,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
@@ -22,6 +23,7 @@ import junit.framework.JUnit4TestAdapter;
  * @author Julen
  *
  */
+@Ignore
 @RunWith(MockitoJUnitRunner.class)
 public class ReservaComedorDAOTest {
 

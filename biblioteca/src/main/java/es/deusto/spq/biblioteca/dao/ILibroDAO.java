@@ -14,6 +14,7 @@ public interface ILibroDAO {
 	public ArrayList<String> getLibros();
 	public void almacenarLibro(Libro l);
 	public Libro verLibro(String nombre);
+	public void anyadirPremio(String isbn, String nombrePremio);
 
 
 }

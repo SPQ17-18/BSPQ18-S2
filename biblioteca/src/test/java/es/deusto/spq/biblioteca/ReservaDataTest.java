@@ -6,6 +6,7 @@ import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.Required;
 import org.databene.contiperf.junit.ContiPerfRule;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -19,6 +20,7 @@ import junit.framework.JUnit4TestAdapter;
  * @author Ariane
  *
  */
+@Ignore
 @PerfTest(invocations = 5)
 @Required(max = 1200, average = 250)
 public class ReservaDataTest {

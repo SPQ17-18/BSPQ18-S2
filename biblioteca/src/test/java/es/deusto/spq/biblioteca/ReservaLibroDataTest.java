@@ -10,6 +10,7 @@ import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.Required;
 import org.databene.contiperf.junit.ContiPerfRule;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -17,7 +18,7 @@ import org.slf4j.LoggerFactory;
 
 import es.deusto.spq.biblioteca.data.ReservaLibro;
 import junit.framework.JUnit4TestAdapter;
-
+@Ignore
 @PerfTest(invocations = 5)
 @Required(max = 1200, average = 250)
 public class ReservaLibroDataTest {
@@ -26,6 +27,8 @@ public class ReservaLibroDataTest {
 	private ReservaLibro RL2;
 	private ReservaLibro RL3;
 	private ReservaLibro RL4;
+	private 
+	
 	
 	final Logger logger= LoggerFactory.getLogger(ReservaLibroDataTest.class);
 	static int iteracion = 0;
@@ -45,6 +48,7 @@ public class ReservaLibroDataTest {
 		RL2 = new ReservaLibro("2");
 		RL2 = new ReservaLibro("3");
 		RL2 = new ReservaLibro("4");
+	
 
 		
 	}

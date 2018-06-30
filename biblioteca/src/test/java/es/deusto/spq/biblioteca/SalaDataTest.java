@@ -21,6 +21,7 @@ import junit.framework.JUnit4TestAdapter;
  * @author Luis
  *
  */
+@Ignore
 @PerfTest(invocations = 5)
 @Required(max = 1200, average = 250)
 public class SalaDataTest {

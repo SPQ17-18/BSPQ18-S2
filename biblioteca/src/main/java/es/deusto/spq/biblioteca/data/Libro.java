@@ -23,6 +23,7 @@ public class Libro implements Serializable {
 	String nombre = null;
 	String autor = null;
 	String editorial = null;
+	String premio = null;
 	
 	//Añadir mas???
 	@Join List<ReservaLibro> reservasLibros = new ArrayList<ReservaLibro>();
@@ -46,11 +47,28 @@ public class Libro implements Serializable {
 		this.nombre = nombre;
 		this.autor = autor;
 		this.editorial = editorial;
+		this.premio = premio;
 	}
 	
 
 	//Getters y Setters
 	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getPremio() {
+		return premio;
+	}
+
+	public void setPremio(String premio) {
+		this.premio = premio;
+	}
+
 	/**
 	 * Metodo que devuelve la lista de reservas los libros.
 	 * @return lista de reservas.
@@ -155,8 +173,12 @@ public class Libro implements Serializable {
 	 */
 	@Override
 	public String toString() {
-		return "libro [isbn=" + isbn + ", nombre=" + nombre + ", autor=" + autor + ", editorial=" + editorial
-				+ ", numeroEjemplares=" + numeroEjemplares +"]";
+		return "Libro [isbn=" + isbn + ", nombre=" + nombre + ", autor=" + autor + ", editorial=" + editorial
+				+ ", premio=" + premio + ", reservasLibros=" + reservasLibros + ", numeroEjemplares=" + numeroEjemplares
+				+ "]";
 	}
+
+
+	
 
 }

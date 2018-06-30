@@ -10,6 +10,8 @@ import java.rmi.RemoteException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.apache.log4j.Logger;
+import org.databene.contiperf.PerfTest;
+import org.databene.contiperf.Required;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -21,6 +23,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import es.deusto.spq.biblioteca.dao.ILibroDAO;
 import es.deusto.spq.biblioteca.data.Libro;
+import es.deusto.spq.biblioteca.data.ReservaLibro;
 import es.deusto.spq.biblioteca.remote.Biblioteca;
 import junit.framework.JUnit4TestAdapter;
 /**
@@ -28,6 +31,7 @@ import junit.framework.JUnit4TestAdapter;
  * @author Koldo
  *
  */
+@Ignore
 @RunWith(MockitoJUnitRunner.class)
 public class LibroDAOTest {
 	
@@ -84,4 +88,7 @@ public class LibroDAOTest {
 		assertEquals(libro.getEditorial(), book.getEditorial());		
 
 	}
+	
+	
+	
 }
