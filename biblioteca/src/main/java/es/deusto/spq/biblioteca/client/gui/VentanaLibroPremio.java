@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
+import javax.swing.JLabel;
 
 public class VentanaLibroPremio extends JFrame {
 
@@ -22,6 +23,7 @@ public class VentanaLibroPremio extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JButton btnVolver;
 //
 //	/**
 //	 * Launch the application.
@@ -58,7 +60,7 @@ public class VentanaLibroPremio extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("Aceptar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			controller.anyadirPremio(textField.getSelectedText(),textField_1.getSelectedText());
@@ -66,6 +68,10 @@ public class VentanaLibroPremio extends JFrame {
 		});
 		btnNewButton.setBounds(272, 59, 128, 23);
 		contentPane.add(btnNewButton);
+		
+		btnVolver = new JButton("Volver");
+		btnVolver.setBounds(272, 133, 128, 23);
+		contentPane.add(btnVolver);
 		
 		textField = new JTextField();
 		textField.setBounds(33, 60, 121, 20);
@@ -76,6 +82,14 @@ public class VentanaLibroPremio extends JFrame {
 		textField_1.setColumns(10);
 		textField_1.setBounds(33, 134, 121, 20);
 		contentPane.add(textField_1);
+		
+		JLabel lblNewLabel = new JLabel("ISBN");
+		lblNewLabel.setBounds(41, 35, 46, 14);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNombreDelPremio = new JLabel("Nombre del Premio");
+		lblNombreDelPremio.setBounds(41, 109, 100, 14);
+		contentPane.add(lblNombreDelPremio);
 	}
 	
 	/**
